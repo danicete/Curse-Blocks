@@ -1,0 +1,61 @@
+﻿// Block -> Media (b-media-a)
+//
+// ✎ Basic media module
+//
+// ⌚ Level 1.00 (03/05/12)
+//
+// ☍ Components:
+//     - None
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+//
+// Mixin
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin b-media-a {
+    
+    position: relative;
+
+    // Overlay
+
+    &.b-media_overlay {
+        padding-bottom: 0;
+
+        .b-media-content {
+
+            > a {
+                @include borderRadius($mediaBorder-radius);
+                cursor: pointer; // Cross-browser support
+                display: block;
+                overflow: hidden;
+
+                &:hover .title { color: $mediaTitle-color-hover; }
+            }
+        }
+
+        .title {
+            background: $mediaOverlay-bg;
+            @include borderRadius-bottom($mediaBorder-radius);
+            color: $mediaTitle-color;
+            font-size: $mediaTitle-size;
+            margin-bottom: 0;
+            padding: $leading / 2 0;
+            position: absolute;
+            bottom: 0; left: 0;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+} // END b-media-a

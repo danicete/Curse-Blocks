@@ -1,0 +1,181 @@
+﻿// Block -> Tab (b-tab-b)
+//
+// ✎ UNIQUE - Cobalt standard tabs
+//
+// ⌚ Level 1.00 (05/08/12)
+//
+// ☍ Components:
+//     - Item (b-tab-item)
+//     - Nav (b-tab-nav)
+//     - Selected (b-tab-selected)
+//
+// ☆ Sub-Classes:
+//     - Temp
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+//
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin b-tab-b {
+
+    @include group;
+
+    position: relative;
+
+    // Nav
+
+    .b-tab-nav {
+        margin: $tabMargin;
+        
+        // Item
+
+        .b-tab-item {
+            cursor: pointer;
+            @include inline-block;
+
+            > a {
+                background: $tabBg;
+                @include borderRadius($border-radius);
+                color: $tabFont-color;
+                display: block;
+                padding: $tabPadding;
+                position: relative;
+                text-transform: $tabFont-texTransform;
+
+                &:hover { background: $tabBg-hover; color: $tabFont-color-hover; }
+            }
+
+            // IE
+
+            .ie7 & + .b-tab-item { margin-left: 4px; }
+
+            // Selected
+
+            &.selected {
+                font-weight: bold;
+                
+                > a {
+                    background: $tabBg-hover;
+                    color: $tabFont-color-hover;
+
+                    // Speech Pill
+
+                    @if $tabSpeech {
+
+                        &:after {
+                            border-top: 4px solid $tabBg-hover;
+                            border-left: 4px solid transparent;
+                            border-right: 4px solid transparent;
+                            content: "";
+                            display: block;
+                            height: 0;
+                            margin-left: -4px;
+                            position: absolute;
+                            bottom: -4px; left: 50%;
+                            width: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //// Temp (b-tab_temp)
+
+    &.b-tab_temp {
+        
+        // Nav
+
+        .b-tab-nav {
+            @include group;
+            border-bottom: $tabBorder;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        // Sub-Nav
+
+        .sub-nav {
+            background: $tabSubnav-bg;
+            border: $tabSubnav-border;
+            border-top-width: 0;
+
+            > li {
+                display: inline-block;
+
+                &:first-child { margin-top: -1px; }
+
+                > a,
+                > span {
+                    display: inline-block;
+                    font-size: $font-sizeSmaller;
+                    font-weight: bold;
+                    padding: $leading / 2;
+                }
+
+                > span { cursor: default; }
+
+                // Selected
+
+                &.selected {
+                    
+                    > span { border-bottom: $tabSubnav-border-selected; }
+                }
+            }
+        }
+
+        // Item
+
+        .b-tab-item {
+            float: left;
+            @include u-dropDown-z;
+            position: relative;
+            top: 1px;
+
+            > a {
+                border: $tabBorder;
+                border-left-width: 0;
+                color: $font-color;
+                text-align: center;
+                min-width: $tabItem-width;
+
+                &:hover { color: $font-colorTertiary; }
+            }
+
+            &:first-child {
+                
+                > a { border-left-width: 1px; }
+            }
+
+            // Selected
+
+            &.selected {
+
+                > a {
+                    
+                    &:after { display: none; }
+                }
+            }
+
+            // DropDown
+
+            > .sub-nav {
+                
+                > .b-tab-item {
+                    
+                    > a { border-width: 0 1px 1px; }
+                }
+            }
+        }
+    }
+
+} // END b-tab-b

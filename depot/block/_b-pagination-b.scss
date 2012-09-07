@@ -1,0 +1,53 @@
+﻿// Block -> Pagination (b-pagination-b)
+//
+// ✎ Horizontal, smaller meta pagination
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//     - Item (b-pagination-item) 
+
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+//
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin b-pagination-b {
+		
+    @include group;
+    float: left;
+
+    // Item
+
+    .b-pagination-item {
+        cursor: default;
+        float: left; 
+        font-size: $paginationFont-size;
+		
+        & + .b-pagination-item { margin-left: 4px; }
+
+        > a {
+            background: $paginationBg;
+            border: $paginationBorder;
+            @include borderRadius($paginationBorder-radius);
+            color: $paginationFont-color;
+            float: left;
+            line-height: 1em;
+            padding: 2px 4px;
+            text-decoration: none;
+
+            &:hover { background: $paginationBg-hover; color: $paginationFont-color-hover; }
+        }
+    }
+
+} // END b-pagination-b

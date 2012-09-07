@@ -1,0 +1,46 @@
+﻿// ★★ Plugin -> Carousel (p-carousel-a) ★★
+
+// ✎ Horizontal carousel with on/off toggle ability
+
+// ⌚ Level 1.00 (02/017/12)
+
+// ☍ Components:
+//     - Filter (p-carousel-filter)
+//     - Frame (p-carousel-frame)
+//     - Wrapper (p-carousel-wrapper)
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin p-carousel-a {
+
+    @include group;
+
+    // Filter
+
+    .p-carousel-filter { display: none; } // Hide filters in carousel mode
+
+    // Frame
+
+    .p-carousel-frame { max-width: 100%; overflow: hidden; position: relative; } // Carousel mask
+
+    // Wrapper
+
+    .p-carousel-wrapper { width: 9999px; position: relative; } // The adjustable listing container
+
+    //// ☆ Sub-Classes ☆
+
+    // Carousel Off
+
+    &.p-carousel_off .p-carousel-filter { display: block; } // Show filters
+    &.p-carousel_off .p-carousel-wrapper { width: auto; } // Wrapper now coforms to its parent
+
+} // END p-carousel-a

@@ -1,0 +1,110 @@
+﻿// Plugin -> Browser (p-browser-a)
+//
+// ✎ Generic browser plugin
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//     - Content (p-browser-content)
+//     - Item (p-browser-item)
+//     - Thumb (p-browser-thumb)
+//     - Title (p-browser-title)
+//     - Byline (p-browser-byline)
+//     - Exerpt (p-browser-exerpt)
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - TBD
+//
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin p-browser-a {
+    
+    // Item
+
+    .p-browser-item { @include group; margin-bottom: 10px; padding: 10px 0; position: relative; border-bottom: $browserBorder; }
+
+    // Thumb
+
+    .p-browser-thumb { 
+		float: left;
+        height: 124px;
+        width: $browserImage-width;
+        overflow: hidden;
+        position: relative;
+	}
+
+    // Content
+
+    .p-browser-content {
+        margin-left: $browserImage-width;
+        padding-left: $leading;
+
+        > a { display: block; }
+    }
+
+    // Title
+
+    .p-browser-title { font-size: $browserTitle-size;; margin-right: 45px; font-weight: bold; }
+
+    // Byline
+
+    .p-browser-byline {
+        font-size: $font-sizeSmaller;
+        margin-bottom: $leading;
+    
+        > li { @include inline-block; }
+    }
+
+    // Comments
+
+    .p-browser-comments {
+        position: absolute;
+        top: 0; right: 0;
+
+        > a {
+            @include u-glyph-speechBubble;
+            line-height: $leading;
+            margin-left: 8px;
+            padding: 0 8px;
+        }
+    }
+
+    // Duration
+
+    .p-browser-duration {
+        background: $icon-ua-time-duration;
+        border-left: 1px solid $box-borderColor;
+        margin-left: 10px;
+        padding-left: 24px;
+    }
+
+    // Exerpt
+
+    .p-browser-excerpt {
+        color: $font-color;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        > p:last-child { margin-bottom: 0; }
+    }
+
+    // b-tag
+
+    .b-tag {
+        margin-left: $browserImage-width;
+        padding-left: $leading;
+
+        // Title
+
+        .b-tag-title { position: absolute; left: -9999px; }
+    }
+
+    .p-browser-tags { display: none; } // Hiding for now, going to ad a parameter
+
+} // END p-browser-a

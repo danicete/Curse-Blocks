@@ -1,0 +1,93 @@
+﻿// Utility -> Glyph (u-glyph-z)
+//
+// ✎ Standard glyph set
+//
+// ⌚ Level 1.00 (04/03/12)
+//
+// ☍ Components:
+//     - Generic Glyph (u-glyph-box)
+//     - Speech Bubble (u-glyph-speechBubble)
+//     - Arrow Left )u-glyph-arrowLeft)
+//     - Arrow Right (u-glyph-arrowRight)
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Testing Required
+// 
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+// Generic Glyph
+
+@mixin u-glyph-box {
+    background: $glyphBg;
+    border: $glyphBorder;
+    @include borderRadius($glyphBorder-radius);
+    @include boxShadow($glyphBoxShadow);
+    color: $glyphFont-color;
+    @include inline-block;
+    font-size: $glyphFont-size;
+    padding: $glyphPadding;
+    text-align: center;
+
+    &:hover { background: $glyphBg-hover; color: $glyphFont-color-hover; }
+}
+
+// Speech Bubble
+
+@mixin u-glyph-speechBubble {
+    background: $glyphBg;
+    @include borderRadius($glyphBorder-radius);
+    color: $glyphFont-color;
+    @include inline-block;
+    font-size: $glyphFont-size;
+    font-weight: bold;
+    padding: $glyphPadding;
+    position: relative;
+    text-align: center;
+    text-shadow: $glyphText-shadow;
+    
+    &:hover { background: $glyphBg-hover; color: $glyphFont-color-hover; }
+
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: -6px; left: 4px;
+        border-width: 6px 0 0 6px;
+        border-style: solid;
+        border-color: $glyphBg transparent;
+        display: block;
+        padding: 0;
+        width: 0;
+    }
+
+    &:hover:after { border-color: $glyphBg-hover transparent; }
+}
+
+// Left Arrow
+
+@mixin u-glyph-arrowLeft {
+    border-top: $glyphArrow-size solid transparent;
+    border-right: $glyphArrow-size solid $glyphArrow-color;
+    border-bottom: $glyphArrow-size solid transparent;
+    display: inline-block;
+    height: 0;
+    margin: $glyphArrow-margin;
+    width: 0;
+}
+
+// Right Arrow
+
+@mixin u-glyph-arrowRight {
+    border-top: $glyphArrow-size solid transparent;
+    border-left: $glyphArrow-size solid $glyphArrow-color;
+    border-bottom: $glyphArrow-size solid transparent;
+    display: inline-block;
+    height: 0;
+    margin: $glyphArrow-margin;
+    width: 0;
+}

@@ -1,0 +1,119 @@
+﻿// ★★ Block -> Tree (b-tree-a) ★★
+
+// ✎ Tree oriented chart with proportional branches
+
+// ⌚ Level 1.00 (02/17/12)
+
+// ☍ Components:
+//     - Count (b-tree-count# eg. b-tree-count3)
+//     - Item (b-tree-item)
+//     - Tier (b-tree-tier# eg. b-tree-tier3)
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin b-tree-a {
+
+    @include group;
+
+    margin-bottom: $leading;
+    text-align: center;
+
+    // Image
+
+    img { display: block; margin: 0 auto; max-width: 64px; }
+
+    // Item
+
+    .b-tree-item { position: relative; }
+    .b-tree-tier2 .b-tree-item,
+    .b-tree-tier3 .b-tree-item { float: left; margin-top: 8px; }
+
+    // 1 Item
+
+    .b-tree-count1 > .b-tree-item { width: 100%; }
+    .b-tree-count1 > .b-tree-item:before {
+        border-left: 1px solid $box-borderColor;
+        content: "";
+        height: 8px;
+        position: absolute;
+        top: -8px; left: 50%;
+
+        @include boxShadow(-1px, -1px, 0px, rgba(170,170,170,.1));
+    }
+
+    // 2 Items
+
+    .b-tree-count2 > .b-tree-item {
+        width: 50%;
+            
+        &:before {
+            border-left: 1px solid $box-borderColor;
+            border-right: 1px solid $box-borderColor;
+            border-top: 1px solid $box-borderColor;
+            content: "";
+            height: 3px;
+            position: absolute;
+            top: -4px; left: 50%;
+            width: 100%;
+    
+            @include boxShadow(-1px, -1px, 0px, rgba(170,170,170,.1));
+        }
+        
+        & + .b-tree-item:before {
+            border-right-width: 0;
+            border-top-width: 0;
+            height: 5px;
+            left: 0; top: -8px;
+            width: 50%;
+    
+            @include boxShadow(-1px, -1px, 0px, rgba(170,170,170,.1));
+        }
+
+    }
+
+    // 3 Items
+
+    .b-tree-count3 > .b-tree-item {
+        width: 33%;
+
+        :before {
+            border-left: 1px solid $box-borderColor;
+            border-top: 1px solid $box-borderColor;
+            content: "";
+            height: 3px;
+            position: absolute;
+            top: -4px; left: 50%;
+            width: 100%;
+    
+            @include boxShadow(-1px, -1px, 0px, rgba(170,170,170,.1));
+        }
+
+        & + .b-tree-item:before {
+            height: 7px;
+            top: -8px;
+            width: auto;
+
+            & + .b-tree-item:before {
+                border-left-width: 0;
+                border-right: 1px solid $box-borderColor;
+                display: block;
+                height: 3px;
+                top: -4px;
+                left: -50%;
+                width: 100%;
+            }
+
+        }
+
+    }
+
+} // END b-tree-a

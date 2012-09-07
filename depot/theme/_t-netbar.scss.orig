@@ -1,0 +1,230 @@
+﻿// ★★ Theme -> Netbar ★★
+
+// ✎ Styles for universal Curse netbar
+
+// ⌚ Level 1.00 (02/017/12)
+
+// ☍ Components:
+//     - Null
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Testing Required
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+// Vars
+
+$netbarHeight: 28px;
+$netbarPadding: 0 15px;
+$netbarSprite: url("#{$imageURL-core}/netbar/netbar-sprite.png") no-repeat;
+$netbarBgColor-hover: #222;
+$netbarFont-family: Tahoma, Geneva, Verdana;
+
+.t-netbar {
+    @include boxShadow(inset 0 0 1px #666, 1px 1px 2px rgba(0,0,0,.65));
+    background-color: #222;
+    @include backgroundGradient(linear-gradient(top, #4d4d4d, #343434));
+    @include group;
+    font: 12px/18px $netbarFont-family;
+    height: $netbarHeight;
+    text-shadow: 0px -1px 0px rgba(0,0,0,.6);
+
+    // Initiate dropDowns
+
+    .t-netbar-discover,
+    .t-netbar-help,
+    .t-netbar-preferences,
+    .t-netbar-account {
+        > li { 
+			@include u-dropDown-z;
+			.u-icon-dropDown {
+				content:"";
+				border-style: solid dashed dashed;
+				border-color:transparent;
+				border-top-color:silver;
+				height:0;
+				line-height:0;
+				width:0;
+				border-width: 3px 3px 0;
+				padding-top:1px;
+				position: absolute;
+				top: 12px;
+				right: 6px;
+			} 
+		}
+    }
+
+    // Set link colors
+
+    a {
+        color: #fff;
+        font-family: $netbarFont-family;
+        white-space: nowrap;
+		display: block;
+    
+        &:visited { color: #fff; }
+        &:hover { color: #fff; text-decoration: none; }
+
+        > strong {
+            color: #FFCC33;
+
+            &:hover { color: #fff; }
+        }
+    }
+
+    // Base sections
+
+    .t-netbar-section {
+        float: left;
+
+        &:hover { background: $netbarBgColor-hover; }
+
+        // Label
+
+        .t-netbar-label {
+            border-right: 1px solid #333;
+            display: block;
+            line-height: $netbarHeight;
+            padding: $netbarPadding;
+
+            // DropDown
+
+            & + ul {
+                background: $netbarBgColor-hover;
+                @include borderRadius-bottom(6px);
+                @include boxShadow(0px 1px 1px rgba(0,0,0,.3));
+
+                // List Item
+
+                > li {
+                    > a {
+                        display: block;
+                        padding: 4px 8px;
+
+                        &:hover { background-color: #111; }
+                    }
+                    &:last-child > a { @include borderRadius-bottom(6px); } // Prevent corner overflow on hover
+                }
+            }
+        }
+    }
+
+    // Curse Info
+
+    .t-netbar-curseInfo {
+
+        // Discover
+
+        .t-netbar-discover {
+            > li { 
+				background: url("#{$imageURL-core}/netbar/discover.png") no-repeat 8px 0; text-indent: -9999px; width: 100px; 
+				> ul li i {
+					@include u-icon-z;
+					width: 30px;
+					&.u-icon-curse { background: url("#{$imageURL-core}/netbar/sites/curse.png") no-repeat 5px center; }
+					&.u-icon-mmoc { background: url("#{$imageURL-core}/netbar/sites/mmoc.png") no-repeat 0 center; }
+					&.u-icon-wowstead { background: url("#{$imageURL-core}/netbar/sites/wowstead.png") no-repeat 1px center; }
+					&.u-icon-arenajunkies { background: url("#{$imageURL-core}/netbar/sites/aj.png") no-repeat 0 center; }
+					&.u-icon-minecraftforums { background: url("#{$imageURL-core}/netbar/sites/mcf.png") no-repeat 0 center; }
+					&.u-icon-darthhater { background: url("#{$imageURL-core}/netbar/sites/dh.png") no-repeat 3px center; }
+					&.u-icon-diablofans { background: url("#{$imageURL-core}/netbar/sites/dfans.png") no-repeat -1px center; }
+					&.u-icon-terraria { background: url("#{$imageURL-core}/netbar/sites/terraria.png") no-repeat -1px center; }
+				}
+			}
+        }
+
+        // Preferences
+
+        .t-netbar-preferences {
+            > li {
+                > a {
+                    background: $netbarSprite;
+                    background-position: 2px -86px; // Gear icon
+                    padding: 0 24px 0 20px;
+                    text-indent: -9999px;
+                }
+                &:hover > a { background-position: -33px -86px; }
+            }
+        }
+    }
+
+    // User Info
+
+    .t-netbar-userInfo {
+        @include group;
+        float: right;
+
+        // AUTHORIZE
+
+        .t-netbar-authorize {
+            &:hover { background: transparent; }
+            > li {  @extend .t-netbar-section;  }
+        }
+
+        // Messages
+
+        .t-netbar-messages {
+			position: relative;
+            > li {
+                > a {
+                    background: $netbarSprite;
+                    background-position: 2px -25px; // Envelope icon
+                    display: block;
+                    height: $netbarHeight;
+                    padding: 0 20px;
+                }
+            }
+			.option-count {
+				@include borderRadius(2px);
+				color: #fff;        
+				font-family: Arial, Sans-Serif;   
+				font-size: 8px;
+				text-align: center;    
+				padding: 0 3px;
+				font-weight: bold;
+				background: #d70101;
+				line-height: 11px;  
+				position: absolute;
+				top: 5px;
+				right: 9px;  
+			}
+        }
+
+        // Messages
+
+        .t-netbar-notifications {
+			position: relative;
+            > li {
+                > a {
+                    background: $netbarSprite;
+                    background-position: -65px 2px; // Envelope icon
+                    display: block;
+                    height: $netbarHeight;
+                    padding: 0 20px;
+                }
+            }
+			.option-count {
+				@include borderRadius(2px);
+				color: #fff;        
+				font-family: Arial, Sans-Serif;   
+				font-size: 8px;
+				text-align: center;    
+				padding: 0 3px;
+				font-weight: bold;
+				background: #d70101;
+				line-height: 11px;  
+				position: absolute;
+				top: 5px;
+				right: 9px;  
+			}
+        }
+
+        // Avatar
+
+        .t-netbar-avatar img { height: 24px; padding-bottom: 3px; vertical-align: bottom; }
+    }
+
+} // END t-netbar

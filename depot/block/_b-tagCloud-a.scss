@@ -1,0 +1,45 @@
+﻿// ★★ Block -> Tag Cloud (b-tagCloud-a) ★★
+
+// ✎ Varying size tag cloud
+
+// ⌚ Level 1.00 (03/28/12)
+
+// ☍ Components:
+//     - Null
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - TBD
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin b-tagCloud-a {
+
+    position: relative;
+
+    // Item
+
+    .b-tagCloud-item { display: inline; }
+
+    // Sizes
+
+    .tag-smallest { font-size: .8333em; }
+    .tag-small { font-size: 1em; }
+    .tag-medium { font-size: 1.4em; }
+    .tag-large { font-size: 1.8em; }
+    .tag-largest { font-size: 2em; }
+
+    // Fallbacks
+
+    .ie7 & {
+
+        .tag-smallest,
+        .tag-small,
+        .tag-medium,
+        .tag-large,
+        .tag-largest { line-height: normal; }
+    }
+
+} // END b-tagCloud-a

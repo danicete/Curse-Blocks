@@ -1,0 +1,289 @@
+﻿$typography-counter: 0 !default;
+
+@while $typography-counter < 1 {
+
+    // Utility -> Typography (u-typography-a)
+
+    // ✎ Fibonacci scale
+ 
+    // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+    // Core
+
+    body {
+        color: $font-color;
+        font-size: $font-size;
+        line-height: $leading;
+        font-family: $font-family;
+    }
+
+    // Links
+
+    a {
+        color: $link-color;
+        text-decoration: none;
+
+        &:visited { color: $link-colorVisited; }
+        &:hover { color: $link-colorHover; text-decoration: none; }
+        &:active { color: $link-colorActive; }
+    }
+
+    // Headers
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $header-color;
+        font-family: $header-family;
+        font-size: $header-size;
+        font-weight: $header-weight;
+        line-height: 1em;
+        margin: $header-margin;
+	    letter-spacing: $header-letterSpacing;
+        text-transform: $header-transform;
+
+        a {
+            color: $header-color;
+
+            &:visited { color: $header-colorVisited; }
+            &:hover { color: $header-colorHover; }
+        }
+
+        // Fallbacks
+
+        .ie7 & { line-height: normal; } // Resolves clipping
+    }
+
+    h1 { font-size: $header-size * 1.5; text-transform: $header-transform; }
+    h2 { font-size: $header-size * 1; text-transform: $header-transform; }
+    h3 { font-size: $header-size * .85; text-transform: $header-transform; }
+    h4 { font-size: $header-size * .8; text-transform: $header-transform; }
+    h5 { font-size: $header-size * .75; text-transform: $header-transform; }
+    h6 { font-size: $header-size * .7; text-transform: $header-transform; }
+
+    blockquote {
+        margin: $leading / 2 5px;
+        padding: 5px 10px;
+        border: 1px solid $blockquoteBorder-color;
+        border-left: 4px solid $tertiaryColor;
+        background: $blockquoteBg;
+        color: $blockquoteFont-color;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        .p-article & {
+            margin: $leading 0;
+            padding: $leading $leading * 2;
+            border: none;
+            border-left: 8px solid $tertiaryColor;
+            background: $blockquoteBg;
+            color: $blockquoteFont-color;
+
+            .quote-author {
+                border-bottom: 1px solid $blockquoteBorder-color;
+                color: $blockquoteAuthor-color;
+                display: block;
+                font-weight: bold;
+                line-height: 30px;
+                margin-bottom: 8px;
+
+                &:hover { color: $blockquoteAuthor-color-hover; }
+            }
+        }
+
+        .post-widget.quote & { 
+            border: none;
+            background: none;
+
+            .quote-content {
+                padding: 0 10px 10px;
+	            background: $blockquoteBg;
+	            @include borderRadius($border-radius);
+                @include borderRadius-top-left(0);
+                @include borderRadius-bottom-right(0);
+	            border: $blockquoteBorder;
+                color: $blockquoteFont-color;
+                position: relative;
+
+                &:before,
+                &:after {
+                    background: $blockquoteBorder-color;
+                    display: block;
+                    font-weight: bold;
+                    font-family: "Times", serif;
+                    height: 42px;
+                    line-height: 42px;
+                    font-size: 32px;
+                    position: absolute;
+                    text-align: center;
+                    width: 28px;
+                }
+
+                &:before { @include borderRadius-left($blockquoteBorder-radius); content: "\201C"; top: -($blockquoteBorder-size); left: -(28px + $blockquoteBorder-size); } // Temp content, replacing with var image path
+                &:after { @include borderRadius-right($blockquoteBorder-radius); content: "\201D"; bottom: -($blockquoteBorder-size); right: -(28px + $blockquoteBorder-size); } // Temp content, replacing with var image path
+
+                .quote-author {
+                    border-bottom: 1px solid $blockquoteBorder-color;
+                    color: $blockquoteAuthor-color;
+                    display: block;
+                    font-weight: bold;
+                    line-height: 30px;
+                    &:hover { color: $blockquoteAuthor-color-hover; }
+                }
+            }
+        }
+
+        a { color: $blockquoteLink-color; text-decoration: underline; &:hover { color: $blockquoteLink-colorHover; text-decoration: none; } }
+	    
+        > *:last-child { margin-bottom: 0; }
+        > *:only-of-type { margin-bottom: 0; }
+    }
+
+    // TWitter Embed
+
+    .twitter-tweet-rendered { margin-bottom: $leading !important; } // Twitter embed uses !important
+
+    // Formatting
+
+    .u-typography-format {
+        
+
+        h1 { margin: $leading + ($leading / 2) 0 $leading / 2; font-size: $header-size * 1; font-weight: $header-weight; }
+        h2 { margin: $leading + ($leading / 2) 0 $leading / 2; font-size: $header-size * .8; font-weight: $header-weight; }
+        h3 { margin: $leading + ($leading / 2) 0 $leading / 2; font-size: $header-size * .7; font-weight: $header-weight; }
+        h4 { margin: $leading + ($leading / 2) 0 $leading / 2; font-size: $header-size * .6; font-weight: $header-weight; }
+        h5 { margin: $leading + ($leading / 2) 0 $leading / 2; font-size: $header-size * .5; font-weight: $header-weight; }
+        h6 { margin: $leading + ($leading / 2) 0 $leading / 2; font-size: $header-size * .4; font-weight: $header-weight; }
+
+        pre { margin-bottom: $leading; }
+
+        dl,
+        ol,
+        ul { margin: 0 0 $leading; }
+
+        ol,
+        ul { padding: 0 0 0 25px; }
+
+        ul { list-style: disc outside; }
+        ol { list-style: decimal outside; }
+
+        :first-child { margin-top: 0; }
+
+        table {
+            table-layout: fixed;
+
+            th {
+                background-color: $tableHeader-bg-bottom;
+                @include backgroundGradient(linear-gradient(top, $tableHeader-bg-top, $tableHeader-bg-bottom));
+                border: $tableHeader-border;
+                padding: $tableHeader-padding;
+                color: $tableHeader-color;
+            }
+
+            th > a,
+            th > a:hover,
+            th > a:visited { color: $tableHeader-color; }
+
+            td {
+                background: $table-bg;
+                @include boxShadow($tableCell-boxShadow);
+                border: $tableCell-border;
+                border-width: $tableCell-borderWidth;
+                border-width-top: 0;
+                padding: $tableCell-padding;
+                vertical-align: middle;
+
+                dd { margin-left: 0; }
+            }
+
+            tr:nth-child(even),
+            tr.odd {
+
+                td { background: $table-bgAlt; }
+            }
+        }
+
+        hr { border-top: 3px double $box-borderColor; }
+
+        .diff-table {
+            .item-name { font-size: $font-size; }
+            td {
+                padding: 4px;
+                img { display: block; margin: 0 auto; }
+            }
+            .champion-keyword-tooltip .champion-portrait,
+            .game-key { display: none; }
+            .key {
+                background: #111;
+                text-align: center;
+                font-weight: bold;
+                * { color: #fff; border: none; } 
+            }
+            .title {
+                .old-value { background: #FAA; }
+                .new-value { background: #AFA; }
+            }
+            .old-value {
+                .diff-type-deleted { background: #FAA; }
+            }
+            .new-value {
+                .diff-type-inserted { background: #AFA; }
+            }
+            .champion-info {
+                .name { font-size: $font-sizeLarger; font-weight: bold; }
+                .desc { display: block; clear: both; }
+                .stats {
+                    .stat { float: right; color: #090; }
+                }
+            }
+            .spell-name {
+                &:before { content:' - '; }
+            }
+            dl {
+                margin: 5px 0; 
+                dt { font-weight: bold; }
+                dd { margin: 0 0 5px 30px; }
+            }
+        }
+
+        blockquote > h4 {
+
+            > a {
+                color: $font-color;
+                &:hover { color: $blockquoteAuthor-color-hover; }
+            }
+        }
+    }
+
+    $typography-counter: $typography-counter + 1;
+}
+
+// Base
+
+@mixin u-typography-base(
+    $color: $font-color,
+    $color-hover: $link-color,
+    $font-size: $font-size,
+    $leading: $leading
+) {
+
+    line-height: $leading;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $color;
+        font-size: $font-size;
+        line-height: $leading;
+        margin: 0;
+    }
+
+    a {
+        //color: $color;
+
+        //&:hover { color: $color-hover; }
+
+        h1, h2, h3, h4, h5, h6 { color: $color; }
+
+        &:hover {
+
+            h1, h2, h3, h4, h5, h6 { color: $color-hover; }
+        } 
+    }
+}

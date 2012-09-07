@@ -1,0 +1,95 @@
+﻿// ************************************************************************************************************************
+// Package - Database - Layout                                                                                            *
+// ************************************************************************************************************************
+
+// --------------------------------------------------------- //
+// 2.) Site Wrapper                                            
+// --------------------------------------------------------- //
+
+    .body-home-index #site { background: $bodyHomeBg; padding:0; }
+
+    .body-home-index #site-main { @include boxShadow(none); width: 100%; } // Unique homepage layout
+
+
+// --------------------------------------------------------- //
+// 4.) Content                                                 
+// --------------------------------------------------------- //
+
+    #content {     
+        padding: 12px;
+        @include boxShadow($content-boxShadow);
+        @include multipleBg-border($borderBg-path,$borderBg-color,$borderBg-width,$borderBg-style);
+
+        .body-home-index & { background: transparent none; padding: 0; @include boxShadow(none); }
+    }
+    .homepage-feature { 
+        display: none;  
+        .body-home-index & { 
+            display: block;
+            width: 400px;
+            margin: $leading auto; 
+        } 
+    }
+
+
+// Footer
+// ------------------------------------------------------------------------------------------
+
+footer.main { 
+    padding: $leading 0;
+    > span { width: 59px; height: 63px; background: $siteFooter-curse; display: block; text-indent: -9999px; margin: 0 auto; }
+    #copyright { width: 800px; font-size: 11px; color: #666; text-align: center; margin: 10px auto; }
+}
+
+// Homepage
+// ------------------------------------------------------------------------------------------
+
+.body-home-index {
+    // Search
+    .b-search-b {
+        text-align: center;
+        width: 500px;
+        margin: 20px auto;
+        padding: 0;
+        background: none;
+        border: none;
+        form { margin: 0; }
+        // Input
+        .b-search-input { padding: 8px 2px 8px 2px; width: 100%; }
+        .b-search-submit { position: absolute; left: -9999px; }
+    }
+    // Nav
+    .p-nav-a {
+        text-align: center;
+        .p-nav-item { margin: 0 -2px; }
+        .section .p-nav-item { margin: 0; }
+    }
+    .atf-ad-leaderboard,
+    .btf-ad-leaderboard { display: none; visibility: hidden; }   
+}
+
+// Details 
+// ------------------------------------------------------------------------------------------
+
+.details {
+    > section { margin-bottom: $leading; }
+    .infobox {
+        @include col(3);
+        float: right;
+        text-align: center;
+    }
+    #related { clear: both; }
+}
+
+
+// Ads
+// ------------------------------------------------------------------------------------------
+
+.atf {
+    background: none;
+    .atf-ad-leaderboard {
+        margin-bottom: $leading;
+        min-width: 728px;
+    }
+}
+.btf-ad-leaderboard { text-align:center; margin: $leading 0 0; }

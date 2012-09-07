@@ -1,0 +1,38 @@
+﻿$listing-counter: 0 !default;
+
+@while $listing-counter < 1 {
+
+    // Utility -> Listings (u-listing-z)
+
+    // ✎ UNIQUE - Standard buttons
+
+    // ⌚ Level 1.00 (05/08/12)
+
+    // ☍ Components:
+    //     - Null
+
+    // ☆ Sub-Classes:
+    //     - Null
+
+    // ☯ Browser Support:
+    //     - Testing Required
+ 
+    // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+    // ★★ Global Variables
+
+    // Margins
+     table.listing
+     {
+	    margin-bottom: $leading;
+     }
+
+     ul.listing
+     {
+	    margin-bottom: $leading;
+     }
+
+     .listing .no-results { text-align: center !important; font-size: $font-sizeLarger; margin: $leading 0; }
+
+     $listing-counter: $listing-counter + 1;
+ }

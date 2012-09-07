@@ -1,0 +1,475 @@
+﻿$jqueryUI-counter: 0 !default;
+
+@while $jqueryUI-counter < 1 {
+
+    // Utility -> Jquery UI
+
+    // ✎ All jqueryUI Elements
+
+    // ⌚ Level 1.00 (02/017/12)
+
+    // ☍ Components:
+    //     - Null
+
+    // ☆ Sub-Classes:
+    //     - Null
+
+    // ☯ Browser Support:
+    //     - Testing Required
+ 
+    // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+    // ★★ Base Selectors
+
+    .ui-slider {
+        position: relative;
+        text-align: left;
+    }
+
+    .ui-slider-horizontal {
+        height: 0.8em;
+    }
+
+    .ui-slider .ui-slider-handle {
+        cursor: default;
+        height: 1.2em;
+        position: absolute;
+        width: 1.2em;
+        z-index: 2;
+    }
+
+    .ui-slider-horizontal .ui-slider-handle {
+        margin-left: -0.6em;
+        top: -0.3em;
+    }
+
+    /* Layout helpers
+    ----------------------------------*/
+    .ui-helper-hidden { display: none; }
+    .ui-helper-hidden-accessible { position: absolute; left: -99999999px; }
+    .ui-helper-reset { margin: 0; padding: 0; border: 0; outline: 0; line-height: 1.3; text-decoration: none; font-size: 100%; list-style: none; }
+    .ui-helper-clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+    .ui-helper-clearfix { display: inline-block; }
+    /* required comment for clearfix to work in Opera \*/
+    * html .ui-helper-clearfix { height:1%; }
+    .ui-helper-clearfix { display:block; }
+    /* end clearfix */
+    .ui-helper-zfix { width: 100%; height: 100%; top: 0; left: 0; position: absolute; opacity: 0; filter:Alpha(Opacity=0); }
+
+
+    /* Interaction Cues
+    ----------------------------------*/
+    .ui-state-disabled { cursor: default !important; }
+
+
+    /* Overlays */
+    .ui-widget-overlay { 
+	    position: absolute; 
+	    top: 0; 
+	    left: 0; 
+	    width: 100%; 
+	    height: 100%; 
+	    background-color: #000; 
+	    opacity: 0.6; 
+	    filter:Alpha(Opacity=60); 
+    }
+
+    /*
+    Dialog
+    ------------------------------------------------ */
+
+    .ui-dialog { 
+	    position: absolute;  
+	    min-width: 500px !important; 
+        height: auto !important;
+	    left: 50% !important;
+	    margin-left: -250px !important;
+	    background: $modalBg;
+	    border: $modalBorderWidth solid $modalBorderColor;
+	    @include boxShadow($modalBoxShadow-outter);
+
+	    .ui-dialog-titlebar { 
+		    position: relative; 
+		    padding: 5px $modalPadding;
+		    line-height: $modalTitleHeight;
+		    background: $modalTitleBg;
+            border-bottom: $modalBorderWidth solid $modalBorderColor;
+		    .ui-dialog-title {  
+			    line-height: $modalTitleHeight;
+			    color: $modalTitleColor; 
+			    font-weight: bold; 
+			    font-size: 12px;  
+		    }
+		    .ui-dialog-titlebar-close {
+			    background: $modalClose-bg url("#{$imageURL-core}/login/sprite-close.png") no-repeat;
+                @include borderRadius(12px);
+                display: block; 
+                height: 21px;
+                width: 21px;
+                border: 2px solid #fff;
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                @include boxShadow($modalBoxShadow-outter);
+
+                &:hover { background-color: lighten($modalClose-bg,5%); }
+		    }  
+	    }
+
+	    .ui-dialog-content { 
+		    @include group; 
+		    overflow: auto; 
+		    position: relative;
+		    height: 100% !important;
+		    padding: $modalPadding;
+	    }
+
+	    .ui-dialog-buttonpane { display: none; }
+    }
+    .ui-dialog .ui-resizable-se { 
+	    width: 14px; 
+	    height: 14px; 
+	    right: 3px; 
+	    bottom: 3px; 
+    }
+    .ui-draggable .ui-dialog-titlebar { 
+	    cursor: move; 
+    }
+
+    /* states and images */
+    .ui-icon { 
+	    display: inline-block; 
+	    text-indent: -99999px; 
+	    overflow: hidden; 
+	    background-repeat: no-repeat; 
+	    //&.ui-icon-closethick { 
+		    //background-image: url("#{$imageURL-core}/icons/16x16/icon-close-16x16.png");
+		    //width: 16px;
+		    //height: 16px;
+	    //}
+    }
+
+    /*
+    Datepicker
+    ------------------------------------------------ */
+
+    .ui-datepicker
+    { 
+        display: none;
+    }
+
+    .ui-datepicker-header {
+	    position: relative;
+	    padding: 5px;
+	    background: #333;
+    }
+
+    .ui-datepicker-prev,
+    .ui-datepicker-next
+    {
+	    position: absolute;
+    }
+
+    .ui-datepicker-next {
+	    right: 5px;
+    }
+
+    .ui-datepicker-prev {
+	    left: 5px;
+    }
+
+    .ui-datepicker-header .ui-datepicker-next .ui-icon {
+	    width: 16px;
+	    height: 16px;
+	    background: url("#{$imageURL-core}/ui/go-next.png") no-repeat;
+	    text-indent:-9999px;
+    }
+
+    .ui-datepicker-header .ui-datepicker-prev .ui-icon {
+	    width: 16px;
+	    height: 16px;
+	    background: url("#{$imageURL-core}/ui/go-previous.png") no-repeat;
+	    text-indent:-9999px;
+    }
+
+    .ui-datepicker a
+    {
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+	    display: block;
+	    height: 24px;
+	    width: 24px;
+	    line-height: 24px;
+	    text-align: center;
+    }
+
+    .ui-datepicker select
+    {
+	    height: 24px;
+	    padding: 0px;
+    }
+
+
+    .ui-datepicker a:hover {
+	    background: #222;
+	    color: #fff;
+    }
+
+    .ui-datepicker-title
+    {
+        text-align: center;
+    }
+
+
+    .ui-datepicker-calendar table
+    {
+	    border: 1px solid #000;
+    }
+
+    .ui-datepicker-calendar tr th,
+    .ui-datepicker-calendar tr td {	
+	    padding: 0px;
+    }
+
+    .ui-datepicker-calendar tr th {
+	    background: #252525;
+	    border-top: 1px solid #222;
+	    color:#fff;
+    }
+
+    .ui-datepicker-calendar tr td.ui-datepicker-unselectable {
+	    background: #444;	
+    }
+
+    .ui-datepicker-calendar tr td
+    {
+	    background: #333;
+	    border-right: 1px solid #222;
+	    border-top: 1px solid #222;
+	    border-bottom: none;
+	    border-left: none;	
+	    text-align: center;
+    }
+
+    .ui-datepicker-calendar tr td.ui-datepicker-current-day > a
+    {
+	    background: #fff;
+	    color: #333;
+	    font-weight: bold;
+    } 
+
+
+    .ui-datepicker-calendar tr:hover td.ui-datepicker-unselectable {
+	    background: #444;
+    }
+
+
+
+
+    /* Resizable
+    ----------------------------------*/
+    .ui-resizable { position: relative;}
+    .ui-resizable-handle { position: absolute;font-size: 0.1px;z-index: 99999; display: block;}
+    .ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+    .ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; left: 0; }
+    .ui-resizable-s
+    {
+        background: #eeeeee url("#{$imageURL-local}/ui/grippie.png") no-repeat center center; cursor: s-resize; height: 7px; width: 100%; bottom: -10px; left: 0;
+        border: 1px solid #DDDDDD;
+        border-top-width: 0px;
+    }
+    .ui-resizable-e { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
+    .ui-resizable-w { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
+    .ui-resizable-se { cursor: se-resize; width: 12px; height: 12px; right: 1px; bottom: 1px; }
+    .ui-resizable-sw { cursor: sw-resize; width: 9px; height: 9px; left: -5px; bottom: -5px; }
+    .ui-resizable-nw { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px; }
+    .ui-resizable-ne { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px;}
+
+
+
+    /**
+     * jQuery lightBox plugin
+     * This jQuery plugin was inspired and based on Lightbox 2 by Lokesh Dhakar (http://www.huddletogether.com/projects/lightbox2/)
+     * and adapted to me for use like a plugin from jQuery.
+     * @name jquery-lightbox-0.5.css
+     * @author Leandro Vieira Pinho - http://leandrovieira.com
+     * @version 0.5
+     * @date April 11, 2008
+     * @category jQuery plugin
+     * @copyright (c) 2008 Leandro Vieira Pinho (leandrovieira.com)
+     * @license CC Attribution-No Derivative Works 2.5 Brazil - http://creativecommons.org/licenses/by-nd/2.5/br/deed.en_US
+     * @example Visit http://leandrovieira.com/projects/jquery/lightbox/ for more informations about this jQuery plugin
+     */
+    #jquery-overlay {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    z-index: 5;
+	    width: 100%;
+	    height: 500px;
+    }
+    #jquery-lightbox 
+    {
+    
+        left:50%;    
+        position:fixed;
+        top:50%;
+        z-index: 6 !important;        		
+	    width: 100%;		
+	    text-align: center;
+	    line-height: 0;
+	    * {
+		    -moz-box-sizing: content-box;
+		    -webkit-box-sizing: content-box;
+		    box-sizing: content-box;
+	    }
+    }
+    #jquery-lightbox a img { border: none; }
+    #lightbox-container-image-box {
+	    position: relative;
+	    background-color: #fff;
+	    width: 250px;
+	    height: 250px;
+	    margin: 0 auto;
+	    display: block;
+    }
+    #lightbox-container-image { padding: 10px; }
+    #lightbox-loading {
+	    position: absolute;
+	    top: 40%;
+	    left: 0%;
+	    height: 25%;
+	    width: 100%;
+	    text-align: center;
+	    line-height: 0;
+    }
+    #lightbox-nav {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    height: 100%;
+	    width: 100%;
+	    z-index: 10;
+    }
+    #lightbox-container-image-box > #lightbox-nav { left: 0; }
+    #lightbox-nav a { outline: none;}
+    #lightbox-nav-btnPrev, #lightbox-nav-btnNext {
+	    width: 49%;
+	    height: 100%;
+	    zoom: 1;
+	    display: block;
+    }
+    #lightbox-nav-btnPrev { 
+	    left: 0; 
+	    float: left;
+    }
+    #lightbox-nav-btnNext { 
+	    right: 0; 
+	    float: right;
+    }
+    #lightbox-container-image-data-box {
+	    font: 10px Verdana, Helvetica, sans-serif;
+	    background-color: #fff;
+	    margin: 0 auto;
+	    line-height: 1.4em;
+	    overflow: auto;
+	    width: 100%;
+	    padding: 0 10px 0;
+    }
+    #lightbox-container-image-data {
+	    padding: 0 10px; 
+	    color: #666; 
+    }
+    #lightbox-container-image-data #lightbox-image-details { 
+	    /* width: 70%;  */
+	    float: left; 
+	    text-align: left; 
+    }	
+    #lightbox-image-details-caption { font-weight: bold; }
+    #lightbox-image-details-currentNumber {
+	    display: block; 
+	    clear: left; 
+	    padding-bottom: 1.0em;	
+    }			
+    #lightbox-secNav-btnClose {
+	    width: 66px; 
+	    float: right;
+	    padding-bottom: 0.7em;	
+    }
+
+    /* DEV */
+    .sort-gripper
+    {
+        cursor: move;
+    }
+
+    .sort-gripper-vertical
+    {
+        width: 16px;
+        height: 16px;
+        position: relative;
+        display: inline-block;
+	    background: url("#{$imageURL-core}/ui/object-flip-vertical.png") no-repeat;	
+        vertical-align: middle;
+    }
+
+
+    .remove-link
+    {
+        width: 16px;
+        height: 16px;
+        position: relative;
+        display: inline-block;
+	    background: url("#{$imageURL-core}/ui/remove.png") no-repeat;	    
+        vertical-align: middle;
+    }
+
+    .remove-link.disabled
+    {
+        opacity: .5;
+        opacity: 0.50;
+    }
+
+    .time-selector 
+    {
+        background:#333;
+        border: 1px solid #000;
+        color:#fff;
+        overflow:auto;
+        height:200px;
+        width:120px;
+        z-index:9999;
+	    font-size: 13px;
+    }
+
+    .time-selector  a
+    {
+	    color: #fff;
+	    display: block;
+	    height: 20px;
+	    line-height: 20px;
+	    padding: 0px 4px;
+	    cursor: pointer;
+    }
+
+    .time-selector  a:hover
+    {
+	    background: #222;
+	    color: #fff;
+    }
+
+    .time-selector li 
+    {    
+        border-top: 1px solid #484848;
+	    border-bottom: 1px solid #222222;
+	    white-space: no-wrap;
+    }
+
+    .time-selector li:first-child 
+    {
+        border-top:none;
+    }
+
+    $jqueryUI-counter: $jqueryUI-counter + 1;
+}

@@ -1,0 +1,414 @@
+﻿// Plugin -> Forums (p-forum-a)
+//
+// ✎ General Forum Styles
+//
+// ⌚ Level 1.00 (02/17/12)
+//
+// ☍ Components:
+//     - Null
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+// 
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin p-forum-a {
+
+	@include group;
+    position: relative;
+
+    // Header
+
+	.p-forum-header {
+        @include group;
+		position: relative;
+
+		h2 { height: 0; margin: 0; text-indent: -9999px; } // Not used but retained for prosperity
+	}
+
+    // b-userAction
+
+    .b-userAction { float: right; margin-bottom: 5px; }
+    header .user-action a { @include u-button-z; }
+
+	// Content
+
+	.p-forum-content {
+
+		> .h2 { margin-bottom: $leading / 2; }
+    }
+
+    // Announcements
+
+	.forum-announcement {				
+		@include group;
+        line-height: $forumIcon-height; // Vertcially center text based on icon size					
+
+        & + .forum-accouncement { margin-top: $leading / 2; }
+
+        // Status Icon
+
+		.status-icon {
+            display: block;
+			float: left;
+			margin-right: $forumCell-padding;
+
+			> a	{
+                display: block;
+                height: $forumIcon-height;
+                width: $forumIcon-width;
+            }											
+		}
+
+        // States
+
+		&.forum-thread-row-unread {	.status-icon { background: $forumStatusBg-announcement-unread; } }
+		&.forum-thread-row-read { .status-icon { background: $forumStatusBg-announcement-read; } }
+
+		.thread-title { font-size: $forumThreadAnnouncementFontSize; }
+	} 
+
+    // Controls
+
+    .p-forum-controls {
+		@include group;
+
+		.p-forum-filters { @include col(6); margin-left: 0; min-height: 1px; } // 1px if container is empty
+		.p-forum-bulkModeration { @include col(6); text-align: right;}
+	}
+
+    // Statistics
+
+	.p-forum-statistics {
+		@include group;
+
+		.p-forum-statisticsCount { float: right; margin: 0 0 0 20px; }
+	}
+
+    // Poll
+
+    .p-forum-poll { margin-bottom: $leading; }
+
+    // Tables (Main layout containers)
+
+	.b-table,
+    table.listing { // Temp until markup has ".b-table" added 
+		width: 100%;
+		margin-bottom: $leading; 
+
+        // Base
+
+		th,
+		td {
+            border-bottom: $forumBorder;
+            line-height: $forumCell-height;
+			padding: $forumCell-padding;
+			text-align: left;
+			vertical-align: middle;
+		}
+
+        th {
+            @include backgroundGradient(linear-gradient(top, $forumHeading-bg-top, $forumHeading-bg-bottom));
+			border: $forumHeader-border;
+			border-bottom-width: 0;
+			color: $tableHeader-color;
+		}
+
+        td {
+			background: $forumBg;
+            border-right: $forumBorder;
+			@include boxShadow(inset 0 1px 0 rgba(255,255,255,.1));
+
+            &:first-child { border-left: $forumBorder; }
+        }
+
+        // Unique Columns
+
+		.col-actions { width: 20px; text-align: center; }
+		.col-count { text-align: center; width: 1%; } // Minimize spacing as much as possible
+
+        .col-status {
+			width: $forumIcon-width; // Keeps td from expanding to fill space
+
+			.status-icon {
+				display: block;
+				height: $forumIcon-height;
+				width: $forumIcon-width;										
+			}
+
+            &.without-icon {
+
+                .status-icon { background: $forumStatusBg-general-read; }
+            }
+		}
+
+        .col-forum {
+
+			.title {
+                margin-bottom: 0;
+                .active-viewers { font-size: 11px; color: $font-colorSecondary; }
+                > a { 
+					font-size: $forumTitleFont-size;
+					color: $forumLink-color;
+                    
+					&:hover { color: $forumLink-color-hover; }
+				}
+            }
+
+            .description { font-size: $font-sizeSmaller; }
+
+            .forum-subs {
+                display: block;
+                font-size: $font-sizeSmaller; 
+
+                > a { font-size: $font-sizeSmaller; line-height: 1.2em; }
+            }
+		}
+
+        .col-last-post {
+            line-height: 1.3em;
+			width: 20%;
+			font-size: 11px;
+
+			.post-date abbr[title] { border-bottom: none; }
+		}
+
+		.b-pagination-b { float: none; }
+
+        // States - Forums
+
+        .forum-row-not-seen-latest-thread {
+
+			.col-forum {
+
+				.title { font-weight: bold; }
+			}
+		}
+
+        .forum-row-seen-latest-thread {
+							
+			.col-status.with-icon > .status-icon > img { opacity: 0.50;	} // ?
+		}
+
+        .forum-row-normal {
+
+			.col-status.without-icon > .status-icon { background: $forumStatusBg-general-read; }
+		}
+
+        .forum-row-not-seen-latest-thread {
+
+            .col-status.without-icon > .status-icon { background: $forumStatusBg-general-unread; }
+        }
+
+		.forum-row-locked {	
+        			
+			.col-status.without-icon > .status-icon { background: $forumStatusBg-locked-read; }
+		}
+
+        // Threads
+
+        // Typical
+
+        .forum-thread-row-typical {
+
+            // Unread
+
+			.thread-title { font-weight: bold; }
+			.col-status > .status-icon { background: $forumStatusBg-typical-unread; }
+
+            // Read
+
+			&.forum-thread-row-read {
+
+				.thread-title {	font-weight: normal; }
+                .col-status > .status-icon { background: $forumStatusBg-typical-read; }
+            }
+		}
+
+        // Poll
+
+        .forum-thread-row-poll {
+            
+            // Unread
+
+			.col-status > .status-icon { background: $forumStatusBg-poll-unread; }
+
+            // Read
+
+            &.forum-thread-row-read {
+
+                .col-status > .status-icon { background: $forumStatusBg-poll-read; }
+            }
+		}
+
+        // Locked
+
+        .forum-thread-row-locked {
+
+            // Unread
+
+			.col-status > .status-icon { background: $forumStatusBg-locked-unread; }
+
+            // Read
+
+			&.forum-thread-row-read {
+
+                .col-status > .status-icon { background: $forumStatusBg-locked-read; }
+            }
+		}
+
+        // Pinned
+
+        .forum-thread-row-pinned {
+
+            // Unread
+
+			.col-status > .status-icon { background: $forumStatusBg-pinned-unread; }
+
+            // Read
+
+            &.forum-thread-row-read {
+
+                .col-status > .status-icon { background: $forumStatusBg-pinned-read; }
+            }
+		}
+
+        // Redirect
+
+        .forum-thread-row-redirect {
+            
+            // Unread
+
+			.col-status > .status-icon { background: $forumStatusBg-redirect-unread; }
+
+            // Read
+
+            &.forum-thread-row-read {
+
+                .col-status > .status-icon { background: $forumStatusBg-redirect-read; }
+            }
+		}
+
+        // Thread Label
+
+        .thread-type {
+			background: $link-color;
+            border: $paginationBorder;
+            border-radius: 2px;
+			color: $font-colorTertiary;
+            cursor: default;
+            display: inline-block;
+            font-size: 9px;
+            line-height: 1em;
+			padding: 2px 6px;
+			text-transform: uppercase;
+            vertical-align: top;
+		}
+
+        .thread-title { 
+			margin-right: $leading / 2;
+			font-size: $forumTitleFont-size;
+
+			a {												
+				color: $forumLink-color;
+
+				&:hover { color: $forumLink-color-hover; }
+			}
+		}
+
+		.thread-author {
+			clear: both;
+
+			a { color: $forumLink-color-hover; }
+		}
+
+		.thread-status-note { float: right; font-size: $font-sizeSmaller; }
+
+        .thread-actions {
+			float: right;
+            position: relative; // In place for .no-opacity fallback
+
+			.thread-actions-icons {
+				@include group;
+				opacity: 0 !important;
+				@include transition (background, .5ms, linear);
+                white-space: nowrap; // In place for .no-opacity fallback
+
+                // Fallback 1 of 2
+
+                .no-opacity & { position: absolute; left: -9999px; }
+
+				li {
+					display: inline-block;
+					width: 16px;
+					height: 16px;
+					text-indent: -9000px;
+                    vertical-align: top;
+
+					&.thread-action-add { background-image: url("#{$imageURL-core}/forums/thread-action-add.png"); }
+					&.thread-action-delete{ background-image: url("#{$imageURL-core}/forums/thread-action-delete.png"); }
+					&.thread-action-lock { background-image: url("#{$imageURL-core}/forums/thread-action-lock.png"); }
+					&.thread-action-pin { background-image: url("#{$imageURL-core}/forums/thread-action-pin.png"); }
+					&.thread-action-unpin { background-image: url("#{$imageURL-core}/forums/thread-action-unpin.png"); }
+					&.thread-action-unlock { background-image: url("#{$imageURL-core}/forums/thread-action-unlock.png"); }
+					&.thread-action-rename { background-image: url("#{$imageURL-core}/forums/thread-action-rename.png"); }
+				}
+			}
+		}
+
+        .forum-thread-row:hover .thread-actions .thread-actions-icons {	cursor: pointer; display: block; opacity: .5 !important; }
+        .forum-thread-row:hover .thread-actions .thread-actions-icons:hover { opacity: 1 !important; }
+
+        // Fallback 2 of 2
+
+        .no-opacity & .forum-thread-row:hover .thread-actions .thread-actions-icons { left: auto; right: 0; }
+	}
+    	
+} // END p-forum-a
+
+
+
+
+/* DEV */
+.p-forum-thread-form
+{
+	.form-tools
+	{
+		float: right;
+	}
+
+	.attachment-form
+	{
+		position: absolute;
+		left: -2000px;
+	}
+}
+
+.thread-prefix /* DEV: This is moderator entered HTML, inside of a span */
+		{
+			margin-right: 4px;
+		}
+
+// REFACTOR POINT
+
+.p-forum-explore { 
+	@include group;
+	clear: both;
+	margin: 0 0 10px 0;
+	.b-search { float: right; } 
+	.social-sharing {
+		@include group;
+		.social-share { float: left; }
+	}
+}
+
+.p-forum-tools { display: none; visibility: hidden; }

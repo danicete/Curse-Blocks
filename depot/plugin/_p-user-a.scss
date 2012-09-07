@@ -1,0 +1,229 @@
+﻿// Plugin -> Profile (p-user-a)
+//
+// ✎ Standard Cobalt user profile
+//
+// ⌚ Level 1.00 (06/14/12)
+//
+// ☍ Components:
+//     - Null
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+// 
+// --------------------------------------------------------- //
+
+@mixin p-user-a {
+    
+    // Member Information
+
+    .member-information {
+        @include group;
+        padding: $profilePadding;
+
+        // User Actions
+
+        .b-userAction-a { float: right; }
+    }
+
+    // Member Details
+
+    .details {
+
+        > li { margin-left: $profileAvatar-width + 10; }
+
+        // Avatar
+
+        .avatar { float: left; margin-left: 0; max-width: $profileAvatar-width; img { max-width: $profileAvatar-width; } }
+
+        // Username
+
+        .username {
+            color: $profileName-fontColor;
+            font-size: 2em;
+            font-weight: bold;
+            line-height: 1em;
+            margin-top: -0.1em;
+        }
+
+        // Role
+
+        .role { font-weight: bold; }
+
+        // Posts, Joined, & Active
+
+        .posts,
+        .joined,
+        .active { color: $profileFont-color; }
+    }
+
+    // Member Interaction
+
+    .member-interaction {
+        @include group;
+        border-top: $profileBorder;
+
+        // Nav (b-nav)
+
+        .p-nav {
+            @include col(4);
+            margin-left: 0;
+            margin-top: -1px; // Overlap containing top border
+
+            .b-list-item.selected a { 
+                background: $profileNav-bgSelected;
+                border-color: $profileNav-bgSelected;
+                color: $profileNav-colorSelected;
+                text-align: center;
+
+                 &:after {
+                    border-width: 6px 0 6px 6px;
+                    border-style: solid;
+                    border-color: transparent transparent transparent $profileNav-bgSelected;
+                    content:'';
+                    position: absolute;
+                    right: -5px; top: 9px;
+                } 
+            }
+
+            .b-list-item { 
+
+                > a {
+                    background: $profileNav-bg;
+                    @include borderRadius(0);
+                    color: $profileNav-color;
+                    display: block;
+                    height: 36px;
+                    line-height: 36px;
+                    padding: 0;
+                    position: relative;
+
+                    &:hover {
+                        background: $profileNav-bgHover;
+                        border-color: $profileNav-bgSelected;
+                        color: $profileNav-colorHover;
+                    }
+                }
+            }
+        } 
+
+        // Content
+
+        .content {
+            @include col(8);
+            padding: $profilePadding;
+            padding-left: 2.05%;
+            border-left: $profileBorder;
+            margin-left: -1px;
+
+            // Header
+
+            .h2 { border-bottom: $profileBorder; border-width: 0 0 3px; padding-bottom: 5px; margin-bottom: $leading; }
+
+            .listing li {
+                padding: 10px 0;
+                margin: 0 0 10px;
+                border-bottom: $profileBorder;
+                .post-date,
+                .post-location {
+                    color: $font-colorDarker;
+                    font-size: 11px;
+                }
+                .latest-post-details {
+                    @include group;
+                    h3 { float: left; @include col(10); margin-left: 0; margin-top: 0; }
+                    .post-date { float: right; @include col(2); }
+                }
+            }
+
+            .p-delivery-options {
+				display: none;				
+
+				.p-notification-settings {
+					margin: 8px 0;					
+					padding: 8px;
+
+					.day-selection {						
+						ul#field-day-selection li {
+							display: inline;
+							margin-right: 5px;
+						}
+						margin-bottom: 5px;						
+					}
+
+					.time-selection {												
+
+						input {
+							width: 75px;
+						}
+					}
+				}
+			}
+
+			.p-all-notifications-checkbox {
+				float: right;
+			}
+
+			.p-setting-section {
+				margin-bottom: 20px;
+				.p-notification-settings {					
+					padding: 5px;
+
+					.send-email { text-align: right; }
+
+					.setting {
+						display: block;
+						height: 25px;
+                        clear: both;
+                        
+						label {
+							float: left;
+							font-weight: bold;
+						}
+
+						input[type="checkbox"] {
+							float: right;
+						}
+					}
+				}
+			}
+
+            // Latest Post
+
+            .latest-post-item {
+                @extend .u-typography-format;
+                
+                &:hover {
+                    background: $profilePostItem-bgHover;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    // Setting
+
+    .p-setting-section { border-bottom: $box-border; padding-bottom: $leading / 2; margin-bottom: $leading / 2; }
+
+    // Avatar
+
+    .current-avatar {
+
+        .avatar > a { display: block; width: 54px; }
+    }
+
+    // User Actions
+
+    .b-userAction {
+        float: right;
+
+        .b-userAction-item a { @include u-button-z }
+    }
+    
+
+} // END p-user-a

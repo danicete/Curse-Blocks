@@ -1,0 +1,36 @@
+﻿// ★★ Utility -> DropDown (u-dropDown-z) ★★
+
+// ✎ UNIQUE - Standard drop down functionality (suckerfish based)
+
+// ⌚ Level 1.00 (04/03/12)
+
+// ☍ Components:
+//     - Null
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Testing Required
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+// ★★ Mixin
+
+@mixin u-dropDown-z {
+
+    position: relative;
+
+    // Hide dropDown
+
+    > ul { position: absolute; left: -9999px; }
+
+    // Show dropDown
+
+    &:hover > ul { left: 0; text-indent: 0; }
+
+    // Show Third Tier dropdown
+
+    & ul .section:hover > ul { left: 100%; top: 0; }
+
+} // END u-dropDown-a

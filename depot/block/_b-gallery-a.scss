@@ -1,0 +1,82 @@
+﻿// Block -> Cobalt -> Gallery (b-gallery-a)
+//
+// ✎ UNIQUE - Cobalt gallery post widget
+//
+// ⌚ Level 1.00 (05/03/12)
+//
+// ☍ Components:
+//     - Item (b-gallery-item)
+//     - Image (b-gallery-image)
+//     - Caption (b-gallery-caption)
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Chrome
+//     - Opera
+//     - IE9/8/7
+//
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin b-gallery-a {
+
+    @include group;
+
+    // Item
+
+    .b-gallery-item {
+        background: $galleryBg;
+        border: $galleryBorder;
+        @include boxShadow(inset 0 1px 1px rgba(255,255,255,.1));
+        float: left;
+        margin: 0 0 $col-gutter 2%;
+		text-align: center;
+        width: 23.5%;
+
+        &:first-child { margin-left: 0; }
+
+        &:hover {
+            background: $galleryBg-hover;
+
+            .b-gallery-caption {
+
+                > a { color: $galleryFont-color-hover; }
+            }
+        }
+
+        > a {
+            cursor: pointer; // Cross Browser fallback
+            padding: $galleryPadding $galleryPadding 0;
+        }
+
+        // IE
+
+        .ie7 & { width: 20%; } // No border-box support
+
+        > a { color: $galleryFont-color; display: block; }
+
+        // Image
+
+        .b-gallery-image { height: $galleryViewport; overflow: hidden; } // Change value based on your projects needs
+
+        // Caption
+
+        .b-gallery-caption {
+
+            > a {
+                display: block;
+                overflow: hidden;
+                padding: $galleryPadding * 2 $galleryPadding $galleryPadding; // Doubles top padding to accout for and even out parent padding below
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+} // END b-gallery-a

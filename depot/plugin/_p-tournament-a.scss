@@ -1,0 +1,301 @@
+﻿// Plugin -> Tournament (p-tournament-a)
+//
+// ✎ Default news article format
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//     - Null
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+// 
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin p-tournament-a {
+
+    // Title
+
+    .title { margin: $leading 0; }
+
+    // Sub-Title
+
+    .sub-title { margin-bottom: $leading / 2; }
+
+    // Header
+
+    .p-tournament-header { margin-bottom: $leading; }
+
+    // Tabs
+
+    .b-tab {
+        
+        .b-tab-item {
+
+            > a {
+                background: $tournamentNav-bg-color;
+                padding: $tournamentNav-item-padding;
+                width: $tournamentNav-item-width;
+            }
+        }
+    }
+
+    // Admin
+
+    .admin {
+        background: $tournamentAdmin-icon;
+        @include u-dropDown-z;
+        float: right;
+        height: 26px;
+        line-height: 26px; // Helps adjust dropDown positioning
+        text-indent: -9999px;
+        width: 45px;
+
+        &:hover {
+            background-position: $tournamentAdmin-icon-hover;
+
+            > ul { left: auto; right: 0; }
+        }
+
+        // DropDown
+
+        > ul {
+            background: $tournamentAdmin-bg;
+            border: $tournamentAdmin-border;
+            
+            > li {
+                white-space: nowrap;
+
+                > a {
+                    display: block;
+                    line-height: 2em;
+                    padding: $tournamentAdmin-padding;
+
+                    &:hover { background: $tournamentAdmin-item-bg-hover; color: $tournamentAdmin-item-color-hover; }
+                }
+
+                // Types of Admin Links
+
+                &.team-details-admin {
+                    border-top: $tournamentAdmin-border;
+
+                    & + .team-details-admin { border-top-width: 0; }
+                }
+            }
+        }
+    }
+
+    // Details (General)
+
+    .details {
+        border-bottom: $tournamentBorder;
+        @include group;
+        margin-bottom: $leading;
+        padding-bottom: $leading;
+
+        // Info
+
+        .info { float: left; max-width: 60%; }
+
+        // Interact
+
+        .interact {
+            float: right;
+            max-width: 35%; // 5% remains for spacing
+            text-align: center;
+        }
+
+        // Social Share
+
+        .social-share { display: inline-block; vertical-align: middle; }
+    }
+
+    // Team Details
+
+    &.s-team-details {
+
+        .details {
+
+            // Avatar
+
+            .team-avatar { float: left; max-width: $tournamentTeam-avatar-width; }
+
+            // Sub-title
+
+            .sub-title { margin-left: $tournamentTeam-avatar-width + $leading; }
+
+            // Description
+
+            .description { margin-left: $tournamentTeam-avatar-width + $leading; }
+        }
+    }
+
+    // Tournament Details
+
+    &.s-tournament-details {
+
+        .details {
+            position: relative;
+            
+            // Avatar
+
+            .tournament-avatar { float: left; max-width: $tournamentAvatar-width; }
+
+            // Sub-Title
+
+            .sub-title { margin-left: $tournamentAvatar-width + $leading; }
+
+            // Schedule
+
+            .schedule { margin-left: $tournamentAvatar-width + $leading; }
+
+            // Interact
+
+            .button {
+                background-color: $tournamentGradient-bottom;
+                @include backgroundGradient(linear-gradient(top, $tournamentGradient-top, $tournamentGradient-bottom));
+                font-size: $font-sizeLarger;
+                margin-bottom: 4px;
+                padding: 12px 28px;
+            } 
+            .deadline { font-size: $font-sizeSmaller; margin-bottom: $leading / 2; }
+
+            // Check-in
+
+            .check-in {
+                
+                > p { font-size: $font-sizeSmaller; margin: 0 auto $leading / 2; width: 80%; }
+            }
+        }
+
+        // Match Info
+
+        .match-info {
+            margin-bottom: $leading;
+            
+            > li { font-size: $font-sizeSmaller; font-style: italic; }
+
+            // Match Status / Format
+
+            .match-status,
+            .format { font-size: $font-sizeLarger; font-style: normal; }
+
+            .match-status > span { color: $tertiaryColor; font-weight: bold; }
+        }
+    }
+
+    // Create Team
+
+    &.s-create {
+        
+        // Form (This needs consideration for refactoring into u-form
+
+        label {
+            margin-bottom: $leading;
+
+            .label { display: block; }
+        }
+    }
+
+    // Temporary working styles for visual examples and working dev features
+    // --------------------------------------------------------- //
+
+    // Filters
+
+    .listing-filters-wrapper {
+        
+        label[for="filter-status-filter"] {
+            float: left;
+            font-weight: bold;
+            margin-right: $leading;
+
+            &:after { content: ":"; }
+        }
+
+        .field-choice {
+            display: inline-block;
+
+            > label { margin: 0 $leading / 2 $leading / 2 0; vertical-align: top; }
+        }
+    }
+
+    // Bracket
+
+    .b-bracket-a {
+        caption {
+            border-bottom: $box-border;
+            font-size: $header-size;
+            font-weight: bold;
+            margin-bottom: $leading;
+            line-height: 1.5em;
+            
+            span { display: block; font-size: $font-sizeLarger; }
+        }
+
+        time { display: block; font-size: $font-sizeSmaller; font-weight: normal; }
+
+        .round-1 > ul { margin: 4em 0; }
+        li { background: #ddd; margin: 0 0 2em; padding: 1em 2em; line-height: 2em; white-space: nowrap; }
+        th { padding: 0 18px; }
+        td { vertical-align: top; }
+        td li:last-child { margin-bottom: 0; }
+    
+        td + td ul { margin-top: 8em; }
+        td + td li { margin-bottom: 10em; }
+    
+        .losers-bracket td + td ul { margin-top: 4em; }
+        .losers-bracket td + td li { margin-bottom: 2em; }
+    
+        td + td + td ul { margin-top: 16em; }
+        td + td + td li { margin-bottom: 26em; }
+    
+        .losers-bracket td + td + td ul { margin-top: 8em; }
+        .losers-bracket td + td + td li { margin-bottom: 10em; }
+    
+        td + td + td + td ul { margin-top: 32em; }
+        td + td + td + td li { margin-bottom: 58em; }
+    
+        td + td + td + td + td ul { margin-top: 64em; }
+        td + td + td + td + td li { margin-bottom: 122em; }
+    
+        .losers-bracket td + td + td + td + td ul { margin-top: 16em; }
+        .losers-bracket td + td + td + td + td li { margin-bottom: 26em; }
+    
+        .finals,
+        .winner,
+        .overall-winner { vertical-align: middle; }
+    
+        .winner ul,
+        .finals ul { margin-top: 0; }
+    
+        .winner li,
+        .finals li { margin-bottom: 0; }
+    
+        .single-elimination .winner li,
+        .double-elimination .overall-winner li { border: 1px solid #bbb; margin-left: 4em; }
+    
+        .single-elimination .winner div,
+        .double-elimination .overall-winner div {
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center; 
+            text-shadow: 0 -1px 0 rgba(255,255,255,.6);
+        }
+    
+        .winner { font-weight: bold; }
+        .loser { opacity: .6; }
+
+        .overall-winner { font-weight: bold; font-size: $header-size; padding: 18px; }
+    }
+
+} // END p-tournament-a

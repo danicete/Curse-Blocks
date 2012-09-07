@@ -1,0 +1,162 @@
+﻿// ************************************************************************************************************************
+// * Plugin -> Guide (p-guide-a)                                                                                          *
+// *                                                                                                                      *
+// * Sub-Classes:                                                                                                         *
+// *    - Null                                                                                                            *
+// ************************************************************************************************************************
+
+// --------------------------------------------------------- //
+// 1.) Mixin                                                   
+// --------------------------------------------------------- //
+
+// *** NOTE
+// *** Temporary styles included until refactoring of adjoining elements
+
+@mixin p-guide-a {
+
+    &.s-details {
+        background: $guideCover-bg;
+
+        // If ads are enabled...
+
+        .show-ads & { background-position: -245px top !important; }
+
+        // Byline
+
+        .byline { margin-bottom: $leading; }
+
+        .author,
+        .date { @include inline-block; }
+    }
+
+    // Med Rect
+
+    .atf-ad-medRect {
+        background: $secondaryColor;
+        @include border;
+        float: right;
+        margin: $guideCover-padding;
+        padding: 4px;
+
+        // Fallback 1of1
+
+        .ie7 & { width: 310px; } // 300px width + 8px padding + 2px border
+    }
+
+    // Cover
+
+    .cover {
+        font-weight: $guideCoverFont-weight;
+        min-height: $guideCover-minHeight; // Change to var representing height of bg-image
+        padding: $guideCover-padding;
+        width: $guideCover-width;
+    }
+
+    // Excerpt
+
+    /* .excerpt { 
+        margin: $leading 0; 
+        background: rgba(0, 0, 0, 0.2);
+        border: 0;
+        padding: $leading / 2;
+        font-weight: normal;
+
+        &:before { content: "\201C"; } 
+        &:after { content: "\201D"; }
+     } */
+
+    // Related Guide Links
+        
+    .guide-link {
+        @include inline-block;
+
+        & ~ .guide-link:before { content: $guideCoverSeparator; font-weight: bold; }
+    }
+
+    // Table of Contents (b-tab)
+
+    .b-tab {
+        @include border($border-width: $guideToc-borderWidth, $border-color: $guideToc-borderColor);
+        display: table;
+        margin: 0;
+        width: 100%;
+
+        .b-tab-item {
+            display: table-cell;
+            float: none;
+
+            > a { padding: $guideToc-padding; }
+
+            // Fallback 1 of 1
+
+            .ie7 &,
+            .ie8 & {
+                table-layout: fixed;
+
+                &:before, &:after { display: none; } // Causes display issue with table
+
+                > a { display: inline-block; white-space: normal; width: 100%; }
+            }
+        }
+    }
+
+    // Guides Tab Header
+    
+    .b-tab-body {
+        .title { 
+            @include backgroundGradient($guideTabHeader-gradient);
+            @include textShadow($guideTab-textShadow);
+            @include boxShadow($guideTab-boxShadow);
+            font-size: $guideTabHeaderFont-size;
+            font-weight: $guideTabHeaderFont-weight;
+            position: $guideTabHeader-position;
+            text-align: center;
+            text-transform: $guideTabHeader-textTransform;
+            margin-bottom: $leading;
+            padding: $leading / 2 0;
+        }
+    }
+
+    // Table of Contents (b-tab)
+
+    .b-tab {
+
+        .b-tab-item {
+                height: 33px;
+            > a { 
+                padding: $guideToc-padding;
+
+                @include borderRadius-top($guideTab-borderRadius);
+                @include backgroundGradient($guideTab-gradient);
+                @include textShadow($guideTab-textShadow);
+                @include boxShadow($guideTab-boxShadow);
+
+                &:hover { background: $guideTabBg-hover; }
+            }
+
+            &.b-tab-selected { 
+                z-index: 2; 
+                top: 1px;
+                > a { @include backgroundGradient($guideTabSelected-gradient); }
+                    > :hover { 
+                        background: none; 
+                        @include borderRadius-top($guideTab-borderRadius);
+                        @include backgroundGradient($guideTabSelected-gradient);
+                        @include textShadow($guideTab-textShadow);
+                        @include boxShadow($guideTab-boxShadow);
+                    } 
+           }
+        }
+    }
+    
+    // Social Icons
+    
+    .b-social-a {
+
+        &:after { clear: left; }
+
+        .social-sharing { padding: $leading 0; }
+    }
+    
+
+} // END p-guide-a

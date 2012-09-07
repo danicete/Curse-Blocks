@@ -1,0 +1,66 @@
+﻿// ★★ Plugin -> Attachments (p-attachments-a) ★★
+
+// ✎ Default news article format
+
+// ⌚ Level 1.00 (05/04/12)
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin p-attachments-a {
+
+    @include group;
+    margin-bottom: $leading;    
+
+    .p-attachments-list > li {
+        float: left;
+        width: 80px;
+        height: 130px;
+        margin-bottom: 10px;
+        margin-left:10px;
+        margin-right:10px;
+        .forum-post-content & {
+            height: 92px;
+        }
+    }
+
+    // List Items
+	.p-attachment-item {
+        width: 80px;
+        height: 92px;
+        text-align: center;
+        padding: 5px;
+        background: $galleryBg;
+        border: $galleryBorder;
+        position: relative;
+        @include boxShadow(inset 0 1px 1px rgba(255,255,255,.1));
+
+        .p-attachment-image { height: 80px; overflow: hidden; margin-bottom: 10px; img { margin-top: -3px; } }
+        .u-clip { background: #000; }
+        &:hover { 
+            background: $galleryBg-hover; 
+            cursor: pointer;
+            img { cursor: pointer; }
+        }
+	}        
+
+} // END p-attachments-a
+
+/* DEV */
+.p-attachmentable-form {	
+	.form-tools {
+		float: right;
+	}
+	.attachment-form {
+		position: absolute;
+		left: -2000px;
+	}
+}

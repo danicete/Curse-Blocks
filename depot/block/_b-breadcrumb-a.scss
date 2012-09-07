@@ -1,0 +1,85 @@
+﻿// Block -> breadcrumb (b-breadcrumb-a)
+//
+// ✎ UNIQUE - Cobalt standard breadcrumbs
+//
+// ⌚ Level 1.00 (05/02/12)
+//
+// ☍ Components:
+//     - Item (b-breadcrumbs-item)
+//     - Wrapper (b-breadcrumbs-wrapper)
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+//
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin b-breadcrumb-a {
+
+    clear: both;
+	background: $breadcrumb-bg;
+	padding: $breadcrumb-padding;
+	border: $breadcrumb-border;
+	border-width: $breadcrumb-borderWidth;
+	@include borderRadius($breadcrumb-borderRadius);
+    margin: $breadcrumbMargin;
+    text-align: left;
+
+    // Wrapper
+
+	.b-breadcrumb-wrapper { 
+		@include group;
+
+        // Item
+
+		.b-breadcrumb-item {
+            @include inline-block;
+            background: $breadcrumbItem-bg;
+            font-size: $breadcrumbItem-fontSize;
+            font-weight: $breadcrumbItem-fontWeight;
+            padding: $breadcrumbItem-padding;
+            white-space: nowrap;
+
+            a { color: $breadcrumbItem-color; display: inline-block; &:hover { color: $breadcrumbItem-hover; } }
+
+            & a.section { 
+
+                &:after {
+                    border-left: 5px solid transparent;
+	                border-right: 5px solid transparent;
+	                border-top: 6px solid $breadcrumbItem-color;
+                    content: "";
+                    @include inline-block;
+	                height: 0;
+                    margin-left: 6px;
+                    width: 0;
+                }
+            }
+            
+            &.home { background: $breadcrumbHomeItem-bg; padding: $breadcrumbHomeItem-padding; }
+            
+            & + .b-breadcrumb-item {
+                
+                &:before { content: $breadcrumbItem-seperator; }
+
+                // IE Fixes
+            
+                .ie7 & {
+                    border-left: 1px solid $font-color;
+                    margin-left: .5em;
+                    padding-left: .5em;
+                }
+            }
+        }
+	}
+
+} // END b-breadcrumb-a
+

@@ -1,0 +1,104 @@
+﻿// ★★ Block -> Tab (b-tab-a) ★★
+
+// ✎ Horizontal, blocked tabs with a default display of box flex; fall-back
+//    in place for browsers uncompatible with box flex.
+
+// ⌚ Level 1.00 (05/08/12)
+
+// ☍ Components:
+//     - Item (b-tab-item)
+//     - Selected (b-tab-selected)
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin b-tab-a {
+    
+    @include group;
+
+    .flexbox & {
+        @include boxFlex-container;
+        margin: 0;
+        list-style-type: none;
+        width: 100%;
+    }
+
+    // Fall-back 1 of 2
+
+    .no-flexbox & { display: table; }
+    .ie7 & { display: block; }
+
+    .u-typography-format & { padding: 0; } // Override if within typography formatting section
+
+    // Item
+
+    .b-tab-item {
+        @include boxFlex-item;
+        position: relative;
+        text-align: center;
+    
+        -moz-transition: width 0.7s ease-out;
+        -o-transition: width 0.7s ease-out;
+        -webkit-transition: width 0.7s ease-out;
+        transition: width 0.7s ease-out;
+
+        > a {
+            background: $tabBg;
+            color: #fff; // Commonly on dark backgrounds
+            display: block;
+            padding: 4px 8px;
+            white-space: nowrap;
+            &:hover { background: $tabBg-hover; }
+        }
+
+        & + .b-tab-item { margin-left: 4px; padding-left: 4px; }
+
+        // Fallback 2 of 2
+
+        .no-flexbox & { display: table-cell; }
+
+        .ie7 & {
+            display: block;
+            float: left;
+
+            > ul {
+                
+                > li { float: none; }
+            }
+        }
+
+        // Selected
+
+        &.selected,
+        &.b-tab-selected {
+            
+            > a { background: $tertiaryColor none; color: $tertiaryColor; font-weight: bold; }
+        }
+    }
+
+    /// ☂ Fallbacks ☂
+
+    // No Flex Box
+
+    .no-flexbox & {
+        @include group;
+
+        .b-tab-item {
+            float: left;
+            -webkit-box-flex: 0;
+            -moz-box-flex: 0;
+            box-flex: 0;
+
+            & + b-tab-item { margin-left: 4px; padding-left: 4px; }
+        }
+    }
+
+} // END b-tab-a

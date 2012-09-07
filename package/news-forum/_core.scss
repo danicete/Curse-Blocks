@@ -1,0 +1,35 @@
+﻿// ************************************************************************************************************************
+// * Package -> News-Forum                                                                                                *
+// ************************************************************************************************************************
+
+// --------------------------------------------------------- //
+// Initialization                                              
+// --------------------------------------------------------- //
+
+    // Config
+
+    @import "../../config";
+    @include components(
+    
+        // Block
+
+        $shoutbox: true,
+        $tag: true,
+        $tagCloud: true,
+
+        // Plugin
+
+        $article: true,
+        $attachments: true,
+        $browser: true,
+        $comments: true,
+        $forum: true,
+        $infractions: true,
+        $result: true,
+        $streams: true,
+        $widget: true
+    );
+
+    // Layout
+
+    @import "layout";

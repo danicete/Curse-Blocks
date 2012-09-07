@@ -1,0 +1,20 @@
+$frame-counter: 0 !default;
+
+@while $frame-counter < 1 {
+
+// ************************************************************************************************************************
+// * Utility -> Frame (u-frame)                                                                                           *
+// ************************************************************************************************************************
+
+.u-frame-a {
+    background: $frame-bg;
+    @include backgroundGradient($frame-gradient);
+    @include boxShadow($frame-boxShadow);
+    display: block;
+    padding: $frame-size;
+    overflow: hidden;
+}
+
+$frame-counter: $frame-counter + 1;
+
+}

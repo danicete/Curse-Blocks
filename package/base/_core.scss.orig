@@ -1,0 +1,46 @@
+﻿// ************************************************************************************************************************
+// * Package -> Core                                                                                                      *
+// ************************************************************************************************************************
+
+// --------------------------------------------------------- //
+// Initialization                                              
+// --------------------------------------------------------- //
+
+    // Config
+
+    @import "../../config";
+    @include components(
+    
+        // Block
+
+	    $breadcrumb: true,
+        $definition: true,
+        $figure: true,
+        $gallery: true,
+        $infograph: true,
+        $list: true,
+        $media: true,
+        $pagination: true,
+        $poll: true,
+	    $rating: true,
+        $search: true,
+	    $tab: true,
+        $table: true,
+	    $userAction: true,
+
+        // Plugin
+
+        $avatar: true,
+        $base: true,
+	    $comments: true,
+	    $header: true,
+        $login: true,
+        $nav: true,
+        $notifications: true,
+        $pm: true,
+	    $user: true
+    );
+
+    // Layout
+
+    @import "layout";

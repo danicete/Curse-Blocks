@@ -1,0 +1,40 @@
+﻿// ★★ Block -> Infograph (b-infograph-b) ★★
+
+// ✎ Information graphic w/ x&y labels for table based representation
+
+// ⌚ Level 1.00 (03/05/12)
+
+// ☍ Components:
+//     - X Label (b-infograph
+
+// ☆ Sub-Classes:
+//     - X Label (b-infograph-xlabel)
+//     - Y Label (b-infograph-ylabel)
+//     - Item (b-infograph-item)
+//     - Value (b-infograph-value)
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin b-infograph-b {
+
+    border-collapse: collapse;
+    margin-bottom: $leading;
+    width: 100%;
+
+    // Label
+
+    .b-infograph-xlabel { font-weight: bold; text-align: right; padding: 0 $leading * 2 0 0; }
+    .b-infograph-ylabel { font-weight: bold; }
+
+    // Item
+
+    .b-infograph-item { border-bottom: 1px solid; padding: 0; }
+
+} // END b-infograph-b

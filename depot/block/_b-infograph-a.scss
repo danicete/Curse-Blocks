@@ -1,0 +1,49 @@
+﻿// ★★ Block -> Infograph (b-infograph-a) ★★
+
+// ✎ Information graphic that displays data in a horizontal bar graph
+
+// ⌚ Level 1.00 (03/05/12)
+
+// ☍ Components:
+//     - Fill (b-infograph-fill)
+//     - Title (b-infograph-title)
+//     - Rating (b-infograph-rating)
+//     - Label (b-infograph-label)
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+// ★★ Mixin
+
+@mixin b-infograph-a {
+
+    margin-bottom: $leading;
+    padding: $box-padding;
+
+    // Rating
+
+    .b-infograph-rating { border: 1px solid $box-borderColor; margin: 0; overflow: hidden; }
+
+    // Fill
+
+    .b-infograph-fill {
+        background: $secondaryColor none;
+        border-right: 1px solid $box-borderColor;
+        display: block;
+        text-indent: -9999px;
+    }
+
+    // Label
+
+    .b-infograph-label { display: block; margin: 0; text-align: right; }
+
+} // END b-infograph-a

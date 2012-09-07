@@ -1,0 +1,51 @@
+﻿// ★★ Block -> Definition (b-definition-a) ★★
+
+// ✎ Definition list with icon column and description column
+
+// ⌚ Level 1.00 (05/03/12)
+
+// ☍ Components:
+//     - Title (b-definition-title)
+//     - Description (b-definition-desc)
+//     - Icon (b-definition-icon)
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+// ★★ Global Variables
+
+$definitionTitle-size: $header-size !default;
+
+// ★★ Mixin
+
+@mixin b-definition-a {
+
+    @include group;
+
+    min-height: 0; // Change value to height of icon
+    padding-left: $leading/2; // Width of the icon will need to be added to the left padding (eg padding-left: 100px + $leading/2)
+    position: relative;
+
+    // Title
+
+    .b-definition-title { font-size: $definitionTitle-size; margin: 0 0 $leading; }
+    .b-definition-desc + .b-definition-title { margin-top: $leading; } // Add space if two definition titles in same definition list
+
+    // Icon
+
+    .b-definition-icon { position: absolute; top: 0; left: 0; }
+
+    // Description
+   
+    .b-definition-desc { margin: 0 0 $leading; }
+
+} // END b-definition-a

@@ -1,0 +1,50 @@
+﻿// ★★ Utility -> Button (u-button-z) ★★
+
+// ✎ UNIQUE - Standard buttons
+
+// ⌚ Level 1.00 (04/03/12)
+
+// ☍ Components:
+//     - Null
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Testing Required
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+// ★★ Mixin
+
+@mixin u-button-z {
+
+    // Base
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: #111; // Fallback
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    @include borderRadius($button-borderRadius);
+    background-color: $button-bgBottom;
+    @include backgroundGradient(linear-gradient(top, $button-bgTop, $button-bgBottom));
+    background-repeat: repeat-x;
+    @include boxShadow(inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05));
+    color: $button-fontColor;
+    display: inline-block;
+    line-height: $leading;
+    padding: $button-padding;
+    text-shadow: $button-fontTextShadow;
+	font-family: $button-fontFamily;
+    font-weight: bold;
+    @include transition(background-position, .1s, linear);
+
+    // States
+
+    &:hover { background-position: 0 -15px; color: $button-fontColorHover; }
+    &:visited { color: $button-fontColor; }
+    &:active { background-image: none; @include boxShadow(inset 0px 2px 4px rgba(0, 0, 0, 0.10), inset 0px 1px 2px rgba(0,0,0,.05)); }
+
+} // END u-button-z

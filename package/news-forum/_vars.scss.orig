@@ -1,0 +1,146 @@
+﻿// ************************************************************************************************************************
+// * News-Forum Master Variables                                                                                          *
+// * Project Documentation: http://wwww.styleguide/link/goes/here                                                         *
+// ************************************************************************************************************************
+
+// --------------------------------------------------------------------------------------------------------------------- //
+//                                            TIER 3: COMPONENT VARIABLES                                                  
+// --------------------------------------------------------------------------------------------------------------------- //
+
+// --------------------------------------------------------- //
+// (3) Article                                                 
+// --------------------------------------------------------- //
+
+$articleBg: transparent !default;
+$articleBorder: $box-border !default;
+$articleBorder-divider: 3px double $box-borderColor !default;
+$articleBorder-radius: null !default;
+$articlePadding: 0 !default;
+$articlePadding-bottom: 0 !default;
+
+$articleInteract-bg: $box-bg !default;
+$articleInteract-padding: $box-padding !default;
+
+$articleToC-border: $articleBorder !default;
+$articleToC-bg: $box-bgColor !default;
+$articleToC-boxShadow: 0 0 5px rgba(0,0,0,.7) !default;
+$articleToC-font-color: $link-color !default;
+
+$articleAudio-bg: $articleInteract-bg !default;
+
+// --------------------------------------------------------- //
+// (3) Browser                                                 
+// --------------------------------------------------------- //
+
+$browserImage-width: 44.2% !default;
+
+$browserThumb-border: 1px solid rgba(0,0,0,.7) !default;
+$browserThumbShadow: 0 3px 3px rgba(0,0,0,0.3) !default;
+$browserThumbView-bg: $link-color !default;
+$browserThumbView-bg-image: url("#{$imageURL-core}/icons/8x8/white/icon-view-8x8.png") no-repeat 4px center !default;
+$browserThumbView-shadow: inset 0px 1px 1px rgba(255,255,255,.2), 0 1px 3px rgba(0,0,0,.3) !default;
+$browserThumbView-borderColor: darken($secondaryColor, 20%) !default;
+$browserThumb-width: 142px !default;
+$browserThumb-height: 165px !default;
+$browserThumbView-fontColor: $link-colorSecondary !default;
+$browserBorder: $articleBorder-divider !default;
+
+// --------------------------------------------------------- //
+// (3) Comments                                                
+// --------------------------------------------------------- //
+
+$commentBg: $box-bg !default;
+$commentThreadBg-color: darken($commentBg, 5%) !default;
+
+$commentLink-color: $link-color !default;
+
+$commentBorderWidth-top: 0 !default;
+$commentBorderStyle-top: solid !default;
+$commentBorderColor-top: transparent !default;
+$commentBorderWidth-bottom: 1px !default;
+$commentBorderStyle-bottom: solid !default;
+$commentBorderColor-bottom: $box-borderColor !default;
+
+$commentMargin: 2px !default;
+$commentPadding: $box-padding !default;
+
+$commentUserBoxWidth: 75px !default;
+
+$commentSigColor: $font-colorLighter !default;
+$commentSigBorder: $box-border !default;
+
+// Forums
+
+$forumComment-bg: $commentBg !default;
+$forumCommentThreadBg: $commentBg !default;
+$forumComment-font-color: $box-fontColor !default;
+$forumComment-margin: $commentMargin !default;
+$forumCommentUserBoxWidth: 150px !default;
+$forumComment-padding: 10px 0 !default;
+$forumCommentSigColor: $commentSigColor !default;
+$forumCommentSigBorder: $commentSigBorder !default;
+$forumComment-link-color: $link-color !default;
+
+$forumComment-border: $box-border !default;
+$forumCommentBorderWidth-top: 0 !default;
+$forumCommentBorderStyle-top: solid !default;
+$forumCommentBorderColor-top: transparent !default;
+$forumCommentBorderWidth-bottom: 1px !default;
+$forumCommentBorderStyle-bottom: solid !default;
+$forumCommentBorderColor-bottom: $box-borderColor !default;
+
+// --------------------------------------------------------- //
+// (3) Forum                                                   
+// --------------------------------------------------------- //
+
+$forumBg: $table-bg !default;
+$forumBorder: $tableCell-border !default;
+$forumCell-height: $tableCell-height !default;
+$forumCell-padding: $tableCell-padding !default;
+$forumHeader-border: $tableHeader-border !default;
+$forumHeading-bg-top: $tableHeader-bg-top !default;
+$forumHeading-bg-bottom: $tableHeader-bg-bottom !default;
+$forumTitleFont-size: $font-size !default;
+$forumThreadTitleFontSize: $forumTitleFont-size !default;
+$forumThreadAnnouncementFontSize: $forumTitleFont-size !default;
+$forumIcon-height: 48px !default;
+$forumIcon-width: 48px !default;
+$forumLink-color: $header-color !default;
+$forumLink-color-hover:  $header-colorHover !default;
+$forumComment-content-margin: $forumCommentUserBoxWidth + ($leading / 2) !default;
+
+$forumStatusBg-general-unread: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-normal.png") no-repeat 0px -48px !default;
+$forumStatusBg-general-read: url("#{$imageURL-core}/32x32/grey/icon-forum-normal.png") no-repeat 0px 0px !default;
+
+$forumStatusBg-typical-unread: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-typical.png") no-repeat 0px -48px !default;
+$forumStatusBg-typical-read: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-typical.png") no-repeat 0px 0px !default;
+
+$forumStatusBg-locked-unread: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-locked.png") no-repeat 0px -48px !default;
+$forumStatusBg-locked-read: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-locked.png") no-repeat 0px 0px !default;
+
+$forumStatusBg-pinned-unread: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-pinned.png") no-repeat 0px -48px !default;
+$forumStatusBg-pinned-read: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-pinned.png") no-repeat 0px 0px !default;
+
+$forumStatusBg-poll-unread: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-poll.png") no-repeat 0px -48px !default;
+$forumStatusBg-poll-read: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-poll.png") no-repeat 0px 0px !default;
+
+$forumStatusBg-announcement-read: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-announcement.png") no-repeat 0px 0px !default;
+$forumStatusBg-announcement-unread: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-announcement.png") no-repeat 0px -48px !default;
+
+$forumStatusBg-redirect-read: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-redirect.png") no-repeat 0px 0px !default;
+$forumStatusBg-redirect-unread: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-redirect.png") no-repeat 0px -48px !default;	
+
+// --------------------------------------------------------- //
+// (3) Result                                                  
+// --------------------------------------------------------- //
+
+$resultPadding: $leading / 2 !default;
+
+// --------------------------------------------------------- //
+// (3) Widget                                                  
+// --------------------------------------------------------- //
+
+$widgetBg: transparent !default;
+$widgetBorder: none !default;
+$widgetBorder-radius: $border-radius !default;
+$widgetPadding: $box-padding !default;

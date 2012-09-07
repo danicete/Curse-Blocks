@@ -1,0 +1,172 @@
+﻿// Plugin -> Mapper (p-mapper-a)
+//
+// ✎ Mapper Plugin
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+// 
+// ------------------------------------------------------------------------------------------
+
+// Mixin
+// ------------------------------------------------------------------------------------------
+
+@mixin p-mapper-a {
+    
+    .mapper {
+	    overflow: auto;
+	    min-height: 345px;
+        .mapper-map-container {
+	        float: left;
+	        position: relative;
+        }
+        .mapper-map-container[data-zoomed=true] {
+	        position: fixed;
+	        margin: auto;
+	        z-index: 999999;
+	        top: 50%;
+	        left: 50%;
+        }
+        img.pin {
+	        position: absolute;
+	        z-index: 2;
+	        cursor: default;
+        }
+        .map {
+	        border: solid 2px black;
+	        cursor: pointer;
+        }
+        .zoom-control {
+	        position: absolute;
+	        top: 2.5%;
+	        left: 2%;
+	        text-align: left;
+	        width: 100%;
+	        color: White;
+	        padding: 0;
+	        margin: 0;
+	        font-size: 11px;
+	        font-weight: bold;
+	        cursor: pointer;
+        }
+        .change-floor-control {
+            position: absolute;
+            top: 2.5%;
+            right: 2%;
+            text-align: right;
+            font-size: 11px;
+            cursor: default;
+            @include boxShadow(2px 2px 2px #000000);
+            @include borderRadius(4px);
+            padding: 4px 8px;
+        }
+        .black-shadow { text-shadow: 2px 2px #000000, -1px -1px #000000, 1px 1px #000000; }
+    }
+
+
+
+/* SIDEBAR CSS BELOW */
+
+.mapper .mapper-sidebar
+{
+	float: left;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	margin-left: 20px;
+}
+
+.mapper .mapper-sidebar li
+{
+	margin-bottom: 4px;
+}
+
+.mapper .mapper-sidebar li a
+{
+	padding: 5px 10px;
+	border: solid #909090;
+	border-width: 1px 1px 1px 1px;
+	border-radius: 7px;
+	white-space: nowrap;
+	font-size: 90%;
+	display: block;
+}
+
+.mapper .mapper-sidebar li.selected a
+{
+    background: #4F6E33;    
+	color: White;
+	font-weight: bold;
+	display: block;
+}
+
+.mapper .mapper-sidebar a:selected
+{
+	border: 0;
+}
+
+.mapper .mapper-sidebar li a
+{
+	text-decoration: none;
+	color: Black;
+}
+
+.mapper .mapper-sidebar li.header
+{
+	border-radius: 7px;
+    text-align: left;
+    padding: 3px;
+    padding-left: 0.5em;
+    font-weight: bold;
+    cursor: auto;
+
+font-size: 100%;
+    color: #fff;
+    line-height: 24px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    -moz-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset;
+    /* -o-box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset; << Opera inserts shadow into odd place - JB 10/12/11 */
+    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset;
+    background: #3f3f3f;
+    background: -moz-linear-gradient(top, #3f3f3f 0%, #1c1c1c 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f3f3f), color-stop(100%,#1c1c1c));
+    background: -webkit-linear-gradient(top, #3f3f3f 0%,#1c1c1c 100%);
+    background: -o-linear-gradient(top, #3f3f3f 0%,#1c1c1c 100%);
+    background: -ms-linear-gradient(top, #3f3f3f 0%,#1c1c1c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f3f3f', endColorstr='#1c1c1c',GradientType=0 );
+    background: linear-gradient(top, #3f3f3f 0%,#1c1c1c 100%);
+    white-space: nowrap;
+}
+
+.mapper .map-black-overlay
+{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: Black;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	opacity: 0.85;
+}
+
+.map-images .mapper
+{
+    clear: none;
+}
+
+
+} // END p-mapper-a
+
+//.body-wowarea #content  { z-index: 4; }

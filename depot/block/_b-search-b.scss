@@ -1,0 +1,42 @@
+﻿// ★★ Block -> Search (b-search-b) ★★
+
+// ✎ Single focused search input
+
+// ⌚ Level 1.00 (03/28/12)
+
+// ☍ Components:
+//     - Null
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - TBD
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin b-search-b {
+    
+    @include group;
+
+    background: $searchBg;
+    border: $searchBorder;
+    @include borderRadius($searchBorder-radius);
+    height: $searchHeight;
+    padding: $searchPadding;
+    position: relative;
+    text-align: center;
+
+    // Form
+
+    .b-search-form { text-align: center; }
+
+    // Input
+
+    .b-search-input { display: inline-block; background: $searchInput-Bg; }
+
+    // Submit
+
+    .b-search-submit { display: inline-block; }
+
+} // END b-search-b

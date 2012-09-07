@@ -1,0 +1,35 @@
+﻿// ★★ Utility -> User Action (u-userAction-a) ★★
+
+// ✎ Floated right user actions
+
+// ⌚ Level 1.00 (02/017/12)
+
+// ☍ Components:
+//     - Item (b-userAction-item)
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Testing Required
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin b-userAction-a {
+
+    @include group;
+
+    display: block;
+    position: relative;
+    z-index: 2;
+
+    // Item
+
+    .b-userAction-item {
+        @include inline-block;
+
+        & + .b-userAction-item { margin-left: 6px; }
+
+        > a { @include u-button-z; }
+    }
+} // END b-userAction-a

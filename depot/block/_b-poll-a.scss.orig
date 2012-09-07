@@ -1,0 +1,118 @@
+﻿// Block -> Poll (b-poll-a)
+//
+// ✎ UNIqUE - Cobalt standard poll post widget
+//
+// ⌚ Level 1.00 (05/07/12)
+//
+// ☍ Components:
+//     - Description (b-poll-desc)
+//     - Expiration (b-poll-expiration)
+//     - Item (b-poll-item)
+//     - Results (b-poll-results)
+//     - Voting (b-poll-voting)
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+//
+// --------------------------------------------------------- //
+
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin b-poll-a {
+
+    margin-bottom: $pollMargin;
+
+    // Resets
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li { list-style-type: none; margin: 0; }
+    }
+
+    // Title
+
+    h2 { margin-bottom: $leading / 2; }
+
+    // Description
+
+    .b-poll-desc { margin-bottom: $leading / 2; }
+
+    // Voting
+
+    .b-poll-voting {
+        margin-bottom: $leading;
+
+        .form-field { margin-bottom: 0; } // Reset
+        .form-footer { margin: $leading / 2 0; }
+    }
+
+	// Expiration
+
+	.b-poll-expiration {
+        background: $pollBg;
+        border: $pollBorder;
+        @include boxShadow(inset 0 1px 1px rgba(255,255,255,.1));
+        color: $box-fontColor;
+        margin: $leading / 2 0;
+        padding: $leading / 2;
+        text-align: center;
+    }
+
+    // Results
+
+    .b-poll-results {
+        
+        > ul { display: table; }
+    }
+
+    // Item
+
+	.b-poll-item {
+        display: table-row;
+        margin: 0;
+        padding: 0;
+
+        .choice,
+        .percentage,
+        .amount { display: table-cell; }
+    }
+
+    // Choice
+
+    .choice { text-align: right; white-space: nowrap; color: $pollChoice-color; font-weight: bold; }
+
+    // Percentage
+
+    .percentage {
+        padding-right: 1em;
+        white-space: nowrap;
+
+        &:before { content: "\00A0 - "; }
+    }
+
+    // Amount
+
+    .amount { vertical-align: middle; width: 100%; }
+
+    // Graph
+
+    .graph {
+        background-color: $pollResults-bg;
+        @include boxShadow(inset 0 1px 1px rgba(255,255,255,.1));
+        display: block;
+        height: .75em;
+        min-width: 2px;
+    }
+
+} // END b-poll-a

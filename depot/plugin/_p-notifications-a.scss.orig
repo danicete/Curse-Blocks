@@ -1,0 +1,161 @@
+﻿// ★★ Plugin -> Notifications (p-notifications-a) ★★
+
+// ✎ Standard horizontal navigation
+
+// ⌚ Level 1.00 (02/017/12)
+
+// ☍ Components:
+//     - Item (p-notification-item)
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+// ★★ Global Variables
+
+// Notifications menu
+#notifications {
+	position: absolute;
+	z-index: 3;
+	width: 320px;
+	background-color: $primaryColor;
+	font-size: 11px;
+	line-height: 14px;
+
+	.p-notification-item:hover {
+		background-color: lighten($secondaryColor, 50%);
+	}
+}
+
+// Notification Subscription buttons
+.user-action-p-notification-subscription-button {
+	> ul { display: none; }
+	&:hover { 
+		> a { background-position: 0 -15px; color: $button-fontColor; }
+		> ul { 
+			display: block; 
+			position: absolute;
+		}
+	}
+
+	ul.p-notification-subscription-links {
+		background-color: $button-bg;
+
+		li.p-notification-subscription-link {
+			&:hover { background-color: $button-bgBottom !important; }
+			a {
+				border: none !important;
+				background: inherit !important;
+			}
+		}
+	}
+}
+
+@mixin p-notifications-a {
+
+	// Item
+	.p-notification-item { 
+		padding: 5px;		
+
+		.avatar { 
+			float: left;
+		}
+
+		a
+		{
+			color: $font-color;
+			display: block;
+			overflow: hidden;
+		}
+
+		p
+		{
+			margin-bottom: inherit !important;
+		}
+
+		p.preview {
+			font-size: 11px;			
+		}
+
+		p.date 
+		{
+			font-size: 11px;
+			text-align: right;				
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			abbr
+			{
+				border: none;
+			}
+		}
+
+		> ul {
+			margin-left: 55px;
+			min-height: 48px; // To match the height of the avatar
+			a.p-collapsed-notifications-count {
+				color: $link-color;
+			}
+			> li
+			{
+				position: relative;
+			}
+			> li > .p-collapsed-notifications {
+				display: none;
+			}	
+		}
+	}
+
+	// Listing
+	&.p-notification-items {
+		.p-notification-item {
+			border-bottom: 1px solid $box-borderColor;
+			
+			&.unread {
+				background-color: $unreadNotificationColor;
+			}
+			p.date 
+			{
+				position: static;
+			}
+		}
+
+		border: 1px solid $secondaryColor;
+
+		header {
+			border-bottom: 1px solid $secondaryColor;
+			padding: 5px;
+		}
+
+		.p-all-notifications {
+			text-align: center;
+			margin-bottom: 8px;
+		}
+
+		ul.listing
+		{
+			margin-bottom: 8px;
+		}
+	}
+
+	// Big listing
+	&.p-notification-items-full {
+		h4 {
+			margin-bottom: 10px;
+			border-bottom: 1px solid $box-borderColor;
+		}
+
+		.p-notification-item p.subject
+		{
+			padding-right: 100px;
+		}
+	}
+
+} // END p-notifications-a

@@ -1,0 +1,102 @@
+﻿// ************************************************************************************************************************
+// * Plugin -> Base (p-base-a)                                                                                            *
+// *                                                                                                                      *
+// * Sub-Classes:                                                                                                         *
+// *    - Null                                                                                                            *
+// ************************************************************************************************************************
+
+// --------------------------------------------------------- //
+// 1.) Mixin                                                   
+// --------------------------------------------------------- //
+
+@mixin p-base-a {
+
+    @include group;
+    @include borderRadius($baseBorder-radius);
+    background: $baseBg;
+    border: $baseBorder;
+    color: $baseFont-color;
+    margin-bottom: $leading;
+    padding: $basePadding;
+    position: relative;
+
+    // Header
+
+    .p-base-header {
+        margin-bottom: $leading;
+        background: $baseBg-image;
+        padding-bottom: $basePadding-bottom;
+		margin-bottom: $baseMargin-bottom;
+        
+        .title { color: $baseHeader-color; }
+    }
+
+    // Filters
+
+    .filters {
+        @include custom-checkbox;
+        margin-bottom: $leading;
+
+        // Search by Text Input
+
+        .text-input { float: left; margin-right: $col-gutter; width: 18%; }
+
+        // Title
+
+        .title { position: absolute; left: -9999px; } // Base styles for single category filter, override this style on project level for multiple category filters with titles
+
+        // Filter Options
+
+        .filter {
+            @include inline-block;
+            padding: 0;
+
+            & { margin-right: $leading / 2; }
+        } 
+    }
+
+    // Content
+
+    .p-base-content { @include group; @include u-typography-base($color: $box-fontColor, $leading: 1.4em); }
+
+    // Footer
+
+    .p-base-footer { margin-top: $leading; text-align: right; }
+
+    // Empty
+
+    .p-base-empty { background: $baseBg; margin: $leading; text-align: center; }
+
+    // Comments
+
+    .comments { @include u-glyph-speechBubble; }
+
+    // Guide Select
+
+    &.guide-select {
+        @include col(12);
+        clear: left;
+        margin-top: 0;
+
+        .p-base-header {
+            background: none;
+                
+            // Guides Header Bar
+            .title { 
+                @include backgroundGradient($guideTab-gradient);
+                @include textShadow($guideTab-textShadow);
+                @include boxShadow($guideTab-boxShadow);
+                letter-spacing: -1px;
+                font-size: $guideTabHeaderFont-size;
+                position: $guideTabHeader-position;
+                text-align: center;
+                z-index: 1;
+                margin-bottom: $baseMargin-bottom;
+                padding: $leading / 2 0;
+                }
+        }
+
+        .u-frame { float: none; margin-right: 0; }
+    }
+    
+} // END p-base-a

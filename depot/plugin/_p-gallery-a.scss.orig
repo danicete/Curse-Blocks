@@ -1,0 +1,105 @@
+﻿// ★★ Plugin -> Gallery (p-gallery-a) ★★
+//
+// ✎ Gallery with albums and screenshots
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//     - Null
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+// 
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin p-gallery-a {
+    @include group;
+    .user-actions { 
+        float: right; 
+        li {
+            float: left;
+            margin-left: 10px;
+        }
+        .social-share { @include inline-block ; }
+    }
+    .p-gallery-items { @include group; margin-bottom: $leading; > h3 { margin-bottom: $leading / 2; } }
+    .albums {
+        .p-gallery-item:after {
+            content: '';
+            position: absolute;
+            right: -5px;
+            top: 5px;
+            height: 100%;
+            display: block;
+            background: darken($galleryBg,30%);
+            width: 5px;
+        }
+        .p-gallery-item:before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            bottom: -5px;
+            width: 100%;
+            display: block;
+            background: darken($galleryBg,30%);
+            height: 5px;            
+        }
+    }
+    
+    .p-gallery-item { 
+        width: $albumViewport;
+        height: $albumViewport + 50;
+        margin-right: 1%;
+        margin-left: 1%; 
+        text-align: center;
+        float: left;
+        margin-bottom: 10px;
+        padding: 10px;
+        background: $galleryBg;
+        border: $galleryBorder;
+        position: relative;
+        @include boxShadow(inset 0 1px 1px rgba(255,255,255,.1));
+
+        .p-gallery-image { height: $albumViewport; overflow: hidden; } // Change value based on your projects needs 
+        .u-clip { background: $galleryBg; }
+        .p-gallery-caption { @include group; font-weight: bold; padding: 4px 10px; }
+        .p-gallery-count { float: right; color: $font-colorDarker; font-size: 11px; font-weight: normal; &.comments {  @include u-glyph-speechBubble; } }
+        .p-gallery-title { white-space: nowrap; overflow: hidden; display: block; text-overflow: ellipsis; }
+        &:hover { 
+            background: $galleryBg-hover; 
+            .p-gallery-title { color: $galleryFont-color-hover; }
+            .p-gallery-count {
+                color: $galleryFont-color-hover;
+                &.comments {
+                    background: $galleryFont-color-hover; 
+                    color: $link-color;
+                    &:after { border-color: $galleryFont-color-hover transparent; }
+                }
+            }
+        }
+    }
+    .p-gallery-imageFull img { margin: 0 auto $leading; display: block; }
+    .p-gallery-byline {
+        @include group;
+        margin-bottom: $leading;
+        .p-gallery-comment { @include u-glyph-speechBubble; a { color: $glyphFont-color; } }
+    } 
+    .p-gallery-crop {
+        img,
+        .jcrop-holder { margin: 0 auto 10px; }
+        .controls { text-align: center; }
+    }
+}
+
+.attachment-listing {
+    @include p-gallery-a;
+}

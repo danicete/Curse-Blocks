@@ -1,0 +1,79 @@
+﻿// Block -> Pagination (b-pagination-a)
+//
+// ✎ Horizontal, standard pagination
+//
+// ⌚ Level 1.00 (05/04/12)
+//
+// ☍ Components:
+//     - Count (b-pagination-count)
+//     - Item (b-pagination-item)
+//     - List (b-pagination-list)
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - Firefox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+//
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin b-pagination-a {
+    
+    margin: $leading 0;
+
+    // Count
+
+    .b-pagination-count {
+        background: $paginationBg;
+        border: $paginationBorder;
+        @include borderRadius($paginationBorder-radius);
+        color: $paginationFont-color;
+        float: left;
+        margin-right: 10px;
+        padding: $paginationPadding;
+    }
+
+    // List
+
+    .b-pagination-list {
+		
+    @include group;
+
+    // Item
+
+    .b-pagination-item {
+        cursor: default; // If no link don't change cursor
+        float: left; 
+
+        > a,
+        &.s-active {
+            background: $paginationBg;
+            border: $paginationBorder;
+            border-left-width: 0;
+            color: $paginationFont-color;
+            display: block;
+            padding: $paginationPadding;
+            text-decoration: none;
+
+            &:hover { background: $paginationBg-hover; color: $paginationFont-color-hover; }
+        }
+
+        &.s-active,
+        &.s-active:hover { background-color: $paginationBg-active; color: $paginationFont-color-active; font-weight: bold; }
+			
+        &.s-active:first-child,
+        &:first-child a { border-left-width: 1px; @include borderRadius-left($paginationBorder-radius); }
+
+        &.s-active:last-child,
+        &:last-child a { @include borderRadius-right($paginationBorder-radius); }
+        }
+    }
+
+} // END b-pagination-a

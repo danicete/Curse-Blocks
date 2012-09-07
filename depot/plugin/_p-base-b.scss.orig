@@ -1,0 +1,88 @@
+﻿// Plugin -> Base (p-base-b)
+//
+// ✎ Generic base plugin for abstract relationships with banner header & layered background
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//     - Empty (p-base-empty)
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+// 
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin p-base-b {
+
+    @include group;
+    background: $baseBg-alt;
+    border: $baseBorder;
+    @include borderRadius($baseBorder-radius);
+    color: $baseFont-color;
+    margin-bottom: $leading * 2;
+    padding: $leading + 10 8px 8px;
+    position: relative;
+
+    // Title Banners
+
+    .title {
+        background: $baseBg;
+        border: $baseBorder;
+        color: $baseHeader-color;
+        font-size: $font-size;
+        line-height: $leading + 4;
+        position: absolute;
+        left: -2%; top: -4px;
+        text-align: center;
+        text-transform: uppercase;
+        width: 104%;
+
+        &:before,
+        &:after {
+            background: url("#{$imageURL-local}/sprite-ribbon.png") no-repeat; // Temp
+            content: "";
+            display: block;
+            height: 29px;
+            position: absolute;
+            top: 1px; left: -6px;
+            width: 10px;
+            z-index: -2;
+        }
+
+        &:after { background-position: right top; left: auto; right: -6px; }
+    }
+    
+    // Content
+
+    .p-base-content {
+        @include group;
+        @include u-typography-base($color: $box-fontColor, $leading: 1.4em);
+        background: $baseBg;
+        padding: $basePadding;
+    }
+
+    // Footer
+
+    .p-base-footer {
+        margin-top: 10px;
+        text-align: right;
+        
+        // Jump Link
+
+        .jump-link { @include u-button-z; }
+    }
+
+    // Empty
+
+    .p-base-empty { margin: $leading; text-align: center; }
+
+} // END p-base-a

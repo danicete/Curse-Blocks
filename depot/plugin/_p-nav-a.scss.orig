@@ -1,0 +1,194 @@
+﻿// ★★ Plugin -> Nav (p-nav-a) ★★
+//
+// ✎ Standard horizontal navigation with block menu items
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//     - Item (p-nav-item)
+//     - Search (p-nav-search)
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+// 
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin p-nav-a (
+    $db-nav: $db-nav
+) {
+
+    @include group;
+
+    background: $navBg;
+
+    // Item
+    
+    .p-nav-item {
+        @include u-dropDown-z;
+
+        > a {
+            @include font($font-weight: $navItem-fontWeight, $font-size: $navItem-fontSize, $text-transform: $navItem-textTransform, $font-family: $navItem-fontFamily);
+            background: $navItem-bg;
+            border: $navItem-border;
+            border-right-width: 0;
+            color: $navItem-color;
+            display: block;
+            padding: $navItem-padding;
+            text-align: center;
+            @include textShadow($navItem-textShadow);
+
+            &:hover { background-color: $navItem-bg-hover; color: $navItem-color-hover; }
+        }
+
+        &:last-child > a { border-right-width: 1px; } // Reinsert last border
+
+        // DropDown
+
+        &.section {
+            
+            > a {
+
+                &:after {
+                    border-left: 5px solid transparent;
+	                border-right: 5px solid transparent;
+	                border-top: 6px solid $navItem-color;
+                    content: "";
+                    display: inline-block;
+	                height: 0;
+                    margin-left: 6px;
+                    width: 0;
+                }
+
+                &:hover {
+
+                    &:after { border-top-color: $navItem-color-hover; }
+                }
+            }
+
+            > ul {
+                display: block;
+                min-width: 100%;
+				a { padding: $navItemDropDown-padding; text-align: left; }
+				li > span { padding: $navItemDropDown-padding; display: block; background: $tertiaryColor; font: $navItem-font; color: $font-colorTertiary; } 
+                .section > a {
+                    &:after {
+                        border-left: 5px solid $navItem-color;
+	                    border-top: 5px solid transparent;
+	                    border-bottom: 5px solid transparent;
+                        content: "";
+                        display: inline-block;
+	                    height: 0;
+                        margin-left: 6px;
+                        width: 0;
+                        position: absolute;
+                        right: 6px;
+                    }
+                }
+                > li { display: block; float: none; }
+            }
+            &:hover > a { background-color: $navItem-bg-hover; } 
+        }
+    }
+
+    @if ($db-nav) {
+        position: relative;
+        clear: left;
+
+        // Item
+        .p-nav-item {
+            &.active > a { background-color: $navItem-bg-hover; color: $navItem-color-hover; }
+            > a {
+                text-shadow: $navItem-textShadow;
+                border: none;
+            }
+            &#nav-feedback > a { background: $navItem-bg, $navItem-bg; background-position: left center, right center; &:hover { background-color: $navItem-bg-hover; } }
+            
+            // Dropdowns
+            &.section ul { display: none; } // kill due to JS dropdown
+            &.section > a:hover ul { display: none; } // kill due to JS dropdown
+            
+            ul {
+                padding: 0;
+                background-color: $navItem-bg-hover;
+                border: $navItem-border;
+                border-bottom-width: 3px;
+                border-top-width: 0;
+                a { border: none; background: none; }
+                li { border-top: $navItem-border; @include boxShadow(inset 0 1px 0 rgba(255,255,255,.1)); } //&:first-child { border-top: none; @include boxShadow(none); } }
+                > li ul {
+                    border-top-width: 1px;  
+                }
+            }
+            & + .p-nav-item {
+                > a { border-left: none; }
+            }
+		    &.b-search-a { 
+			    float: right;  			    
+                form { margin: 5px; margin-right: 0; }
+                input[type=search] { width: 250px; }
+                .b-search-submit { display: none; }
+		    }
+            &.section > ul { width: $navItem-width; }
+        }      
+        .b-list_float .b-list-item + .b-list-item { margin: 0; padding: 0; } 
+    }
+
+} // END p-nav-a
+
+// JS Dropdowns
+.dropdown {
+    padding: 0;
+    position: absolute;
+    z-index: 99;
+
+    a { border: none; background: none; }
+
+    // Column (base)
+
+    .column {
+        float: left; // Lets column break when necessary
+        width: $navItem-width;
+        border: $navItem-border;
+        border-bottom-width: 3px;
+        border-top-width: 0;
+        background-color: $navItem-bg-hover;
+        > p { 
+            border-top: $navItem-border; 
+            @include boxShadow(inset 0 1px 0 rgba(255,255,255,.1)); 
+            margin: 0; // Reset
+            a {
+                padding: $navItemDropDown-padding; 
+                color: $navItem-color;
+                text-align: left;
+                display: block;
+                position: relative;
+            }
+            &.dropdown-hover a { background-color: $navItem-bg-hover; color: $navItem-color-hover; }            
+       }
+       > h3 { padding: $navItemDropDown-padding; display: block; background: $tertiaryColor; font: $navItem-font; color: $fontColor-tertiary; border-top: $navItem-border; margin: 0; }        
+       .has-submenu > a {
+            &:after {
+                border-left: 5px solid $navItem-color;
+	            border-top: 5px solid transparent;
+	            border-bottom: 5px solid transparent;
+                content: "";
+                display: inline-block;
+	            height: 0;
+                margin-left: 6px;
+                width: 0;
+                position: absolute;
+                right: 6px;
+                top: 7px;
+            }
+        }
+    }
+}

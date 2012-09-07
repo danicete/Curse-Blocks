@@ -1,0 +1,38 @@
+﻿// ★★ Grid -> Grid A (grid-a) ★★
+//
+// ✎ WIDTH: 1000px | #COLS: 12 | COL WIDTH: 63px | COL PADDING: 12px | GUTTER: 20px
+//
+// ⌚ v1.0 (02/07/12)
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+////
+
+// Grid Makeup
+
+$width: 100% !default;
+$cols: 12 !default;
+$col-gutter: 2.05% !default;
+$actual-pix: 976px !default;
+
+// Grid Calculator
+
+$col_width: ($width - ($col-gutter * ($cols - 1))) / $cols;
+$col_total_width: $col-width + $col-gutter;
+
+@mixin col($n: 1) { float: left; @include span($n); }
+
+@mixin span($n: 1) {
+    width: ($n * $col-width) + (($n - 1) * $col-gutter);
+
+    .ie7 & { width: ($n * $col-width) + (($n - 1) * $col-gutter) - 1%; }
+
+    @if $n == $cols {
+        margin-left: 0;
+    } @else {
+        margin-left: $col-gutter;
+    }
+}

@@ -1,0 +1,268 @@
+﻿// ************************************************************************************************************************
+// * Plugin -> Article (p-article-a)                                                                                      *
+// *                                                                                                                      *
+// * Sub-Classes:                                                                                                         *
+// *    - Null                                                                                                            *
+// ************************************************************************************************************************
+
+// --------------------------------------------------------- //
+// 1.) Mixin                                                   
+// --------------------------------------------------------- //
+
+@mixin p-article-a {
+
+    @include group;
+
+    background: $articleBg;
+    border-bottom: $articleBorder-divider;
+    @include borderRadius($articleBorder-radius);
+    margin-bottom: $leading * 2;
+    padding: $articlePadding;
+    padding-bottom: $articlePadding-bottom;
+    position: relative;
+
+    // Title
+
+    .p-article-title { margin: 0  35px + $leading / 2 .15em 0; }
+
+    // Byline
+
+    .p-article-byline {
+        font-size: $font-sizeSmaller;
+        margin-bottom: $leading;
+        color: $font-colorDarker;
+
+        // b-list
+
+        .b-list { position: static; } // Reset position value for comment positioning
+
+        // Category
+
+        .u-icon-category:first-child { display: inline-block; text-indent: -9999px; width: 0; }
+
+        // Comments
+
+        .p-article-comments {
+            @include u-glyph-speechBubble;
+            float: none;
+            padding: 0;
+            position: absolute;
+            top: $articlePadding; right: $articlePadding;
+            
+            > a {
+                color: $glyphFont-color;
+                display: block;
+                line-height: 20px;
+                overflow: hidden;
+                padding: 4px 6px;
+                text-overflow: ellipsis;
+                max-width: 35px;
+                white-space: nowrap;
+
+                &:hover { color: $glyphFont-color-hover; }
+            }
+        }
+    }
+
+    // Content
+
+    .p-article-content { margin-bottom: $leading; }
+
+    // Footer
+
+    .p-article-footer { clear: both; margintop: $leading * 2; }
+
+    // Post Meta
+
+    .p-article-meta { @include group; }
+
+    // Jump Link
+
+    .p-article-jump {
+        float: left;
+        width: 25%;
+
+        > a {
+            @include u-button-z;
+            font-weight: bold;
+
+            // Arrow
+
+            &:after { content: " \00BB"; }
+        }
+    }
+
+    // Tags
+
+    .p-article-tags {
+        float: right;
+        max-width: 70%;
+                
+        // b-tag
+
+        .b-tag-item {
+            float: right;
+            margin: 4px 4px 0 0;
+
+            > a { @include u-glyph-box; }
+        }
+
+        // If details page
+
+        .body-category-itemdetails & {
+            float: none; // No jump link, so take up space
+            max-width: none;
+
+            .b-tag-item { float: left; }
+        }
+    }
+
+    // Post Interaction
+
+    .p-article-interact {
+        @include group;
+        background: $articleInteract-bg;
+        border: $articleBorder;
+        color: $box-fontColor;
+        @include borderRadius($border-radius);
+        margin: $leading / 2 0 0;
+        padding: $articleInteract-padding;
+
+        // Comments
+
+        .p-article-comments {
+            float: right;
+
+            a { color: $box-fontColor; }
+
+            a:first-of-type {
+                @include u-glyph-speechBubble;
+                vertical-align: baseline; // Reset inline-block mixin in speech bubble
+            }
+        }
+    }
+
+    // Social
+
+	.p-article-social {
+		@include group;
+
+        .social-sharing { margin-bottom: 0; }
+        .social-share { float: left; height: 20px; }
+        & + .p-article-tags { padding-top: 2px; }
+	}
+    
+    // Pagination
+
+    .b-pagination { padding-left: 0; }
+
+    // Table of Contents (Page Break)
+
+    .p-article-content-pagebreak { 
+        padding-left: 70px;
+        min-height: 440px;
+
+        > .post-table-of-contents  {
+            background: $articleToC-bg;
+            @include boxShadow($articleToC-boxShadow);
+            position: absolute;
+            left: -55px;
+            width: 110px;
+            z-index: 2;
+           
+            ul { 
+                list-style: none;
+                margin: 0; 
+                padding: 3px 0;
+                li { 
+                    margin: 0; 
+                    position: relative;
+                    text-align: right;
+                    a { display: block; padding: 4px 16px 4px 20px; }
+                    &.current { 
+                        font-weight: bold;
+
+                        a { text-decoration: underline; background: lighten($articleToC-bg,5%);  }
+
+                        &:after {
+                            border-width: 6px 0 6px 6px;
+                            border-style: solid;
+                            border-color: transparent transparent transparent lighten($articleToC-bg,5%);
+                            content:'';
+                            position: absolute;
+                            right: -6px; top: 7px;
+                        }  
+                    }
+                } 
+
+                a {
+                    display: block;
+                    color: $articleToC-font-color;
+                    &:hover { text-decoration: underline; }
+                } 
+            }
+        }
+
+        // If running site skin & fallbacks
+
+        .ad-skin &,
+        .ie7 & {
+            padding-left: 130px;
+
+            .post-table-of-contents { left: $articlePadding; }
+        }
+    }
+
+    // Audio (Podcast)
+
+    &.p-article_audio {
+        
+        // Duration
+
+        .duration { margin-left: 10px; }
+
+        // Footer
+
+        .p-article-footer {
+            background: $articleAudio-bg;
+            border: $articleBorder;
+            @include borderRadius($articleBorder-radius);
+            padding: $articleInteract-padding;
+        }
+
+        // Show Notes & Download
+                
+        .show-notes,
+        .download {
+            @include inline-block;
+
+            > a { @include u-button-z; }
+        }
+
+        // Comments
+
+        .p-article-comments {
+            float: right;
+            margin-top: 2px;
+
+            > a { @include u-glyph-speechBubble; }
+        }
+    }
+
+} // END p-article-a
+
+// Temp media query
+
+@media all and (max-width: 1000px) {
+    body { // Body tag is temp
+
+        .p-article-a {
+
+            .p-article-content-pagebreak {
+                padding-left: 130px;
+
+                .post-table-of-contents { left: $articlePadding; }
+            }
+        }
+    }
+}

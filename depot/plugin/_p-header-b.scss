@@ -1,0 +1,71 @@
+﻿// ★★ Plugin -> Header (p-header-b) ★★
+//
+// ✎ Header containing left logo and right navigation
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//     - Null
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+// 
+// ------------------------------------------------------------------------------------------
+
+// Mixin
+// ------------------------------------------------------------------------------------------
+
+@mixin p-header-b {
+    @include group;
+
+    background: $headerBg;
+    margin-bottom: $leading;
+    position: relative;
+
+    // Logo
+
+    h1 { margin: 0; } // Base reset
+
+    // Logo
+
+    .logo {
+        > a {
+            background: $headerLogo;
+            display: block;
+            float: left;
+            height: $headerLogo-height;
+            text-indent: -9999px;
+            width: $headerLogo-width;
+        }
+    }
+
+    // Index View
+
+    .body-home-index & {
+        background: transparent none;
+        margin-bottom: 0;
+        // Hide Header Search & nav (Unique search used on Home/Index.aspx)
+        .p-nav-a,
+        .p-header-search { display: none; }
+
+        // Logo
+        .logo {
+            > a {
+                background: $headerLogoBig;
+                display: block;
+                float: none;
+                height: $headerLogoBig-height;
+                margin: 20px auto 5px;
+                text-indent: -9999px;
+                width: $headerLogoBig-width;
+            }
+        }
+    }
+
+} // END p-header-a

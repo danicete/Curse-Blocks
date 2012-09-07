@@ -1,0 +1,36 @@
+﻿// ★★ Block -> Search (b-search-a) ★★
+
+// ✎ Standard, horizontal search area
+
+// ⌚ Level 1.00 (05/08/12)
+
+// ☍ Components:
+//     - Input (b-search-input)
+//     - Submit (b-search-submit)
+//     - Advanced (b-search-advanced)
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin b-search-a {
+    
+    @include group;
+
+    margin-bottom: $leading;
+
+    // Input // Submit // Advanced
+
+    .b-search-input,
+    .b-search-submit,
+    .b-search-advanced { @include inline-block; }
+
+} // END b-search-a

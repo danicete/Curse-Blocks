@@ -1,0 +1,65 @@
+﻿// ★★ Plugin -> Nav (p-nav-b) ★★
+//
+// ✎ Standard vertical navigation with block menu items
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//     - Item (p-nav-item)
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+// 
+// --------------------------------------------------------- //
+
+$navBorder: $box-border !default;
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin p-nav-b {
+
+    @include group;
+
+    // Item
+
+    .p-nav-item {
+        
+        > a {
+            background: $navItem-bg;
+            border: $navBorder;
+            border-bottom-width: 0;
+            display: block;
+            font-weight: bold;
+            padding: $navItem-padding;
+            text-align: center;
+        }
+
+        &:last-child { > a { border-bottom-width: 1px; } }
+
+        &.selected {
+            
+            > a {
+                background: $navItem-bg-selected;
+                border: $navItem-border-selected;
+                border-bottom-width: 0;
+                color: $navItem-color-selected;
+            }
+
+            &:last-child { > a { border-bottom: $navItem-border-selected; } }
+
+            & + .p-nav-item {
+        
+                > a { border-top: $navItem-border-selected; }
+            }
+        }
+    }
+
+} // END p-nav-b

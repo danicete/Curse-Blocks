@@ -1,0 +1,309 @@
+﻿// ************************************************************************************************************************
+// * Configuration                                                                                                        *
+// ************************************************************************************************************************
+
+// --------------------------------------------------------- //
+// 1.) Imports                                                 
+// --------------------------------------------------------- //
+    
+    // Vabiables
+
+    @import "package/base/vars"; // Base
+	@import "package/news-forum/vars"; // News-Forum
+    @import "package/guide/vars"; // Guide
+    @import "package/database/vars"; // Database
+    @import "package/tournament/vars"; // Tournament
+
+    // Temp (Utilities)
+
+    @import "shared";
+
+    // Grid
+
+    @import "depot/grid/grid-a";
+
+    // Blocks
+
+    @import "depot/block/b-breadcrumb-a";
+    @import "depot/block/b-definition-a";
+    @import "depot/block/b-figure-a";
+    @import "depot/block/b-gallery-a";
+    @import "depot/block/b-infograph-a";
+    @import "depot/block/b-infograph-b";
+    @import "depot/block/b-list-a";
+    @import "depot/block/b-list-b";
+    @import "depot/block/b-media-a";
+    @import "depot/block/b-pagination-a";
+    @import "depot/block/b-pagination-b";
+    @import "depot/block/b-pagination-c";
+    @import "depot/block/b-poll-a";
+    @import "depot/block/b-rating-a";
+    @import "depot/block/b-search-a";
+    @import "depot/block/b-search-b";
+    @import "depot/block/b-shoutbox-a";
+    @import "depot/block/b-social-a";
+    @import "depot/block/b-tab-a";
+    @import "depot/block/b-tab-b";
+    @import "depot/block/b-table-a";
+    @import "depot/block/b-tag-a";
+    @import "depot/block/b-tagCloud-a";
+    @import "depot/block/b-userAction-a";
+
+    // Plugins
+
+    @import "depot/plugin/p-article-a";
+    @import "depot/plugin/p-attachments-a";
+    @import "depot/plugin/p-avatar-select-a";
+    @import "depot/plugin/p-base-a";
+    @import "depot/plugin/p-base-b";
+    @import "depot/plugin/p-browser-a";
+    @import "depot/plugin/p-browser-b";
+    @import "depot/plugin/p-comments-a";
+    @import "depot/plugin/p-comments-b";
+    @import "depot/plugin/p-filters-a";
+    @import "depot/plugin/p-forum-a";
+    @import "depot/plugin/p-header-a";
+    @import "depot/plugin/p-header-b";
+    @import "depot/plugin/p-gallery-a";
+    @import "depot/plugin/p-guide-a";
+    @import "depot/plugin/p-infractions-a";
+    @import "depot/plugin/p-login-a";
+    @import "depot/plugin/p-mapper-a";
+    @import "depot/plugin/p-nav-a";
+    @import "depot/plugin/p-nav-b";
+    @import "depot/plugin/p-notifications-a";
+    @import "depot/plugin/p-pm-a";
+    @import "depot/plugin/p-user-a";
+    @import "depot/plugin/p-result-a";
+    @import "depot/plugin/p-streams-a";
+    @import "depot/plugin/p-talentCalc-a";
+    @import "depot/plugin/p-tournament-a";
+    @import "depot/plugin/p-widget-a";
+
+    // Themes
+
+    @import "depot/theme/t-netbar";
+    @import "depot/theme/t-footer";
+    @import "depot/theme/t-ad";
+
+// --------------------------------------------------------- //
+// 2.) Components                                           
+// --------------------------------------------------------- //
+
+    @mixin components(
+
+        // Block
+
+        $breadcrumb: false,
+        $definition: false,
+        $figure: false,
+        $gallery: false,
+        $infograph: false,
+        $list: false,
+        $media: false,
+        $pagination: false,
+        $poll: false,
+        $rating: false,
+        $search: false,
+        $shoutbox: false,
+        $social: false,
+        $tab: false,
+        $table: false,
+        $tag: false,
+        $tagCloud: false,
+        $userAction: false,
+
+        // Plugin
+
+        $article: false,
+        $attachments: false,
+        $avatar: false,
+        $base: false,
+        $browser: false,
+        $comments: false,
+        $filters: false,
+        $forum: false,
+        $guide: false,
+        $header: false,
+        $infractions: false,
+        $login: false,
+        $mapper: false,
+        $nav: false,
+        $notifications: false,
+        $pm: false,
+        $result: false,
+        $streams: false,
+        $talentCalc: false,
+        $tournament: false,
+        $user: false,
+        $widget: false
+
+    ) {
+
+        //// BLOCK
+
+        // Breadcrumbs
+
+        @if ($breadcrumb) { .b-breadcrumb-a { @include b-breadcrumb-a; } }
+
+        // Definition
+
+        @if ($definition) { .b-definition-a { @include b-definition-a; } }
+
+        // Breadcrumbs
+
+        @if ($figure) { .b-figure-a { @include b-figure-a; } }
+
+        // Gallery
+
+        @if ($gallery) { .b-gallery-a { @include b-gallery-a; } .p-gallery-a { @include p-gallery-a; } }
+
+        // Infograph
+
+        @if ($infograph) { .b-infograph-a { @include b-infograph-a; } .b-infograph-b { @include b-infograph-b; } }
+
+        // List
+
+        @if ($list) { .b-list-a { @include b-list-a; } .b-list-b { @include b-list-b; } }
+
+        // Media
+
+        @if ($media) { .b-media-a { @include b-media-a; } }
+
+        // Pagination
+
+        @if ($pagination) { .b-pagination-a { @include b-pagination-a; } .b-pagination-b { @include b-pagination-b; } .b-pagination-c { @include b-pagination-c; } }
+
+        // Poll
+
+        @if ($poll) { .b-poll-a { @include b-poll-a; } }
+
+        // Rating
+
+        @if ($rating) { } // Null
+
+        // Search
+
+        @if ($search) { .b-search-a { @include b-search-a; } .b-search-b { @include b-search-b; } }
+
+        // Shoutbox
+
+        @if ($shoutbox) { .b-shoutbox-a { @include b-shoutbox-a; } }
+
+        // Social
+
+        @if ($social) { .b-social-a { @include b-social-a; } }
+
+        // Tab
+
+        @if ($tab) { .b-tab-a { @include b-tab-a; } .b-tab-b { @include b-tab-b; } }
+
+        // Table
+
+        @if ($table) { .b-table-a { @include b-table-a; } }
+
+        // Tag
+
+        @if ($tag) { .b-tag-a { @include b-tag-a; } }
+
+        // Tag Cloud
+
+        @if ($tagCloud) { .b-tagCloud-a { @include b-tagCloud-a; } }
+
+        // User Action
+
+        @if ($userAction) { .b-userAction-a { @include b-userAction-a; } }
+
+        //// PLUGIN
+
+        // Article
+
+        @if ($article) { .p-article-a { @include p-article-a; } }
+
+        // Attachments
+
+        @if ($attachments) { .p-attachments-a { @include p-attachments-a; } }
+
+        // Avatar Select
+
+        @if ($avatar) { .p-avatar-select-a { @include p-avatar-select-a; } }
+
+        // Base
+
+        @if ($base) { .p-base-a { @include p-base-a; } .p-base-b { @include p-base-b; } }
+
+        // Browser
+
+        @if ($browser) { .p-browser-a { @include p-browser-a; } .p-browser-b { @include p-browser-b; } }
+
+        // Comments
+
+        @if ($comments) { .p-comments-a { @include p-comments-a; } .p-comments-b { @include p-comments-b; } }
+
+        // Filters
+
+        @if ($filters) { .p-filters-a { @include p-filters-a; } }
+
+        // Forum
+
+        @if ($forum) { .p-forum-a { @include p-forum-a; } }
+
+        // Guide
+
+        @if ($guide) { .p-guide-a { @include p-guide-a; } }
+
+        // Header
+
+        @if ($header) { .p-header-a { @include p-header-a; } .p-header-b { @include p-header-b; } }
+
+        // Infractions
+
+        @if ($infractions) { .p-infractions-a { @include p-infractions-a; } }
+
+        // Login
+
+        @if ($login) { .p-login-a { @include p-login-a; } .p-login-b { @include p-login-b; } }
+
+        // Mapper
+
+        @if ($mapper) { .p-mapper-a { @include p-mapper-a; } }
+
+        // Nav
+
+        @if ($nav) { .p-nav-a { @include p-nav-a; } .p-nav-b { @include p-nav-b; } }
+
+        // Notifications
+
+        @if ($notifications) { .p-notifications-a { @include p-notifications-a; } }
+
+        // Private Messages
+
+        @if ($pm) { .p-pm-a { @include p-pm-a; } }
+
+        // Profile
+
+        @if ($user) { .p-user-a { @include p-user-a; } }
+
+        // Result
+
+        @if ($result) { @include p-result-a; }
+
+        // Streams
+
+        @if ($streams) { .p-streams-a { @include p-streams-a; } }
+
+        // Talent Calculator
+
+        @if ($talentCalc) { .p-talentCalc-a { @include p-talentCalc-a; } }
+
+        // Tournament
+
+        @if ($tournament) { .p-tournament-a { @include p-tournament-a; } }
+
+        // Widget
+
+        @if ($widget) { .p-widget-a { @include p-widget-a; } }
+
+    }
+
+// END configuration

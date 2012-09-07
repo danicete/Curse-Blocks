@@ -1,0 +1,131 @@
+﻿// Block -> List (b-list-b)
+//
+// ✎ Vertical, connecting block list
+//
+// ⌚ Level 1.00 (05/04/12)
+//
+// ☍ Components:
+//     - Button (b-list-button)
+//     - Comment (b-list-comment)
+//     - Item (b-list-item)
+//     - Time (b-list-time)
+//     - Title (b-list-title)
+//
+// ☆ Sub-Classes:
+//     - Comments (b-list_comments)
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+//
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin b-list-b {
+
+    // Item
+
+    .b-list-item {
+        @include group;
+        position: relative;
+
+        & + .b-list-item {
+            border-top: $listBorder;
+            margin-top: $listPadding / 2;
+            padding-top: $listPadding / 2;
+        }
+
+        > a:only-of-type { @include group; display: block; }
+    }
+
+    // Time
+
+    .b-list-time { position: absolute; top: 0; right: 0; }
+
+    // Button
+
+    .b-list-button { position: absolute; top: 0; right: 0; }
+
+    //// ☆ Sub-Classes ☆
+
+    // Comments
+
+    &.b-list_comments {
+
+        // Title & Meta
+
+        .b-list-title,
+        .b-list-meta {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        // Comment
+
+        .b-list-comment {
+            float: right;
+            margin-left: 1em;
+            position: relative;
+
+            > a { @include u-glyph-speechBubble; }
+        }
+    }
+
+	// Videos
+
+	&.b-list_videos {
+		
+		// Title
+
+		.b-list-title {
+			overflow: hidden;
+            text-overflow: ellipsis;
+		}
+
+		// Thumb 
+
+		.b-list-thumb {
+			float: left;
+			margin-right: 10px;
+			&.b-list-thumb-110_62 {
+				width: 110px;
+				height: 58px;
+				overflow: hidden;
+				position: relative;
+				> img { position: absolute; top: -9px; left: 0; }
+			}
+		}
+
+
+		// Time
+
+		.b-list-time {
+			position: relative;
+			top: 0;
+			left: 0;
+			display: block;
+			font-size: $font-sizeSmaller;
+		}
+
+		// Views
+
+		.b-list-view {
+			display: block;
+			font-size: $font-sizeSmaller;
+		}
+
+		// Date
+
+		.b-list-date {
+			display: block;
+			font-size: $font-sizeSmaller;
+		}
+	}
+
+} // END b-list-b

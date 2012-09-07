@@ -1,0 +1,43 @@
+﻿// ★★ Plugin -> Avatar Selection (p-avatar-select-a) ★★
+
+// ✎ Generic base plugin for Avatar selection
+
+// ⌚ Level 1.00 (02/017/12)
+
+// ☍ Components:
+//     - Null
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin p-avatar-select-a {
+	@include group;
+	.p-avatar-upload {
+		@include col(4);
+		margin-left: 0;
+		.user-selection,
+		.current-avatar { margin-bottom: 10px; }
+	}
+	.p-avatar-list {
+		@include col(8);
+        .b-list-item { 
+            height: 60px; width: 60px; margin-bottom: 20px; padding: 0;
+            > a { 
+                width: 60px; height: 60px; 
+                .u-clip { border: 3px solid transparent; }
+            }
+            a:hover .u-clip,
+            &.avatar-selected .u-clip { border-color: $link-color; }
+        }
+        .user-avatar-delete-link { text-align: center; font-size: 11px; display: block; }
+	}
+
+} // END p-avatar-select-a

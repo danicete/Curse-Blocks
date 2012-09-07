@@ -1,0 +1,286 @@
+﻿// ************************************************************************************************************************
+// * Plugin -> Article (p-article-a)                                                                                      *
+// *                                                                                                                      *
+// * Sub-Classes:                                                                                                         *
+// *    - Null                                                                                                            *
+// ************************************************************************************************************************
+
+// --------------------------------------------------------- //
+// 1.) Mixin                                                   
+// --------------------------------------------------------- //
+
+@mixin p-article-a {
+
+    @include group;
+
+    background: $articleBg;
+    border-bottom: $articleBorder-divider;
+    @include borderRadius($articleBorder-radius);
+    margin-bottom: $leading * 2;
+    padding: $articlePadding;
+    padding-bottom: $articlePadding-bottom;
+    position: relative;
+
+    // User Authentication
+
+    .user-authenticated.body-category-itemdetails & {
+        padding-top: $leading * 2;
+
+            .b-userAction {
+                padding: 6px 0 0;
+                position: absolute;
+                top: -($leading * 2); right: 0;
+
+                .b-userAction-item { > a { @include u-button-z; } }
+            }
+    }
+
+    // Header
+
+    .p-article-header { margin-bottom: $leading; position: relative; }
+
+    // Title
+
+    .p-article-title { margin: 0  35px + $leading / 2 .15em 0; }
+
+    // Byline
+
+    .p-article-byline {
+        margin-bottom: $leading;
+
+        // b-list
+
+        .b-list { position: static; } // Reset position value for comment positioning
+
+        // Category
+
+        .u-icon-category:first-child { display: inline-block; text-indent: -9999px; width: 0; }
+
+        // Comments
+
+        .p-article-comments {
+            @include u-glyph-speechBubble;
+            float: none;
+            padding: 0;
+            position: absolute;
+            top: $articlePadding; right: $articlePadding;
+            
+            > a {
+                color: $glyphFont-color;
+                display: block;
+                line-height: 20px;
+                overflow: hidden;
+                padding: 4px 6px;
+                text-overflow: ellipsis;
+                max-width: 35px;
+                white-space: nowrap;
+
+                &:hover { color: $glyphFont-color-hover; }
+            }
+        }
+
+        // Rating
+
+        .p-article-rating { margin-left: 1em; }
+    }
+
+    // Content
+
+    .p-article-content { margin-bottom: $leading; }
+
+    // Footer
+
+    .p-article-footer { clear: both; margintop: $leading * 2; }
+
+    // Post Meta
+
+    .p-article-meta { @include group; }
+
+    // Jump Link
+
+    .p-article-jump {
+        float: left;
+        width: 25%;
+
+        > a {
+            @include u-button-z;
+            font-weight: bold;
+
+            // Arrow
+
+            &:after { content: " \00BB"; }
+        }
+    }
+
+    // Tags
+
+    .p-article-tags {
+        float: right;
+        max-width: 70%;
+                
+        // b-tag
+
+        .b-tag-item {
+            float: right;
+            margin: 4px 4px 0 0;
+
+            > a { @include u-glyph-box; }
+        }
+
+        // If details page
+
+        .body-category-itemdetails & {
+            float: none; // No jump link, so take up space
+            max-width: none;
+
+            .b-tag-item { float: left; }
+        }
+    }
+
+    // Post Interaction
+
+    .p-article-interact {
+        @include group;
+        background: $articleInteract-bg;
+        border: $articleBorder;
+        color: $box-fontColor;
+        @include borderRadius($border-radius);
+        margin: $leading / 2 0 0;
+        padding: $articleInteract-padding;
+
+        // Comments
+
+        .p-article-comments {
+            float: right;
+
+            a { color: $box-fontColor; }
+
+            a:first-of-type {
+                @include u-glyph-speechBubble;
+                vertical-align: baseline; // Reset inline-block mixin in speech bubble
+            }
+        }
+    }
+
+    // Social
+
+	.p-article-social {
+		@include group;
+
+        & + .p-article-tags { padding-top: 2px; }
+	}
+    
+    // Pagination
+
+    .b-pagination { padding: $leading 0; }
+
+    // Table of Contents (Page Break)
+
+    .p-article-content-pagebreak { 
+
+        > .post-table-of-contents  {
+            background: $articleToC-bg;
+            border-top: $articleToC-border;
+            @include boxShadow($articleToC-boxShadow);
+            padding: $articleToC-padding;
+           
+            ul {
+                list-style: decimal inside;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                width: 100%;
+
+                li {
+                    font-size: $font-sizeSmaller;
+                    margin-left: 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    width: 33%;
+
+                    // Fallback 1 of 1
+
+                    .ie7 & { display: list-item; } // ie7 decimal bug
+
+                    &:nth-child(11n),
+                    &:nth-child(11n) ~ li { margin-left: 33%; padding-left: .5em; position: absolute; }
+
+                    &:nth-child(11n) { top: 0; }
+                    &:nth-child(12n) { top: $leading ; }
+                    &:nth-child(13n) { top: $leading * 2; }
+                    &:nth-child(14n) { top: $leading * 3; }
+                    &:nth-child(15n) { top: $leading * 4; }
+                    &:nth-child(16n) { top: $leading * 5; }
+                    &:nth-child(17n) { top: $leading * 6; }
+                    &:nth-child(18n) { top: $leading * 7; }
+                    &:nth-child(19n) { top: $leading * 8; }
+                    &:nth-child(20n) { top: $leading * 9; }
+
+                    &:nth-child(21n),
+                    &:nth-child(21n) ~ li { margin-left: 66% !important; } // Important is temporary
+
+                    &:nth-child(21n) { top: 0; }
+                    &:nth-child(22n) { top: $leading ; }
+                    &:nth-child(23n) { top: $leading * 2; }
+                    &:nth-child(24n) { top: $leading * 3; }
+                    &:nth-child(25n) { top: $leading * 4; }
+                    &:nth-child(26n) { top: $leading * 5; }
+                    &:nth-child(27n) { top: $leading * 6; }
+                    &:nth-child(28n) { top: $leading * 7; }
+                    &:nth-child(29n) { top: $leading * 8; }
+                    &:nth-child(30n) { top: $leading * 9; }
+
+                    a {
+                        color: $articleToCFont-color;
+
+                        &:hover { color: $articleToCFont-colorSelected; }
+                    } 
+
+                    &.current { 
+                        font-weight: bold;
+
+                        a { color: $articleToCFont-colorSelected; }
+                    }
+                } 
+            }
+        }
+    }
+
+    // Audio (Podcast)
+
+    &.p-article_audio {
+        
+        // Duration
+
+        .duration { margin-left: 10px; }
+
+        // Footer
+
+        .p-article-footer {
+            background: $articleAudio-bg;
+            border: $articleBorder;
+            @include borderRadius($articleBorder-radius);
+            padding: $articleInteract-padding;
+        }
+
+        // Show Notes & Download
+                
+        .show-notes,
+        .download {
+            @include inline-block;
+
+            > a { @include u-button-z; }
+        }
+
+        // Comments
+
+        .p-article-comments {
+            float: right;
+            margin-top: 2px;
+
+            > a { @include u-glyph-speechBubble; }
+        }
+    }
+
+} // END p-article-a

@@ -1,0 +1,95 @@
+﻿// Temporary holding
+
+.star-rating,
+.star-rating input:hover,
+.star-rating li.current-rating
+{
+	background: url("#{$imageURL-core}/ui/star-rating.png") 0 0 repeat-x;	
+}
+.star-rating
+{
+	position:relative;
+	list-style:none;
+	margin: 4px 0px 4px 0px;
+	background-position: left top;
+	padding:0 !important;
+	width:70px !important;
+	height:14px !important;
+	overflow:hidden !important;
+	display: block !important;
+	float: none !important;
+}
+.star-rating li
+{
+	display: block !important;
+	float: left;
+	background: none !important;
+	border: none !important;
+	position: relative;
+	line-height: normal !important;
+	margin: 0 !important;
+}
+ul.star-rating input
+{
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-indent: 9999px;
+	overflow: hidden;
+	height: 14px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: 0;
+	-webkit-appearance: none;
+}
+
+.star-rating input:hover,
+.star-rating input:active,
+.star-rating input:focus
+{
+	background-position: 0 -28px;
+}
+.star-rating input[disabled]
+{
+	display: none;
+}
+
+.star-rating li.one input
+{
+	width:14px !important;
+	z-index:6;
+}
+.star-rating li.two input
+{
+	width:28px !important;
+	z-index:5;
+}
+.star-rating li.three input
+{
+	width:42px !important;
+	z-index:4;
+}
+.star-rating li.four input
+{
+	width:56px !important;
+	z-index:3;
+}
+.star-rating li.five input
+{
+	width:70px !important;
+	z-index:2;
+}
+.star-rating li.current-rating
+{
+	z-index:1;
+	background-image: url("#{$imageURL-core}/ui/star-rating.png") !important;
+	background-position: 0 -14px !important;
+	text-indent: 9999px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	float: none;
+}	
+
+

@@ -1,0 +1,76 @@
+﻿//★★ Plugin -> Browser (p-browser-a) ★★
+
+// ✎ Horizontal Browser listing 
+
+// ⌚ v1.0 (12/20/11)
+
+// ▣ Block Support:
+//     - b-list-a
+//     - b-list_inlineBlock
+
+// ☍ Components:
+//     - Header (p-browser-header)
+//     - Item (p-browser-item)
+//     - Title (p-browser-title)
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - TBD
+
+//-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_ 
+
+@mixin p-browser-b {
+	@include group;
+
+	.b-list-b .b-list-item { 
+		@include boxShadow(none);
+		box-shadow: none; 
+		overflow: visible; 
+		background: none;
+		border: none;
+		padding: 0;
+		margin: 0;
+		&.b-list-thumb {
+			overflow: hidden;
+			position: relative; 
+			border: $browserThumb-border;
+            margin: 0 0 8px; 
+			@include boxShadow($browserThumbShadow);
+		}
+		&.b-list-thumb-140_80 { 
+			width: 140px; 
+			height: 80px; 
+		}
+		&.b-list-thumb-110_62 { 
+			width: 110px;
+			height: 62px; 
+		}
+        .u-clip { background: #000; }
+		.b-list-title { font-size: 12px; font-weight: bold; }
+	}
+	.listing > li { height: $browserThumb-height; width: $browserThumb-width; float: left; margin-right: 1%; margin-left: 1%;}
+
+	.b-list-item .b-list-view {
+		background: $browserThumbView-bg $browserThumbView-bg-image;
+		
+		@include borderRadius($border-radius);
+		@include boxShadow($browserThumbView-shadow);
+
+		border: 1px solid $browserThumbView-borderColor;
+		font-size: 10px;
+		font-weight: bold;
+		position: absolute;
+		top: 6px;
+		right: 6px;
+		color: $browserThumbView-fontColor;
+		z-index:2;
+		padding: 0 3px 0 16px; 
+		text-shadow: 0 -1px 1px rgba(0,0,0,.4);
+	}
+
+	.stream-time { font-size: 10px; color: $font-color; }
+	
+
+} // END p-browser-b

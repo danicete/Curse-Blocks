@@ -1,0 +1,51 @@
+﻿// Block -> Figure (b-figure-a)
+//
+// ✎ Standard figure element that contains an image and caption
+//
+// ⌚ Level 1.00 (05/03/12)
+//
+// ☍ Components:
+//     - Caption (b-figure-caption)
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - Opera
+//     - IE9/8/7
+//
+// --------------------------------------------------------- //
+
+@mixin b-figure-a {
+
+    @include inline-block;
+    width: $figure-width;
+    
+    // Image
+
+    img { display: block; }
+
+    // Caption
+
+    .caption {
+        background: $figureCaption-bg;
+        border: $figureCaption-border;
+        @include borderRadius($figureCaption-borderRadius);
+        @include boxShadow($figureCaption-boxShadow);
+        display: block;
+        @include font(
+            $font-weight: $figureFont-weight,
+            $font-size: $figureFont-size,
+            $line-height: $figureFont-lineHeight,
+            $font-family: $figureFont-family,
+            $text-transform: $figureFont-textTransform
+        );
+        margin: $figureCaption-margin;
+        padding: $figureCaption-padding;
+        text-align: center;
+    }
+
+} // END b-figure-a

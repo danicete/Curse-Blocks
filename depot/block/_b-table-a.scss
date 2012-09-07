@@ -1,0 +1,95 @@
+﻿// ★★ Block -> Table (b-table-a) ★★
+
+// ✎ UNIQUE - Rendered table layout in Cobalt
+
+// ⌚ Level 1.00 (02/17/12)
+
+// ☍ Components:
+//     - Null
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - TBD
+
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin b-table-a(
+    $db-table: $db-table
+) {
+    
+    // Header
+
+    th {
+        background-color: $tableHeader-bg-bottom;
+        @include backgroundGradient(linear-gradient(top, $tableHeader-bg-top, $tableHeader-bg-bottom));
+        border: $tableHeader-border;
+        padding: $tableHeader-padding;
+		color: $tableHeader-color;
+		.asc,
+		.desc { padding-right: 12px; padding-left: 12px; }
+		.asc.selected { background: $icon-asc }
+		.desc.selected { background: $icon-desc; }
+    }
+
+	th > a,
+	th > a:hover,
+	th > a:visited
+	{
+		color: $tableHeader-color;
+	}
+    // Content
+
+    td {
+        background: $table-bg;
+        @include boxShadow($tableCell-boxShadow);
+        border: $tableCell-border;
+        border-width: $tableCell-borderWidth;
+        border-width-top: 0;
+        padding: $tableCell-padding;
+        vertical-align: middle;
+
+        dd { margin-left: 0; }
+    }
+    tr:nth-child(even),
+    tr.odd {
+        td { background: $table-bgAlt; }
+    }
+
+    @if ($db-table) {
+		th {
+			text-align: center;
+			font-weight: bold;
+			&.col-name {
+				text-align: left;
+			}
+			a {
+				&:hover { text-decoration: underline; }
+			}
+		}
+        td {
+            text-align: center;
+			line-height: normal; 
+            &.col-name,
+            &:first-child { 
+                text-align: left;
+                // font-size: $fontSize-smaller; Needs refactoring
+				.listing-icon { float: none; @include inline-block; margin-right: 10px; }
+				.t { @include inline-block; font-size: $font-size; font-weight: bold; }
+                .model-view-link { &:hover { cursor: pointer; color: $link-colorHover; text-decoration: underline; } }          
+            }
+            .regeants img { width: 20px; height: 20px; }  
+			.subtext { font-size: 11px; color: lighten($font-color, 10%); display: block; }
+            p { margin: 0; }
+            a:hover { text-decoration: underline; }
+        }
+		&#achievements {
+			.listing-icon { float: left; margin-right: 10px; }
+			.listing-desc { display: block; float: left; .t { font-size: $font-size; font-weight: bold; }
+			.t { display: block; font-size: $font-size; font-weight: bold; }  
+		}
+    }
+    }
+
+} // END b-table-a

@@ -1,0 +1,204 @@
+﻿// ★★ Plugin -> Notifications (p-notifications-a) ★★
+
+// ✎ Standard horizontal navigation
+
+// ⌚ Level 1.00 (02/017/12)
+
+// ☍ Components:
+//     - Item (p-notification-item)
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+// ★★ Global Variables
+
+// Notifications menu
+#notifications {
+	position: absolute;
+	z-index: 3;
+	width: 320px;
+	background-color: $primaryColor;
+	font-size: 11px;
+	line-height: 14px;
+
+	.p-notification-item:hover {
+		background-color: lighten($secondaryColor, 50%);
+	}
+}
+
+// Notification Subscription buttons
+.user-action-p-notification-subscription-button {
+	position: relative;
+
+	> ul { position: absolute; left: -9999px; padding: 3px 0; width: 210px; text-align: left; }
+	&:hover { 
+		> ul { 
+			left: 0;
+		}
+	}
+	a {
+		&:hover { color: $link-color; }
+	}
+	& > a > span:after {
+		display: inline-block;
+		width: 0;
+		height: 0;
+		vertical-align: middle;
+		border-top: 4px solid $button-fontColor;
+		border-right: 4px solid transparent;
+		border-left: 4px solid transparent;
+		content: "";
+	}
+	.p-notification-subscription-links {
+		background-color: $secondaryColor;
+
+		.p-notification-subscription-link {
+			&:hover { background-color: lighten($secondaryColor,10%); }
+			a {
+				border: none;
+				background: inherit;
+				color: $font-colorSecondary;
+				display: block;
+				padding: 0 8px;
+			}
+		}
+	}
+}
+
+@mixin p-notifications-a {
+
+	// Header
+	header {
+		.user-actions { 
+			float: right; 
+			a { @include u-button-z; }
+		}
+	}
+
+	// Item
+	.p-notification-item {
+		@include group;
+		padding: 5px;		
+
+		.avatar-image {
+			float: left;
+			
+			.avatar {
+				width: 48px; // Can't use col(*) due to page rendering after js loading and browser inconsistencies
+			}
+
+			// Fallback 1 of 1
+
+			.ie7 & { width: 56px; }
+		}
+		
+		.content { margin-left: 48px; padding-left: 1em; }
+
+		a
+		{
+			color: $font-color;
+			display: block;
+			overflow: hidden;
+		}
+
+		p { margin-bottom: 0; }
+
+		.subject { margin-bottom: $leading / 2; }
+
+		p.preview {
+			font-size: 11px;			
+		}
+
+		p.date 
+		{
+			font-size: 11px;
+			text-align: right;				
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			abbr
+			{
+				border: none;
+			}
+		}
+
+		> ul {
+			margin-left: 55px;
+			min-height: 48px; // To match the height of the avatar
+			a.p-collapsed-notifications-count {
+				color: $link-color;
+			}
+			> li
+			{
+				position: relative;
+			}
+			> li > .p-collapsed-notifications {
+				display: none;
+			}	
+		}
+	}
+
+	// Listing
+	&.p-notification-items {
+		.p-notification-item {
+			border-bottom: 1px solid $box-borderColor;
+			&:hover { background-color: $unreadNotificationColor; }
+			&.unread {
+				background-color: $unreadNotificationColor;
+
+				a { color: $unreadNotificationFont-color; }
+
+				// Hover
+
+				&:hover {
+					background-color: transparent;
+
+					a { color: $font-color; }
+				}
+			}
+			p.date 
+			{
+				position: static;
+			}
+		}
+
+		border: 1px solid $secondaryColor;
+
+		header {
+			border-bottom: 1px solid $secondaryColor;
+			padding: 5px;
+		}
+
+		.p-all-notifications {
+			text-align: center;
+			margin-bottom: 8px;
+		}
+
+		ul.listing
+		{
+			margin-bottom: 8px;
+		}
+	}
+
+	// Big listing
+	&.p-notification-items-full {
+		h4 {
+			margin-bottom: 10px;
+			border-bottom: 1px solid $box-borderColor;
+		}
+
+		.p-notification-item p.subject
+		{
+			padding-right: 100px;
+		}
+	}
+
+} // END p-notifications-a

@@ -1,0 +1,118 @@
+﻿// ★★ Utility -> Icons (u-icon-z) ★★
+
+// ✎ UNIQUE - Standard icon mixin and sprite package
+
+// ⌚ Level 1.00 (04/03/12)
+
+// ☍ Components:
+//     - Null
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Testing Required
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+// ★★ Mixin
+
+@mixin u-icon-z {
+    display: inline-block;
+    height: 12px;
+    line-height: 0;
+    vertical-align: middle;
+    width: 12px;
+}
+
+.u-icon-z {
+
+    // DropDown
+
+    .u-icon-dropDown { @include u-icon-z; }
+
+} // END u-icon-z
+
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+// Next
+
+a.go-next {
+	background: $icon-goNext;
+	height: 10px;
+	width: 10px;
+	display: inline-block;
+	text-indent: -9999px;
+}
+
+// Streams
+
+.u-icon-stream {
+	background: $icon-streams;
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	vertical-align: text-top;
+}
+
+// Comments
+
+.p-comment-actions {
+	> ul { 
+		> li {
+			a { padding-left: $icon-ua-width !important; @include transition(none, 0s, linear !important); } // !importants are to override elementGoBoom!
+			a:hover { background-position: $icon-ua-hoverPosition !important; @include transition(none, 0s, linear !important); } // !importants are to override elementGoBoom!
+			a:active { background-position: $icon-ua-hoverPosition !important; @include transition(none, 0s, linear !important); } // !importants are to override elementGoBoom!
+			&.user-action-quote a {
+				background: $icon-ua-quote;
+                &:active { background: $icon-ua-quote; }
+			}
+			&.user-action-reply a {
+				background: $icon-ua-reply;
+                &:active { background: $icon-ua-reply; }
+			}
+			&.user-action-delete a {
+				background: $icon-ua-delete;
+                &:active { background: $icon-ua-delete; }
+			}
+			&.user-action-report a {
+				background: $icon-ua-report;
+                &:active { background: $icon-ua-report; }
+			}
+			&.user-action-edit a {
+				background: $icon-ua-edit;
+                &:active { background: $icon-ua-edit; }
+			}
+			&.user-action-edit-attachments a {
+				background: $icon-ua-edit-attachments;
+                &:active { background: $icon-ua-edit-attachments; }
+			}
+			&.user-action-spam a {
+				background: $icon-ua-spam;
+                &:active { background: $icon-ua-spam; }
+			}
+			&.user-action-not-spam a {
+				background: $icon-ua-not-spam;
+                &:active { background: $icon-ua-not-spam; }
+			}
+            &.user-action-warn a {
+				background: $icon-ua-warn;
+                &:active { background: $icon-ua-not-spam; }
+			}
+            &.user-action-warned a {
+				background: $icon-ua-warn;
+                font-weight: bold;
+                &:active { background: $icon-ua-not-spam; }
+			}
+            &.user-action-add-note a {
+				background: $icon-ua-add-note;
+                &:active { background: $icon-ua-add-note; }
+			}
+            &.user-action-remove-note a {
+				background: $icon-ua-remove-note;
+                &:active { background: $icon-ua-remove-note; }
+			}
+		}
+	}
+}

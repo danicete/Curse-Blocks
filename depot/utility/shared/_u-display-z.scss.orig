@@ -1,0 +1,92 @@
+﻿$display-counter: 0 !default;
+
+@while $display-counter < 1 {
+
+    // Utility -> Display (u-display-z)
+
+    // ✎ UNIQUE - Standard methods for display adjustments
+
+    // ⌚ Level 1.00 (04/19/12)
+
+    // ☍ Components:
+    //     - Null
+
+    // ☆ Sub-Classes:
+    //     - Null
+
+    // ☯ Browser Support:
+    //     - Testing Required
+ 
+    // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+    // Viewport - Center
+
+    .viewport-wrapper {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+
+        .viewport {
+            margin-left: -750px;
+            position: absolute;
+            top: 0; left: 50%;
+            text-align: center;
+            width: 1500px;
+
+            > img { max-width: none; }
+        }
+    }
+
+    // Clipping - Clip & Center
+
+    .u-clip {
+        display: block;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+
+        .u-clip-wrapper {
+            position: absolute;
+            top: -($clip-size); right: -($clip-size);
+            bottom: -($clip-size); left: -($clip-size);
+            text-align: center;
+            vertical-align: middle;
+            white-space: nowrap;
+            word-break: normal;
+
+            .u-clip-inner {
+                height: 100%;
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%;
+
+                img {
+                    max-width: none;
+                    position: static !important; // !important necessary until future refactoring of p-browser-b
+                    top: auto !important;
+                    right: auto !important;
+                    bottom: auto !important;
+                    left: auto !important;
+                    vertical-align: middle;
+                } 
+
+                .u-clip-buddy { display: inline-block; height: 100%; vertical-align: middle; }
+            }
+        }
+    }
+
+    .disabled,
+    .s-disabled {
+        @include boxShadow(none !important); // !important used for top-level overriding
+        cursor: default;
+        opacity: .25;
+
+        &:hover { background-position: 0 0 !important; }
+
+        &:active { @include backgroundGradient(linear-gradient(top, $button-bgTop, $button-bgBottom) !important);}
+    }
+
+    $display-counter: $display-counter + 1;
+}

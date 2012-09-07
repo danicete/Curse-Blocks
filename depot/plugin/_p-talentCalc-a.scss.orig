@@ -1,0 +1,174 @@
+﻿// ★★ Plugin -> Talent Calc (p-talentCalc-a) ★★
+
+// ✎ Talent Calc
+
+// ⌚ Level 1.00 (02/017/12)
+
+// ☍ Components:
+//     - Null
+
+// ☆ Sub-Classes:
+//     - Null
+
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+ 
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+@mixin p-talentCalc-a {
+
+    @include group;
+    position: relative;
+    > h2 { padding: 10px 0; }
+    .p-talentCalc-reset { @include u-button-z; margin-left: 20px; float: right; }
+    .p-talentCalc-social { 
+        float: right; 
+        li { @include inline-block; margin-left: 20px; }
+        .social-sharing > div { @include inline-block; }
+        input[type=text] { width: 300px; margin-right: 5px; }
+
+    }
+    .p-talentCalc-nav {
+        border-bottom: 3px double #ddd;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        .b-list-item { 
+            a {
+                img { opacity: .3; }
+                &:hover img { opacity: 1; }
+            }
+            &.selected img { opacity: 1; }
+        }
+    }
+      
+    .p-talentCalc-content { 
+        @include group;
+        h2 { font-size: 18px; }
+        .p-talentCalc-header {
+            margin-bottom: 20px;
+            .class-level { float: right; }           
+            .class-level { font-size: 14px; font-weight: bold; line-height: 30px; }
+        } 
+    }
+    .p-talentCalc-primary {
+        @include col(8);
+        margin-left: 0;
+    }
+    .p-talentCalc-secondary {
+        @include col(4);
+    }
+    .p-talentCalc-footer { 
+        clear: both; 
+        h2 { font-size: 18px; padding-bottom: 10px; }
+        .u-button-z { @include u-button-z; float: right; margin-left: 20px; margin-bottom: 5px; }
+    }
+    .row {
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+        li {         
+            a {
+                padding: 10px 0;
+                border: 1px solid;
+                border-color: transparent transparent transparent #ddd;
+                font-weight: bold;
+                background: #f5f5f5;
+                @include boxShadow(inset 0 1px 1px rgba(255,255,255,.3));
+                &:hover { border-color: $link-color; @include boxShadow(0 0 5px $link-color); background: #f2f2f2; color: #000; }
+            }
+            &.level { line-height: 60px; font-size: 26px; font-weight: bold; background: #eee; }
+            &.type { line-height: 40px; font-size: 18px; font-weight: bold; background: #eee; }
+            &.glyph { 
+                min-width: 125px; 
+                &.j-glyph-selected a { border-color: #000; background: #252525; color: #fff; @include boxShadow(inset 0 0 5px rgba(255,255,255,.3)); }
+            }
+        }
+        &.j-talentRow-selected {
+            .talent { opacity: .3; }
+            .j-talent-selected {
+                opacity: 1;
+                a {
+                    border-color: #000;
+                    background: #252525;
+                    color: #fff;
+                    @include boxShadow(inset 0 0 5px rgba(255,255,255,.3));
+                }
+            }
+        }
+    }
+    .spec {
+        margin-bottom: 10px;
+        border: solid 1px;
+        border-color: transparent;
+        padding: 10px;
+        img { float: right; margin-left: 10px; }
+        &:hover { border-color: $link-color; @include boxShadow(0 0 5px $link-color); cursor:pointer; } 
+        &.j-spec-expanded {
+            border-color: #000; background: #252525; @include boxShadow(inset 0 0 5px rgba(255,255,255,.3));
+            h4,
+            p,
+            .spell-filters { color: #fff; .j-spell-active a { color: #fff; font-weight: bold; } }
+            .spell-filters { background: #111; font-size: 11px; border: 1px solid #000; padding: 5px; a { color: $secondaryColor; &:hover { color: #fff; text-decoration: underline; } } }
+            h4:before {
+                border-left: 5px solid transparent;
+	            border-right: 5px solid transparent;
+	            border-top: 5px solid #fff;
+                content: "";
+                display: inline-block;
+	            height: 0;
+                margin-right: 6px;
+                width: 0;
+            }
+        }
+        &.j-spec-collapsed h4:before {
+            border-left: 5px solid #252525;
+	        border-bottom: 5px solid transparent;
+	        border-top: 5px solid transparent;
+            content: "";
+            display: inline-block;
+	        height: 0;
+            margin-right: 6px;
+            width: 0;
+        }
+        p { margin: 0; }
+        tr {
+            td {
+                background: #333;
+                @include boxShadow(inset 0 1px 0 rgba(255,255,255,.1));
+                border-color: #111; 
+                color: #fff;
+            }
+            &:nth-child(even) td { background: #444; }
+        }
+    }
+    .spells {
+        height: 160px; overflow: auto;
+        td { text-align: left; padding: 2px 5px; font-size: 11px; }
+        td:first-child { width: 1%; font-weight: bold; text-align: center; }
+        img { float: none; }
+    }
+
+    img {
+        @include inline-block;
+		@include borderRadius(3px);
+		@include boxShadow(0 1px 1px rgba(0, 0, 0, 0.5));
+		overflow: hidden;
+		padding: 1px;
+		background-color: black;
+		background-position: 1px 1px;
+		background-repeat: no-repeat;
+		border: 1px solid #434445;
+		border-bottom-color: #2F3032;
+		border-top-color: #B1B2B4;
+		&:hover { @include boxShadow(inset 0 10px 5px #4F6E33); }
+    }
+
+    // JS related
+    .j-spec-collapsed { 
+        .spells { display: none; }
+    }
+
+} // END p-talentCalc-a

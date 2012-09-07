@@ -1,0 +1,43 @@
+﻿// Plugin -> Widget (p-widget-a)
+//
+// ✎ Generic base plugin for abstract relationships
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//     - Null
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+//
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin p-widget-a {
+
+    @include group;
+
+    background: $widgetBg;
+    border: $widgetBorder;
+    @include borderRadius($widgetBorder-radius);
+    margin-bottom: $leading;
+    padding: $widgetPadding;
+    position: relative;
+
+    // Header
+
+    .p-widget-header { margin-bottom: $leading / 2; @include group; h3 { font-weight: 900; } .b-userAction { float: right; } }
+
+    // Footer
+
+    .p-widget-footer { margin-top: $leading / 2; }
+
+} // END p-widget-a

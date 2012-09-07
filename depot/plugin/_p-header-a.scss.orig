@@ -1,0 +1,163 @@
+﻿// ★★ Plugin -> Header (p-header-a) ★★
+//
+// ✎ Header containing left logo and right navigation
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//     - Null
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - Chrome
+//     - FireFox
+//     - Safari
+//     - IE9/8/7
+// 
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin p-header-a(
+    $full-nav: $full-nav,
+    $full-nav-overlap: $full-nav-overlap
+) {
+    
+    @include group;
+
+    background: $headerBg;
+    margin-bottom: $header-margin;
+    position: relative;
+
+    // Logo
+
+    h1 { margin: 0; } // Base reset
+
+    .title {
+        background: $headerLogo;
+        display: block;
+        height: $headerLogo-height;
+        @if ($split-nav) {
+            margin: 0 auto;
+        }
+        @else {
+            margin: $headerLogo-top $headerLogo-right $headerLogo-bottom $headerLogo-left;
+        }
+        position: relative;
+        text-indent: -9999px;
+        width: $headerLogo-width;
+        z-index: 2; // Say above full width nav
+
+        &:hover { background-position: $headerLogo-hover; }
+        
+        > a { display: block; height: $headerLogo-height; width: $headerLogo-width; }
+
+        // If site skin active remove any logo overlap
+
+        .ad-skin & { left: 0; }        
+    }
+
+    .sub-title {
+        color: $headerSubtitle-color;
+        font-size: $headerSubtitle-size;
+        font-weight: $headerSubtitle-weight;
+        position: $headerSubtitle-position;
+        top: $headerSubtitle-top;
+        right: $headerSubtitle-right;
+        bottom: $headerSubtitle-bottom;
+        left: $headerSubtitle-left;
+    }
+
+    // Nav
+
+    .p-nav {
+
+        // Full Nav
+
+        @if ($full-nav) {
+            position: relative;
+        }
+
+        // Full Nav Overlap
+
+        @else if ($full-nav-overlap) {
+            position: absolute;
+            bottom: 0; right: 0;
+            padding-left: $headerLogo-width + $leading;
+            width: 100%;
+
+            // Fallbacks
+
+            .ie7 & {
+                padding-left: 0;
+
+                > ul { margin-left: $headerLogo-width + $leading; }
+            }
+        }
+
+        // Split Nav (Requires unique classes in nav items)
+
+        @else if ($split-nav) {
+            
+            $logo-nav-diff: ($site-width - $headerLogo-width) / 5; // Find offset created by logo
+            $nav-item-percentage: percentage((($site-width - $headerLogo-width) / 6) / $site-width);
+
+            height: 50px;
+            margin: -$leading 0 0 (-($site-width / 2));
+            position: absolute;
+            top: 50%; left: 50%;
+            width: $site-width;
+
+            .p-nav-item {
+                margin-left: -(25% - percentage($logo-nav-diff / $site-width)) / 2;
+                position: absolute;
+                left: 50%;
+                width: $nav-item-percentage;
+
+                > a { background: transparent; }
+
+                &.first { margin-left: -((percentage($headerLogo-width / $site-width) / 2) + ($nav-item-percentage)); }
+                &.second { margin-left: (percentage($headerLogo-width / $site-width) / 2); }
+                &.third { margin-left: -((percentage($headerLogo-width / $site-width) / 2) + ($nav-item-percentage) * 2); }
+                &.fourth { margin-left: ((percentage($headerLogo-width / $site-width) / 2) + ($nav-item-percentage)); }
+                &.fifth { margin-left: -((percentage($headerLogo-width / $site-width) / 2) + ($nav-item-percentage) * 3); }
+                &.sixth { margin-left: ((percentage($headerLogo-width / $site-width) / 2) + ($nav-item-percentage) * 2); }
+            }
+
+            .b-list { display: block; }
+        }
+
+        // Default
+
+        @else {
+            position: absolute;
+            bottom: 0; right: 0;
+            width: $actual-pix - $headerLogo-width - $leading;
+        } 
+    }
+
+    // Search
+
+    .b-search {
+        height: $headerSearch-height;
+        position: $headerSearch-position;
+        top: $headerSearch-top; right: $headerSearch-right;
+
+        .text-input { padding-right: 25px; }
+
+        .submit {
+            background: $headerSearch-bg;
+            border-width: 0;
+            @include boxShadow(null);
+            height: 16px;
+            position: absolute;
+            top: 5px; right: 5px;
+            text-indent: -9999px;
+            width: 16px;
+        }
+    }
+
+} // END p-header-a

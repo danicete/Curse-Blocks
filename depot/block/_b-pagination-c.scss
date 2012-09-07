@@ -1,0 +1,162 @@
+﻿// ★★ Block -> Pagination (b-pagination-c) ★★
+//
+// ✎ Table Sorter Pagination
+//
+// ⌚ Level 1.00 (02/017/12)
+//
+// ☍ Components:
+//     - Item (b-pagination-item) 
+//
+// ☆ Sub-Classes:
+//     - Null
+//
+// ☯ Browser Support:
+//     - TBD
+//
+// --------------------------------------------------------- //
+
+// Mixin
+// --------------------------------------------------------- //
+
+@mixin b-pagination-c {
+		
+	@include group;
+
+    display: table;
+    font-size: $font-sizeLarger;
+    margin: $leading / 2 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+
+    // Fallbacks
+
+    .ie7 & { display: block; }
+
+    // Prev/Next & First/Last
+
+    .b-pagination-prev,
+    .b-pagination-next,
+    .b-pagination-first,
+    .b-pagination-last,
+    .b-pagination-display {
+        display: table-cell;
+        list-style-type: none;
+        vertical-align: top;
+
+        // Fallbacks
+
+        .ie7 & { display: block; float: left; }
+        
+        > * {
+            @include u-button-z;
+            cursor: pointer; // Fallback for older browsers
+            display: block;
+            line-height: 48px;
+
+            .single-column & { line-height: 25px; }
+
+            /* Legacy - Keeping for prosperity
+            
+            background: $paginationBg;
+            border: $paginationBorder;
+            @include borderRadius($paginationBorder-radius);
+            color: $paginationFont-color;
+            display: inline-block;
+            padding: $paginationPadding;
+
+            //&:hover { background: $paginationBg-hover; color: $paginationFont-color-hover; }
+            &.s-disabled { display: none;  }
+            */
+        }
+        dl { line-height: normal; height: 48px; }
+        dl,
+        dd { margin: 0; }
+		dt { margin-bottom: 10px; }
+        dd {
+			font-size: $font-size;
+            &:before { content: "\201C"; }
+            &:after { content: "\201D"; }
+        }
+    }
+
+    // First & Last
+
+    .b-pagination-first,
+    .b-pagination-last { width: 10%; }
+
+    // Previous
+
+    .b-pagination-prev {
+        padding: 0 $leading * 3 0 0;
+        width: 40%;
+
+        .single-column & { padding: 0 $leading * 3 0 $leading; width: 30%; }
+        &:only-of-type { float: left; padding: 0; }
+
+        // Fallbacks
+
+        .ie7 & { width: auto; }
+
+        //> span,
+        //dt { @include triangle(left, $size: 8px, $color: $button-fontColor); }
+    }
+
+    // Next
+
+    .b-pagination-next {
+        padding: 0 0 0 $leading * 3;
+        width: 40%;
+
+        .single-column & { padding: 0 $leading 0 $leading * 3; width: 30%; }
+
+        // Fallbacks
+
+        .ie7 & { width: auto; }
+
+        //> span,
+        // dt { @include triangle(right, $size: 8px, $location: ":after", $color: $button-fontColor); } // don't really like this - BF
+    }
+
+    // Display
+
+	.b-pagination-display {
+        //background: $paginationBg;
+        //border: $paginationBorder;
+        //@include borderRadius($paginationBorder-radius);
+        color: $paginationFont-color;
+        cursor: default;
+        display: table-cell;
+        padding: $paginationPadding;
+        line-height: 50px;
+        vertical-align: middle;
+
+        .single-column & { line-height: 25px; }
+    }
+
+    // If post-collection
+
+    .post-collection + & {
+        display: block;
+
+        .b-pagination-prev,
+        .b-pagination-next { display: block; float: right; padding: 0; }
+
+        .b-pagination-prev { float: left; }
+    }
+
+    // If post
+
+    .post & {
+
+        .b-pagination-item {
+
+            > a {
+                
+                &:before,
+                &:after { display: none; }
+            }
+        }
+    }
+
+} // END b-pagination-c
