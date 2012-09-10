@@ -21,11 +21,13 @@
  
 // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-// ★★ Global Variables
+// Vars
+// --------------------------------------------------------- //
+//
+// $definitionTitle-size: $header-size !default;
 
-$definitionTitle-size: $header-size !default;
-
-// ★★ Mixin
+// Mixin
+// --------------------------------------------------------- //
 
 @mixin b-definition-a {
 
