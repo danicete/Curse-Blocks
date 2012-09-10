@@ -19,28 +19,49 @@
 //     - IE9/8/7
 //
 
+// Vars
+// --------------------------------------------------------- //
+//
+// $breadcrumbMargin: 10px 0 !default;
+// $breadcrumbItem-fontSize: $font-size !default;
+// $breadcrumbItem-fontWeight: normal !default;
+// $breadcrumbItem-color: $link-color !default;
+// $breadcrumbItem-hover: $link-colorHover !default;
+// $breadcrumbItem-seperator: '--' !default;
+// $breadcrumb-bg: none !default;
+// $breadcrumb-padding: 0 !default;
+// $breadcrumb-border: none !default;
+// $breadcrumb-borderWidth: 0 !default;
+// $breadcrumb-borderRadius: null !default;
+// $breadcrumbItem-padding: 0 !default;
+// $breadcrumbItem-bg: none !default;
+// $breadcrumbItem-seperator: "//" !default;
+// $breadcrumb-bg: none !default;
+// $breadcrumbHomeItem-bg: none !default;
+// $breadcrumbHomeItem-padding: 0 !default;
+
 // Mixin
 // --------------------------------------------------------- //
 
 @mixin b-breadcrumb-a {
 
     clear: both;
-	background: $breadcrumb-bg;
-	padding: $breadcrumb-padding;
-	border: $breadcrumb-border;
-	border-width: $breadcrumb-borderWidth;
-	@include borderRadius($breadcrumb-borderRadius);
+    background: $breadcrumb-bg;
+    padding: $breadcrumb-padding;
+    border: $breadcrumb-border;
+    border-width: $breadcrumb-borderWidth;
+    @include borderRadius($breadcrumb-borderRadius);
     margin: $breadcrumbMargin;
     text-align: left;
 
     // Wrapper
 
-	.b-breadcrumb-wrapper { 
-		@include group;
+    .b-breadcrumb-wrapper { 
+        @include group;
 
         // Item
 
-		.b-breadcrumb-item {
+        .b-breadcrumb-item {
             @include inline-block;
             background: $breadcrumbItem-bg;
             font-size: $breadcrumbItem-fontSize;
@@ -54,11 +75,11 @@
 
                 &:after {
                     border-left: 5px solid transparent;
-	                border-right: 5px solid transparent;
-	                border-top: 6px solid $breadcrumbItem-color;
+                    border-right: 5px solid transparent;
+                    border-top: 6px solid $breadcrumbItem-color;
                     content: "";
                     @include inline-block;
-	                height: 0;
+                    height: 0;
                     margin-left: 6px;
                     width: 0;
                 }
@@ -79,7 +100,7 @@
                 }
             }
         }
-	}
+    }
 
 } // END b-breadcrumb-a
 
