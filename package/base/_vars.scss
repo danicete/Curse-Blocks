@@ -274,23 +274,65 @@ $blockquoteLink-colorHover: $link-colorHover !default;
 // (3) Breadcrumb                                              
 // --------------------------------------------------------- //
 
-$breadcrumbMargin: 10px 0 !default;
-$breadcrumbItem-fontSize: $font-size !default;
-$breadcrumbItem-fontWeight: normal !default;
-$breadcrumbItem-color: $link-color !default;
-$breadcrumbItem-hover: $link-colorHover !default;
-$breadcrumbItem-seperator: '--' !default;
-$breadcrumb-bg: none !default;
-$breadcrumb-padding: 0 !default;
-$breadcrumb-border: none !default;
-$breadcrumb-borderWidth: 0 !default;
-$breadcrumb-borderRadius: null !default;
-$breadcrumbItem-padding: 0 !default;
-$breadcrumbItem-bg: none !default;
-$breadcrumbItem-seperator: "//" !default;
-$breadcrumb-bg: none !default;
-$breadcrumbHomeItem-bg: none !default;
-$breadcrumbHomeItem-padding: 0 !default;
+    // a.) Background
+
+        // 1.) Parent
+        $breadcrumb-bg: none !default;
+
+        // 2.) Child
+        $breadcrumbItem-bg: none !default;
+
+        // 3.) Home
+        $breadcrumbHomeItem-bg: none !default;
+
+    // b.) Font
+    $breadcrumb-fontStyle: normal !default;
+    $breadcrumb-fontTransform: lowercase !default;
+    $breadcrumb-fontLineheight: $leading !default;
+    $breadcrumb-fontWeight: normal !default;
+    $breadcrumb-fontSize: $font-size !default;
+    $breadcrumb-fontFamily: $font-family !default;
+
+    // c.) Colors
+    $breadcrumbItem-color: $link-color !default;
+    $breadcrumbItem-hover: $link-colorHover !default;
+
+    // d.) Box Model
+
+        // 1.) Parent
+        $breadcrumb-margin: 10px 0 !default;
+        $breadcrumb-padding: 0 !default;
+        $breadcrumb-height: $leading;
+
+        // 2.) Child
+        $breadcrumbItem-padding: 0 !default;
+        $breadcrumbItem-margin: 0 !default;
+
+        // 3.) Home
+        $breadcrumbHomeItem-padding: 0 !default;
+
+    // e.) Borders
+
+        // 1.) Parent
+        $breadcrumb-border: none !default;
+        $breadcrumb-borderWidth: 0 !default;
+
+        // 2.) Child
+        $breadcrumbItem-border: none !default;
+        $breadcrumbItem-borderWidth: 0 !default;
+
+    // e.) Item
+    $breadcrumbItem-seperator: '--' !default;
+
+    // f.) Border Radius
+
+        // 1.) Parent
+        $breadcrumb-borderRadius: null !default;
+
+        // 2.) Home
+        $breadcrumbHomeItem-borderRadius: null !default;
+
+
 
 // --------------------------------------------------------- //
 // (3) Clipping                                                

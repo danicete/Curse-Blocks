@@ -17,7 +17,6 @@
 //     - Safari
 //     - Opera
 //     - IE9/8/7
-//
 
 // Mixin
 // --------------------------------------------------------- //
@@ -25,17 +24,21 @@
 @mixin b-breadcrumb-a {
 
     @include borderRadius($breadcrumb-borderRadius);
-    clear: both;
+    @include font($breadcrumb-fontStyle,$breadcrumb-fontTransform,$breadcrumb-fontWeight,$breadcrumb-fontSize,$breadcrumb-fontLineheight,$breadcrumb-fontFamily);
+    @include boxShadow($breadcrumb-boxShadow);
+
     background: $breadcrumb-bg;
-    padding: $breadcrumb-padding;
     border: $breadcrumb-border;
     border-width: $breadcrumb-borderWidth;
-    margin: $breadcrumbMargin;
+    clear: both;
+    margin: $breadcrumb-margin;
+    padding: $breadcrumb-padding;
     text-align: left;
 
     // Wrapper
 
     .b-breadcrumb-wrapper { 
+
         @include group;
 
         // Item
@@ -43,28 +46,31 @@
         .b-breadcrumb-item {
             @include inline-block;
             background: $breadcrumbItem-bg;
-            font-size: $breadcrumbItem-fontSize;
-            font-weight: $breadcrumbItem-fontWeight;
+            border: $breadcrumbItem-border;
+            border-width: $breadcrumbItem-borderWidth;
+            margin: $breadcrumbItem-margin;
             padding: $breadcrumbItem-padding;
             white-space: nowrap;
 
-            a { color: $breadcrumbItem-color; display: inline-block; &:hover { color: $breadcrumbItem-hover; } }
+            a { 
+                @include inline-block;
+                color: $breadcrumbItem-color; 
+                &:hover { color: $breadcrumbItem-colorHover; } 
+            }
 
-            & a.section { 
+            & a.section { // Dropdowns via JS
 
                 &:after {
-                    border-left: 5px solid transparent;
-                    border-right: 5px solid transparent;
-                    border-top: 6px solid $breadcrumbItem-color;
-                    content: "";
-                    @include inline-block;
-                    height: 0;
-                    margin-left: 6px;
-                    width: 0;
+                    @include triangle(down, null, 6px, $breadcrumbItem-color);
                 }
+
             }
             
-            &.home { background: $breadcrumbHomeItem-bg; padding: $breadcrumbHomeItem-padding; @include borderRadius-top-left($breadcrumb-borderRadius); }
+            &.home { 
+                @include borderRadius-top-left($breadcrumbHomeItem-borderRadius); 
+                background: $breadcrumbHomeItem-bg; 
+                padding: $breadcrumbHomeItem-padding; 
+            }
             
             & + .b-breadcrumb-item {
                 
