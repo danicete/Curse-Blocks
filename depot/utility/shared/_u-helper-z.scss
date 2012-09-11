@@ -552,7 +552,7 @@ $legacy-support-for-ie: $legacy-support-for-ie6 or $legacy-support-for-ie7 or $l
 @mixin triangle($direction, $location: ":before", $size: 6px, $color: $tertiaryColor, $spacing: 5px) {
     &:#{$location} {
         content: "";
-        display: inline-block;
+        @include inline-block;
         height: 0;
         vertical-align: baseline;
         width: 0;
