@@ -19,38 +19,17 @@
 //     - IE9/8/7
 //
 
-// Vars
-// --------------------------------------------------------- //
-//
-// $breadcrumbMargin: 10px 0 !default;
-// $breadcrumbItem-fontSize: $font-size !default;
-// $breadcrumbItem-fontWeight: normal !default;
-// $breadcrumbItem-color: $link-color !default;
-// $breadcrumbItem-hover: $link-colorHover !default;
-// $breadcrumbItem-seperator: '--' !default;
-// $breadcrumb-bg: none !default;
-// $breadcrumb-padding: 0 !default;
-// $breadcrumb-border: none !default;
-// $breadcrumb-borderWidth: 0 !default;
-// $breadcrumb-borderRadius: null !default;
-// $breadcrumbItem-padding: 0 !default;
-// $breadcrumbItem-bg: none !default;
-// $breadcrumbItem-seperator: "//" !default;
-// $breadcrumb-bg: none !default;
-// $breadcrumbHomeItem-bg: none !default;
-// $breadcrumbHomeItem-padding: 0 !default;
-
 // Mixin
 // --------------------------------------------------------- //
 
 @mixin b-breadcrumb-a {
 
+    @include borderRadius($breadcrumb-borderRadius);
     clear: both;
     background: $breadcrumb-bg;
     padding: $breadcrumb-padding;
     border: $breadcrumb-border;
     border-width: $breadcrumb-borderWidth;
-    @include borderRadius($breadcrumb-borderRadius);
     margin: $breadcrumbMargin;
     text-align: left;
 
@@ -85,7 +64,7 @@
                 }
             }
             
-            &.home { background: $breadcrumbHomeItem-bg; padding: $breadcrumbHomeItem-padding; }
+            &.home { background: $breadcrumbHomeItem-bg; padding: $breadcrumbHomeItem-padding; @include borderRadius-left($breadcrumb-borderRadius); }
             
             & + .b-breadcrumb-item {
                 
