@@ -64,7 +64,7 @@
                 }
             }
             
-            &.home { background: $breadcrumbHomeItem-bg; padding: $breadcrumbHomeItem-padding; @include borderRadius-left($breadcrumb-borderRadius); }
+            &.home { background: $breadcrumbHomeItem-bg; padding: $breadcrumbHomeItem-padding; @include borderRadius-top-left($breadcrumb-borderRadius); }
             
             & + .b-breadcrumb-item {
                 
