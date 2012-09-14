@@ -59,11 +59,8 @@
             }
 
             & a.section { // Dropdowns via JS
-
-                &:after {
-                    @include triangle(down, null, 6px, $breadcrumbItem-color);
-                }
-
+                @include triangle($direction: "down", $location: ":after", $color: $breadcrumbItem-color);
+                &:after { margin-left: 6px; }
             }
             
             &.home { 

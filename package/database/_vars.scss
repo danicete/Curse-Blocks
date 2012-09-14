@@ -103,18 +103,54 @@ $contentBox-Shadow: 0 0 3px rgba(0,0,0,.315) !default;
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ //
 
 
-// (3) Breadcrumb
-// ------------------------------------------------------------------------------------------
+// --------------------------------------------------------- //
+// (3) Breadcrumb                                              
+// --------------------------------------------------------- //
 
-$breadcrumbMargin: 0 0 10px !default;
-$breadcrumbItem-fontSize: $fontSize !default;
-$breadcrumbItem-fontWeight: normal !default;
-$breadcrumbItem-color: $linkColor !default;
-$breadcrumbItem-hover: $linkColor-hover !default;
-$breadcrumbItem-padding: 0 !default;
-$breadcrumbItem-bg: none !default;
-$breadcrumbHomeItem-bg: none !default;
-$breadcrumbHomeItem-padding: 0 !default;
+    // a.) Background
+
+        // 1.) Parent
+        $breadcrumb-bg: #e9e9e9;
+
+        // 2.) Child
+        $breadcrumbItem-bg: #e9e9e9 url("#{$imageURL-local}/breadcrumbItem-bg.png") no-repeat right center;
+
+        // 3.) Home
+        $breadcrumbHomeItem-bg: $breadcrumbItem-bg;
+
+    // b.) Borders
+
+        // 1.) Parent
+        $breadcrumb-border: solid #ddd;
+        $breadcrumb-borderWidth: 0 0 1px;
+
+    // c.) Box Model
+
+        // 1.) Parent
+        $breadcrumb-margin: -12px -12px $leading;
+
+        // 2.) Child
+        $breadcrumbItem-padding: .5em 2em .5em 1em;
+
+        // 3.) Home
+        $breadcrumbHomeItem-padding: $breadcrumbItem-padding;
+
+    // d.) Typography
+        $breadcrumb-fontWeight: bold;
+        $breadcrumb-fontSize: 14px;
+
+    // e.) Custom
+        
+        // 1.) Item
+            $breadcrumbItem-seperator: none;
+
+        // 2.) Border Radius
+
+            // 1.) Parent
+            $breadcrumb-borderRadius: 4px 4px 0 0;
+
+            // 2.) Home
+            $breadcrumbHomeItem-borderRadius: 4px;
 
 
 // (3) Table
