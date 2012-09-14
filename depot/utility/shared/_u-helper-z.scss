@@ -552,20 +552,20 @@ $legacy-support-for-ie: $legacy-support-for-ie6 or $legacy-support-for-ie7 or $l
 @mixin triangle($direction, $location: ":before", $size: 6px, $color: $tertiaryColor, $spacing: 5px) {
     &:#{$location} {
         content: "";
-        @include inline-block;
+        display: inline-block;
         height: 0;
         vertical-align: baseline;
         width: 0;
 
         @if ($direction == "up") {
             border-bottom: $size solid $color;
-            border-left: ($size / 2) solid transparent;
-            border-right: ($size / 2) solid transparent;
+            border-left: ($size - 1) solid transparent;
+            border-right: ($size - 1) solid transparent;
         }
         @if ($direction == "down") {
             border-top: $size solid $color;
-            border-left: ($size / 2) solid transparent;
-            border-right: ($size / 2) solid transparent;
+            border-left: ($size - 1) solid transparent;
+            border-right: ($size - 1) solid transparent;
         }
         @if ($direction == "left") {
             border-right: $size solid $color;

@@ -283,21 +283,19 @@ $blockquoteLink-colorHover: $link-colorHover !default;
         $breadcrumbItem-bg: none !default;
 
         // 3.) Home
-        $breadcrumbHomeItem-bg: none !default;
+        $breadcrumbHomeItem-bg: $breadcrumbItem-bg !default;
 
-    // b.) Font
-    $breadcrumb-fontStyle: normal !default;
-    $breadcrumb-fontTransform: lowercase !default;
-    $breadcrumb-fontLineheight: $leading !default;
-    $breadcrumb-fontWeight: normal !default;
-    $breadcrumb-fontSize: $font-size !default;
-    $breadcrumb-fontFamily: $font-family !default;
+    // b.) Borders
 
-    // c.) Colors
-    $breadcrumbItem-color: $link-color !default;
-    $breadcrumbItem-hover: $link-colorHover !default;
+        // 1.) Parent
+        $breadcrumb-border: none !default;
+        $breadcrumb-borderWidth: 0 !default;
 
-    // d.) Box Model
+        // 2.) Child
+        $breadcrumbItem-border: none !default;
+        $breadcrumbItem-borderWidth: 0 !default;
+
+    // c.) Box Model
 
         // 1.) Parent
         $breadcrumb-margin: 10px 0 !default;
@@ -309,29 +307,33 @@ $blockquoteLink-colorHover: $link-colorHover !default;
         $breadcrumbItem-margin: 0 !default;
 
         // 3.) Home
-        $breadcrumbHomeItem-padding: 0 !default;
+        $breadcrumbHomeItem-padding: $breadcrumbItem-padding !default;
 
-    // e.) Borders
+    // d.) Typography
+        $breadcrumb-fontStyle: normal !default;
+        $breadcrumb-fontTransform: none !default;
+        $breadcrumb-fontLineheight: $leading !default;
+        $breadcrumb-fontWeight: normal !default;
+        $breadcrumb-fontSize: $font-size !default;
+        $breadcrumb-fontFamily: $font-family !default;
+        $breadcrumbItem-color: $link-color !default;
+        $breadcrumbItem-colorHover: $link-colorHover !default;
 
-        // 1.) Parent
-        $breadcrumb-border: none !default;
-        $breadcrumb-borderWidth: 0 !default;
+    // e.) Custom
+        
+        // 1.) Item
+            $breadcrumbItem-seperator: '--' !default;
 
-        // 2.) Child
-        $breadcrumbItem-border: none !default;
-        $breadcrumbItem-borderWidth: 0 !default;
+        // 2.) Border Radius
 
-    // e.) Item
-    $breadcrumbItem-seperator: '--' !default;
+            // 1.) Parent
+            $breadcrumb-borderRadius: null !default;
 
-    // f.) Border Radius
+            // 2.) Home
+            $breadcrumbHomeItem-borderRadius: null !default;
 
-        // 1.) Parent
-        $breadcrumb-borderRadius: null !default;
-
-        // 2.) Home
-        $breadcrumbHomeItem-borderRadius: null !default;
-
+        // 3.) Box Shadow
+            $breadcrumb-boxShadow: null !default;
 
 
 // --------------------------------------------------------- //
@@ -344,7 +346,14 @@ $clip-size: 50px !default;
 // (3) Definition                                              
 // --------------------------------------------------------- //
 
-$definitionTitle-size: $header-size !default;
+    // c.) Box-Model
+
+    $definitionAvatar-height: 0 !default;
+    $definitionAvatar-width: 0 !default;
+
+    // d.) Typography
+
+    $definitionTitle-size: $header-size !default;
 
 // --------------------------------------------------------- //
 // (3) Figure                                                  

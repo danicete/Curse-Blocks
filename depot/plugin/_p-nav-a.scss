@@ -102,6 +102,16 @@
     @if ($db-nav) {
         position: relative;
         clear: left;
+        > .b-list {
+            margin-left: 0;
+            float: left;
+            .body-home-index & { 
+                float: none; width: 100%; 
+                .p-nav-item {
+                    a { padding: 8px 14px; }
+                }
+            }
+        }
 
         // Item
         .p-nav-item {
@@ -109,6 +119,7 @@
             > a {
                 text-shadow: $navItem-textShadow;
                 border: none;
+                .b-list-label { @include truncate; }
             }
             &#nav-feedback > a { background: $navItem-bg, $navItem-bg; background-position: left center, right center; &:hover { background-color: $navItem-bg-hover; } }
             
@@ -131,15 +142,16 @@
             & + .p-nav-item {
                 > a { border-left: none; }
             }
-		    &.b-search-a { 
-			    float: right;  			    
-                form { margin: 5px; margin-right: 0; }
-                input[type=search] { width: 250px; }
-                .b-search-submit { display: none; }
-		    }
             &.section > ul { width: $navItem-width; }
         }      
         .b-list_float .b-list-item + .b-list-item { margin: 0; padding: 0; } 
+        .b-search-a { 
+            float: right; 
+            margin-bottom: 0;              
+            form { margin: 5px; margin-right: 0; }
+            input[type=search] { max-width: 250px; float: right; width: 100%; }
+            .b-search-submit { display: none; }
+        }
     }
 
 } // END p-nav-a
