@@ -344,7 +344,14 @@ $clip-size: 50px !default;
 // (3) Definition                                              
 // --------------------------------------------------------- //
 
-$definitionTitle-size: $header-size !default;
+    // c.) Box-Model
+
+    $definitionAvatar-height: 0 !default;
+    $definitionAvatar-width: 0 !default;
+
+    // d.) Typography
+
+    $definitionTitle-size: $header-size !default;
 
 // --------------------------------------------------------- //
 // (3) Figure                                                  

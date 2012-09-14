@@ -21,30 +21,30 @@
  
 // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-// Vars
-// --------------------------------------------------------- //
-//
-// $definitionTitle-size: $header-size !default;
-
 // Mixin
 // --------------------------------------------------------- //
 
 @mixin b-definition-a {
 
     @include group;
-
-    min-height: 0; // Change value to height of icon
-    padding-left: $leading/2; // Width of the icon will need to be added to the left padding (eg padding-left: 100px + $leading/2)
-    position: relative;
+    @if ($definitionAvatar-height != 0) { min-height: $definitionAvatar-height; }
+    @if ($definitionAvatar-width != 0) { padding-left: $definitionAvatar-width + 10 };
+    margin: 0;
 
     // Title
 
-    .b-definition-title { font-size: $definitionTitle-size; margin: 0 0 $leading; }
+    .b-definition-title { font-size: $definitionTitle-size; margin: 0 0 $leading; position: relative; }
     .b-definition-desc + .b-definition-title { margin-top: $leading; } // Add space if two definition titles in same definition list
 
-    // Icon
+    // Avatar
 
-    .b-definition-icon { position: absolute; top: 0; left: 0; }
+    .avatar {
+        height: $definitionAvatar-height;
+        margin: 0;
+        position: absolute;
+        top: 0; left: -($definitionAvatar-width + 10);
+        width: $definitionAvatar-width;
+    }
 
     // Description
    
