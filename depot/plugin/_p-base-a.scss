@@ -70,33 +70,5 @@
     // Comments
 
     .comments { @include u-glyph-speechBubble; }
-
-    // Guide Select
-
-    &.guide-select {
-        @include col(12);
-        clear: left;
-        margin-top: 0;
-
-        .p-base-header {
-            background: none;
-                
-            // Guides Header Bar
-            .title { 
-                @include backgroundGradient($guideTab-gradient);
-                @include textShadow($guideTab-textShadow);
-                @include boxShadow($guideTab-boxShadow);
-                letter-spacing: -1px;
-                font-size: $guideTabHeaderFont-size;
-                position: $guideTabHeader-position;
-                text-align: center;
-                z-index: 1;
-                margin-bottom: $baseMargin-bottom;
-                padding: $leading / 2 0;
-                }
-        }
-
-        .u-frame { float: none; margin-right: 0; }
-    }
     
 } // END p-base-a

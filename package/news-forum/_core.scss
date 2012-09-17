@@ -3,32 +3,34 @@
 // ************************************************************************************************************************
 
 // --------------------------------------------------------- //
-// Initialization                                              
+// Variables                                              
 // --------------------------------------------------------- //
 
-    // Config
+    @import "vars";
+
+// --------------------------------------------------------- //
+// Config                                              
+// --------------------------------------------------------- //
 
     @import "../../config";
-    @include components(
     
-        // Block
+    // Block
 
-        $shoutbox: true,
-        $tag: true,
-        $tagCloud: true,
+    $config-shoutbox: true;
+    $config-tag: true;
+    $config-tagCloud: true;
 
-        // Plugin
+    // Plugin
 
-        $article: true,
-        $attachments: true,
-        $browser: true,
-        $comments: true,
-        $forum: true,
-        $infractions: true,
-        $result: true,
-        $streams: true,
-        $widget: true
-    );
+    $config-article: true;
+    $config-attachments: true;
+    $config-browser: true;
+    $config-comments: true;
+    $config-forum: true;
+    $config-infractions: true;
+    $config-result: true;
+    $config-streams: true;
+    $config-widget: true;
 
     // Layout
 

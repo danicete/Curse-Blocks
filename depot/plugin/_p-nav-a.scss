@@ -174,7 +174,7 @@
             }
             &.dropdown-hover a { background-color: $navItem-bg-hover; color: $navItem-color-hover; }            
        }
-       > h3 { padding: $navItemDropDown-padding; display: block; background: $tertiaryColor; font: $navItem-font; color: $fontColor-tertiary; border-top: $navItem-border; margin: 0; }        
+       > h3 { padding: $navItemDropDown-padding; display: block; background: $tertiaryColor; font: $navItem-font; color: $font-colorTertiary; border-top: $navItem-border; margin: 0; }        
        .has-submenu > a {
             &:after {
                 border-left: 5px solid $navItem-color;

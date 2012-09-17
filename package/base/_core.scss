@@ -3,44 +3,56 @@
 // ************************************************************************************************************************
 
 // --------------------------------------------------------- //
-// Initialization                                              
+// Variables                                              
 // --------------------------------------------------------- //
 
-    // Config
+    @import "vars";
+
+// --------------------------------------------------------- //
+// Config                                              
+// --------------------------------------------------------- //
+    
+    // Shared (Unique to Base)
+
+    @import "../../shared";
+
+    // Grid (Unique to Base)
+
+    @import "../../depot/grid/grid-a";
+
+    // References
 
     @import "../../config";
-    @include components(
-    
-        // Block
 
-	    $breadcrumb: true,
-        $definition: true,
-        $figure: true,
-        $gallery: true,
-        $infograph: true,
-        $list: true,
-        $media: true,
-        $pagination: true,
-        $poll: true,
-	    $rating: true,
-        $search: true,
-        $social: true,
-	    $tab: true,
-        $table: true,
-	    $userAction: true,
+    // Block
 
-        // Plugin
+    $config-breadcrumb: true;
+    $config-definition: true;
+    $config-figure: true;
+    $config-gallery: true;
+    $config-infograph: true;
+    $config-list: true;
+    $config-media: true;
+    $config-pagination: true;
+    $config-poll: true;
+    $config-rating: true;
+    $config-search: true;
+    $config-social: true;
+    $config-tab: true;
+    $config-table: true;
+    $config-userAction: true;
 
-        $avatar: true,
-        $base: true,
-	    $comments: true,
-	    $header: true,
-        $login: true,
-        $nav: true,
-        $notifications: true,
-        $pm: true,
-	    $user: true
-    );
+    // Plugin
+
+    $config-avatar: true;
+    $config-base: true;
+    $config-comments: true;
+    $config-header: true;
+    $config-login: true;
+    $config-nav: true;
+    $config-notifications: true;
+    $config-pm: true;
+    $config-user: true;
 
     // Layout
 

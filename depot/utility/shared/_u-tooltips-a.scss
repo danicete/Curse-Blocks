@@ -1,43 +1,36 @@
-﻿$tooltips-counter: 0 !default;
+﻿// Utility -> tooltips (u-tooltips-a)
 
-@while $tooltips-counter < 1 {
+// ✎ Standard project tooltips
 
-    // Utility -> tooltips (u-tooltips-a)
+// ⌚ Level 1.00 (02/017/12)
 
-    // ✎ Standard project tooltips
+// ☍ Components:
+//     - Null
 
-    // ⌚ Level 1.00 (02/017/12)
+// ☆ Sub-Classes:
+//     - Null
 
-    // ☍ Components:
-    //     - Null
+// ☯ Browser Support:
+//     - Testing Required
 
-    // ☆ Sub-Classes:
-    //     - Null
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-    // ☯ Browser Support:
-    //     - Testing Required
- 
-    // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+.tip { border-bottom: $tooltip-border; cursor: default; }
 
-    .tip { border-bottom: $tooltip-border; cursor: default; }
+a.tip {
+    border-bottom: none;
+    cursor: pointer; // If attached to link, user normal pointer
 
-    a.tip {
-        border-bottom: none;
-        cursor: pointer; // If attached to link, user normal pointer
+    .u-typography-format & { border-bottom: $tooltip-border; text-decoration: none; }
+}
 
-        .u-typography-format & { border-bottom: $tooltip-border; text-decoration: none; }
-    }
-
-    .u-tooltips-a {
-        background: $primaryColor;
-        @include borderRadius($border-radius);
-        @include boxShadow(0 0 6px rgba(0,0,0,.1));
-        border: $box-border;
-        padding: 10px;
-	    width: auto; 
-	    max-width: 400px; 
-	    z-index: 100000006;
-    }
-
-    $tooltips-counter: $tooltips-counter + 1;
+.u-tooltips-a {
+    background: $primaryColor;
+    @include borderRadius($border-radius);
+    @include boxShadow(0 0 6px rgba(0,0,0,.1));
+    border: $box-border;
+    padding: 10px;
+    width: auto; 
+    max-width: 400px; 
+    z-index: 100000006;
 }

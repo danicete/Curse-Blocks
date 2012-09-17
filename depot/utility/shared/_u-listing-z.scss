@@ -1,38 +1,31 @@
-﻿$listing-counter: 0 !default;
+﻿// Utility -> Listings (u-listing-z)
 
-@while $listing-counter < 1 {
+// ✎ UNIQUE - Standard buttons
 
-    // Utility -> Listings (u-listing-z)
+// ⌚ Level 1.00 (05/08/12)
 
-    // ✎ UNIQUE - Standard buttons
+// ☍ Components:
+//     - Null
 
-    // ⌚ Level 1.00 (05/08/12)
+// ☆ Sub-Classes:
+//     - Null
 
-    // ☍ Components:
-    //     - Null
+// ☯ Browser Support:
+//     - Testing Required
 
-    // ☆ Sub-Classes:
-    //     - Null
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-    // ☯ Browser Support:
-    //     - Testing Required
- 
-    // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+// ★★ Global Variables
 
-    // ★★ Global Variables
-
-    // Margins
-     table.listing
-     {
-	    margin-bottom: $leading;
-     }
-
-     ul.listing
-     {
-	    margin-bottom: $leading;
-     }
-
-     .listing .no-results { text-align: center !important; font-size: $font-sizeLarger; margin: $leading 0; }
-
-     $listing-counter: $listing-counter + 1;
+// Margins
+ table.listing
+ {
+    margin-bottom: $leading;
  }
+
+ ul.listing
+ {
+    margin-bottom: $leading;
+ }
+
+ .listing .no-results { text-align: center !important; font-size: $font-sizeLarger; margin: $leading 0; }

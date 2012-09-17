@@ -1,46 +1,39 @@
-﻿$tinymce-counter: 0 !default;
+﻿// Utility -> Vanity
 
-@while $tinymce-counter < 1 {
+// ✎ Standard project vanities
 
-    // Utility -> Vanity
+// ⌚ Level 1.00 (06-06-12)
 
-    // ✎ Standard project vanities
+// ☍ Components:
+//     - Null
 
-    // ⌚ Level 1.00 (06-06-12)
+// ☆ Sub-Classes:
+//     - Null
 
-    // ☍ Components:
-    //     - Null
+// ☯ Browser Support:
+//     - Testing Required
 
-    // ☆ Sub-Classes:
-    //     - Null
+// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-    // ☯ Browser Support:
-    //     - Testing Required
- 
-    // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+.mceContentBody {
+    background: $tinyMCE-bg;
+    color: $font-color;
 
-    .mceContentBody {
-        background: $tinyMCE-bg;
-        color: $font-color;
+    td { color: $font-color; }
+}
 
-        td { color: $font-color; }
-    }
+#tinymce .spoiler
+{
+    border: 1px solid gray;
+    background: $box-bg;
+    padding: 5px;
+    > p:last-child { margin-bottom: 0; }
+}
 
-    #tinymce .spoiler
-    {
-        border: 1px solid gray;
-        background: $box-bg;
-        padding: 5px;
-        > p:last-child { margin-bottom: 0; }
-    }
-
-    .mceToolbar a.mce_spoiler > span.mceIcon
-    {
-        background: url("#{$imageURL-core}/ui/exclamation.png") no-repeat center center;   
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-
-    $tinymce-counter: $tinymce-counter + 1;
+.mceToolbar a.mce_spoiler > span.mceIcon
+{
+    background: url("#{$imageURL-core}/ui/exclamation.png") no-repeat center center;   
+    display: block;
+    width: 100%;
+    height: 100%;
 }

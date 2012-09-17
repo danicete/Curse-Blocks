@@ -38,196 +38,189 @@
 .alert { @include u-interface-alert; }
 // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
-$interface-counter: 0 !default;
+// Base Selectors
 
-@while $interface-counter < 1 {
+// Comments
 
-    // Base Selectors
+.comment-spam {
+    background: #DE0000 url("#{$imageURL-core}/ui/ui-spam-bg.png") no-repeat center center !important;
+    color: #fff;
+}
 
-    // Comments
+.comment-deleted, .comment-deleted-with-note {
+    background:#333 url("#{$imageURL-core}/ui/ui-deleted-bg.png") no-repeat center center !important;
+    color: #fff;
+}
 
-    .comment-spam {
-        background: #DE0000 url("#{$imageURL-core}/ui/ui-spam-bg.png") no-repeat center center !important;
-        color: #fff;
-    }
+// Loading Masks
 
-    .comment-deleted, .comment-deleted-with-note {
-        background:#333 url("#{$imageURL-core}/ui/ui-deleted-bg.png") no-repeat center center !important;
-        color: #fff;
-    }
+.loading {
+    background-image: url("#{$imageURL-core}/ui/ajax-loader-dark.gif");
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 19px;
+}
 
-    // Loading Masks
+.loading-left {
+    background: url("#{$imageURL-core}/ui/ajax-loader-dark.gif") left no-repeat;
+    padding-left: 19px;
+}
 
-    .loading {
-        background-image: url("#{$imageURL-core}/ui/ajax-loader-dark.gif");
-        background-position: right;
-        background-repeat: no-repeat;
-        padding-right: 19px;
-    }
+.masked,
+.modal-loading { cursor: wait; }
+.loadmask {
+    z-index: 1000;
+    position: absolute;
+    top:0;
+    left:0;
+    -moz-opacity: 0.5;
+    opacity: .50;
+    filter: alpha(opacity=50);
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    zoom: 1;
+    background-image: url("#{$imageURL-core}/ui/ajax-loader.gif");
+    background-position:center center;
+    background-repeat:no-repeat;
+}
 
-    .loading-left {
-        background: url("#{$imageURL-core}/ui/ajax-loader-dark.gif") left no-repeat;
-        padding-left: 19px;
-    }
+.loadmask-msg {
+    z-index: 20001;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 
-    .masked,
-    .modal-loading { cursor: wait; }
-    .loadmask {
-        z-index: 1000;
-        position: absolute;
-        top:0;
-        left:0;
-        -moz-opacity: 0.5;
-        opacity: .50;
-        filter: alpha(opacity=50);
-        background-color: #000;
-        width: 100%;
-        height: 100%;
-        zoom: 1;
-        background-image: url("#{$imageURL-core}/ui/ajax-loader.gif");
-        background-position:center center;
-        background-repeat:no-repeat;
-    }
+.loadmask-msg div {
+    padding:5px 10px 5px 25px;
+    line-height: 16px;
+    color:white;
+    padding-left: 16px;
+}
 
-    .loadmask-msg {
-        z-index: 20001;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+.masked-relative{ position: relative !important; }
+.masked-hidden { visibility: hidden !important; }
 
-    .loadmask-msg div {
-        padding:5px 10px 5px 25px;
-        line-height: 16px;
-        color:white;
-        padding-left: 16px;
-    }
-
-    .masked-relative{ position: relative !important; }
-    .masked-hidden { visibility: hidden !important; }
-
-    // Auto Complete
+// Auto Complete
 input[type=text],
 input[type=search] {
-    &.ac_loading { background-image: url("#{$imageURL-core}/ui/ac-loader.gif"); background-repeat: no-repeat; background-position: 97% center; }
+&.ac_loading { background-image: url("#{$imageURL-core}/ui/ac-loader.gif"); background-repeat: no-repeat; background-position: 97% center; }
 }
-    .ac_results {
-        z-index: 3;
-        background: $modalBg;
-        border: $modalBorderWidth solid $modalBorderColor;
-        @include boxShadow($modalBoxShadow-outter);
-        ul {
-            padding: 3px 0;
-            white-space: nowrap;
-            font-weight: normal;
-        }
-        li {
-            > div,
-            a {
-                padding: 1px 45px 1px 6px;
-                display: block;
-                line-height: 16px;
-                border: solid $box-bg;
-                border-width: 1px 0;
-                text-decoration: none;
-                color: $font-color;
-                @include truncate;
-                position: relative;
-                img {
-                    margin-right: 5px;
-                    width: 30px;
-                }
-                .autoCompleteCategory { position: absolute; right: 5px; top: 0; font-size: 11px; }
-                &:hover { background: $link-color; border-color: darken($link-color,50%); color: $font-colorTertiary; cursor: pointer; }
-            }
-
-            &.ac_over a,
-            &.ac_over > div { background: $link-color; border-color: darken($link-color,50%); color: $font-colorTertiary; cursor: pointer; }
-        
-            .avatar { display: inline-block; margin-right: 5px; vertical-align: middle; }
-        }
+.ac_results {
+    z-index: 3;
+    background: $modalBg;
+    border: $modalBorderWidth solid $modalBorderColor;
+    @include boxShadow($modalBoxShadow-outter);
+    ul {
+        padding: 3px 0;
+        white-space: nowrap;
+        font-weight: normal;
     }
-
-    // Expandable
-    .u-hidden,
-    button[class*="u-hidden"],
-    a[class*="u-hidden"],
-    div[class*="u-hidden"],
-    span[class*="u-hidden"],
-    p[class*="u-hidden"] { display: none; }
-
-    // Jump Link
-
-    .jump-link { @include u-button-z; }
-
-    // Buttons
-
-    button[type="submit"],
-    input[type="submit"],
-    .button { @include u-button-z; }
-
-    // Poll Creation [Temporary holding area before refactoring - JB 08/27/12]
-
-    .forum-create .p-poll-form-a {
-        clear: both;
-
-        // Help text
-
-        .help-block { color: $font-colorDarker; font-size: $font-sizeSmaller; font-style: italic; }
-    }
-
-    // Flash Message
-
-    .flash-messages {
-        position: fixed;
-        top: 28px + $leading * 2; // 28px is netbar height
-        text-align: center;
-        width: 100%;
-
-        .message {
-            background: $secondaryColor;
-            border: $box-border;
-            @include boxShadow(0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.2));
-            color: $font-colorSecondary;
+    li {
+        > div,
+        a {
+            padding: 1px 45px 1px 6px;
             display: block;
-            font-size: $font-sizeLarger;
-            font-weight: bold;
-            line-height: 1.5em;
-            margin: 0 auto;
-            padding: 2em 5em;
+            line-height: 16px;
+            border: solid $box-bg;
+            border-width: 1px 0;
+            text-decoration: none;
+            color: $font-color;
+            @include truncate;
             position: relative;
-            width: 50em; // .5em = roughly 1 char | 40em original width + 10em padding = 80 char line length average
+            img {
+                margin-right: 5px;
+                width: 30px;
+            }
+            .autoCompleteCategory { position: absolute; right: 5px; top: 0; font-size: 11px; }
+            &:hover { background: $link-color; border-color: darken($link-color,50%); color: $font-colorTertiary; cursor: pointer; }
         }
 
-        .message-close {
-            background: url(#{$imageURL-core}/ui/window-close.png) no-repeat;
-            height: 16px;
-            position: absolute;
-            right: 14px; top: 14px;
-            text-indent: -9999px;
-            width: 16px;
-        }
+        &.ac_over a,
+        &.ac_over > div { background: $link-color; border-color: darken($link-color,50%); color: $font-colorTertiary; cursor: pointer; }
+    
+        .avatar { display: inline-block; margin-right: 5px; vertical-align: middle; }
+    }
+}
 
-        .message-error   { background: #fbe3e4; border: 1px solid #fbc2c4; color: #8a1f11; }
-        .message-warning { background: #fff6bf; border: 1px solid #ffd324; color: #514721; }
-        .message-info    { background: #d5edf8; border: 1px solid #92cae4; color: #205791; }
-        .message-success { background: #e6efc2; border: 1px solid #c6d880; color: #264409; }
-        .message-tip     { background: #85a6d6; border: 1px solid #678bbf; color: #3b5a85; }
+// Expandable
+.u-hidden,
+button[class*="u-hidden"],
+a[class*="u-hidden"],
+div[class*="u-hidden"],
+span[class*="u-hidden"],
+p[class*="u-hidden"] { display: none; }
 
-        .message > a         { text-decoration: underline; }
-        .message-error > a   { color: #8a1f11; }
-        .message-warning > a { color: #514721; }
-        .message-info > a    { color: #205791; }
-        .message-success > a { color: #264409; }
-        .message-tip > a     { color: #205791; }
+// Jump Link
 
-        .message > a:hover         { text-decoration: none; }
-        .message-error > a:hover   { color: darken(#8a1f11, 15%); }
-        .message-warning > a:hover { color: darken(#514721, 15%); }
-        .message-info > a:hover    { color: darken(#205791, 15%); }
-        .message-success > a:hover { color: darken(#264409, 15%); }
-        .message-tip > a:hover     { color: darken(#205791, 15%); }
+.jump-link { @include u-button-z; }
+
+// Buttons
+
+button[type="submit"],
+input[type="submit"],
+.button { @include u-button-z; }
+
+// Poll Creation [Temporary holding area before refactoring - JB 08/27/12]
+
+.forum-create .p-poll-form-a {
+    clear: both;
+
+    // Help text
+
+    .help-block { color: $font-colorDarker; font-size: $font-sizeSmaller; font-style: italic; }
+}
+
+// Flash Message
+
+.flash-messages {
+    position: fixed;
+    top: 28px + $leading * 2; // 28px is netbar height
+    text-align: center;
+    width: 100%;
+
+    .message {
+        background: $secondaryColor;
+        border: $box-border;
+        @include boxShadow(0 0 8px rgba(0, 0, 0, 0.1), 0 0 16px rgba(0, 0, 0, 0.2));
+        color: $font-colorSecondary;
+        display: block;
+        font-size: $font-sizeLarger;
+        font-weight: bold;
+        line-height: 1.5em;
+        margin: 0 auto;
+        padding: 2em 5em;
+        position: relative;
+        width: 50em; // .5em = roughly 1 char | 40em original width + 10em padding = 80 char line length average
     }
 
-    $interface-counter: $interface-counter + 1;
+    .message-close {
+        background: url(#{$imageURL-core}/ui/window-close.png) no-repeat;
+        height: 16px;
+        position: absolute;
+        right: 14px; top: 14px;
+        text-indent: -9999px;
+        width: 16px;
+    }
+
+    .message-error   { background: #fbe3e4; border: 1px solid #fbc2c4; color: #8a1f11; }
+    .message-warning { background: #fff6bf; border: 1px solid #ffd324; color: #514721; }
+    .message-info    { background: #d5edf8; border: 1px solid #92cae4; color: #205791; }
+    .message-success { background: #e6efc2; border: 1px solid #c6d880; color: #264409; }
+    .message-tip     { background: #85a6d6; border: 1px solid #678bbf; color: #3b5a85; }
+
+    .message > a         { text-decoration: underline; }
+    .message-error > a   { color: #8a1f11; }
+    .message-warning > a { color: #514721; }
+    .message-info > a    { color: #205791; }
+    .message-success > a { color: #264409; }
+    .message-tip > a     { color: #205791; }
+
+    .message > a:hover         { text-decoration: none; }
+    .message-error > a:hover   { color: darken(#8a1f11, 15%); }
+    .message-warning > a:hover { color: darken(#514721, 15%); }
+    .message-info > a:hover    { color: darken(#205791, 15%); }
+    .message-success > a:hover { color: darken(#264409, 15%); }
+    .message-tip > a:hover     { color: darken(#205791, 15%); }
 }

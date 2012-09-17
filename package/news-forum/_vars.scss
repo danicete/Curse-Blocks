@@ -51,54 +51,6 @@ $browserBorder: $articleBorder-divider !default;
 $browserTitle-size: $header-size !default;
 
 // --------------------------------------------------------- //
-// (3) Comments                                                
-// --------------------------------------------------------- //
-
-$commentBg: $box-bg !default;
-$commentThreadBg-color: darken($commentBg, 5%) !default;
-
-$commentLink-color: $link-color !default;
-$commentLink-colorHover: $link-colorHover !default;
-
-$commentBorderWidth-top: 0 !default;
-$commentBorderStyle-top: solid !default;
-$commentBorderColor-top: transparent !default;
-$commentBorderWidth-bottom: 1px !default;
-$commentBorderStyle-bottom: solid !default;
-$commentBorderColor-bottom: $box-borderColor !default;
-
-$commentMargin: 2px !default;
-$commentPadding: $box-padding !default;
-
-$commentUserBoxWidth: 75px !default;
-
-$commentSigColor: $font-colorLighter !default;
-$commentSigBorder: $box-border !default;
-
-// Forums
-
-$forumComment-bg: $commentBg !default;
-$forumCommentThreadBg: $commentBg !default;
-$forumComment-font-color: $box-fontColor !default;
-$forumCommentFont-colorHover: $box-fontColorHover !default;
-$forumComment-margin: $commentMargin !default;
-$forumCommentUserBoxWidth: 150px !default;
-$forumComment-padding: 10px 0 !default;
-$forumCommentSigColor: $commentSigColor !default;
-$forumCommentSigBorder: $commentSigBorder !default;
-$forumComment-link-color: $link-color !default;
-
-$forumComment-border: $box-border !default;
-$forumCommentBorderWidth-top: 0 !default;
-$forumCommentBorderStyle-top: solid !default;
-$forumCommentBorderColor-top: transparent !default;
-$forumCommentBorderWidth-bottom: 1px !default;
-$forumCommentBorderStyle-bottom: solid !default;
-$forumCommentBorderColor-bottom: $box-borderColor !default;
-
-$forumComment-boxShadow: null !default;
-
-// --------------------------------------------------------- //
 // (3) Forum                                                   
 // --------------------------------------------------------- //
 
@@ -116,7 +68,6 @@ $forumIcon-height: 48px !default;
 $forumIcon-width: 48px !default;
 $forumLink-color: $header-color !default;
 $forumLink-color-hover:  $header-colorHover !default;
-$forumComment-content-margin: $forumCommentUserBoxWidth + ($leading / 2) !default;
 
 $forumStatusBg-sprite: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-sprite.png") !default;
 
