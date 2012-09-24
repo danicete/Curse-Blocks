@@ -6,20 +6,7 @@
 
 // ✎ All Ad Units
 
-// ⌚ Level 1.00 (04/03/12)
-
-// ☍ Components:
-//     - Null
-
-// ☆ Sub-Classes:
-//     - Null
-
-// ☯ Browser Support:
-//     - IE7
-//     - IE8
-//     - IE9
-//     - FF3+
-//     - Chrome
+// ⌚ Level 1.1.1 (09/20/12)
  
 // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
 
@@ -36,12 +23,18 @@
 .hide-ads .atf-ad-leaderboard,
 .hide-ads .btf-ad-leaderboard { display: none !important; visibility: hidden !important; }
 .hide-ads .ad-removal { display: none !important; visibility: hidden !important; }
-#analytics { display: none !important; visibility: hidden !important; }
+#analytics,
+.btf-ad-analytic { display: none !important; visibility: hidden !important; }
 
 // If site skin active
 
-.ad-skin #site-main { overflow: hidden; }
+.ad-skin #site-main { @include boxShadow($adskin-boxShadow); }
 .ad-skin .p-header-a { background: $adSkinHeader-bg; }
+.ad-skin .atf .atf-ad-badge { display: none !important; visibility: hidden !important; }
+.ad-skin #site { position: relative; background: $adskin-bgGradient; background-position: $adskin-bgGradientPosition; }
+
+// Med Rec
+
 .atf-ad-medRect,
 .btf-ad-medRect {
 	background: $ad-bg;
@@ -55,7 +48,6 @@
 		display: block;
 		margin: 0 auto;
 	}
-
     .ad-removal { display: block; font-size: $font-sizeSmaller; text-align: center; }
 }
 
@@ -93,7 +85,19 @@
 			margin: 0 auto;
 		}
 	}
+	.atf-ad-medRect {
+		background: $atfAdMedRec-bg;
+		padding: $atfAdMedRec-padding;
+	}
 }
+.atf-ad-leaderboard {
+	min-width: 728px;
+	img[width="1"] { display: none !important; visibility: hidden !important; }
+}
+.atf-ad-badge .ad-removal,
+.atf-ad-leaderboard .ad-removal,
+.btf-ad-leaderboard .ad-removal { display: none !important; visibility: hidden !important; }
+.btf { text-align: center; margin-bottom: 20px; }
 
 $ad-counter: $ad-counter + 1;
 

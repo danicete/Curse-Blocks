@@ -43,7 +43,7 @@
 
     .primary-content:first-child { margin-left: 0; }
 
-    .primary-content + .secondary-content { padding: $secondaryContent-padding; }
+    .primary-content + .secondary-content { padding: $secondaryContent-padding; background: $secondaryContent-bg; }
 
     // Secondary + Primary
 
@@ -58,7 +58,7 @@
 // --------------------------------------------------------- //
 
     #content, .atf {
-	    background: $content-bg;
+        background: $content-bg;
         @include multipleBg-border($borderBg-path,$borderBg-color,$borderBg-width,$borderBg-style);
         
         .hide-ads & { border-bottom-width: 0; border-top-width: 0; }

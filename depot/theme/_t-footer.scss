@@ -32,7 +32,7 @@ $footerHeight-teritary: 20px;
 $footerFeaturedImgPath-one: url('http://media-curse.cursecdn.com/attachments/73/537/featured-gw2g.png');
 $footerFeaturedImgPath-two: url('http://media-curse.cursecdn.com/attachments/63/908/featured-lolpro.png');
 $footerFeaturedImgPath-three: url('http://media-curse.cursecdn.com/attachments/63/909/featured-mmoc.png');
-$footerFeaturedImgPath-four: url('http://media-curse.cursecdn.com/attachments/73/538/featured-dayz.png');
+$footerFeaturedImgPath-four: url('http://media-curse.cursecdn.com/attachments/75/387/featured-gw2db.png');
 $footerFont-family: Tahoma, Geneva, Verdana;
 $footerFont-color: #fff;
 
@@ -197,7 +197,7 @@ $footerFont-color: #fff;
 				&.site-mmoc {
 					h4 { background-image: $footerFeaturedImgPath-three; }
 				}
-				&.site-dayz {
+				&.site-gw2db {
 					h4 { background-image: $footerFeaturedImgPath-four; }
 				}
 				a { display: block;  cursor: pointer; // Cross-browser fallback

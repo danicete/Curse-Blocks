@@ -24,6 +24,15 @@
     $quaternaryColor: #E1EDB9 !default; // Additional color
     $quinaryColor: #B8986B !default; // Additional color
 
+        // greyscale
+
+        $black          : #000;
+        $darkgrey       : lighten($black, 25%);
+        $grey           : lighten($black, 50%);
+        $lightgrey      : lighten($black, 75%);
+        $lightergrey    : lighten($black, 90%);
+        $white          : #fff;
+
     // c.) Options
 
         // i.) Base
@@ -34,7 +43,7 @@
 
         $full-nav: false !default;
         $full-nav-overlap: false !default;
-		$split-nav: false !default;
+        $split-nav: false !default;
 
         $db-nav: false !default;
         $db-table: false !default;
@@ -154,7 +163,7 @@
     $content-boxShadow: none !default;
 
     $secondaryContent-padding: 0 0 0 1.2295% !default;
-
+    $secondaryContent-bg: none !default;
     // c.) Colors
 
     $selection-bgColor: $tertiaryColor !default;
@@ -166,13 +175,33 @@
 
     // d.) Ads
 
-    $ad-bg: transparent none !default;
+    // 1.) Header BG
     $adSkinHeader-bg: $body-bg !default;
-    $atf-bg: $content-bg !default;
-    $atf-margin: 0 !default;
-    $atf-marginBottom: $atf-margin !default;
-    $atf-padding: 0 $content-padding !default;
-    $atfAd-padding: 0 !default;
+
+    // 2.) Top Gradient
+    $adskin-bgGradient: url("#{$imageURL-core}/ads/ad-skin-gradient-top.png") fixed repeat-x !default;
+    $adskin-bgGradientPosition: 0 0 !default;
+
+    // 3.) Site Drop Down
+    $adskin-boxShadow: 0 0 8px rgba(0,0,0,.4) !default;
+
+    // 4.) Atf
+
+        // a.) Background
+        $atf-bg: $content-bg !default;
+
+        // b.) Box Model
+        $atf-margin: 0 !default;
+        $atf-marginBottom: $atf-margin !default;
+        $atf-padding: 0 $content-padding !default;
+        $atfAd-padding: 0 !default;
+
+        // c.) Med Rec
+        $atfAdMedRec-bg: transparent !default;
+        $atfAdMedRec-padding: 0 !default;
+        
+        // d.) Leaderboard
+        $ad-bg: transparent none !default;
 
 // --------------------------------------------------------- //
 // 3.) Box-Model                                               
