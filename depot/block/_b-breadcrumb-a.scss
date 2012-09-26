@@ -1,24 +1,53 @@
 ﻿// Block -> breadcrumb (b-breadcrumb-a)
-//
-// ✎ UNIQUE - Cobalt standard breadcrumbs
-//
-// ⌚ Level 1.00 (05/02/12)
-//
+
 // ☍ Components:
 //     - Item (b-breadcrumbs-item)
 //     - Wrapper (b-breadcrumbs-wrapper)
-//
+
 // ☆ Sub-Classes:
 //     - Null
-//
-// ☯ Browser Support:
-//     - Chrome
-//     - FireFox
-//     - Safari
-//     - Opera
-//     - IE9/8/7
 
-// Mixin
+// @ Includes: 
+//     - borderRadius
+//     - borderRadius-top-left
+//     - boxShadow
+//     - font
+//     - group
+//     - inline-block
+//     - triangle
+
+// $ Variables:
+//      a.) Background
+//          - $breadcrumb-bg
+//          - $breadcrumbHomeItem-bg
+//          - $breadcrumbItem-bg
+//      a.) Border
+//          - $breadcrumb-border
+//          - $breadcrumb-borderRadius
+//      a.) Box-Model
+//          - $breadcrumb-borderWidth
+//          - $breadcrumb-boxShadow
+//          - $breadcrumb-margin
+//          - $breadcrumb-padding
+//          - $breadcrumbHomeItem-borderRadius
+//          - $breadcrumbHomeItem-padding
+//          - $breadcrumbItem-seperator
+//      a.) Typography
+//          - $font-color
+//          - $breadcrumb-fontFamily
+//          - $breadcrumb-fontLineheight
+//          - $breadcrumb-fontSize
+//          - $breadcrumb-fontStyle
+//          - $breadcrumb-fontTransform
+//          - $breadcrumb-fontWeight
+//          - $breadcrumbItem-color
+//      a.) Misc
+//          - $color
+//          - $direction
+//          - $location
+
+// --------------------------------------------------------- //
+//  Mixin
 // --------------------------------------------------------- //
 
 @mixin b-breadcrumb-a {

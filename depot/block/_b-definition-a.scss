@@ -2,8 +2,6 @@
 
 // ✎ Definition list with icon column and description column
 
-// ⌚ Level 1.00 (05/03/12)
-
 // ☍ Components:
 //     - Title (b-definition-title)
 //     - Description (b-definition-desc)
@@ -12,17 +10,21 @@
 // ☆ Sub-Classes:
 //     - Null
 
-// ☯ Browser Support:
-//     - Chrome
-//     - FireFox
-//     - Safari
-//     - Opera
-//     - IE9/8/7
- 
-// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+// @ Includes: 
+//     - group
 
-// Mixin
+// $ Variables:
+//      a.) Box-Model
+//          - $definitionAvatar-height
+//          - $definitionAvatar-width
+//          - $leading
+//      a.) Typography
+//          - $definitionTitle-size
+
 // --------------------------------------------------------- //
+//  Mixin
+// --------------------------------------------------------- //
+
 
 @mixin b-definition-a {
 

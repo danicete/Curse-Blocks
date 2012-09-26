@@ -1,28 +1,51 @@
 ﻿// Block -> List (b-list-a)
-//
+
 // ✎ Horizontal, blocked container list with default float behavior
-//
-// ⌚ Level 1.00 (05/04/12)
-//
+
 // ☍ Components:
 //     - Item (b-list-item)
 //     - Label (b-list-label)
 //     - Overlay (b-list-overlay)
 //     - Title (b-list-title)
-//
+
 // ☆ Sub-Classes:
 //     - Null
-//
-// ☯ Browser Support:
-//     - Chrome
-//     - FireFox
-//     - Safari
-//     - Opera
-//     - IE9/8/7
-//
-// --------------------------------------------------------- //
 
-// Mixin
+// @ Includes: 
+//     - boxShadow
+//     - col
+//     - inline-block
+//     - group
+
+// $ Variables:
+//      a.) Background
+//          - $listGridItem-bg
+//          - $listGridItemFull-bg
+//          - $listGridItemHover-bg
+//          - $listGridPortrait-bg
+//      b.) Box-Model
+//          - $leading
+//          - $listPadding
+//          - $listGridItem-boxShadow
+//          - $listGridItem-height
+//          - $listGridItem-margin
+//          - $listGridItem-padding
+//          - $listGridItem-width
+//          - $listGridItemFull-boxShadow
+//          - $listGridItemFull-height
+//          - $listGridItemFull-margin
+//          - $listGridItemFull-width
+//          - $listGridItemPortraitFull-boxShadow
+//          - $listGridPortrait-padding
+//          - $listGridPortrait-width
+//      c.) Typography
+//          - $font-color
+//          - $listGridItem-color
+//          - $listGridItemFull-color
+//          - $listGridItemHover-color
+
+// --------------------------------------------------------- //
+//  Mixin
 // --------------------------------------------------------- //
 
 @mixin b-list-a {

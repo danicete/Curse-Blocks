@@ -1,26 +1,31 @@
 ﻿// Block -> Media (b-media-a)
-//
+
 // ✎ Basic media module
-//
-// ⌚ Level 1.00 (03/05/12)
-//
+
 // ☍ Components:
 //     - None
-//
+
 // ☆ Sub-Classes:
 //     - Null
-//
-// ☯ Browser Support:
-//     - Chrome
-//     - FireFox
-//     - Safari
-//     - Opera
-//     - IE9/8/7
-//
-// Mixin
-// --------------------------------------------------------- //
 
-// Mixin
+// @ Includes: 
+//     - borderRadius
+//     - borderRadius-bottom
+
+// $ Variables:
+//      a.) Background
+//          - $mediaOverlay-bg
+//          - $mediaTitle-color-hover
+//      b.) Border
+//          - $mediaBorder-radius
+//      c.) Box-Model
+//          - $leading
+//      d.) Typography
+//          - $mediaTitle-color
+//          - $mediaTitle-size
+
+// --------------------------------------------------------- //
+//  Mixin
 // --------------------------------------------------------- //
 
 @mixin b-media-a {

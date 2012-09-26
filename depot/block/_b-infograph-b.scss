@@ -2,8 +2,6 @@
 
 // ✎ Information graphic w/ x&y labels for table based representation
 
-// ⌚ Level 1.00 (03/05/12)
-
 // ☍ Components:
 //     - X Label (b-infograph
 
@@ -13,14 +11,16 @@
 //     - Item (b-infograph-item)
 //     - Value (b-infograph-value)
 
-// ☯ Browser Support:
-//     - Chrome
-//     - FireFox
-//     - Safari
-//     - Opera
-//     - IE9/8/7
+// @ Includes: 
+//     - none
+
+// $ Variables:
+//      a.) Box-Model
+//          - $leading
  
-// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+// --------------------------------------------------------- //
+//  Mixin
+// --------------------------------------------------------- //
 
 @mixin b-infograph-b {
 

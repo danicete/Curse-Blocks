@@ -1,29 +1,33 @@
 ﻿// Block -> List (b-list-b)
-//
+
 // ✎ Vertical, connecting block list
-//
+
 // ⌚ Level 1.00 (05/04/12)
-//
+
 // ☍ Components:
 //     - Button (b-list-button)
 //     - Comment (b-list-comment)
 //     - Item (b-list-item)
 //     - Time (b-list-time)
 //     - Title (b-list-title)
-//
+
 // ☆ Sub-Classes:
 //     - Comments (b-list_comments)
-//
-// ☯ Browser Support:
-//     - Chrome
-//     - FireFox
-//     - Safari
-//     - Opera
-//     - IE9/8/7
-//
-// --------------------------------------------------------- //
 
-// Mixin
+// @ Includes: 
+//     - group
+//     - u-glyph-speechBubble
+
+// $ Variables:
+//      a.) Border
+//          - $listBorder
+//      b.) Box-Model
+//          - $listPadding
+//      c.) Typography
+//          - $font-sizeSmaller
+
+// --------------------------------------------------------- //
+//  Mixin
 // --------------------------------------------------------- //
 
 @mixin b-list-b {

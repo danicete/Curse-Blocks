@@ -2,8 +2,6 @@
 
 // ✎ Information graphic that displays data in a horizontal bar graph
 
-// ⌚ Level 1.00 (03/05/12)
-
 // ☍ Components:
 //     - Fill (b-infograph-fill)
 //     - Title (b-infograph-title)
@@ -13,16 +11,21 @@
 // ☆ Sub-Classes:
 //     - Null
 
-// ☯ Browser Support:
-//     - Chrome
-//     - FireFox
-//     - Safari
-//     - Opera
-//     - IE9/8/7
- 
-// -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+// @ Includes: 
+//     - none
 
-// ★★ Mixin
+// $ Variables:
+//      a.) Box-Model
+//          - $box-padding
+//          - $leading
+//      b.) Borders
+//          - $box-borderColor
+//      c.) Typography
+//          - $secondaryColor
+ 
+// --------------------------------------------------------- //
+//  Mixin
+// --------------------------------------------------------- //
 
 @mixin b-infograph-a {
 
