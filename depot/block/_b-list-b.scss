@@ -5,14 +5,18 @@
 // ⌚ Level 1.00 (05/04/12)
 //
 // ☍ Components:
-//     - Button (b-list-button)
+//     - Item    (b-list-item)
+//     - Time    (b-list-time)
+//     - Button  (b-list-button)
+//     - Title   (b-list-title)
 //     - Comment (b-list-comment)
-//     - Item (b-list-item)
-//     - Time (b-list-time)
-//     - Title (b-list-title)
+//     - Thumb   (b-list-thumb)
+//     - View    (b-list-view)
+//     - Date    (b-list-date)
 //
 // ☆ Sub-Classes:
 //     - Comments (b-list_comments)
+//     - Videos (b-list_videos)
 //
 // ☯ Browser Support:
 //     - Chrome
@@ -22,7 +26,6 @@
 //     - IE9/8/7
 //
 // --------------------------------------------------------- //
-
 // Mixin
 // --------------------------------------------------------- //
 
@@ -51,15 +54,22 @@
 
     .b-list-button { position: absolute; top: 0; right: 0; }
 
+    // Title
+
+    .b-list-title { 
+    	overflow: hidden; 
+    	text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
     //// ☆ Sub-Classes ☆
 
     // Comments
 
     &.b-list_comments {
 
-        // Title & Meta
+        // Meta
 
-        .b-list-title,
         .b-list-meta {
             overflow: hidden;
             text-overflow: ellipsis;
@@ -80,28 +90,13 @@
 	// Videos
 
 	&.b-list_videos {
-		
-		// Title
-
-		.b-list-title {
-			overflow: hidden;
-            text-overflow: ellipsis;
-		}
 
 		// Thumb 
 
 		.b-list-thumb {
 			float: left;
 			margin-right: 10px;
-			&.b-list-thumb-110_62 {
-				width: 110px;
-				height: 58px;
-				overflow: hidden;
-				position: relative;
-				> img { position: absolute; top: -9px; left: 0; }
-			}
 		}
-
 
 		// Time
 
