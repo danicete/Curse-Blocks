@@ -252,7 +252,7 @@
 
     // c.) Box-Model
 
-    $button-padding: 4px 8px !default;
+    $button-padding: 5px 8px !default;
 
     // d.) Typography
 
@@ -390,7 +390,9 @@ $blockquoteLink-colorHover: $link-colorHover !default;
     $commentSigColor: $font-colorLighter !default;
     $commentSigBorder: $box-border !default;
 
-    // Forums
+// --------------------------------------------------------- //
+// (3) Forums                                               
+// --------------------------------------------------------- //
 
     $forumComment-bg: $commentBg !default;
     $forumCommentThreadBg: $commentBg !default;
@@ -414,6 +416,17 @@ $blockquoteLink-colorHover: $link-colorHover !default;
     $forumComment-boxShadow: null !default;
 
     $forumComment-content-margin: $forumCommentUserBoxWidth + ($leading / 2) !default;
+
+    $forumButton-bgTop: #777;
+    $forumButton-bgBottom: darken(#777, 20%);
+
+    $forumStatusIcon-announcement: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -51px 2px !default;
+    $forumStatusIcon-general: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -1px 2px !default;
+    $forumStatusIcon-locked: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -35px 2px !default;
+    $forumStatusIcon-pinned: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -1px -14px !default;
+    $forumStatusIcon-poll: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -20px 2px !default;
+    $forumStatusIcon-redirect: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat 0 -33px !default;
+    $forumStatusIcon-typical: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -19px -16px !default;
 
 // --------------------------------------------------------- //
 // (3) Clipping                                                

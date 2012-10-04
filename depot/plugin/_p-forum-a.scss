@@ -1,23 +1,54 @@
 ﻿// Plugin -> Forums (p-forum-a)
-//
+
 // ✎ General Forum Styles
-//
-// ⌚ Level 1.00 (02/17/12)
-//
+
 // ☍ Components:
 //     - Null
-//
+
 // ☆ Sub-Classes:
 //     - Null
-//
-// ☯ Browser Support:
-//     - Chrome
-//     - FireFox
-//     - Safari
-//     - IE9/8/7
-// 
-// --------------------------------------------------------- //
 
+// $ Variables:
+//      a.) Background
+//			- $forumBg
+//			- $forumButton-bgBottom
+//			- $forumButton-bgTop
+//			- $forumHeading-bg-bottom
+//			- $forumHeading-bg-top
+//			- $forumStatusBg-general-unread
+//			- $forumStatusBg-sprite
+//			- $forumStatusIcon-announcement
+//			- $forumStatusIcon-general
+//			- $forumStatusIcon-locked
+//			- $forumStatusIcon-typical
+//			- $forumStatusIcon-poll
+//			- $forumStatusIcon-locked
+//			- $forumStatusIcon-pinned
+//			- $forumStatusIcon-redirect
+//      b.) Border
+//			- $button-borderRadius
+//			- $forumBorder
+//			- $forumHeader-border
+//			- $paginationBorder
+//      c.) Box-Model
+//			- $forumCell-height
+//			- $forumCell-padding
+//			- $forumIcon-width
+//          - $leading
+//			- $tableCell-boxShadow
+//      d.) Typography
+//			- $font-colorTertiary
+//			- $font-colorSecondary
+//			- $font-family
+//			- $font-sizeSmaller
+//			- $forumLink-color
+//			- $forumLink-color-hover
+//			- $forumThreadAnnouncementFontSize
+//			- $forumTitleFont-size
+//			- $link-color
+//			- $tableHeader-color
+
+// --------------------------------------------------------- //
 // Mixin
 // --------------------------------------------------------- //
 
@@ -72,8 +103,26 @@
 
         // States
 
-		&.forum-thread-row-unread {	.status-icon { background-position: $forumStatusBg-announcement-unread; } }
-		&.forum-thread-row-read { .status-icon { background-position: $forumStatusBg-announcement-read; } }
+		&.forum-thread-row-unread {	
+			.status-icon { 
+				span { 
+					background: $forumStatusIcon-announcement; 
+					display: block;
+					height: 17px;
+					width: 19px; 
+				}
+			} 
+		}
+		&.forum-thread-row-read { 
+			.status-icon { 
+				span { 
+					background: $forumStatusIcon-announcement; 
+					display: block;
+					height: 17px;
+					width: 19px; 
+				}
+			} 
+		}
 
 		.thread-title { font-size: $forumThreadAnnouncementFontSize; font-weight: bold; }
 	} 
@@ -149,16 +198,19 @@
 			width: $forumIcon-width; // Keeps td from expanding to fill space
 
 			.status-icon {
-				display: block;
-				height: $forumIcon-height;
-				width: $forumIcon-width;
-				background-image: $forumStatusBg-sprite;
-				background-repeat: no-repeat;
-				background-position: center center;
+            	@include u-button-z;
+            	background-position: $forumStatusBg-general-unread; 				
+				height: 32px;
+				width: 32px;
 			}
 
             &.without-icon {
-                .status-icon { background-position: -95px -55px; }
+                .status-icon { 
+                	@include u-button-z;
+                	background-position: $forumStatusBg-general-unread; 				
+					height: 32px;
+					width: 32px;
+				}
             }
             &.with-icon {
                 .status-icon { background: none; }
@@ -203,30 +255,53 @@
 
         .forum-row-not-seen-latest-thread {
 
-			.col-forum {
+			.col-status.with-icon > .status-icon > img { opacity: 0.50;	} // ?
 
-				.title { font-weight: bold; }
+			.col-status.without-icon > .status-icon { 
+				@include backgroundGradient(linear-gradient(top, $forumButton-bgTop, $forumButton-bgBottom));			    
+			    @include borderRadius($button-borderRadius);
+			    @include boxShadow(inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 2px rgba(0, 0, 0, 0.05));
+			    @include transition(background-position, .1s, linear);			    
+			    background-color: $forumButton-bgBottom;
+			    background-position: -48px -2px;
+			    background-repeat: repeat-x;
+			    border-style: solid;
+			    border-color: #111; // Fallback
+			    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+			    border-width: 1px;
+			    display: inline-block;
+				height: 32px;
+				width: 32px;
+
+			    // States
+
+			    &:hover { background-position: -95px -55px; }
+			    &:active { background-image: none; @include boxShadow(inset 0px 2px 4px rgba(0, 0, 0, 0.10), inset 0px 1px 2px rgba(0,0,0,.05)); }	
 			}
 		}
 
-        .forum-row-seen-latest-thread {
-							
-			.col-status.with-icon > .status-icon > img { opacity: 0.50;	} // ?
+        // General Icon
+
+        .forum-row-normal, .forum-row-not-seen-latest-thread {
+			
+			.col-status.without-icon > .status-icon > span { 
+				background: $forumStatusIcon-general; 
+				display: block;
+				height: 17px;
+				width: 19px;
+			}
 		}
 
-        .forum-row-normal {
-
-			.col-status.without-icon > .status-icon { background-position: $forumStatusBg-general-read; }
-		}
-
-        .forum-row-not-seen-latest-thread {
-
-            .col-status.without-icon > .status-icon { background-position: $forumStatusBg-general-unread; }
-        }
-
+        // Locked Icon
+        
 		.forum-row-locked {	
-        			
-			.col-status.without-icon > .status-icon { background-position: $forumStatusBg-locked-read; }
+			
+			.col-status.without-icon > .status-icon > span { 
+				background: $forumStatusIcon-locked; 
+				display: block;
+				height: 20px;
+				width: 15px;
+			}
 		}
 
         // Threads
@@ -238,14 +313,28 @@
             // Unread
 
 			.thread-title { font-weight: bold; }
-			.col-status > .status-icon { background-position: $forumStatusBg-typical-unread; }
+			.col-status > .status-icon { 
+				span { 
+					background: $forumStatusIcon-typical; 
+					display: block;
+					height: 20px;
+					width: 17px;
+				}
+			}
 
             // Read
 
 			&.forum-thread-row-read {
 
 				.thread-title {	font-weight: normal; }
-                .col-status > .status-icon { background-position: $forumStatusBg-typical-read; }
+                .col-status > .status-icon { 
+					span { 
+						background: $forumStatusIcon-typical; 
+						display: block;
+						height: 20px;
+						width: 17px;
+					} 
+                }
             }
 		}
 
