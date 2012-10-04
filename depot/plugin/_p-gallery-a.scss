@@ -69,6 +69,8 @@
         position: relative;
         @include boxShadow(inset 0 1px 1px rgba(255,255,255,.1));
 
+        .u-clip-wrapper { top: -50px; right: -50px; bottom: -50px; left: -50px; }
+
         .p-gallery-image { height: $albumViewport; overflow: hidden; } // Change value based on your projects needs 
         .u-clip { background: $galleryBg; }
         .p-gallery-caption { @include group; font-weight: bold; padding: 4px 10px; }

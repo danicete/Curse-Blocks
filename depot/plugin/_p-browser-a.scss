@@ -33,10 +33,12 @@
 
     .p-browser-thumb { 
 		float: left;
-        height: 124px;
+        height: 160px; // 16:9 aspect ratio, current width is 284px
         width: $browserImage-width;
         overflow: hidden;
         position: relative;
+
+        .u-clip-wrapper { top: -24px; } // Offsets letterbox in screen shots
 	}
 
     // Content
