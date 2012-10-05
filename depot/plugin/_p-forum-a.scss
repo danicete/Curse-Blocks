@@ -92,12 +92,12 @@
             display: block;
 			float: left;
 			margin-right: $forumCell-padding;
-			background-image: $forumStatusBg-sprite;
 
 			> a	{
-                display: block;
-                height: $forumIcon-height;
-                width: $forumIcon-width;
+            	@include u-button-z;
+            	background-position: $forumStatusBg-general-unread; 				
+				height: 32px;
+				width: 32px;
             }								
 		}
 
@@ -108,8 +108,8 @@
 				span { 
 					background: $forumStatusIcon-announcement; 
 					display: block;
-					height: 17px;
-					width: 19px; 
+					height: $forumIcon-height;
+					width: $forumIcon-width; 
 				}
 			} 
 		}
@@ -118,9 +118,8 @@
 				span { 
 					background: $forumStatusIcon-announcement; 
 					display: block;
-					height: 17px;
-					width: 19px; 
-				}
+					height: $forumIcon-height;
+					width: $forumIcon-width; 				}
 			} 
 		}
 
@@ -204,7 +203,7 @@
 				width: 32px;
 			}
 
-            &.without-icon {
+            &.without-icon a {
                 .status-icon { 
                 	@include u-button-z;
                 	background-position: $forumStatusBg-general-unread; 				
@@ -287,8 +286,8 @@
 			.col-status.without-icon > .status-icon > span { 
 				background: $forumStatusIcon-general; 
 				display: block;
-				height: 17px;
-				width: 19px;
+				height: $forumIcon-height;
+				width: $forumIcon-width; 
 			}
 		}
 
@@ -299,8 +298,8 @@
 			.col-status.without-icon > .status-icon > span { 
 				background: $forumStatusIcon-locked; 
 				display: block;
-				height: 20px;
-				width: 15px;
+				height: $forumIcon-height;
+				width: $forumIcon-width;
 			}
 		}
 
@@ -317,8 +316,8 @@
 				span { 
 					background: $forumStatusIcon-typical; 
 					display: block;
-					height: 20px;
-					width: 17px;
+					height: $forumIcon-height;
+					width: $forumIcon-width;
 				}
 			}
 
@@ -331,8 +330,8 @@
 					span { 
 						background: $forumStatusIcon-typical; 
 						display: block;
-						height: 20px;
-						width: 17px;
+						height: $forumIcon-height;
+						width: $forumIcon-width;
 					} 
                 }
             }
@@ -344,14 +343,28 @@
             
             // Unread
 
-			.col-status > .status-icon { background-position: $forumStatusBg-poll-unread; }
+			.col-status > .status-icon {
+				span { 
+					background: $forumStatusIcon-poll; 
+					display: block;
+					height: $forumIcon-height;
+					width: $forumIcon-width;
+				}
+			}
 
             // Read
 
             &.forum-thread-row-read {
-
-                .col-status > .status-icon { background-position: $forumStatusBg-poll-read; }
-            }
+                
+                .col-status > .status-icon { 
+                	span { 
+						background: $forumStatusIcon-poll; 
+						display: block;
+						height: $forumIcon-height;
+						width: $forumIcon-width;
+					}
+				}
+			}
 		}
 
         // Locked
@@ -360,29 +373,57 @@
 
             // Unread
 
-			.col-status > .status-icon { background-position: $forumStatusBg-locked-unread; }
+			.col-status > .status-icon { 
+				span { 
+				background: $forumStatusIcon-locked; 
+				display: block;
+				height: $forumIcon-height;
+				width: $forumIcon-width;
+				}
+			}
 
             // Read
 
 			&.forum-thread-row-read {
 
-                .col-status > .status-icon { background-position: $forumStatusBg-locked-read; }
+                .col-status > .status-icon { 
+					span { 
+					background: $forumStatusIcon-locked; 
+					display: block;
+					height: $forumIcon-height;
+					width: $forumIcon-width;
+					}
+                }
             }
 		}
 
-        // Pinned
+		// Pinned
 
         .forum-thread-row-pinned {
 
             // Unread
 
-			.col-status > .status-icon { background-position: $forumStatusBg-pinned-unread; }
+			.col-status > .status-icon { 
+				span { 
+				background: $forumStatusIcon-pinned; 
+				display: block;
+				height: $forumIcon-height;
+				width: $forumIcon-width;
+				}
+			}
 
             // Read
 
             &.forum-thread-row-read {
 
-                .col-status > .status-icon { background-position: $forumStatusBg-pinned-read; }
+                .col-status > .status-icon { 
+					span { 
+					background: $forumStatusIcon-pinned; 
+					display: block;
+					height: $forumIcon-height;
+					width: $forumIcon-width;
+					}
+                }
             }
 		}
 
@@ -392,13 +433,27 @@
             
             // Unread
 
-			.col-status > .status-icon { background-position: $forumStatusBg-redirect-unread; }
+			.col-status > .status-icon { 
+				span { 
+				background: $forumStatusIcon-redirect; 
+				display: block;
+				height: $forumIcon-height;
+				width: $forumIcon-width;
+				}
+			}
 
             // Read
 
             &.forum-thread-row-read {
 
-                .col-status > .status-icon { background-position: $forumStatusBg-redirect-read; }
+                .col-status > .status-icon { 
+					span { 
+					background: $forumStatusIcon-redirect; 
+					display: block;
+					height: $forumIcon-height;
+					width: $forumIcon-width;
+					}
+                }
             }
 		}
 

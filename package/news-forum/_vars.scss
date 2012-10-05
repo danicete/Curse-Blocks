@@ -74,23 +74,36 @@ $forumStatusBg-sprite: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-sprite
 $forumStatusBg-general-unread: -48px -2px !default;
 $forumStatusBg-general-read: -95px -55px !default;
 
-$forumStatusBg-typical-unread: -95px -2px !default;
-$forumStatusBg-typical-read: -95px -55px !default;
+// Commented out for now. Need to be sure isnt used anywhere else. DA 10/5/12
 
-$forumStatusBg-locked-unread: -188px -2px !default;
-$forumStatusBg-locked-read: -188px -55px !default;
+//$forumStatusBg-typical-unread: -95px -2px !default;
+//$forumStatusBg-typical-read: -95px -55px !default;
 
-$forumStatusBg-pinned-unread: -235px -2px !default;
-$forumStatusBg-pinned-read: -235px -55px !default;
+//$forumStatusBg-locked-unread: -188px -2px !default;
+//$forumStatusBg-locked-read: -188px -55px !default;
 
-$forumStatusBg-poll-unread: -140px -2px !default;
-$forumStatusBg-poll-read: -140px -55px !default;
+//$forumStatusBg-pinned-unread: -235px -2px !default;
+//$forumStatusBg-pinned-read: -235px -55px !default;
 
-$forumStatusBg-announcement-read: -2px -2px !default;
-$forumStatusBg-announcement-unread: -2px -55px !default;
+//$forumStatusBg-poll-unread: -140px -2px !default;
+//$forumStatusBg-poll-read: -140px -55px !default;
 
-$forumStatusBg-redirect-read: -282px -2px !default;
-$forumStatusBg-redirect-unread: -282px -55px !default;	
+//$forumStatusBg-announcement-read: -2px -2px !default;
+//$forumStatusBg-announcement-unread: -2px -55px !default;
+
+//$forumStatusBg-redirect-read: -282px -2px !default;
+//$forumStatusBg-redirect-unread: -282px -55px !default;	
+
+$forumButton-bgTop: #777;
+$forumButton-bgBottom: darken(#777, 20%);
+
+$forumStatusIcon-announcement: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -1px -20px !default;
+$forumStatusIcon-general: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -2px 3px !default;
+$forumStatusIcon-locked: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -48px 3px !default;
+$forumStatusIcon-pinned: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -50px -19px !default;
+$forumStatusIcon-poll: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -26px 3px !default;
+$forumStatusIcon-redirect: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -1px -40px !default;
+$forumStatusIcon-typical: url("#{$imageURL-core}/icons/32x32/white/sprite_forum-status.png") no-repeat -25px -19px !default;
 
 // --------------------------------------------------------- //
 // (3) Result                                                  
