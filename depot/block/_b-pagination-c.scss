@@ -1,27 +1,35 @@
 ﻿// ★★ Block -> Pagination (b-pagination-c) ★★
-//
+
 // ✎ Table Sorter Pagination
-//
-// ⌚ Level 1.00 (02/017/12)
-//
+
 // ☍ Components:
 //     - Item (b-pagination-item) 
-//
+
 // ☆ Sub-Classes:
 //     - Null
-//
-// ☯ Browser Support:
-//     - TBD
-//
-// --------------------------------------------------------- //
 
+// $ Variables
+//      a.) Background
+//          - $boxBg
+//          - $paginationBg
+//      b.) Border
+//          - $paginationBorder
+//          - $paginationBorder-radius
+//      c.) Box-Model
+//          - $leading
+//          - $boxModel
+//          - $paginationPadding
+//      d.) Typography
+//          - $font-size
+//          - $font-sizeLarger
+//          - $paginationFont-color
+
+// --------------------------------------------------------- //
 // Mixin
 // --------------------------------------------------------- //
 
 @mixin b-pagination-c {
-		
-	@include group;
-
+    @include group;
     display: table;
     font-size: $font-sizeLarger;
     margin: $leading / 2 0;
@@ -40,44 +48,50 @@
     .b-pagination-first,
     .b-pagination-last,
     .b-pagination-display {
+        @include boxShadow(0 -1px 0 rgba(51, 51, 51, 0.4));        
+        background: rgba(0,0,0,.08);
+        border-top: 1px solid #111;
         display: table-cell;
         list-style-type: none;
         vertical-align: top;
 
-        // Fallbacks
+        // Fallback IE7
 
         .ie7 & { display: block; float: left; }
-        
         > * {
             @include u-button-z;
             cursor: pointer; // Fallback for older browsers
             display: block;
             line-height: 48px;
-
             .single-column & { line-height: 25px; }
-
-            /* Legacy - Keeping for prosperity
-            
-            background: $paginationBg;
-            border: $paginationBorder;
-            @include borderRadius($paginationBorder-radius);
-            color: $paginationFont-color;
-            display: inline-block;
-            padding: $paginationPadding;
-
-            //&:hover { background: $paginationBg-hover; color: $paginationFont-color-hover; }
-            &.s-disabled { display: none;  }
-            */
         }
         dl { line-height: normal; height: 48px; }
         dl,
         dd { margin: 0; }
-		dt { margin-bottom: 10px; }
-        dd {
-			font-size: $font-size;
-            &:before { content: "\201C"; }
-            &:after { content: "\201D"; }
+        dt { margin-bottom: 10px; }
+        dd { font-size: $font-size; &:before { content: "\201C"; } &:after { content: "\201D"; } }
+
+        // Fallback IE8
+
+        .ie8 & { background: $primaryColor; }            
+        
+        > * { @include elementGoBOOM($boxModel: true); }
+        dl { height: 100%; }
+        dt {
+            
+            > a { 
+
+                //Button
+
+                @include u-button-z;
+                cursor: pointer; // Fallback for older browsers
+                display: block;
+                margin-top: 15px;
+                padding: 15px 8px;
+            }
         }
+        
+        dd { cursor: default; font-weight: bold; }        
     }
 
     // First & Last
@@ -88,69 +102,76 @@
     // Previous
 
     .b-pagination-prev {
+        @include boxShadow(1px -1px 0 rgba(51, 51, 51, 0.5));        
+        border-right: 1px solid #111;
         padding: 0 $leading * 3 0 0;
         width: 40%;
-
         .single-column & { padding: 0 $leading * 3 0 $leading; width: 30%; }
         &:only-of-type { float: left; padding: 0; }
 
-        // Fallbacks
+        // Fallback IE7
 
         .ie7 & { width: auto; }
-
-        //> span,
-        //dt { @include triangle(left, $size: 8px, $color: $button-fontColor); }
     }
 
     // Next
 
     .b-pagination-next {
+        @include boxShadow(-1px -1px 0 rgba(51, 51, 51, 0.4));        
+        border-left: 1px solid #111;
         padding: 0 0 0 $leading * 3;
         width: 40%;
-
         .single-column & { padding: 0 $leading 0 $leading * 3; width: 30%; }
 
         // Fallbacks
 
         .ie7 & { width: auto; }
-
-        //> span,
-        // dt { @include triangle(right, $size: 8px, $location: ":after", $color: $button-fontColor); } // don't really like this - BF
     }
+
+    .b-pagination-prev,
+    .b-pagination-next {
+        background: rgba(0,0,0,.10);
+        padding: 0 $leading $leading $leading;
+        .single-column & { padding: 0 $leading $leading/2 $leading; }
+    }
+
 
     // Display
 
-	.b-pagination-display {
-        //background: $paginationBg;
-        //border: $paginationBorder;
-        //@include borderRadius($paginationBorder-radius);
+    .b-pagination-display {
         color: $paginationFont-color;
         cursor: default;
         display: table-cell;
-        padding: $paginationPadding;
         line-height: 50px;
+        padding: $paginationPadding;
         vertical-align: middle;
-
         .single-column & { line-height: 25px; }
     }
+
+    .disabled {
+        @include u-button-z;
+        display: block;
+        padding: 15px 8px;
+        margin-top: 15px;
+    }
+
+    // u-typography resets
+
+    .u-typography-format & { padding: 0; }
 
     // If post-collection
 
     .post-collection + & {
         display: block;
-
         .b-pagination-prev,
         .b-pagination-next { display: block; float: right; padding: 0; }
-
         .b-pagination-prev { float: left; }
     }
 
     // If post
 
     .post & {
-
         .b-pagination-item {
-
             > a {
                 
                 &:before,
@@ -158,5 +179,4 @@
             }
         }
     }
-
 } // END b-pagination-c
