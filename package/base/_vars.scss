@@ -769,27 +769,31 @@ $modalClose-bg: $primaryColor !default;
 
 
 // Interface + Icons
-
-$icon-goNext: url("#{$imageURL-core}/icons/8x8/grey/post-callout.png") no-repeat top center !default;
-$icon-streams: url("#{$imageURL-core}/icons/16x16/icon-stream-16x16.png") no-repeat 0 0 !default;
-$icon-ua-quote: url("#{$imageURL-core}/icons/12x12/grey/icon-quote.png") no-repeat 0 0 !default;
-$icon-ua-reply: url("#{$imageURL-core}/icons/12x12/grey/icon-reply.png") no-repeat 0 0 !default;
-$icon-ua-delete: url("#{$imageURL-core}/icons/12x12/grey/icon-delete.png") no-repeat 0 0 !default;
-$icon-ua-report: url("#{$imageURL-core}/icons/12x12/grey/icon-report.png") no-repeat 0 0 !default;
-$icon-ua-edit: url("#{$imageURL-core}/icons/12x12/grey/icon-edit.png") no-repeat 0 0 !default;
-$icon-ua-edit-attachments: url("#{$imageURL-core}/icons/grey/12x12/icon-edit-attachments.png") no-repeat 0 0 !default;
-$icon-ua-spam: url("#{$imageURL-core}/icons/12x12/grey/icon-spam.png") no-repeat 0 0 !default;
-$icon-ua-not-spam: url("#{$imageURL-core}/icons/12x12/grey/icon-not-spam.png") no-repeat 0 0 !default;
-$icon-ua-warn: url("#{$imageURL-core}/icons/12x12/grey/icon-warn.png") no-repeat 0 0 !default;
-$icon-ua-add-note: url("#{$imageURL-core}/icons/12x12/grey/icon-add-note.png") no-repeat 0 0 !default;
-$icon-ua-remove-note: url("#{$imageURL-core}/icons/12x12/grey/icon-remove-note.png") no-repeat 0 0 !default;
-$icon-ua-time-duration: url("#{$imageURL-core}/icons/grey/12x12/icon-time.png") no-repeat 5px center !default;
-$icon-ua-reply-to: url("#{$imageURL-core}/icons/8x8/grey/icon-reply-to.png") no-repeat 0 0 !default;
+$icon-goNext: url("#{$imageURL-core}/icons/8x8/darkgrey/icon-postArrow.png") no-repeat 0 0 !default;
+$icon-streams: url("#{$imageURL-core}/icons/16x16/darkgrey/icon-stream.png") no-repeat 0 0 !default;
+$icon-ua-time-duration: url("#{$imageURL-core}/icons/12x12/darkgrey/icon-time.png") no-repeat 5px center !default;
 $icon-asc: url("#{$imageURL-core}/icons/12x12/green/icon-asc.png") no-repeat right center !default;
 $icon-desc: url("#{$imageURL-core}/icons/12x12/green/icon-desc.png") no-repeat right center !default;
+$icon-ua-reply-to: url("#{$imageURL-core}/icons/8x8/darkgrey/icon-replyTo.png") no-repeat 0 0 !default;
+// User Action Icons
+$icon-ua-sprite: url("#{$imageURL-core}/icons/12x12/darkgrey/user-action-sprite.png") no-repeat 0 0 !default;
+$icon-ua-quote: -28px -14px !default;
+$icon-ua-reply: 0 -28px !default;
+$icon-ua-delete: -14px 0 !default;
+$icon-ua-report: -14px -28px !default;
+$icon-ua-edit: -14px -14px !default;
+$icon-ua-edit-attachments: 0 -14px !default;
+$icon-ua-spam: -28px -28px !default;
+$icon-ua-not-spam: -28px 0 !default;
+$icon-ua-warn: -42px 0 !default;
+$icon-ua-add-note: 0 0 !default;
+$icon-ua-remove-note: -14px 0 !default;
+$icon-us-fontColor: $darkgrey !default;
+// Comment Rating
+$icon-ua-commentRating-sprite: url("#{$imageURL-core}/icons/12x12/darkgrey/user-action-comment-sprite.png") no-repeat 0 0 !default;
+//$icon-ua-width: 16px;
+//$icon-ua-hoverPosition: 0 -37px;
 
-$icon-ua-width: 16px;
-$icon-ua-hoverPosition: 0 -37px;
 
 $navDropDown-bg: $secondaryColor !default;
 

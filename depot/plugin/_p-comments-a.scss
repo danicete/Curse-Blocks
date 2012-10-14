@@ -23,69 +23,71 @@
 
 @mixin p-comments-a {
 
-	margin-bottom: $leading;
+    margin-bottom: $leading;
 
-	// Base 
+    > header h2 { font-size: 14px; }
 
-	.p-comment-post {
+    // Base 
+
+    .p-comment-post {
         
         @include group;
 
         background: $commentBg;
         border-bottom: $commentBorderWidth-bottom $commentBorderStyle-bottom $commentBorderColor-bottom;
-		border-top: $commentBorderWidth-top $commentBorderStyle-top $commentBorderColor-top;
-		padding: $commentPadding;
-		position: relative;
+        border-top: $commentBorderWidth-top $commentBorderStyle-top $commentBorderColor-top;
+        padding: $commentPadding;
+        position: relative;
     }
 
     // User
 
     .p-comment-user {
-		float: left;
-		text-align: center;
+        float: left;
+        text-align: center;
         width: $commentUserBoxWidth - 20px;
 
-		.p-comment-avatar img {	max-width: $commentUserBoxWidth - 20px;	}
-		.p-comment-stats { font-size: $font-sizeSmaller; }
+        .p-comment-avatar img { max-width: $commentUserBoxWidth - 20px; }
+        .p-comment-stats { font-size: $font-sizeSmaller; }
         .p-comment-title { font-size: 10px; font-weight: bold;  }
-	}
+    }
 
     // Header
 
-	.p-comment-header {
-		margin-left: $commentUserBoxWidth + ($leading / 2);
+    .p-comment-header {
+        margin-left: $commentUserBoxWidth + ($leading / 2);
         margin-bottom: 10px;
-		
+        
         // Post #
-        	
-		.p-comment-index { 
-			float: right; 
+            
+        .p-comment-index { 
+            float: right; 
 
-			a { color: $font-colorDarker; }
-		}
+            a { color: $font-colorDarker; }
+        }
 
         // Username
 
-		.p-comment-username {
-			float: left;
-			font-weight: bold;
+        .p-comment-username {
+            float: left;
+            font-weight: bold;
             position: relative;
-			
+            
             a { color: $commentLink-color; }
-		}
+        }
 
         // Timestamp
 
-		.p-comment-postdate { 
-			font-size: $font-sizeSmaller;
-			margin-left: 8px;
+        .p-comment-postdate { 
+            font-size: $font-sizeSmaller;
+            margin-left: 8px;
 
-			abbr[title] { border-bottom: none; } 
-		}
+            abbr[title] { border-bottom: none; } 
+        }
 
         // User Menu
 
-		.user-actions-forum-post-author-menu {
+        .user-actions-forum-post-author-menu {
             background: $box-bg;
             border: $box-border;
             @include borderRadius($border-radius);
@@ -118,40 +120,40 @@
         }
 
         .p-comment-username:hover .user-actions-forum-post-author-menu { left: 0; } 
-	}
+    }
 
     // Content
 
-	.p-comment-content {
-		margin-left: $commentUserBoxWidth + ($leading / 2);
-		overflow-x: hidden; // Prevents users from griefing the forums with extra large images, embeds, etc.
+    .p-comment-content {
+        margin-left: $commentUserBoxWidth + ($leading / 2);
+        overflow-x: hidden; // Prevents users from griefing the forums with extra large images, embeds, etc.
 
-	    .p-comment-body {
+        .p-comment-body {
 
-		    img, iframe, object	{ max-width: 100%; max-height: 600px; }
-	    }
+            img, iframe, object { max-width: 100%; max-height: 600px; }
+        }
     }
 
     // Signature
 
-	.p-comment-sig {
+    .p-comment-sig {
         border-top: $commentSigBorder;
-		font-size: $font-sizeSmaller;
-		color: $commentSigColor;
-		margin-top: 4px;
+        font-size: $font-sizeSmaller;
+        color: $commentSigColor;
+        margin-top: 4px;
         overflow: hidden;
-		padding: 4px;
-			
-		p:only-of-type { margin-bottom: 0; }
-	}
+        padding: 4px;
+            
+        p:only-of-type { margin-bottom: 0; }
+    }
 
-	.p-comment-edited { color: $font-color; font-size: $font-sizeSmaller; font-style: italic; }
+    .p-comment-edited { color: $font-color; font-size: $font-sizeSmaller; font-style: italic; }
 
     // Actions
 
     .p-comment-actions { 
-        clear: both;
-        margin-left: $commentUserBoxWidth + ($leading / 2);
+        //clear: both;
+        //margin-left: $commentUserBoxWidth + ($leading / 2);
 
         > ul {
             @include group;
@@ -161,14 +163,16 @@
             > li {
                 display: inline-block;
                 float: left;
-                font-size: $font-sizeSmaller;
+                font-size: 11px;
                 opacity: 0;
-                @include transition(all, .5s, linear);
+                @include transition(all, .3s, linear);
 
-                & + li { margin-left: 8px; }
+                & + li { margin-left: 12px; }
 
                 a {
                     @include boxShadow(none);
+                    @include borderRadius(none);
+                    background: none;
                     border: none;
                     color: $commentLink-color;
                     display: inline-block;
@@ -183,8 +187,8 @@
                 &.user-action-quote,
                 &.user-action-reply { 
                     float: right;
-                    margin-left: 0;
-                    margin-right: 8px;
+                    margin-left: 18px;
+                    margin-right: 0;
                     opacity: 1;
 
                     a {
@@ -197,10 +201,10 @@
         }
     }
 
-	.p-comment-post:hover .p-comment-actions ul li { opacity: 1; }
-	.p-comment-post[data-depth] { padding-left: $commentPadding + 15px; border-left: 2px solid $commentThreadBg-color; }
-	.p-comment-post[data-depth="1"] { margin-left: 15px; }
-	.p-comment-post[data-depth="2"] { margin-left: 45px; }
+    .p-comment-post:hover .p-comment-actions ul li { opacity: 1; }
+    .p-comment-post[data-depth] { padding-left: $commentPadding + 15px; border-left: 2px solid $commentThreadBg-color; }
+    .p-comment-post[data-depth="1"] { margin-left: 15px; }
+    .p-comment-post[data-depth="2"] { margin-left: 45px; }
 
     .p-comment-reply-form {
         padding: 10px;
@@ -225,8 +229,60 @@
 
     .u-typography-format { word-wrap: break-word; } // For lines of text without spaces that extend beyond the container 
     
+    .forum-post-footer {
+        @include group;
+        clear: both;
+    }
+
+    .b-ratingForm-a {
+        float: left;
+        position: relative;
+        z-index: 4;
+        > form {
+            margin: 0;
+        }
+        div.rating-form {
+            font-size: 11px;
+            border-right: 1px dotted $darkgrey;
+            margin-right: 18px;
+            > div { @include inline-block; }
+        }
+        .rating-noshow { display: none !important; }
+        .rating-up,
+        .rating-down,
+        .rating-sum {
+            margin-right: 6px;
+            padding-right: 6px;
+            > input {
+                width: 12px; 
+                height: 12px;
+                display: block;
+                padding: 0;
+                margin: 0;
+                background: $icon-ua-commentRating-sprite;
+                opacity: .8;
+                &:hover { cursor: pointer; opacity: 1; }
+                &[disabled="disabled"] { display: none; }
+            }
+        }
+        .rating-up {
+            > input { background-position: -14px 0; }
+            &.ratingSelected > input { background-position: 0 -14px; position: relative; top: 1px; }
+        }
+        .rating-down {
+            > input { background-position: 0 0; }
+            &.ratingSelected > input { background-position: 0 -14px; position: relative; top: 1px; }
+        }
+        .rating-sum {
+            font-weight: bold;
+            &.rating-average-ratingNegative { color: red; }
+            &.rating-average-ratingPositive { color: green; }
+        }
+    }
+
 } // END p-comments-a
 
 #reply {
     .form-footer { margin: 0; text-align: right; }
+    > header h2 { font-size: 14px; }
 }

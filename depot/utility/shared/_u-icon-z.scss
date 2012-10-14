@@ -59,59 +59,47 @@ a.go-next {
 // Comments
 
 .p-comment-actions {
-	> ul { 
-		> li {
-			a { padding-left: $icon-ua-width !important; @include transition(none, 0s, linear !important); } // !importants are to override elementGoBoom!
-			a:hover { background-position: $icon-ua-hoverPosition !important; @include transition(none, 0s, linear !important); } // !importants are to override elementGoBoom!
-			a:active { background-position: $icon-ua-hoverPosition !important; @include transition(none, 0s, linear !important); } // !importants are to override elementGoBoom!
-			&.user-action-quote a {
-				background: $icon-ua-quote;
-                &:active { background: $icon-ua-quote; }
+	> .user-actions { 
+		> .user-action {
+			.u-icon { @include inline-block; background: $icon-ua-sprite; width: 12px; height: 12px; } 
+			a:hover > span { text-decoration: underline; } 
+			span { position: relative; top: 1px; color: $icon-us-fontColor; }
+			.u-icon-quote {
+				background-position: $icon-ua-quote;
 			}
-			&.user-action-reply a {
-				background: $icon-ua-reply;
-                &:active { background: $icon-ua-reply; }
+			.u-icon-reply {
+				background-position: $icon-ua-reply;
 			}
-			&.user-action-delete a {
-				background: $icon-ua-delete;
-                &:active { background: $icon-ua-delete; }
+			.u-icon-delete {
+				background-position: $icon-ua-delete;
 			}
-			&.user-action-report a {
-				background: $icon-ua-report;
-                &:active { background: $icon-ua-report; }
+			.u-icon-report {
+				background-position: $icon-ua-report;
 			}
-			&.user-action-edit a {
-				background: $icon-ua-edit;
-                &:active { background: $icon-ua-edit; }
+			.u-icon-edit {
+				background-position: $icon-ua-edit;
 			}
-			&.user-action-edit-attachments a {
-				background: $icon-ua-edit-attachments;
-                &:active { background: $icon-ua-edit-attachments; }
+			.u-icon-edit-attachments {
+				background-position: $icon-ua-edit-attachments;
 			}
-			&.user-action-spam a {
-				background: $icon-ua-spam;
-                &:active { background: $icon-ua-spam; }
+			.u-icon-spam {
+				background-position: $icon-ua-spam;
 			}
-			&.user-action-not-spam a {
-				background: $icon-ua-not-spam;
-                &:active { background: $icon-ua-not-spam; }
+			.u-icon-not-spam {
+				background-position: $icon-ua-not-spam;
 			}
-            &.user-action-warn a {
-				background: $icon-ua-warn;
-                &:active { background: $icon-ua-not-spam; }
+            .u-icon-warn {
+				background-position: $icon-ua-warn;
 			}
-            &.user-action-warned a {
-				background: $icon-ua-warn;
+            .u-icon-warned {
+				background-position: $icon-ua-warn;
                 font-weight: bold;
-                &:active { background: $icon-ua-not-spam; }
 			}
-            &.user-action-add-note a {
-				background: $icon-ua-add-note;
-                &:active { background: $icon-ua-add-note; }
+            .u-icon-add-note {
+				background-position: $icon-ua-add-note;
 			}
-            &.user-action-remove-note a {
-				background: $icon-ua-remove-note;
-                &:active { background: $icon-ua-remove-note; }
+            .u-icon-remove-note {
+				background-position: $icon-ua-remove-note;
 			}
 		}
 	}
