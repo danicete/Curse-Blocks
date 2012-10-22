@@ -18,7 +18,7 @@
 // ★★ Mixin
 
 @mixin u-icon-z {
-    display: inline-block;
+    @include inline-block;
     height: 12px;
     line-height: 0;
     vertical-align: middle;

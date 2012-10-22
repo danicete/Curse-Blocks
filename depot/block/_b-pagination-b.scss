@@ -25,7 +25,6 @@
 @mixin b-pagination-b {
 		
     @include group;
-
     float: left;
 
     // Item
@@ -38,10 +37,9 @@
         & + .b-pagination-item { margin-left: 4px; }
 
         > a {
-            @include borderRadius($paginationBorder-radius);
-            
             background: $paginationBg;
             border: $paginationBorder;
+            @include borderRadius($paginationBorder-radius);
             color: $paginationFont-color;
             float: left;
             line-height: 1em;

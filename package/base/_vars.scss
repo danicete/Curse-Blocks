@@ -146,6 +146,7 @@
     $body-bgColor: $primaryColor !default;
     $body-bgImage: none !default;
     $body-bg: $body-bgColor $body-bgImage !default;
+    $body-bgFallback: false !default;
 
     $wrapper-bgImage: none !default;
     $wrapper-bgColor: transparent !default;
@@ -419,7 +420,7 @@ $blockquoteLink-colorHover: $link-colorHover !default;
 // (3) Clipping                                                
 // --------------------------------------------------------- //
 
-$clip-size: 50px !default;
+    $clip-size: 0 !default;
 
 // --------------------------------------------------------- //
 // (3) Definition                                              
@@ -533,6 +534,7 @@ $glyphText-shadow: $textShadow !default;
 
 // Bg
 $headerBg: transparent none !default;
+$header-bgFallback: false !default;
 // Logo
 $headerLogo: url("#{$imageURL-local}/logo.png") no-repeat !default;
 $headerLogo-hover: 0 0 !default;
@@ -789,11 +791,9 @@ $icon-ua-warn: -42px 0 !default;
 $icon-ua-add-note: 0 0 !default;
 $icon-ua-remove-note: -14px 0 !default;
 $icon-us-fontColor: $darkgrey !default;
-// Comment Rating
-$icon-ua-commentRating-sprite: url("#{$imageURL-core}/icons/12x12/darkgrey/user-action-comment-sprite.png") no-repeat 0 0 !default;
+
 //$icon-ua-width: 16px;
 //$icon-ua-hoverPosition: 0 -37px;
-
 
 $navDropDown-bg: $secondaryColor !default;
 

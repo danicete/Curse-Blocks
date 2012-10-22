@@ -498,9 +498,10 @@ $legacy-support-for-ie: $legacy-support-for-ie6 or $legacy-support-for-ie7 or $l
         $image: false,
         $repeat: false,
         $position: false,
-        $gradient: false
+        $gradient: false,
+        $fallback: false
     ) {
-        @if ($shorthand or $color or $image or $gradient != false) {
+        @if ($shorthand or $color or $image or $gradient or $fallback != false) {
             
             @if ($gradient != false) {
                 background-color: $color;
@@ -508,12 +509,14 @@ $legacy-support-for-ie: $legacy-support-for-ie6 or $legacy-support-for-ie7 or $l
             }
             @else if ($shorthand != false) {
                 background: $shorthand;
+                @if ($fallback != false) { .ie7 &, .ie8 & { background: $fallback; } }
             }
             @else {
                 @if ($color    != false) { background-color: $color; }
                 @if ($image    != false) { background-image: $image; }
                 @if ($repeat   != false) { background-repeat: $repeat; }
                 @if ($position != false) { background-position: $position; }
+                @if ($fallback != false) { .ie7 &, .ie8 & { border-color: $colorFallback; } }
             }
         }
     }

@@ -166,6 +166,7 @@
                 & + li { margin-left: 8px; }
 
                 a {
+                    @include elementGoBOOM;
                     @include boxShadow(none);
                     border: none;
                     color: $forumComment-link-color;

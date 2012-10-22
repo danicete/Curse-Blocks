@@ -64,7 +64,7 @@ blockquote {
     color: $blockquoteFont-color;
     overflow: hidden;
     text-overflow: ellipsis;
-
+    h4 { font-size: 14px; }
     .p-article & {
         margin: $leading 0;
         padding: $leading $leading * 2;
@@ -241,7 +241,7 @@ blockquote {
     }
 
     blockquote > h4 {
-
+        font-size: 14px;
         > a {
             color: $font-color;
             &:hover { color: $blockquoteAuthor-color-hover; }

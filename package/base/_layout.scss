@@ -6,7 +6,7 @@
 // 1.) Window                                                  
 // --------------------------------------------------------- //
 
-    body { background-color: $body-bgColor; background: $body-bg; }
+    body { @include background($shorthand: $body-bg, $fallback: $body-bgFallback); }
 
 // --------------------------------------------------------- //
 // 2.) Site Wrapper                                            

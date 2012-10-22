@@ -28,7 +28,7 @@
     
     @include group;
 
-    background: $headerBg;
+    @include background($shorthand: $headerBg, $fallback: $header-bgFallback);
     margin: $headerMain-margin;
     position: relative;
 

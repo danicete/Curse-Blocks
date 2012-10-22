@@ -20,6 +20,7 @@
 //     - IE9/8/7
 //
 // --------------------------------------------------------- //
+
 // Mixin
 // --------------------------------------------------------- //
 
@@ -30,10 +31,9 @@
     // Count
 
     .b-pagination-count {
-        @include borderRadius($paginationBorder-radius);
-
         background: $paginationBg;
         border: $paginationBorder;
+        @include borderRadius($paginationBorder-radius);
         color: $paginationFont-color;
         float: left;
         margin-right: 10px;
@@ -44,36 +44,35 @@
 
     .b-pagination-list {
 		
-        @include group;
+    @include group;
 
-        // Item
+    // Item
 
-        .b-pagination-item {
-            cursor: default;
-            float: left; 
+    .b-pagination-item {
+        cursor: default; // If no link don't change cursor
+        float: left; 
 
-            > a,
-            &.s-active {
-                background: $paginationBg;
-                border: $paginationBorder;
-                border-left-width: 0;
-                color: $paginationFont-color;
-                display: block;
-                padding: $paginationPadding;
-                text-decoration: none;
+        > a,
+        &.s-active {
+            background: $paginationBg;
+            border: $paginationBorder;
+            border-left-width: 0;
+            color: $paginationFont-color;
+            display: block;
+            padding: $paginationPadding;
+            text-decoration: none;
 
-                &:hover { background: $paginationBg-hover; color: $paginationFont-color-hover; }
-            }
+            &:hover { background: $paginationBg-hover; color: $paginationFont-color-hover; }
+        }
 
-            &.s-active,
-            &.s-active:hover { background-color: $paginationBg-active; color: $paginationFont-color-active; font-weight: bold; }
-    			
-            &.s-active:first-child,
-            &:first-child a { @include borderRadius-left($paginationBorder-radius); border-left-width: 1px; }
+        &.s-active,
+        &.s-active:hover { background-color: $paginationBg-active; color: $paginationFont-color-active; font-weight: bold; }
+			
+        &.s-active:first-child,
+        &:first-child a { border-left-width: 1px; @include borderRadius-left($paginationBorder-radius); }
 
-            &.s-active:last-child,
-            &:last-child a { @include borderRadius-right($paginationBorder-radius); }
-
+        &.s-active:last-child,
+        &:last-child a { @include borderRadius-right($paginationBorder-radius); }
         }
     }
 
