@@ -4,72 +4,64 @@
 // ************************************************************************************************************************
 
 // --------------------------------------------------------------------------------------------------------------------- //
-//                                              TIER 1: CORE VARIABLES                                                     
-// --------------------------------------------------------------------------------------------------------------------- //
-
-// --------------------------------------------------------------------------------------------------------------------- //
-//                                              TIER 2: BASE VARIABLES                                                     
-// --------------------------------------------------------------------------------------------------------------------- //
-
-// --------------------------------------------------------------------------------------------------------------------- //
 //                                            TIER 3: COMPONENT VARIABLES                                                  
 // --------------------------------------------------------------------------------------------------------------------- //
-
-// --------------------------------------------------------- //
-// (3) Header                                                  
-// --------------------------------------------------------- //
-
-    $headerSubtitle-position: relative !default;
-    $headerSubtitle-left: 250px !default;
-
-// --------------------------------------------------------- //
-// (3) Guides                                                
-// --------------------------------------------------------- //
-
-    $guide-boxShadow: 0px 1px 1px rgba(255,255,255,.2) !default;
-    $guide-border: 2px solid $primaryColor !default;
-
-    $guideCover-bgImage: url("#{$imageURL-local}/guide-cover-default.png") no-repeat right top !default;
-    $guideCover-bgColor: transparent !default;
-    $guideCover-bg: $guideCover-bgColor $guideCover-bgImage !default;
-    $guideCover-minHeight: 342px !default;
-    $guideCover-padding: $leading !default;
-    $guideCover-textShadow: 0 1px 0 rgba(0,0,0,.8), 0 0 15px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.8) !default;
-    $guideCover-width: 40% !default;
-
-    $guideCoverFont-weight: bold !default;
-
-    $guideCoverSeparator: "\00B7\00A0" !default; // Middot
-
-    $guideToc-borderWidth: 0 0 2px 0 !default;
-    $guideToc-borderColor: $tabBg !default;
-    $guideToc-padding: $leading / 2 .5em !default;
-
-    $guideTab-borderRadius: 4px !default;
-    $guideTab-gradient: linear-gradient(top,$primaryColor 0,$secondaryColor 400%) !default;
-    $guideTabSelected-gradient: linear-gradient(top,$primaryColor 0,$secondaryColor 400%) !default;
-    $guideTab-textShadow:  $textShadow !default;
-    $guideTab-boxShadow: inset 0 1px rgba(255, 255, 255, .1),0 -5px 8px rgba(0, 0, 0, 0.1) !default;
-    $guideTabBg-hover: $tertiaryColor !default;
-
-    $guideTabHeader-gradient: linear-gradient(top,$primaryColor 0,$secondaryColor 100%) !default;
-    $guideTabHeader-position: relative !default;
-    $guideTabHeader-textTransform: uppercase !default;
-    $guideTabHeaderFont-size: 40px !default;
-    $guideTabHeaderFont-weight: normal !default;
-
-    $guideAvatarBorder: $guide-border !default;
-    $guideAvatarBorder-top: 1px solid rgb(0, 0, 0) !default;
-    $guideAvatarBorder-left: $guideAvatarBorder !default;
-    $guideAvatarBorder-right: $guideAvatarBorder !default;
-    $guideAvatarBorder-bottom: $guideAvatarBorder !default;
-    $guideAvatar-gradient: linear-gradient(top, $secondaryColor 10%,#333 100%) !default;
-    $guideAvatar-boxShadow: inset $guide-boxShadow !default;
 
 // --------------------------------------------------------- //
 // (3) Category Icon                                                
 // --------------------------------------------------------- //
 
-    $categoryIcon-borderRadius: $border-radius !default;
-    $categoryIcon-borderBottom: 1px solid $primaryColor !default;
-    $categoryIcon-borderTop: 1px solid rgb(0, 0, 0) !default;
+$categoryIcon-borderRadius  : $border-radius !default;
+$categoryIcon-borderBottom  : 1px solid $primaryColor !default;
+$categoryIcon-borderTop     : 1px solid rgb(0, 0, 0) !default;
+
+// --------------------------------------------------------- //
+// (3) Guides                                                
+// --------------------------------------------------------- //
+
+$guide-boxShadow               : 0px 1px 1px rgba(255,255,255,.2) !default;
+$guide-border                  : 2px solid $primaryColor !default;
+
+$guideCover-bgImage            : url("#{$imageURL-local}/guide-cover-default.png") no-repeat right top !default;
+$guideCover-bgColor            : transparent !default;
+$guideCover-bg                 : $guideCover-bgColor $guideCover-bgImage !default;
+$guideCover-minHeight          : 342px !default;
+$guideCover-padding            : $leading !default;
+$guideCover-textShadow         : 0 1px 0 rgba(0,0,0,.8), 0 0 15px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.8) !default;
+$guideCover-width              : 40% !default;
+
+$guideCoverFont-weight         : bold !default;
+
+$guideCoverSeparator           : "\00B7\00A0" !default; // Middot
+
+$guideToc-borderWidth          : 0 0 2px 0 !default;
+$guideToc-borderColor          : $tabBg !default;
+$guideToc-padding              : $leading / 2 .5em !default;
+
+$guideTab-borderRadius         : 4px !default;
+$guideTab-gradient             : linear-gradient(top,$primaryColor 0,$secondaryColor 400%) !default;
+$guideTabSelected-gradient     : linear-gradient(top,$primaryColor 0,$secondaryColor 400%) !default;
+$guideTab-textShadow           :  $textShadow !default;
+$guideTab-boxShadow            : inset 0 1px rgba(255, 255, 255, .1),0 -5px 8px rgba(0, 0, 0, 0.1) !default;
+$guideTabBg-hover              : $tertiaryColor !default;
+
+$guideTabHeader-gradient       : linear-gradient(top,$primaryColor 0,$secondaryColor 100%) !default;
+$guideTabHeader-position       : relative !default;
+$guideTabHeader-textTransform  : uppercase !default;
+$guideTabHeaderFont-size       : 40px !default;
+$guideTabHeaderFont-weight     : normal !default;
+
+$guideAvatarBorder             : $guide-border !default;
+$guideAvatarBorder-top         : 1px solid rgb(0, 0, 0) !default;
+$guideAvatarBorder-left        : $guideAvatarBorder !default;
+$guideAvatarBorder-right       : $guideAvatarBorder !default;
+$guideAvatarBorder-bottom      : $guideAvatarBorder !default;
+$guideAvatar-gradient          : linear-gradient(top, $secondaryColor 10%,#333 100%) !default;
+$guideAvatar-boxShadow         : inset $guide-boxShadow !default;
+
+// --------------------------------------------------------- //
+// (3) Header                                                  
+// --------------------------------------------------------- //
+
+$headerSubtitle-position  : relative !default;
+$headerSubtitle-left      : 250px !default;

@@ -11,98 +11,98 @@
 // (3) Article                                                 
 // --------------------------------------------------------- //
 
-$articleBg: transparent !default;
-$articleBorder: $box-border !default;
-$articleBorder-divider: 3px double $box-borderColor !default;
-$articleBorder-radius: null !default;
-$articlePadding: 0 !default;
-$articlePadding-bottom: 0 !default;
+$articleBg                     : transparent !default;
+$articleBorder                 : $box-border !default;
+$articleBorder-divider         : 3px double $box-borderColor !default;
+$articleBorder-radius          : null !default;
+$articlePadding                : 0 !default;
+$articlePadding-bottom         : 0 !default;
 
-$articleInteract-bg: $box-bg !default;
-$articleInteract-padding: $box-padding !default;
+$articleInteract-bg            : $box-bg !default;
+$articleInteract-padding       : $box-padding !default;
 
-$articleToC-bg: darken($primaryColor, 10%) !default;
-$articleToC-bgSelected: darken($articleToC-bg, 20%) !default;
-$articleToC-border: 1px solid $articleToC-bgSelected !default;
-$articleToC-boxShadow: null !default;
-$articleToCFont-color: $font-colorPrimary !default;
-$articleToCFont-colorSelected: $link-color !default;
-$articleToC-padding: $box-padding !default;
+$articleToC-bg                 : darken($primaryColor, 10%) !default;
+$articleToC-bgSelected         : darken($articleToC-bg, 20%) !default;
+$articleToC-border             : 1px solid $articleToC-bgSelected !default;
+$articleToC-boxShadow          : null !default;
+$articleToCFont-color          : $font-colorPrimary !default;
+$articleToCFont-colorSelected  : $link-color !default;
+$articleToC-padding            : $box-padding !default;
 
-$articleAudio-bg: $articleInteract-bg !default;
+$articleAudio-bg               : $articleInteract-bg !default;
 
 // --------------------------------------------------------- //
 // (3) Browser                                                 
 // --------------------------------------------------------- //
 
-$browserImage-width: 44.2% !default;
+$browserImage-width            : 44.2% !default;
 
-$browserThumb-border: 1px solid rgba(0,0,0,.7) !default;
-$browserThumbShadow: 0 3px 3px rgba(0,0,0,0.3) !default;
-$browserThumbView-bg: $link-color !default;
-$browserThumbView-bg-image: url("#{$imageURL-core}/icons/8x8/white/icon-view-8x8.png") no-repeat 4px center !default;
-$browserThumbView-shadow: inset 0px 1px 1px rgba(255,255,255,.2), 0 1px 3px rgba(0,0,0,.3) !default;
-$browserThumbView-borderColor: darken($secondaryColor, 20%) !default;
-$browserThumb-width: 142px !default;
-$browserThumb-height: 165px !default;
-$browserThumbView-fontColor: $link-colorSecondary !default;
-$browserBorder: $articleBorder-divider !default;
+$browserThumb-border           : 1px solid rgba(0,0,0,.7) !default;
+$browserThumbShadow            : 0 3px 3px rgba(0,0,0,0.3) !default;
+$browserThumbView-bg           : $link-color !default;
+$browserThumbView-bg-image     : url("#{$imageURL-core}/icons/8x8/white/icon-view-8x8.png") no-repeat 4px center !default;
+$browserThumbView-shadow       : inset 0px 1px 1px rgba(255,255,255,.2), 0 1px 3px rgba(0,0,0,.3) !default;
+$browserThumbView-borderColor  : darken($secondaryColor, 20%) !default;
+$browserThumb-width            : 142px !default;
+$browserThumb-height           : 165px !default;
+$browserThumbView-fontColor    : $link-colorSecondary !default;
+$browserBorder                 : $articleBorder-divider !default;
 
-$browserTitle-size: $header-size !default;
+$browserTitle-size             : $header-size !default;
 
 // --------------------------------------------------------- //
 // (3) Forum                                                   
 // --------------------------------------------------------- //
 
-$forumBg: $table-bg !default;
-$forumBorder: $tableCell-border !default;
-$forumCell-height: $tableCell-height !default;
-$forumCell-padding: $tableCell-padding !default;
-$forumHeader-border: $tableHeader-border !default;
-$forumHeading-bg-top: $tableHeader-bg-top !default;
-$forumHeading-bg-bottom: $tableHeader-bg-bottom !default;
-$forumTitleFont-size: $font-size !default;
-$forumThreadTitleFontSize: $forumTitleFont-size !default;
-$forumThreadAnnouncementFontSize: $forumTitleFont-size !default;
-$forumIcon-height: 48px !default;
-$forumIcon-width: 48px !default;
-$forumLink-color: $header-color !default;
-$forumLink-color-hover:  $header-colorHover !default;
+$forumBg                            : $table-bg !default;
+$forumBorder                        : $tableCell-border !default;
+$forumCell-height                   : $tableCell-height !default;
+$forumCell-padding                  : $tableCell-padding !default;
+$forumHeader-border                 : $tableHeader-border !default;
+$forumHeading-bg-top                : $tableHeader-bg-top !default;
+$forumHeading-bg-bottom             : $tableHeader-bg-bottom !default;
+$forumTitleFont-size                : $font-size !default;
+$forumThreadTitleFontSize           : $forumTitleFont-size !default;
+$forumThreadAnnouncementFontSize    : $forumTitleFont-size !default;
+$forumIcon-height                   : 48px !default;
+$forumIcon-width                    : 48px !default;
+$forumLink-color                    : $header-color !default;
+$forumLink-color-hover              :  $header-colorHover !default;
 
-$forumStatusBg-sprite: url("#{$imageURL-core}/icons/32x32/grey/icon-forum-sprite.png") !default;
+$forumStatusBg-sprite               : url("#{$imageURL-core}/icons/32x32/grey/icon-forum-sprite.png") !default;
 
-$forumStatusBg-general-unread: -48px -2px !default;
-$forumStatusBg-general-read: -95px -55px !default;
+$forumStatusBg-general-unread       : -48px -2px !default;
+$forumStatusBg-general-read         : -95px -55px !default;
 
-$forumStatusBg-typical-unread: -95px -2px !default;
-$forumStatusBg-typical-read: -95px -55px !default;
+$forumStatusBg-typical-unread       : -95px -2px !default;
+$forumStatusBg-typical-read         : -95px -55px !default;
 
-$forumStatusBg-locked-unread: -188px -2px !default;
-$forumStatusBg-locked-read: -188px -55px !default;
+$forumStatusBg-locked-unread        : -188px -2px !default;
+$forumStatusBg-locked-read          : -188px -55px !default;
 
-$forumStatusBg-pinned-unread: -235px -2px !default;
-$forumStatusBg-pinned-read: -235px -55px !default;
+$forumStatusBg-pinned-unread        : -235px -2px !default;
+$forumStatusBg-pinned-read          : -235px -55px !default;
 
-$forumStatusBg-poll-unread: -140px -2px !default;
-$forumStatusBg-poll-read: -140px -55px !default;
+$forumStatusBg-poll-unread          : -140px -2px !default;
+$forumStatusBg-poll-read            : -140px -55px !default;
 
-$forumStatusBg-announcement-read: -2px -2px !default;
-$forumStatusBg-announcement-unread: -2px -55px !default;
+$forumStatusBg-announcement-read    : -2px -2px !default;
+$forumStatusBg-announcement-unread  : -2px -55px !default;
 
-$forumStatusBg-redirect-read: -282px -2px !default;
-$forumStatusBg-redirect-unread: -282px -55px !default;	
+$forumStatusBg-redirect-read        : -282px -2px !default;
+$forumStatusBg-redirect-unread      : -282px -55px !default;	
 
 // --------------------------------------------------------- //
 // (3) Result                                                  
 // --------------------------------------------------------- //
 
-$resultPadding: $leading / 2 !default;
+$resultPadding  : $leading / 2 !default;
 
 // --------------------------------------------------------- //
 // (3) Widget                                                  
 // --------------------------------------------------------- //
 
-$widgetBg: transparent !default;
-$widgetBorder: none !default;
-$widgetBorder-radius: $border-radius !default;
-$widgetPadding: $box-padding !default;
+$widgetBg             : transparent !default;
+$widgetBorder         : none !default;
+$widgetBorder-radius  : $border-radius !default;
+$widgetPadding        : $box-padding !default;

@@ -13,40 +13,40 @@
 
     // a.) Image Paths
 
-    $imageURL-core: "../../Blocks/images" !default;
-    $imageURL-local: "../images" !default;
+    $imageURL-core   : "../../Blocks/images" !default;
+    $imageURL-local  : "../images" !default;
 
     // b.) Project Color Palette 
 
-    $primaryColor: #fff !default; // Canvas color
-    $secondaryColor: #F0F2EB !default; // Foundational color
-    $tertiaryColor: #FF4242 !default; // Accent color
-    $quaternaryColor: #E1EDB9 !default; // Additional color
-    $quinaryColor: #B8986B !default; // Additional color
+    $primaryColor     : #fff !default; // Canvas color
+    $secondaryColor   : #F0F2EB !default; // Foundational color
+    $tertiaryColor    : #FF4242 !default; // Accent color
+    $quaternaryColor  : #E1EDB9 !default; // Additional color
+    $quinaryColor     : #B8986B !default; // Additional color
 
         // greyscale
 
-        $black          : #000;
-        $darkgrey       : lighten($black, 25%);
-        $grey           : lighten($black, 50%);
-        $lightgrey      : lighten($black, 75%);
-        $lightergrey    : lighten($black, 90%);
-        $white          : #fff;
+        $black        : #000;
+        $darkgrey     : lighten($black, 25%);
+        $grey         : lighten($black, 50%);
+        $lightgrey    : lighten($black, 75%);
+        $lightergrey  : lighten($black, 90%);
+        $white        : #fff;
 
     // c.) Options
 
         // i.) Base
 
-        $chrome: false !default;
+        $chrome  : false !default;
 
         // ii.) Header
 
-        $full-nav: false !default;
-        $full-nav-overlap: false !default;
-        $split-nav: false !default;
+        $full-nav          : false !default;
+        $full-nav-overlap  : false !default;
+        $split-nav         : false !default;
 
-        $db-nav: false !default;
-        $db-table: false !default;
+        $db-nav            : false !default;
+        $db-table          : false !default;
 
 // --------------------------------------------------------------------------------------------------------------------- //
 //                                              TIER 2: BASE VARIABLES                                                     
@@ -58,46 +58,46 @@
 
     // a.) Font Size
 
-    $font-size: 13px !default; // Base font size sets typographic scale
-    $font-sizeSmaller: .85em !default;
-    $font-sizeLarger: 1.2em !default;
+    $font-size         : 13px !default; // Base font size sets typographic scale
+    $font-sizeSmaller  : .85em !default;
+    $font-sizeLarger   : 1.2em !default;
 
     // b.) Font Color
 
-    $font-color: #4c4c4c !default;
-    $font-colorPrimary: $font-color; // Contrasting text color for $primaryColor
-    $font-colorSecondary: $font-color !default; // Contrasting text color for $secondaryColor
-    $font-colorTertiary: $font-color !default; // Contrasting text color for $tertiaryColor
-    $font-colorQuaternary: $font-color !default; // Contrasting text color for $quaternaryColor
-    $font-colorQuinary: $font-color !default; // Contrasting text color for $quinaryColor
-    $font-colorLighter: lighten($font-color, 5%) !default;
-    $font-colorDarker: darken($font-color, 5%) !default;
+    $font-color            : #4c4c4c !default;
+    $font-colorPrimary     : $font-color; // Contrasting text color for $primaryColor
+    $font-colorSecondary   : $font-color !default; // Contrasting text color for $secondaryColor
+    $font-colorTertiary    : $font-color !default; // Contrasting text color for $tertiaryColor
+    $font-colorQuaternary  : $font-color !default; // Contrasting text color for $quaternaryColor
+    $font-colorQuinary     : $font-color !default; // Contrasting text color for $quinaryColor
+    $font-colorLighter     : lighten($font-color, 5%) !default;
+    $font-colorDarker      : darken($font-color, 5%) !default;
 
     // c.) Font Family
 
-    $font-family: inherit !default;
+    $font-family  : inherit !default;
 
     // d.) Leading
 
-    $leading: $font-size * 1.5 !default; // Sets vertical rhythm, em's not used due to var type incompatibilities (1.5 equivalent to 1.5em)
+    $leading  : $font-size * 1.5 !default; // Sets vertical rhythm, em's not used due to var type incompatibilities (1.5 equivalent to 1.5em)
 
     // e.) Text Shadow
 
-    $textShadow: 0 1px 0px rgba(0,0,0,.4) !default;
+    $textShadow  : 0 1px 0px rgba(0,0,0,.4) !default;
 
     // f.) Links
 
-    $link-color: $tertiaryColor !default;
-    $link-colorVisited: $link-color !default;
-    $link-colorHover: $font-color !default;
-    $link-colorActive: $link-color !default;
-    $link-colorPrimary: $font-colorPrimary !default; // Contrasting link color for $primaryColor
-    $link-colorSecondary: $font-colorSecondary !default; // Contrasting link color for $secondaryColor
-    $link-colorTertiary: $font-colorTertiary !default; // Contrasting link color for $tertiaryColor
-    $link-colorQuaternary: $font-colorQuaternary !default; // Contrasting link color for $quaternaryColor
-    $link-colorQuinary: $font-colorQuinary !default; // Contrasting link color for $quinaryColor
-    $link-decoration: none !default;
-    $link-family: $font-family !default;
+    $link-color            : $tertiaryColor !default;
+    $link-colorVisited     : $link-color !default;
+    $link-colorHover       : $font-color !default;
+    $link-colorActive      : $link-color !default;
+    $link-colorPrimary     : $font-colorPrimary !default; // Contrasting link color for $primaryColor
+    $link-colorSecondary   : $font-colorSecondary !default; // Contrasting link color for $secondaryColor
+    $link-colorTertiary    : $font-colorTertiary !default; // Contrasting link color for $tertiaryColor
+    $link-colorQuaternary  : $font-colorQuaternary !default; // Contrasting link color for $quaternaryColor
+    $link-colorQuinary     : $font-colorQuinary !default; // Contrasting link color for $quinaryColor
+    $link-decoration       : none !default;
+    $link-family           : $font-family !default;
 
     // g.) Headers
         
@@ -107,19 +107,19 @@
 
         // iii.) Box-Model
 
-        $header-margin: 0 0 .2em !default;
+        $header-margin  : 0 0 .2em !default;
 
         // iv.) Typography
 
-        $header-color: darken($font-color, 15%) !default;
-        $header-colorVisited: $header-color !default;
-        $header-colorHover: $link-color !default;
-        $header-colorActive: $header-color !default;
-        $header-family: $font-family !default;
-        $header-leading: 1em !default;
-        $header-letterSpacing: 0 !default;
-        $header-size: 26px !default;
-        $header-weight: 700 !default;
+        $header-color          : darken($font-color, 15%) !default;
+        $header-colorVisited   : $header-color !default;
+        $header-colorHover     : $link-color !default;
+        $header-colorActive    : $header-color !default;
+        $header-family         : $font-family !default;
+        $header-leading        : 1em !default;
+        $header-letterSpacing  : 0 !default;
+        $header-size           : 26px !default;
+        $header-weight         : 700 !default;
 
         // v.) Custom
 
@@ -129,80 +129,88 @@
 
     // a.) Dimensions
 
-    $site-bgImage: none !default;
-    $site-bgColor: transparent !default;
-    $site-bg: $site-bgImage $site-bgColor !default;
-    $site-margin: 0 auto $leading !default;
-    $site-width: 1000px !default;
-    $site-maxWidth: none !default;
-    $site-minWidth: 0 !default;
-    $site-padding: 0 !default;
-    $site-gutterLeft: 0 !default;
-    $site-gutterRight: 0 !default;
-    $siteFooter-curse: url("#{$imageURL-local}/theme/curse-logo-footer.png") no-repeat 0 0 !default;
+    $site-bgImage      : none !default;
+    $site-bgColor      : transparent !default;
+    $site-bg           : $site-bgImage $site-bgColor !default;
+    $site-margin       : 0 auto $leading !default;
+    $site-width        : 1000px !default;
+    $site-maxWidth     : none !default;
+    $site-minWidth     : 0 !default;
+    $site-padding      : 0 !default;
+    $site-gutterLeft   : 0 !default;
+    $site-gutterRight  : 0 !default;
+    $siteFooter-curse  : url("#{$imageURL-local}/theme/curse-logo-footer.png") no-repeat 0 0 !default;
 
     // b.) Wrappers
 
-    $body-bgColor: $primaryColor !default;
-    $body-bgImage: none !default;
-    $body-bg: $body-bgColor $body-bgImage !default;
-    $body-bgFallback: false !default;
+    $body-bgColor              : $primaryColor !default;
+    $body-bgImage              : none !default;
+    $body-bg                   : $body-bgColor $body-bgImage !default;
+    $body-bgFallback           : false !default;
 
-    $wrapper-bgImage: none !default;
-    $wrapper-bgColor: transparent !default;
-    $wrapper-bg: $wrapper-bgColor $wrapper-bgImage !default;
-    $wrapper-padding: 12px 0 0 0 !default;
+    $wrapper-bgImage           : none !default;
+    $wrapper-bgColor           : transparent !default;
+    $wrapper-bg                : $wrapper-bgColor $wrapper-bgImage !default;
+    $wrapper-padding           : 12px 0 0 0 !default;
 
-    $content-bgImage: none !default;
-    $content-bgColor: transparent !default;
-    $content-bg: $content-bgColor $content-bgImage !default;
-    $content-bgSingle: $content-bg !default;
-    $content-border: none !default;
-    $content-borderSingle: none !default;
-    $content-borderRadius: null !default;
-    $content-padding: $leading !default;
-    $content-boxShadow: none !default;
+    $content-bgImage           : none !default;
+    $content-bgColor           : transparent !default;
+    $content-bg                : $content-bgColor $content-bgImage !default;
+    $content-bgSingle          : $content-bg !default;
+    $content-border            : none !default;
+    $content-borderSingle      : none !default;
+    $content-borderRadius      : null !default;
+    $content-padding           : $leading !default;
+    $content-boxShadow         : none !default;
 
-    $secondaryContent-padding: 0 0 0 1.2295% !default;
-    $secondaryContent-bg: none !default;
+    $secondaryContent-padding  : 0 0 0 1.2295% !default;
+    $secondaryContent-bg       : none !default;
+    
     // c.) Colors
 
-    $selection-bgColor: $tertiaryColor !default;
+    $selection-bgColor           : $tertiaryColor !default;
 
-    $gradient-colorLinearTop: $tertiaryColor !default;
-    $gradient-colorLinearBottom: darken($gradient-colorLinearTop, 8%) !default;
-    $gradient-colorSplitTop: inherit !default;
-    $gradient-colorSplitBottom: inherit !default;
+    $gradient-colorLinearTop     : $tertiaryColor !default;
+    $gradient-colorLinearBottom  : darken($gradient-colorLinearTop, 8%) !default;
+    $gradient-colorSplitTop      : inherit !default;
+    $gradient-colorSplitBottom   : inherit !default;
 
     // d.) Ads
 
-    // 1.) Header BG
-    $adSkinHeader-bg: $body-bg !default;
+    // e.) Header BG
+    
+    $adSkinHeader-bg  : $body-bg !default;
 
-    // 2.) Top Gradient
-    $adskin-bgGradient: url("#{$imageURL-core}/ads/ad-skin-gradient-top.png") fixed repeat-x !default;
-    $adskin-bgGradientPosition: 0 0 !default;
+    // f.) Top Gradient
+    
+    $adskin-bgGradient          : url("#{$imageURL-core}/ads/ad-skin-gradient-top.png") fixed repeat-x !default;
+    $adskin-bgGradientPosition  : 0 0 !default;
 
-    // 3.) Site Drop Down
-    $adskin-boxShadow: 0 0 8px rgba(0,0,0,.4) !default;
+    // g.) Site Drop Down
+    
+    $adskin-boxShadow  : 0 0 8px rgba(0,0,0,.4) !default;
 
-    // 4.) Atf
+    // h.) Atf
 
-        // a.) Background
-        $atf-bg: $content-bg !default;
+        // i.) Background
+    
+        $atf-bg  : $content-bg !default;
 
-        // b.) Box Model
-        $atf-margin: 0 !default;
-        $atf-marginBottom: $atf-margin !default;
-        $atf-padding: 0 $content-padding !default;
-        $atfAd-padding: 0 !default;
+        // ii.) Box Model
+    
+        $atf-margin        : 0 !default;
+        $atf-marginBottom  : $atf-margin !default;
+        $atf-padding       : 0 $content-padding !default;
+        $atfAd-padding     : 0 !default;
 
-        // c.) Med Rec
-        $atfAdMedRec-bg: transparent !default;
-        $atfAdMedRec-padding: 0 !default;
+        // iii.) Med Rec
+    
+        $atfAdMedRec-bg       : transparent !default;
+        $atfAdMedRec-padding  : 0 !default;
         
-        // d.) Leaderboard
-        $ad-bg: transparent none !default;
+        // iv.) Leaderboard
+    
+        $ad-bg  : transparent none !default;
 
 // --------------------------------------------------------- //
 // 3.) Box-Model                                               
@@ -210,30 +218,30 @@
     
     // a.) Background
 
-    $box-bgColor: $secondaryColor !default;
-    $box-bgImage: none !default; // Needs to be implemented into shorthand (not yet supported)
-    $box-bg: $box-bgColor !default;
+    $box-bgColor  : $secondaryColor !default;
+    $box-bgImage  : none !default; // Needs to be implemented into shorthand (not yet supported)
+    $box-bg       : $box-bgColor !default;
 
     // b.) Border
 
-    $box-borderColorFallback: #444 !default;
-    $box-borderColor: rgba(0,0,0,0.25) !default;
-    $box-borderStyle: solid !default;
-    $box-borderWidth: 1px !default;
-    $box-border: $box-borderWidth $box-borderStyle $box-borderColor !default;
-    $border-radius: null !default;
+    $box-borderColorFallback  : #444 !default;
+    $box-borderColor          : rgba(0,0,0,0.25) !default;
+    $box-borderStyle          : solid !default;
+    $box-borderWidth          : 1px !default;
+    $box-border               : $box-borderWidth $box-borderStyle $box-borderColor !default;
+    $border-radius            : null !default;
 
     // c.) Box-Model
 
-    $box-padding: $leading / 2 !default;
-    $box-shadow: null !default;
+    $box-padding  : $leading / 2 !default;
+    $box-shadow   : null !default;
     
     // d.) Typography
 
-    $box-fontColor: $font-colorSecondary !default;
-    $box-fontColorHover: darken($font-colorSecondary, 15%) !default;
-    $box-headerColor: $font-colorSecondary !default;
-    $box-headerColorHover: darken($box-headerColor, 10%) !default;
+    $box-fontColor         : $font-colorSecondary !default;
+    $box-fontColorHover    : darken($font-colorSecondary, 15%) !default;
+    $box-headerColor       : $font-colorSecondary !default;
+    $box-headerColorHover  : darken($box-headerColor, 10%) !default;
 
     // e.) Custom
 
@@ -243,24 +251,24 @@
     
     // a.) Background
 
-    $button-bg: $gradient-colorLinearTop !default;
-    $button-bgTop: $gradient-colorLinearTop !default;
-    $button-bgBottom: $gradient-colorLinearBottom !default;
+    $button-bg        : $gradient-colorLinearTop !default;
+    $button-bgTop     : $gradient-colorLinearTop !default;
+    $button-bgBottom  : $gradient-colorLinearBottom !default;
 
     // b.) Border
 
-    $button-borderRadius: 4px !default;
+    $button-borderRadius  : 4px !default;
 
     // c.) Box-Model
 
-    $button-padding: 4px 8px !default;
+    $button-padding  : 4px 8px !default;
 
     // d.) Typography
 
-    $button-fontColor: $font-colorTertiary !default;
-    $button-fontColorHover: $button-fontColor !default;
-    $button-fontFamily: $font-family !default;
-    $button-fontTextShadow: $textShadow !default;
+    $button-fontColor       : $font-colorTertiary !default;
+    $button-fontColorHover  : $button-fontColor !default;
+    $button-fontFamily      : $font-family !default;
+    $button-fontTextShadow  : $textShadow !default;
 
     // e.) Custom
 
@@ -272,33 +280,33 @@
 // (3) Base                                                    
 // --------------------------------------------------------- //
 
-$baseBg-image: url("#{$imageURL-local}/border-widgets.png") bottom left no-repeat !default;
-$baseBg: $box-bg !default;
-$baseBg-alt: $quaternaryColor !default;
-$baseBorder: $box-border !default;
-$baseBorder-radius: $border-radius !default;
-$baseFont-color: $box-fontColor !default;
-$baseFont-color-hover: $box-fontColorHover !default;
-$baseHeader-color: $box-headerColor !default;
-$baseHeader-color-hover: $box-headerColorHover !default;
-$baseMargin-bottom: $leading / 2 !default; // check with JB - reminder
-$basePadding: $box-padding !default;
-$basePadding-bottom: 0 !default;
+$baseBg-image            : url("#{$imageURL-local}/border-widgets.png") bottom left no-repeat !default;
+$baseBg                  : $box-bg !default;
+$baseBg-alt              : $quaternaryColor !default;
+$baseBorder              : $box-border !default;
+$baseBorder-radius       : $border-radius !default;
+$baseFont-color          : $box-fontColor !default;
+$baseFont-color-hover    : $box-fontColorHover !default;
+$baseHeader-color        : $box-headerColor !default;
+$baseHeader-color-hover  : $box-headerColorHover !default;
+$baseMargin-bottom       : $leading / 2 !default;
+$basePadding             : $box-padding !default;
+$basePadding-bottom      : 0 !default;
 
 // --------------------------------------------------------- //
 // (3) Blockquote                                              
 // --------------------------------------------------------- //
 
-$blockquoteAuthor-color: $link-color !default;
-$blockquoteAuthor-color-hover: $link-colorSecondary !default;
-$blockquoteBg: $secondaryColor !default;
-$blockquoteBorder-color: lighten($blockquoteBg, 5%) !default;
-$blockquoteBorder-size: 3px !default;
-$blockquoteBorder-radius: $border-radius !default;
-$blockquoteBorder: $blockquoteBorder-size solid $blockquoteBorder-color !default;
-$blockquoteFont-color: lighten($font-colorSecondary, 3%) !default;
-$blockquoteLink-color: $link-color !default;
-$blockquoteLink-colorHover: $link-colorHover !default;
+$blockquoteAuthor-color        : $link-color !default;
+$blockquoteAuthor-color-hover  : $link-colorSecondary !default;
+$blockquoteBg                  : $secondaryColor !default;
+$blockquoteBorder-color        : lighten($blockquoteBg, 5%) !default;
+$blockquoteBorder-size         : 3px !default;
+$blockquoteBorder-radius       : $border-radius !default;
+$blockquoteBorder              : $blockquoteBorder-size solid $blockquoteBorder-color !default;
+$blockquoteFont-color          : lighten($font-colorSecondary, 3%) !default;
+$blockquoteLink-color          : $link-color !default;
+$blockquoteLink-colorHover     : $link-colorHover !default;
 
 // --------------------------------------------------------- //
 // (3) Breadcrumb                                              
@@ -307,120 +315,122 @@ $blockquoteLink-colorHover: $link-colorHover !default;
     // a.) Background
 
         // 1.) Parent
-        $breadcrumb-bg: none !default;
+        $breadcrumb-bg  : none !default;
 
         // 2.) Child
-        $breadcrumbItem-bg: none !default;
+        $breadcrumbItem-bg  : none !default;
 
         // 3.) Home
-        $breadcrumbHomeItem-bg: $breadcrumbItem-bg !default;
+        $breadcrumbHomeItem-bg  : $breadcrumbItem-bg !default;
 
     // b.) Borders
 
         // 1.) Parent
-        $breadcrumb-border: none !default;
-        $breadcrumb-borderWidth: 0 !default;
+        $breadcrumb-border       : none !default;
+        $breadcrumb-borderWidth  : 0 !default;
 
         // 2.) Child
-        $breadcrumbItem-border: none !default;
-        $breadcrumbItem-borderWidth: 0 !default;
+        $breadcrumbItem-border       : none !default;
+        $breadcrumbItem-borderWidth  : 0 !default;
 
     // c.) Box Model
 
         // 1.) Parent
-        $breadcrumb-margin: 10px 0 !default;
-        $breadcrumb-padding: 0 !default;
-        $breadcrumb-height: $leading;
+        $breadcrumb-margin   : 10px 0 !default;
+        $breadcrumb-padding  : 0 !default;
+        $breadcrumb-height   : $leading;
 
         // 2.) Child
-        $breadcrumbItem-padding: 0 !default;
-        $breadcrumbItem-margin: 0 !default;
+        $breadcrumbItem-padding  : 0 !default;
+        $breadcrumbItem-margin   : 0 !default;
 
         // 3.) Home
         $breadcrumbHomeItem-padding: $breadcrumbItem-padding !default;
 
     // d.) Typography
-        $breadcrumb-fontStyle: normal !default;
-        $breadcrumb-fontTransform: none !default;
-        $breadcrumb-fontLineheight: $leading !default;
-        $breadcrumb-fontWeight: normal !default;
-        $breadcrumb-fontSize: $font-size !default;
-        $breadcrumb-fontFamily: $font-family !default;
-        $breadcrumbItem-color: $link-color !default;
-        $breadcrumbItem-colorHover: $link-colorHover !default;
+        $breadcrumb-fontStyle       : normal !default;
+        $breadcrumb-fontTransform   : none !default;
+        $breadcrumb-fontLineheight  : $leading !default;
+        $breadcrumb-fontWeight      : normal !default;
+        $breadcrumb-fontSize        : $font-size !default;
+        $breadcrumb-fontFamily      : $font-family !default;
+        $breadcrumbItem-color       : $link-color !default;
+        $breadcrumbItem-colorHover  : $link-colorHover !default;
 
     // e.) Custom
         
         // 1.) Item
-            $breadcrumbItem-seperator: '--' !default;
+            $breadcrumbItem-seperator  : '--' !default;
 
         // 2.) Border Radius
 
             // 1.) Parent
-            $breadcrumb-borderRadius: null !default;
+            $breadcrumb-borderRadius  : null !default;
 
             // 2.) Home
-            $breadcrumbHomeItem-borderRadius: null !default;
+            $breadcrumbHomeItem-borderRadius  : null !default;
 
         // 3.) Box Shadow
-            $breadcrumb-boxShadow: null !default;
+            $breadcrumb-boxShadow  : null !default;
 
 
 // --------------------------------------------------------- //
 // (3) Comments                                                
 // --------------------------------------------------------- //
 
-    $commentBg: $box-bg !default;
-    $commentThreadBg-color: darken($commentBg, 5%) !default;
+$commentBg                  : $box-bg !default;
+$commentThreadBg-color      : darken($commentBg, 5%) !default;
 
-    $commentLink-color: $link-color !default;
-    $commentLink-colorHover: $link-colorHover !default;
+$commentLink-color          : $link-color !default;
+$commentLink-colorHover     : $link-colorHover !default;
 
-    $commentBorderWidth-top: 0 !default;
-    $commentBorderStyle-top: solid !default;
-    $commentBorderColor-top: transparent !default;
-    $commentBorderWidth-bottom: 1px !default;
-    $commentBorderStyle-bottom: solid !default;
-    $commentBorderColor-bottom: $box-borderColor !default;
+$commentBorderWidth-top     : 0 !default;
+$commentBorderStyle-top     : solid !default;
+$commentBorderColor-top     : transparent !default;
+$commentBorderWidth-bottom  : 1px !default;
+$commentBorderStyle-bottom  : solid !default;
+$commentBorderColor-bottom  : $box-borderColor !default;
 
-    $commentMargin: 2px !default;
-    $commentPadding: $box-padding !default;
+$commentMargin              : 2px !default;
+$commentPadding             : $box-padding !default;
 
-    $commentUserBoxWidth: 75px !default;
+$commentUserBoxWidth        : 75px !default;
 
-    $commentSigColor: $font-colorLighter !default;
-    $commentSigBorder: $box-border !default;
+$commentSigColor            : $font-colorLighter !default;
+$commentSigBorder           : $box-border !default;
 
-    // Forums
+// --------------------------------------------------------- //
+// (3) Forums                                             
+// --------------------------------------------------------- //
 
-    $forumComment-bg: $commentBg !default;
-    $forumCommentThreadBg: $commentBg !default;
-    $forumComment-font-color: $box-fontColor !default;
-    $forumCommentFont-colorHover: $box-fontColorHover !default;
-    $forumComment-margin: $commentMargin !default;
-    $forumCommentUserBoxWidth: 150px !default;
-    $forumComment-padding: 10px 0 !default;
-    $forumCommentSigColor: $commentSigColor !default;
-    $forumCommentSigBorder: $commentSigBorder !default;
-    $forumComment-link-color: $link-color !default;
+$forumComment-bg                 : $commentBg !default;
+$forumCommentThreadBg            : $commentBg !default;
+$forumComment-font-color         : $box-fontColor !default;
+$forumCommentFont-colorHover     : $box-fontColorHover !default;
+$forumComment-margin             : $commentMargin !default;
+$forumCommentUserBoxWidth        : 150px !default;
+$forumComment-padding            : 10px 0 !default;
+$forumCommentSigColor            : $commentSigColor !default;
+$forumCommentSigBorder           : $commentSigBorder !default;
+$forumComment-link-color         : $link-color !default;
 
-    $forumComment-border: $box-border !default;
-    $forumCommentBorderWidth-top: 0 !default;
-    $forumCommentBorderStyle-top: solid !default;
-    $forumCommentBorderColor-top: transparent !default;
-    $forumCommentBorderWidth-bottom: 1px !default;
-    $forumCommentBorderStyle-bottom: solid !default;
-    $forumCommentBorderColor-bottom: $box-borderColor !default;
+$forumComment-border             : $box-border !default;
+$forumCommentBorderWidth-top     : 0 !default;
+$forumCommentBorderStyle-top     : solid !default;
+$forumCommentBorderColor-top     : transparent !default;
+$forumCommentBorderWidth-bottom  : 1px !default;
+$forumCommentBorderStyle-bottom  : solid !default;
+$forumCommentBorderColor-bottom  : $box-borderColor !default;
 
-    $forumComment-boxShadow: null !default;
+$forumComment-boxShadow          : null !default;
 
-    $forumComment-content-margin: $forumCommentUserBoxWidth + ($leading / 2) !default;
+$forumComment-content-margin     : $forumCommentUserBoxWidth + ($leading / 2) !default;
 
 // --------------------------------------------------------- //
 // (3) Clipping                                                
 // --------------------------------------------------------- //
 
-    $clip-size: 0 !default;
+$clip-size : 0 !default;
 
 // --------------------------------------------------------- //
 // (3) Definition                                              
@@ -428,459 +438,487 @@ $blockquoteLink-colorHover: $link-colorHover !default;
 
     // c.) Box-Model
 
-    $definitionAvatar-height: 0 !default;
-    $definitionAvatar-width: 0 !default;
+    $definitionAvatar-height  : 0 !default;
+    $definitionAvatar-width   : 0 !default;
 
     // d.) Typography
 
-    $definitionTitle-size: $header-size !default;
+    $definitionTitle-size  : $header-size !default;
 
 // --------------------------------------------------------- //
 // (3) Figure                                                  
 // --------------------------------------------------------- //
     
-    $figureFont-weight: false !default;
-    $figureFont-size: false !default;
-    $figureFont-lineHeight: false !default;
-    $figureFont-family: false !default;
-    $figureFont-textTransform: false !default;
+$figureFont-weight           : false !default;
+$figureFont-size             : false !default;
+$figureFont-lineHeight       : false !default;
+$figureFont-family           : false !default;
+$figureFont-textTransform    : false !default;
 
-    $figureCaption-bgColor: transparent !default;
-    $figureCaption-bgImage: none !default;
-    $figureCaption-bg: $figureCaption-bgColor $figureCaption-bgImage !default;
-    $figureCaption-border: none !default;
-    $figureCaption-borderRadius: $border-radius !default;
-    $figureCaption-boxShadow: $box-shadow !default;
-    $figureCaption-margin: 6px 0 0 !default;
-    $figureCaption-padding: 0 $leading / 2 !default;
+$figureCaption-bgColor       : transparent !default;
+$figureCaption-bgImage       : none !default;
+$figureCaption-bg            : $figureCaption-bgColor $figureCaption-bgImage !default;
+$figureCaption-border        : none !default;
+$figureCaption-borderRadius  : $border-radius !default;
+$figureCaption-boxShadow     : $box-shadow !default;
+$figureCaption-margin        : 6px 0 0 !default;
+$figureCaption-padding       : 0 $leading / 2 !default;
 
-    $figure-width: auto !default;
+$figure-width                : auto !default;
 
 // --------------------------------------------------------- //
 // (3) Frame                                                    
 // --------------------------------------------------------- //
 
-    $frame-bgColor: $tertiaryColor !default;
-    $frame-bgImage: none !default;
-    $frame-bg: $frame-bgColor $frame-bgImage !default;
-    $frame-gradient: false !default;
-    $frame-boxShadow: inset 0 1px 0 rgba(255,255,255,.1) !default;
-    $frame-size: 4px !default;
+$frame-bgColor    : $tertiaryColor !default;
+$frame-bgImage    : none !default;
+$frame-bg         : $frame-bgColor $frame-bgImage !default;
+$frame-gradient   : false !default;
+$frame-boxShadow  : inset 0 1px 0 rgba(255,255,255,.1) !default;
+$frame-size       : 4px !default;
 
 // --------------------------------------------------------- //
 // (3) Table                                                   
 // --------------------------------------------------------- //
 
-$table-bg: darken($primaryColor, 5%) !default;
-$table-bgAlt: $table-bg !default;
-$tableHeader-bg-top: $secondaryColor !default;
-$tableHeader-bg-bottom: darken($tableHeader-bg-top, 10%) !default;
-$tableHeader-bg: $tableHeader-bg-top !default;
-$tableHeader-color: $font-colorSecondary !default;
+$table-bg               : darken($primaryColor, 5%) !default;
+$table-bgAlt            : $table-bg !default;
+$tableHeader-bg-top     : $secondaryColor !default;
+$tableHeader-bg-bottom  : darken($tableHeader-bg-top, 10%) !default;
+$tableHeader-bg         : $tableHeader-bg-top !default;
+$tableHeader-color      : $font-colorSecondary !default;
 
-$tableHeader-padding: 4px 8px !default;
-$tableHeader-border: $box-border !default;
-$tableCell-boxShadow: inset 0 1px 0 rgba(255,255,255,.1) !default;
-$tableCell-bg: $table-bg !default;
-$tableCell-border: $tableHeader-border !default;
-$tableCell-borderWidth: 1px !default;
-$tableCell-height: 18px !default;
-$tableCell-padding: $tableHeader-padding !default;
+$tableHeader-padding    : 4px 8px !default;
+$tableHeader-border     : $box-border !default;
+$tableCell-boxShadow    : inset 0 1px 0 rgba(255,255,255,.1) !default;
+$tableCell-bg           : $table-bg !default;
+$tableCell-border       : $tableHeader-border !default;
+$tableCell-borderWidth  : 1px !default;
+$tableCell-height       : 18px !default;
+$tableCell-padding      : $tableHeader-padding !default;
 
 // --------------------------------------------------------- //
 // (3) Gallery                                                 
 // --------------------------------------------------------- //
 
-$galleryViewport: 150px !default;
+$galleryViewport          : 150px !default;
 
-$galleryBg: $box-bg !default;
-$galleryBg-hover: $tertiaryColor !default;
-$galleryBorder: $box-border !default;
-$galleryFont-color: $box-fontColor !default;
-$galleryFont-color-hover: $font-colorTertiary !default;
-$galleryMargin: 0 0 $leading !default;
-$galleryPadding: 5px !default;
+$galleryBg                : $box-bg !default;
+$galleryBg-hover          : $tertiaryColor !default;
+$galleryBorder            : $box-border !default;
+$galleryFont-color        : $box-fontColor !default;
+$galleryFont-color-hover  : $font-colorTertiary !default;
+$galleryMargin            : 0 0 $leading !default;
+$galleryPadding           : 5px !default;
 
-$albumViewport: 240px !default;
-$albumBorder: $box-border !default;
+$albumViewport            : 240px !default;
+$albumBorder              : $box-border !default;
 
 // --------------------------------------------------------- //
 // (3) Glyph                                                   
 // --------------------------------------------------------- //
 
-$glyphBg: $tertiaryColor !default;
-$glyphBg-hover: darken($glyphBg, 10%) !default;
+$glyphBg                 : $tertiaryColor !default;
+$glyphBg-hover           : darken($glyphBg, 10%) !default;
 
-$glyphBorder: $box-border !default;
-$glyphBorder-radius: $border-radius !default;
-$glyphBoxShadow: none !default;
-$glyphMargin: 0 !default;
-$glyphPadding: 2px 6px !default;
+$glyphBorder             : $box-border !default;
+$glyphBorder-radius      : $border-radius !default;
+$glyphBoxShadow          : none !default;
+$glyphMargin             : 0 !default;
+$glyphPadding            : 2px 6px !default;
 
-$glyphFont-size: $font-size !default;
-$glyphFont-color: $font-colorTertiary !default;
-$glyphFont-color-hover: $glyphFont-color !default;
+$glyphFont-size          : $font-size !default;
+$glyphFont-color         : $font-colorTertiary !default;
+$glyphFont-color-hover   : $glyphFont-color !default;
 
-$glyphArrow-color: $glyphBg !default;
-$glyphArrow-color-hover: $link-colorHover !default;
-$glyphArrow-size: $leading/2 !default;
-$glyphArrow-margin: 0 6px 0 !default;
+$glyphArrow-color        : $glyphBg !default;
+$glyphArrow-color-hover  : $link-colorHover !default;
+$glyphArrow-size         : $leading/2 !default;
+$glyphArrow-margin       : 0 6px 0 !default;
 
-$glyphText-shadow: $textShadow !default;
+$glyphText-shadow        : $textShadow !default;
 
 // --------------------------------------------------------- //
 // (3) Header                                                  
 // --------------------------------------------------------- //
 
 // Bg
-$headerBg: transparent none !default;
-$header-bgFallback: false !default;
+$headerBg           : transparent none !default;
+$header-bgFallback  : false !default;
+
 // Logo
-$headerLogo: url("#{$imageURL-local}/logo.png") no-repeat !default;
-$headerLogo-hover: 0 0 !default;
-$headerLogo-height: 100px !default;
-$headerLogo-width: 100px !default;
-$headerLogo-top: 0px !default;
-$headerLogo-right: 0px !default;
-$headerLogo-bottom: 0px !default;
-$headerLogo-left: 0px !default;
+$headerLogo         : url("#{$imageURL-local}/logo.png") no-repeat !default;
+$headerLogo-hover   : 0 0 !default;
+$headerLogo-height  : 100px !default;
+$headerLogo-width   : 100px !default;
+$headerLogo-top     : 0px !default;
+$headerLogo-right   : 0px !default;
+$headerLogo-bottom  : 0px !default;
+$headerLogo-left    : 0px !default;
+
 // Logo Homepage
-$headerLogoBig: url("#{$imageURL-local}/logo-home.png") no-repeat center center !default;
-$headerLogoBig-hover: 0 0 !default;
-$headerLogoBig-height: 145px !default;
-$headerLogoBig-width: 313px !default;
+$headerLogoBig         : url("#{$imageURL-local}/logo-home.png") no-repeat center center !default;
+$headerLogoBig-hover   : 0 0 !default;
+$headerLogoBig-height  : 145px !default;
+$headerLogoBig-width   : 313px !default;
+
 // Main
-$headerMain-margin: 0 0 $leading !default;
+$headerMain-margin  : 0 0 $leading !default;
+
 // Tagline
-$headerSubtitle-color: $font-color !default;
-$headerSubtitle-size: $font-sizeLarger !default;
-$headerSubtitle-weight: bold !default;
-$headerSubtitle-position: absolute !default;
-$headerSubtitle-top: auto !default;
-$headerSubtitle-right: auto !default;
-$headerSubtitle-bottom: auto !default;
-$headerSubtitle-left: -9999px !default;
+$headerSubtitle-color     : $font-color !default;
+$headerSubtitle-size      : $font-sizeLarger !default;
+$headerSubtitle-weight    : bold !default;
+$headerSubtitle-position  : absolute !default;
+$headerSubtitle-top       : auto !default;
+$headerSubtitle-right     : auto !default;
+$headerSubtitle-bottom    : auto !default;
+$headerSubtitle-left      : -9999px !default;
+
 // Search
-$headerSearch-position: absolute !default;
-$headerSearch-height: 20px !default;
-$headerSearch-top: 0px !default;
-$headerSearch-right: 0px !default;
-$headerSearch-bg: url("#{$imageURL-core}/icons/16x16/magnify.png") no-repeat !default;
-$header-transform: normal !default;
+$headerSearch-position  : absolute !default;
+$headerSearch-height    : 20px !default;
+$headerSearch-top       : 0px !default;
+$headerSearch-right     : 0px !default;
+$headerSearch-bg        : url("#{$imageURL-core}/icons/16x16/magnify.png") no-repeat !default;
+$header-transform       : normal !default;
+
 // Nav
-$headerNav-top: auto !default;
+$headerNav-top  : auto !default;
 
 // --------------------------------------------------------- //
 // (3) List                                                    
 // --------------------------------------------------------- //
 
-$listBorder: $box-border !default;
-$listPadding: $leading !default;
+$listBorder                  : $box-border !default;
+$listPadding                 : $leading !default;
 
-$listGridItem-bgColor: $primaryColor !default;
-$listGridItem-bgImage: none !default;
-$listGridItem-bg: $listGridItem-bgColor $listGridItem-bgImage !default;
-$listGridItemHover-bgColor: $listGridItem-bgColor !default;
-$listGridItemHover-bgImage: $listGridItem-bgImage !default;
-$listGridItemHover-bg: $listGridItemHover-bgColor $listGridItemHover-bgImage !default;
-$listGridItem-boxShadow: null !default;
-$listGridItem-color: $link-color !default;
-$listGridItem-padding: 0 !default;
-$listGridItem-height: auto !default;
-$listGridItem-margin: 1em !default;
-$listGridItem-width: 20% !default;
+$listGridItem-bgColor        : $primaryColor !default;
+$listGridItem-bgImage        : none !default;
+$listGridItem-bg             : $listGridItem-bgColor $listGridItem-bgImage !default;
+$listGridItemHover-bgColor   : $listGridItem-bgColor !default;
+$listGridItemHover-bgImage   : $listGridItem-bgImage !default;
+$listGridItemHover-bg        : $listGridItemHover-bgColor $listGridItemHover-bgImage !default;
+$listGridItem-boxShadow      : null !default;
+$listGridItem-color          : $link-color !default;
+$listGridItem-padding        : 0 !default;
+$listGridItem-height         : auto !default;
+$listGridItem-margin         : 1em !default;
+$listGridItem-width          : 20% !default;
 
-$listGridItemFull-bgColor: $listGridItem-bgColor !default;
-$listGridItemFull-bgImage: $listGridItem-bgImage !default;
-$listGridItemFull-bg: $listGridItemFull-bgColor $listGridItemFull-bgImage !default;
-$listGridItemFull-boxShadow: $listGridItem-boxShadow !default;
+$listGridItemFull-bgColor    : $listGridItem-bgColor !default;
+$listGridItemFull-bgImage    : $listGridItem-bgImage !default;
+$listGridItemFull-bg         : $listGridItemFull-bgColor $listGridItemFull-bgImage !default;
+$listGridItemFull-boxShadow  : $listGridItem-boxShadow !default;
 
-$listGridItemFull-color: $listGridItem-color !default;
-$listGridItemHover-color: $font-color !default;
-$listGridItemFull-width: 298px !default;
-$listGridItemFull-height: 98px !default;
-$listGridItemFull-margin: 5px !default;
+$listGridItemFull-color      : $listGridItem-color !default;
+$listGridItemHover-color     : $font-color !default;
+$listGridItemFull-width      : 298px !default;
+$listGridItemFull-height     : 98px !default;
+$listGridItemFull-margin     : 5px !default;
 
-$listGridPortrait-bgColor: transparent !default;
-$listGridPortrait-bgImage: none !default;
-$listGridPortrait-bg: $listGridPortrait-bgColor $listGridPortrait-bgImage !default;
-$listGridPortrait-padding: 0 !default;
-$listGridPortrait-width: 100% !default;
+$listGridPortrait-bgColor    : transparent !default;
+$listGridPortrait-bgImage    : none !default;
+$listGridPortrait-bg         : $listGridPortrait-bgColor $listGridPortrait-bgImage !default;
+$listGridPortrait-padding    : 0 !default;
+$listGridPortrait-width      : 100% !default;
 
-$listGridItemPortraitFull-boxShadow: 1px 1px 4px rgba(0,0,0,.3) !default;
+$listGridItemPortraitFull-boxShadow  : 1px 1px 4px rgba(0,0,0,.3) !default;
 
 // --------------------------------------------------------- //
 // (3) Media                                                   
 // --------------------------------------------------------- //
 
-$mediaBorder-radius: $border-radius !default;
+$mediaBorder-radius      : $border-radius !default;
 
-$mediaOverlay-bg: rgba(0,0,0,.9) !default;
+$mediaOverlay-bg         : rgba(0,0,0,.9) !default;
 
-$mediaTitle-color: $header-color !default;
-$mediaTitle-color-hover: $header-colorHover !default;
-$mediaTitle-size: $font-sizeLarger !default; 
+$mediaTitle-color        : $header-color !default;
+$mediaTitle-color-hover  : $header-colorHover !default;
+$mediaTitle-size         : $font-sizeLarger !default; 
 
 // --------------------------------------------------------- //
 // (3) Nav                                                     
 // --------------------------------------------------------- //
 
-$navBg: transparent none !default;
+$navBg  : transparent none !default;
 
-$navItem-bg: $box-bg !default;
-$navItem-bg-hover: $tertiaryColor !default;
-$navItem-bg-selected: $tertiaryColor !default;
-$navItem-border: 0 solid $secondaryColor !default;
-$navItem-border-selected: 0 solid $secondaryColor !default;
-$navItem-color: $font-colorSecondary !default;
-$navItem-color-hover: $font-colorTertiary !default;
-$navItem-color-selected: $font-colorTertiary !default;
-$navItem-font: bold $font-size $font-family !default;
-$navItem-fontFamily: $font-family !default;
-$navItem-fontSize: $font-size !default;
-$navItem-fontWeight: bold !default;
-$navItem-padding: .5em 1em !default;
-$navItemDropDown-padding: 5px 14px !default;
-$navItem-textShadow: $textShadow !default;
-$navItem-textTransform: normal !default;
-$navItem-width: 100% !default;
+$navItem-bg               : $box-bg !default;
+$navItem-bg-hover         : $tertiaryColor !default;
+$navItem-bg-selected      : $tertiaryColor !default;
+$navItem-border           : 0 solid $secondaryColor !default;
+$navItem-border-selected  : 0 solid $secondaryColor !default;
+$navItem-color            : $font-colorSecondary !default;
+$navItem-color-hover      : $font-colorTertiary !default;
+$navItem-color-selected   : $font-colorTertiary !default;
+$navItem-font             : bold $font-size $font-family !default;
+$navItem-fontFamily       : $font-family !default;
+$navItem-fontSize         : $font-size !default;
+$navItem-fontWeight       : bold !default;
+$navItem-padding          : .5em 1em !default;
+$navItemDropDown-padding  : 5px 14px !default;
+$navItem-textShadow       : $textShadow !default;
+$navItem-textTransform    : normal !default;
+$navItem-width            : 100% !default;
 
 // --------------------------------------------------------- //
 // (3) Pagination                                              
 // --------------------------------------------------------- //
 
-$paginationBg: $secondaryColor none !default;
-$paginationBg-hover: $tertiaryColor !default;
-$paginationBg-active: $tertiaryColor !default;
-$paginationBorder: $box-border!default;
-$paginationBorder-radius: $border-radius !default;
-$paginationPadding: .3em .6em !default;
-$paginationFont-color: $font-colorSecondary !default;
-$paginationFont-color-hover: $font-colorTertiary !default;
-$paginationFont-color-active: $font-colorTertiary !default;
-$paginationFont-size: $font-sizeSmaller !default;
-$paginationNext-font-color: $link-color !default;
+$paginationBg                 : $secondaryColor none !default;
+$paginationBg-hover           : $tertiaryColor !default;
+$paginationBg-active          : $tertiaryColor !default;
+$paginationBorder             : $box-border!default;
+$paginationBorder-radius      : $border-radius !default;
+$paginationPadding            : .3em .6em !default;
+$paginationFont-color         : $font-colorSecondary !default;
+$paginationFont-color-hover   : $font-colorTertiary !default;
+$paginationFont-color-active  : $font-colorTertiary !default;
+$paginationFont-size          : $font-sizeSmaller !default;
+$paginationNext-font-color    : $link-color !default;
 
 // --------------------------------------------------------- //
 // (3) Poll                                                    
 // --------------------------------------------------------- //
 
-$pollResults-bg: $tertiaryColor !default;
+$pollResults-bg    : $tertiaryColor !default;
 
-$pollBg: $box-bg !default;
-$pollBorder: $box-border !default;
-$pollMargin: 0 0 $leading !default;
-$pollChoice-color: $font-color !default;
+$pollBg            : $box-bg !default;
+$pollBorder        : $box-border !default;
+$pollMargin        : 0 0 $leading !default;
+$pollChoice-color  : $font-color !default;
 
 // --------------------------------------------------------- //
 // (3) PM                                                      
 // --------------------------------------------------------- //
 
-$pmBorder: none !default;
+$pmBorder  : none !default;
 
 // --------------------------------------------------------- //
 // (3) Profile                                                 
 // --------------------------------------------------------- //
 
-$profileAvatar-width: 100px !default;
-$profileBorder: $box-border !default;
-$profilePadding: $box-padding 0 !default;
-$profileFont-color: lighten($font-color, 5%) !default;
+$profileAvatar-width       : 100px !default;
+$profileBorder             : $box-border !default;
+$profilePadding            : $box-padding 0 !default;
+$profileFont-color         : lighten($font-color, 5%) !default;
 
-$profileNav-bg: darken($primaryColor, 5%) !default;
-$profileNav-bgSelected: $link-color !default;
-$profileNav-bgHover: $profileNav-bgSelected !default;
-$profileNav-color: $font-color !default;
-$profileNav-colorSelected: $font-colorTertiary !default;
-$profileNav-colorHover: $profileNav-colorSelected !default;
+$profileNav-bg             : darken($primaryColor, 5%) !default;
+$profileNav-bgSelected     : $link-color !default;
+$profileNav-bgHover        : $profileNav-bgSelected !default;
+$profileNav-color          : $font-color !default;
+$profileNav-colorSelected  : $font-colorTertiary !default;
+$profileNav-colorHover     : $profileNav-colorSelected !default;
 
-$profileName-fontColor: $header-color !default;
+$profileName-fontColor     : $header-color !default;
 
-$profileTabColorBorder: $box-borderColor !default;
-$profileTabColor: $secondaryColor !default;
-$profileTabColorHover: $font-colorSecondary !default;
+$profileTabColorBorder     : $box-borderColor !default;
+$profileTabColor           : $secondaryColor !default;
+$profileTabColorHover      : $font-colorSecondary !default;
 
-$profilePostItem-bgHover: transparent none !default;
+$profilePostItem-bgHover   : transparent none !default;
 
 // --------------------------------------------------------- //
 // (3) Search                                                  
 // --------------------------------------------------------- //
 
-$searchBg: $box-bg !default;
-$searchBorder: $box-border !default;
-$searchBorder-radius: $border-radius !default;
-$searchHeight: auto !default;
-$searchPadding: $box-padding !default;
-$searchInput-Bg: none !default;
+$searchBg             : $box-bg !default;
+$searchBorder         : $box-border !default;
+$searchBorder-radius  : $border-radius !default;
+$searchHeight         : auto !default;
+$searchPadding        : $box-padding !default;
+$searchInput-Bg       : none !default;
 
 // --------------------------------------------------------- //
 // (3) Shoutbox                                                
 // --------------------------------------------------------- //
 
-$shoutbox-border: $box-border !default;
+$shoutbox-border  : $box-border !default;
 
 // --------------------------------------------------------- //
 // (3) Tab                                                     
 // --------------------------------------------------------- //
 
-$tabSpeech: true !default;
+$tabSpeech  : true !default;
 
-$tabBg: $secondaryColor !default;
-$tabBg-hover: $tertiaryColor !default;
-$tabBorder: $box-border !default;
-$tabMargin: 0 0 $leading / 2 !default;
-$tabPadding: 4px 8px !default;
+$tabBg        : $secondaryColor !default;
+$tabBg-hover  : $tertiaryColor !default;
+$tabBorder    : $box-border !default;
+$tabMargin    : 0 0 $leading / 2 !default;
+$tabPadding   : 4px 8px !default;
 
-$tabItem-width: auto !default;
+$tabItem-width  : auto !default;
 
-$tabFont-color: $font-colorSecondary !default;
-$tabFont-color-hover: $font-colorTertiary !default;
-$tabFont-texTransform: normal !default;
+$tabFont-color         : $font-colorSecondary !default;
+$tabFont-color-hover   : $font-colorTertiary !default;
+$tabFont-texTransform  : normal !default;
 
-$tabSubnav-bg: $box-bg !default;
-$tabSubnav-border: none !default;
-$tabSubnav-border-selected: 1px solid $box-borderColor !default;
+$tabSubnav-bg               : $box-bg !default;
+$tabSubnav-border           : none !default;
+$tabSubnav-border-selected  : 1px solid $box-borderColor !default;
 
 // --------------------------------------------------------- //
 // (3) Tooltip                                                 
 // --------------------------------------------------------- //
 
-$tooltip-borderWidth: 1px !default;
-$tooltip-borderStyle: dotted !default;
-$tooltip-borderColor: lighten($font-color, 8%);
-$tooltip-border: $tooltip-borderWidth $tooltip-borderStyle $tooltip-borderColor !default;
+$tooltip-borderWidth  : 1px !default;
+$tooltip-borderStyle  : dotted !default;
+$tooltip-borderColor  : lighten($font-color, 8%);
+$tooltip-border       : $tooltip-borderWidth $tooltip-borderStyle $tooltip-borderColor !default;
+
+// --------------------------------------------------------------------------------------------------------------------- //
+//                                        **** Remaining Legacy ****                                                     
+// --------------------------------------------------------------------------------------------------------------------- //
+
+// --------------------------------------------------------- //
+// Modal                                             
+// --------------------------------------------------------- //
+
+$modalBg                     : $primaryColor !default;
+$modalBg-hover               : #f4f4f4 !default;
+$modalBorderWidth            : 1px !default;
+$modalBorderColor            : $box-borderColor !default;
+$modalBoxShadow-outter       : 0px 0 20px rgba(0,0,0,.9) !default;
+$modalBoxShadow-innertop     : inset 1px 1px 0 rgba(255,255,255,.1) !default;
+$modalBoxShadow-innerbottom  : inset -1px -1px 0 rgba(255,255,255,.1) !default;
+$modalTitleHeight            : 32px !default;
+$modalTitleBg                : $secondaryColor !default;
+$modalTitleColor             : $header-color !default;
+$modalActionBg               : $primaryColor !default;
+$modalPadding                : 8px !default;
+$modalClose-bg               : $primaryColor !default;
 
 
-// Remaining Legacy /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// --------------------------------------------------------- //
+// Interface + Icons                                    
+// --------------------------------------------------------- //
 
-// b. Modal
+$icon-goNext            : url("#{$imageURL-core}/icons/8x8/darkgrey/icon-postArrow.png") no-repeat 0 0 !default;
+$icon-streams           : url("#{$imageURL-core}/icons/16x16/darkgrey/icon-stream.png") no-repeat 0 0 !default;
+$icon-ua-time-duration  : url("#{$imageURL-core}/icons/12x12/darkgrey/icon-time.png") no-repeat 5px center !default;
+$icon-asc               : url("#{$imageURL-core}/icons/12x12/green/icon-asc.png") no-repeat right center !default;
+$icon-desc              : url("#{$imageURL-core}/icons/12x12/green/icon-desc.png") no-repeat right center !default;
+$icon-ua-reply-to       : url("#{$imageURL-core}/icons/8x8/darkgrey/icon-replyTo.png") no-repeat 0 0 !default;
 
-$modalBg: $primaryColor !default;
-$modalBg-hover: #f4f4f4 !default;
-$modalBorderWidth: 1px !default;
-$modalBorderColor: $box-borderColor !default;
-$modalBoxShadow-outter: 0px 0 20px rgba(0,0,0,.9) !default;
-$modalBoxShadow-innertop: inset 1px 1px 0 rgba(255,255,255,.1) !default;
-$modalBoxShadow-innerbottom: inset -1px -1px 0 rgba(255,255,255,.1) !default;
-$modalTitleHeight: 32px !default;
-$modalTitleBg: $secondaryColor !default;
-$modalTitleColor: $header-color !default;
-$modalActionBg: $primaryColor !default;
-$modalPadding: 8px !default;
-$modalClose-bg: $primaryColor !default;
+// --------------------------------------------------------- //
+// UserAction Icons                                             
+// --------------------------------------------------------- //
 
-
-// Interface + Icons
-$icon-goNext: url("#{$imageURL-core}/icons/8x8/darkgrey/icon-postArrow.png") no-repeat 0 0 !default;
-$icon-streams: url("#{$imageURL-core}/icons/16x16/darkgrey/icon-stream.png") no-repeat 0 0 !default;
-$icon-ua-time-duration: url("#{$imageURL-core}/icons/12x12/darkgrey/icon-time.png") no-repeat 5px center !default;
-$icon-asc: url("#{$imageURL-core}/icons/12x12/green/icon-asc.png") no-repeat right center !default;
-$icon-desc: url("#{$imageURL-core}/icons/12x12/green/icon-desc.png") no-repeat right center !default;
-$icon-ua-reply-to: url("#{$imageURL-core}/icons/8x8/darkgrey/icon-replyTo.png") no-repeat 0 0 !default;
-// User Action Icons
-$icon-ua-sprite: url("#{$imageURL-core}/icons/12x12/darkgrey/user-action-sprite.png") no-repeat 0 0 !default;
-$icon-ua-quote: -28px -14px !default;
-$icon-ua-reply: 0 -28px !default;
-$icon-ua-delete: -14px 0 !default;
-$icon-ua-report: -14px -28px !default;
-$icon-ua-edit: -14px -14px !default;
-$icon-ua-edit-attachments: 0 -14px !default;
-$icon-ua-spam: -28px -28px !default;
-$icon-ua-not-spam: -28px 0 !default;
-$icon-ua-warn: -42px 0 !default;
-$icon-ua-add-note: 0 0 !default;
-$icon-ua-remove-note: -14px 0 !default;
-$icon-us-fontColor: $darkgrey !default;
+$icon-ua-sprite            : url("#{$imageURL-core}/icons/12x12/darkgrey/user-action-sprite.png") no-repeat 0 0 !default;
+$icon-ua-quote             : -28px -14px !default;
+$icon-ua-reply             : 0 -28px !default;
+$icon-ua-delete            : -14px 0 !default;
+$icon-ua-report            : -14px -28px !default;
+$icon-ua-edit              : -14px -14px !default;
+$icon-ua-edit-attachments  : 0 -14px !default;
+$icon-ua-spam              : -28px -28px !default;
+$icon-ua-not-spam          : -28px 0 !default;
+$icon-ua-warn              : -42px 0 !default;
+$icon-ua-add-note          : 0 0 !default;
+$icon-ua-remove-note       : -14px 0 !default;
+$icon-us-fontColor         : $darkgrey !default;
 
 //$icon-ua-width: 16px;
 //$icon-ua-hoverPosition: 0 -37px;
 
-$navDropDown-bg: $secondaryColor !default;
+$navDropDown-bg  : $secondaryColor !default;
 
-// Form Elements
+// --------------------------------------------------------- //
+// Form Elements                                             
+// --------------------------------------------------------- //
 
-$formBg-color: #fff !default;
-$formBg-color-hover: #f9f9f9 !default;
-$formFont-color: #000 !default;
-$formBorder-color: #ddd !default;
-$formBorder-color-active: $tertiaryColor !default;
-$formBg-image: none !default;
-$formBg: $formBg-color $formBg-image !default;
+$formBg-color                : #fff !default;
+$formBg-color-hover          : #f9f9f9 !default;
+$formFont-color              : #000 !default;
+$formBorder-color            : #ddd !default;
+$formBorder-color-active     : $tertiaryColor !default;
+$formBg-image                : none !default;
+$formBg                      : $formBg-color $formBg-image !default;
 
-$formFont-color: #111 !default;
-$formFont-color-placeHolder: #aaa !default;
-$formFont-family: $font-family !default;
+$formFont-color              : #111 !default;
+$formFont-color-placeHolder  : #aaa !default;
+$formFont-family             : $font-family !default;
 
-$formBorder-width: 1px !default;
-$formBorder-style: solid !default;
-$formBorder-color: darken($formBg-color, 10%) !default;
-$formBorder-color-active: darkn($formBg-color, 20%) !default;
-$formBorder-radius: $border-radius !default;
+$formBorder-width            : 1px !default;
+$formBorder-style            : solid !default;
+$formBorder-color            : darken($formBg-color, 10%) !default;
+$formBorder-color-active     : darkn($formBg-color, 20%) !default;
+$formBorder-radius           : $border-radius !default;
 
-$formPadding: 4px !default;
-$formWidth: 180px !default;
+$formPadding  : 4px !default;
+$formWidth    : 180px !default;
 
-$formBoxShadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !default;
-$formBoxGlow: 0 0 4px rgba($tertiaryColor, .6) !default;
+$formBoxShadow  : inset 0 1px 1px rgba(0, 0, 0, 0.075) !default;
+$formBoxGlow    : 0 0 4px rgba($tertiaryColor, .6) !default;
 
-$formLabelFilter-bgColor: $primaryColor !default;
-$formLabelFilter-bgImage: none !default;
-$formLabelFilter-bg: $formLabelFilter-bgColor $formLabelFilter-bgImage !default;
-$formLabelFilter-borderWidth: $box-borderWidth !default;
-$formLabelFilter-borderStyle: $box-borderStyle !default;
-$formLabelFilter-borderColor: $box-borderColor !default;
-$formLabelFilter-borderColorFallback: $box-borderColorFallback !default;
-$formLabelFilter-boxShadow: $box-shadow !default;
-$formLabelFilterFont-weight: normal !default;
-$formLabelFilter-padding: 2px 8px !default;
+$formLabelFilter-bgColor              : $primaryColor !default;
+$formLabelFilter-bgImage              : none !default;
+$formLabelFilter-bg                   : $formLabelFilter-bgColor $formLabelFilter-bgImage !default;
+$formLabelFilter-borderWidth          : $box-borderWidth !default;
+$formLabelFilter-borderStyle          : $box-borderStyle !default;
+$formLabelFilter-borderColor          : $box-borderColor !default;
+$formLabelFilter-borderColorFallback  : $box-borderColorFallback !default;
+$formLabelFilter-boxShadow            : $box-shadow !default;
+$formLabelFilterFont-weight           : normal !default;
+$formLabelFilter-padding              : 2px 8px !default;
 
-$formCheckbox-bgColor: $primaryColor !default;
-$formCheckbox-bgImage: none !default;
-$formCheckbox-bg: $formCheckbox-bgColor $formCheckbox-bgImage !default;
-$formCheckbox-bgColorHover: $tertiaryColor !default;
-$formCheckbox-bgImageHover: $formCheckbox-bgImage !default;
-$formCheckbox-bgHover: $formCheckbox-bgColorHover $formCheckbox-bgImageHover !default;
-$formCheckbox-bgColorChecked: $formCheckbox-bgColorHover !default;
-$formCheckbox-bgImageChecked: none !default;
-$formCheckbox-bgChecked: $formCheckbox-bgColorChecked $formCheckbox-bgImageChecked !default;
-$formCheckbox-borderWidth: $box-borderWidth !default;
-$formCheckbox-borderStyle: $box-borderStyle !default;
-$formCheckbox-borderColor: $box-borderColor !default;
-$formCheckbox-borderColorFallback: $box-borderColorFallback !default;
-$formCheckbox-borderRadius: $border-radius !default;
-$formCheckbox-boxShadow: $box-shadow !default;
-$formCheckbox-height: $font-size !default;
-$formCheckbox-width: $font-size !default;
+$formCheckbox-bgColor                 : $primaryColor !default;
+$formCheckbox-bgImage                 : none !default;
+$formCheckbox-bg                      : $formCheckbox-bgColor $formCheckbox-bgImage !default;
+$formCheckbox-bgColorHover            : $tertiaryColor !default;
+$formCheckbox-bgImageHover            : $formCheckbox-bgImage !default;
+$formCheckbox-bgHover                 : $formCheckbox-bgColorHover $formCheckbox-bgImageHover !default;
+$formCheckbox-bgColorChecked          : $formCheckbox-bgColorHover !default;
+$formCheckbox-bgImageChecked          : none !default;
+$formCheckbox-bgChecked               : $formCheckbox-bgColorChecked $formCheckbox-bgImageChecked !default;
+$formCheckbox-borderWidth             : $box-borderWidth !default;
+$formCheckbox-borderStyle             : $box-borderStyle !default;
+$formCheckbox-borderColor             : $box-borderColor !default;
+$formCheckbox-borderColorFallback     : $box-borderColorFallback !default;
+$formCheckbox-borderRadius            : $border-radius !default;
+$formCheckbox-boxShadow               : $box-shadow !default;
+$formCheckbox-height                  : $font-size !default;
+$formCheckbox-width                   : $font-size !default;
 
-// Multiple Border BG
+// --------------------------------------------------------- //
+// Multiple Border Background                                            
+// --------------------------------------------------------- //
 
-$borderBg-path: none !default; 
-$borderBg-color: lighten($primaryColor, 5%) !default;
-$borderBg-width: 0 !default;
-$borderBg-style: solid !default;
+$borderBg-path   : none !default; 
+$borderBg-color  : lighten($primaryColor, 5%) !default;
+$borderBg-width  : 0 !default;
+$borderBg-style  : solid !default;
 
-// TinyMCE
+// --------------------------------------------------------- //
+// TinyMCE                                             
+// --------------------------------------------------------- //
 
-$tinyMCE-bg: $body-bgColor !default;
-$tinyMCEfont-color: $font-color !default;
+$tinyMCE-bg         : $body-bgColor !default;
+$tinyMCEfont-color  : $font-color !default;
 
-// Alert
+// --------------------------------------------------------- //
+// Alert                                             
+// --------------------------------------------------------- //
 
-$alertBg-color: $box-bg !default;
-$alertBg-image: none !default;
-$alertFont-color: $font-color !default;
-$alertBorder: $box-border !default;
-$alertPadding: 8px 14px 8px 14px !default;
+$alertBg-color    : $box-bg !default;
+$alertBg-image    : none !default;
+$alertFont-color  : $font-color !default;
+$alertBorder      : $box-border !default;
+$alertPadding     : 8px 14px 8px 14px !default;
 
-// Notifications
+// --------------------------------------------------------- //
+// Notifications                                             
+// --------------------------------------------------------- //
 
-$unreadNotificationColor: darken($primaryColor,2%) !default;
-$unreadNotificationFont-color: $font-color !default;
+$unreadNotificationColor       : darken($primaryColor,2%) !default;
+$unreadNotificationFont-color  : $font-color !default;
 
-// Filters
+// --------------------------------------------------------- //
+// Filters                                             
+// --------------------------------------------------------- //
 
-$filters-padding: 10px !default;
-$filters-margin: 0 0 $leading !default;
-$filters-bg: $box-bg !default;
-$filters-border: $box-border !default;
-$filters-borderWidth: 0 !default;
+$filters-padding      : 10px !default;
+$filters-margin       : 0 0 $leading !default;
+$filters-bg           : $box-bg !default;
+$filters-border       : $box-border !default;
+$filters-borderWidth  : 0 !default;

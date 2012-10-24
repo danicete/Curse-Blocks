@@ -1,33 +1,34 @@
-﻿//
-// Tournament Master Variables
-//
-// Project Documentation: http://wwww.styleguide/link/goes/here
-// Color Guide: http://www.colourlovers.com/palette/2226225/Skin_an_blue
-// --------------------------------------------------------- //
+﻿// ************************************************************************************************************************
+// * Tournament Master Variables
+// * Project Documentation: http://wwww.styleguide/link/goes/here
+// * Color Guide: http://www.colourlovers.com/palette/2226225/Skin_an_blue
+// ************************************************************************************************************************
 
-//                                                                             TIER 1: CORE VARIABLES
+// --------------------------------------------------------------------------------------------------------------------- //
+//                                            TIER 1: CORE VARIABLES                                                  
 // --------------------------------------------------------------------------------------------------------------------- //
 
-// (1) Base
+// --------------------------------------------------------- //
+// (3) Base                                                
 // --------------------------------------------------------- //
 
-$tournamentBorder: $box-border !default;
-$tournamentBg: $box-bg !default;
-$tournamentGradient-top: #408040 !default;
-$tournamentGradient-bottom: darken($tournamentGradient-top, 10%) !default;
-$tournamentPadding: $box-padding !default;
+$tournamentBorder                  : $box-border !default;
+$tournamentBg                      : $box-bg !default;
+$tournamentGradient-top            : #408040 !default;
+$tournamentGradient-bottom         : darken($tournamentGradient-top, 10%) !default;
+$tournamentPadding                 : $box-padding !default;
 
-$tournamentAvatar-width: 100px !default;
-$tournamentTeam-avatar-width: 64px !default;
+$tournamentAvatar-width            : 100px !default;
+$tournamentTeam-avatar-width       : 64px !default;
 
-$tournamentNav-bg-color: $primaryColor !default;
-$tournamentNav-item-padding: $tabPadding !default;
-$tournamentNav-item-width: auto !default;
+$tournamentNav-bg-color            : $primaryColor !default;
+$tournamentNav-item-padding        : $tabPadding !default;
+$tournamentNav-item-width          : auto !default;
 
-$tournamentAdmin-icon: url("#{$imageURL-core}/icons/16x16/red/icon-cog.png") no-repeat 24px 0 !default;
-$tournamentAdmin-icon-hover: 24px -21px !default;
-$tournamentAdmin-bg: $primaryColor !default;
-$tournamentAdmin-border: $tournamentBorder !default;
-$tournamentAdmin-padding: 0 12px !default;
-$tournamentAdmin-item-color-hover: $font-colorTertiary !default;
-$tournamentAdmin-item-bg-hover: $tertiaryColor !default;
+$tournamentAdmin-icon              : url("#{$imageURL-core}/icons/16x16/red/icon-cog.png") no-repeat 24px 0 !default;
+$tournamentAdmin-icon-hover        : 24px -21px !default;
+$tournamentAdmin-bg                : $primaryColor !default;
+$tournamentAdmin-border            : $tournamentBorder !default;
+$tournamentAdmin-padding           : 0 12px !default;
+$tournamentAdmin-item-color-hover  : $font-colorTertiary !default;
+$tournamentAdmin-item-bg-hover     : $tertiaryColor !default;

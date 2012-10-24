@@ -1,206 +1,235 @@
-﻿//
-// News-Forum Master Variables
-//
-// Project Documentation: http://wwww.styleguide/link/goes/here
-// Color Guide: http://www.colourlovers.com/palette/2226225/Skin_an_blue
-// ------------------------------------------------------------------------------------------
+﻿// ************************************************************************************************************************
+// * News-Forum Master Variables
+// * Project Documentation: http://wwww.styleguide/link/goes/here
+// * Color Guide: http://www.colourlovers.com/palette/2226225/Skin_an_blue
+// ************************************************************************************************************************
 
-//                                                                             TIER 1: CORE VARIABLES
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ //
-
-// (1) Base
-// ------------------------------------------------------------------------------------------
-
-// Config
-
-$imageURL-core: "../../Blocks/images" !default;
-$imageURL-local: "../images" !default;
-
-// Palette 
-
-$primaryColor: #fff !default; // Temp Example Name
-$secondaryColor: #F0F2EB !default; // Temp Example Name
-$tertiaryColor: #FF4242 !default; // Temp Example Name
-$quaternaryColor: #E1EDB9 !default; // Temp Example Name
-$quinaryColor: #B8986B !default; // Temp Example Name
-
-//                                                                             TIER 2: BASE VARIABLES
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ //
-
-// (2) Typography
-// ------------------------------------------------------------------------------------------
-
-$fontSize: 13px !default; // Base font size sets typographic scale
-$fontSize-smaller: 11px !default;
-$fontSize-larger: 15px !default;
-$fontColor: #4c4c4c !default;
-$fontColor-secondary: #333 !default;
-$fontColor-tertiary: #fff !default;
-$fontColor-quaternary: #fff !default;
-$fontColor-lighter: lighten($fontColor, 5%) !default;
-$fontColor-darker: darken($fontColor, 5%) !default;
-$fontFamily: inherit !default;
-
-$leading: 20px !default;
-
-$textShadow: 0 1px 0px rgba(0,0,0,.4) !default;
-$textShadow-chrome: $textShadow !default;
-
-// Links
-
-$linkColor: $tertiaryColor !default;
-$linkColor-visited: $linkColor !default;
-$linkColor-hover: $fontColor !default;
-$linkColor-active: $linkColor !default;
-$linkColor-secondary: $fontColor-secondary !default;
-$linkFamily: $fontFamily !default;
-
-// Headers
-
-$headerColor: darken($fontColor, 15%) !default;
-$headerColor-visited: $headerColor !default;
-$headerColor-hover: $linkColor !default;
-$headerColor-active: $headerColor !default;
-
-$headerSize: 26px !default;
-$headerLeading: 1em !default;
-$headerMargin: 0 0 .2em !default;
-$headerFamily: $fontFamily !default;
-$headerWeight: bold !default;
-$headerLetterSpacing: 0 !default;
-
-// (2) Site
-// ------------------------------------------------------------------------------------------
-
-// Dimensions
-
-$site-margin: 0 auto $leading !default;
-$site-width: 1280px !default;
-$site-maxWidth: 1280px !default;
-$site-minWidth: 1000px !default;
-$siteGutter-left: 0 !default;
-$siteGutter-right: 0 !default;
-$siteBg: url("#{$imageURL-local}/theme/header-bg.png") repeat-x top left !default;
-$siteFooter-curse: url("#{$imageURL-local}/theme/curse-logo-footer.png") no-repeat 0 0;
-// Wrappers
-$bodyImg: none !default;
-$bodyBg: $primaryColor $bodyImg !default;
-
-$bodyHomeBg-Img: url("#{$imageURL-local}/theme/header-bg.png") repeat-x left 142px !default;
-$bodyHomeBg: $primaryColor !default;
-
-$wrapperBg: none !default;
-$wrapper-padding: 0 20px !default;
-
-$contentBg: transparent none !default;
-$contentBg-single: $contentBg !default;
-$contentBorder: none !default;
-$contentBorder-radius: null !default;
-$contentPadding: $leading !default;
-$contentBox-Shadow: 0 0 3px rgba(0,0,0,.315) !default;
-
-//                                                                             TIER 3: COMPONENT VARIABLES
-// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ //
-
+// --------------------------------------------------------------------------------------------------------------------- //
+//                                              TIER 1: CORE VARIABLES                                                     
+// --------------------------------------------------------------------------------------------------------------------- //
 
 // --------------------------------------------------------- //
-// (3) Breadcrumb                                              
+// 1.) Config                                                  
+// --------------------------------------------------------- //
+    
+    // a.) Image Paths
+    
+    $imageURL-core   : "../../Blocks/images" !default;
+    $imageURL-local  : "../images" !default;
+
+    // b.) Project Color Palette 
+
+    $primaryColor     : #fff !default; // Canvas color
+    $secondaryColor   : #F0F2EB !default; // Foundational color
+    $tertiaryColor    : #FF4242 !default; // Accent color
+    $quaternaryColor  : #E1EDB9 !default; // Additional color
+    $quinaryColor     : #B8986B !default; // Additional color
+
+// --------------------------------------------------------------------------------------------------------------------- //
+//                                              TIER 2: BASE VARIABLES                                                     
+// --------------------------------------------------------------------------------------------------------------------- //
+
+// --------------------------------------------------------- //
+// 1.) Typography                                              
+// --------------------------------------------------------- //
+    
+    // a.) Font Size
+    $fontSize              : 13px !default; // Base font size sets typographic scale
+    $fontSize-smaller      : 11px !default;
+    $fontSize-larger       : 15px !default;
+    
+    // b.) Font Color
+
+    $fontColor             : #4c4c4c !default;
+    $fontColor-secondary   : #333 !default;
+    $fontColor-tertiary    : #fff !default;
+    $fontColor-quaternary  : #fff !default;
+    $fontColor-lighter     : lighten($fontColor, 5%) !default;
+    $fontColor-darker      : darken($fontColor, 5%) !default;
+    
+    // c.) Font Family    
+
+    $fontFamily  : inherit !default;
+    
+    // d.) Leading
+
+    $leading  : 20px !default;
+
+   // e.) Text Shadow
+
+    $textShadow         : 0 1px 0px rgba(0,0,0,.4) !default;
+    $textShadow-chrome  : $textShadow !default;
+
+    // f.) Links
+
+    $linkColor            : $tertiaryColor !default;
+    $linkColor-visited    : $linkColor !default;
+    $linkColor-hover      : $fontColor !default;
+    $linkColor-active     : $linkColor !default;
+    $linkColor-secondary  : $fontColor-secondary !default;
+    $linkFamily           : $fontFamily !default;
+
+    // g.) Headers
+        // i.) Background
+
+        // ii.) Border
+
+        // iii.) Box-Model
+        
+        $headerMargin  : 0 0 .2em !default;
+
+        // iv.) Typography
+
+        $headerColor          : darken($fontColor, 15%) !default;
+        $headerColor-visited  : $headerColor !default;
+        $headerColor-hover    : $linkColor !default;
+        $headerColor-active   : $headerColor !default;
+
+        $headerSize           : 26px !default;
+        $headerLeading        : 1em !default;
+
+        $headerFamily         : $fontFamily !default;
+        $headerWeight         : bold !default;
+        $headerLetterSpacing  : 0 !default;
+        
+        // v.) Custom        
+
+// --------------------------------------------------------- //
+// 2.) Site                                                    
+// --------------------------------------------------------- //
+
+    // a.) Dimensions
+
+    $site-margin       : 0 auto $leading !default;
+    $site-width        : 1280px !default;
+    $site-maxWidth     : 1280px !default;
+    $site-minWidth     : 1000px !default;
+    $siteGutter-left   : 0 !default;
+    $siteGutter-right  : 0 !default;
+    $siteBg            : url("#{$imageURL-local}/theme/header-bg.png") repeat-x top left !default;
+    $siteFooter-curse  : url("#{$imageURL-local}/theme/curse-logo-footer.png") no-repeat 0 0;
+
+    // b.) Wrappers
+    
+    $bodyImg               : none !default;
+    $bodyBg                : $primaryColor $bodyImg !default;
+
+    $bodyHomeBg-Img        : url("#{$imageURL-local}/theme/header-bg.png") repeat-x left 142px !default;
+    $bodyHomeBg            : $primaryColor !default;
+
+    $wrapperBg             : none !default;
+    $wrapper-padding       : 0 20px !default;
+
+    $contentBg             : transparent none !default;
+    $contentBg-single      : $contentBg !default;
+    $contentBorder         : none !default;
+    $contentBorder-radius  : null !default;
+    $contentPadding        : $leading !default;
+    $contentBox-Shadow     : 0 0 3px rgba(0,0,0,.315) !default;
+
+// --------------------------------------------------------------------------------------------------------------------- //
+//                                            TIER 3: COMPONENT VARIABLES                                                  
+// --------------------------------------------------------------------------------------------------------------------- //
+
+// --------------------------------------------------------- //
+// (3) Breadcrumb                                                 
 // --------------------------------------------------------- //
 
     // a.) Background
 
         // 1.) Parent
-        $breadcrumb-bg: #e9e9e9;
+        $breadcrumb-bg  : #e9e9e9;
 
         // 2.) Child
-        $breadcrumbItem-bg: #e9e9e9 url("#{$imageURL-local}/breadcrumbItem-bg.png") no-repeat right center;
+        $breadcrumbItem-bg  : #e9e9e9 url("#{$imageURL-local}/breadcrumbItem-bg.png") no-repeat right center;
 
         // 3.) Home
-        $breadcrumbHomeItem-bg: $breadcrumbItem-bg;
+        $breadcrumbHomeItem-bg  : $breadcrumbItem-bg;
 
     // b.) Borders
 
         // 1.) Parent
-        $breadcrumb-border: solid #ddd;
-        $breadcrumb-borderWidth: 0 0 1px;
+        $breadcrumb-border       : solid #ddd;
+        $breadcrumb-borderWidth  : 0 0 1px;
 
     // c.) Box Model
 
         // 1.) Parent
-        $breadcrumb-margin: -12px -12px $leading;
+        $breadcrumb-margin  : -12px -12px $leading;
 
         // 2.) Child
-        $breadcrumbItem-padding: .5em 2em .5em 1em;
+        $breadcrumbItem-padding  : .5em 2em .5em 1em;
 
         // 3.) Home
-        $breadcrumbHomeItem-padding: $breadcrumbItem-padding;
+        $breadcrumbHomeItem-padding  : $breadcrumbItem-padding;
 
     // d.) Typography
-        $breadcrumb-fontWeight: bold;
-        $breadcrumb-fontSize: 14px;
+        $breadcrumb-fontWeight  : bold;
+        $breadcrumb-fontSize    : 14px;
 
     // e.) Custom
         
         // 1.) Item
-            $breadcrumbItem-seperator: none;
+            $breadcrumbItem-seperator  : none;
 
         // 2.) Border Radius
 
             // 1.) Parent
-            $breadcrumb-borderRadius: 4px 4px 0 0;
+            $breadcrumb-borderRadius  : 4px 4px 0 0;
 
             // 2.) Home
-            $breadcrumbHomeItem-borderRadius: 4px;
+            $breadcrumbHomeItem-borderRadius  : 4px;
 
-
-// (3) Table
-// ------------------------------------------------------------------------------------------
-
-$table-bg: darken($primaryColor, 5%) !default;
-$table-bgAlt: $table-bg !default;
-$tableHeader-bg-top: $secondaryColor !default;
-$tableHeader-bg-bottom: darken($tableHeader-bg-top, 10%) !default;
-$tableHeader-bg: $tableHeader-bg-top;
-$tableHeader-color: $fontColor-secondary !default;
-
-$tableHeader-padding: 4px 8px;
-$tableHeader-border: $boxBorder !default;
-$tableCell-boxShadow: inset 0 1px 0 rgba(255,255,255,.1) !default;
-$tableCell-bg: $table-bg;
-$tableCell-border: $tableHeader-border !default;
-$tableCell-borderWidth: 1px !default;
-$tableCell-height: 18px;
-$tableCell-padding: $tableHeader-padding;
-
-
-// (3) Header
-// ------------------------------------------------------------------------------------------
+// --------------------------------------------------------- //
+// (3) Header                                                 
+// --------------------------------------------------------- //
 
 // Bg
-$headerBg: transparent none !default;
+$headerBg  : transparent none !default;
 
 // Logo
-$headerLogo: url("#{$imageURL-local}/logo.png") no-repeat center center !default;
-$headerLogo-hover: 0 0 !default;
-$headerLogo-height: 104px !default;
-$headerLogo-width: 170px !default;
+$headerLogo         : url("#{$imageURL-local}/logo.png") no-repeat center center !default;
+$headerLogo-hover   : 0 0 !default;
+$headerLogo-height  : 104px !default;
+$headerLogo-width   : 170px !default;
 
 // Logo Homepage
-$headerLogoBig: url("#{$imageURL-local}/logo-home.png") no-repeat center center !default;
-$headerLogoBig-hover: 0 0 !default;
-$headerLogoBig-height: 145px !default;
-$headerLogoBig-width: 313px !default;
+$headerLogoBig         : url("#{$imageURL-local}/logo-home.png") no-repeat center center !default;
+$headerLogoBig-hover   : 0 0 !default;
+$headerLogoBig-height  : 145px !default;
+$headerLogoBig-width   : 313px !default;
 
 // Search
-$headerSearch-position: relative !default;
-$headerSearch-top: 0px !default;
-$headerSearch-right: 0px !default;
-$headerSearch-bg: url("#{$imageURL-core}/icons/16x16/magnify.png") no-repeat !default;
+$headerSearch-position  : relative !default;
+$headerSearch-top       : 0px !default;
+$headerSearch-right     : 0px !default;
+$headerSearch-bg        : url("#{$imageURL-core}/icons/16x16/magnify.png") no-repeat !default;
 
 
-// (3) Map
-// ------------------------------------------------------------------------------------------
+// --------------------------------------------------------- //
+// (3) Map                                                 
+// --------------------------------------------------------- //
 
-$siteLogoMap: url("#{$imageURL-local}/logo-horizontal.png") no-repeat center center !default;
-$siteLogoMap-width: 88px !default;
-$siteLogoMap-height: 40px !default;
+$siteLogoMap         : url("#{$imageURL-local}/logo-horizontal.png") no-repeat center center !default;
+$siteLogoMap-width   : 88px !default;
+$siteLogoMap-height  : 40px !default;
+
+// --------------------------------------------------------- //
+// (3) Table                                                 
+// --------------------------------------------------------- //
+
+$table-bg               : darken($primaryColor, 5%) !default;
+$table-bgAlt            : $table-bg !default;
+$tableHeader-bg-top     : $secondaryColor !default;
+$tableHeader-bg-bottom  : darken($tableHeader-bg-top, 10%) !default;
+$tableHeader-bg         : $tableHeader-bg-top;
+$tableHeader-color      : $fontColor-secondary !default;
+
+$tableHeader-padding    : 4px 8px;
+$tableHeader-border     : $boxBorder !default;
+$tableCell-boxShadow    : inset 0 1px 0 rgba(255,255,255,.1) !default;
+$tableCell-bg           : $table-bg;
+$tableCell-border       : $tableHeader-border !default;
+$tableCell-borderWidth  : 1px !default;
+$tableCell-height       : 18px;
+$tableCell-padding      : $tableHeader-padding;
