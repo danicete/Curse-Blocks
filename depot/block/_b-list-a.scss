@@ -1,51 +1,60 @@
 ﻿// Block -> List (b-list-a)
-//
+
 // ✎ Horizontal, blocked container list with default float behavior
-//
-// ⌚ Level 1.00 (05/04/12)
-//
+
 // ☍ Components:
 //     - Item (b-list-item)
 //     - Label (b-list-label)
 //     - Overlay (b-list-overlay)
 //     - Title (b-list-title)
-//
+
 // ☆ Sub-Classes:
 //     - Null
-//
-// ☯ Browser Support:
-//     - Chrome
-//     - FireFox
-//     - Safari
-//     - Opera
-//     - IE9/8/7
-//
-// --------------------------------------------------------- //
 
+// $ Variables:
+//      a.) Background
+//          - $listGridItem-bg
+//          - $listGridItemFull-bg
+//          - $listGridItemHover-bg
+//          - $listGridPortrait-bg
+//      b.) Box-Model
+//          - $leading
+//          - $listGridItem-boxShadow
+//          - $listGridItem-height
+//          - $listGridItem-margin
+//          - $listGridItem-padding
+//          - $listGridItem-width
+//          - $listGridItemFull-boxShadow
+//          - $listGridItemFull-height
+//          - $listGridItemFull-margin
+//          - $listGridItemFull-width
+//          - $listGridItemPortraitFull-boxShadow
+//          - $listGridPortrait-padding
+//          - $listGridPortrait-width
+//          - $listPadding
+//      c.) Typography
+//          - $font-color
+//          - $listGridItem-color
+//          - $listGridItemFull-color
+//          - $listGridItemHover-color
+
+// --------------------------------------------------------- //
 // Mixin
 // --------------------------------------------------------- //
 
 @mixin b-list-a {
-    
-    // FlexBox [Flex Box removed due to unstable w3 spec, utilizing fallbacks]
-
-    // @include boxFlex-container;
     @include group;
-
     margin: 0;
     padding: 0;
     position: relative;
     width: 100%;
     
     // Fall-back 1 of 2
-
     & { display: table; }
     .ie7 & { display: block; }
 
     // Item
-
     .b-list-item {
-        // @include boxFlex-item;
         float: none;
         margin: 0;
         padding: 0;
@@ -56,32 +65,27 @@
         > a { display: block; }
 
         // Fallback 2 of 2
-
         & { display: table-cell; }
-
         .ie7 & { display: block; float: left; }
     }
 
     // Label
-
     .b-list-label { cursor: pointer; }
 
     // Overlay
-
     .b-list-overlay {
+        bottom: 0;         
         display: block;
+        left: 0;       
         position: absolute;
-        bottom: 0; left: 0;
         text-align: center;
         width: 100%;
     }
 
     // Title
-
     .b-list-title { display: block; text-align: center; }
 
     // SUB-CLASS: Float
-
     &.b-list_float {
         display: block;
         width: auto;
@@ -97,9 +101,7 @@
     }
 
     // SUB-CLASS: Equalize
-
     &.b-list_equalize {
-
         .b-list-item {
             margin-left: $listPadding / 2;
             margin-right: $listPadding / 2;
@@ -109,63 +111,50 @@
     }
 
     // SUB-CLASS: InlineBlock
-
     &.b-list_inlineBlock {
         display: inline-block;
         padding: 0;
-
-        .b-list-item { @include inline-block; float: none; 
-            
-        }
+        .b-list-item { @include inline-block; float: none; }
     }
 
     // SUB-CLASS: InlineBlock_Split
-
     &.b-list_inlineBlock_split {
-        > .b-list-item { @include inline-block; width: 44%; margin: 0 2%; }
-        &.col-3 { > .b-list-item { @include inline-block; width: 30%; margin: 0 1%; } }
+        > .b-list-item { @include inline-block; margin: 0 2%; width: 44%; }
+        &.col-3 { > .b-list-item { @include inline-block; margin: 0 1%; width: 30%; } }
     }
 
     // SUB-CLASS: Space right
-
     &.b-list_spaceRight {
-        
         .b-list-item {
             margin-left: 0;
             margin-right: $listPadding / 2;
             padding-left: 0;
             padding-right: $listPadding / 2;
-
-            & + .b-list-item { padding-left: 0; margin-left: 0; }
+            & + .b-list-item { margin-left: 0; padding-left: 0; }
         }
     }
 
     // SUB-CLASS: Unchunk
-
     &.b-list_unchunk {
-
         .b-list-item > :first-child { display: inline; } // Remove default behavior of the first child being a containing block
     }
 
     // SUB-CLASS: Grid
-
     &.b-list_grid {
         display: block;
 
-        // Item
-
+        // List Item
         .b-list-item {
             float: left;
-            margin: 0;
-            padding: 0;
-            width: $listGridItem-width;
             height: $listGridItem-height + 40;
             margin: $listGridItem-margin;
-            margin-top: 5px;
+            margin-top: 5px;            
+            padding: 0;
+            width: $listGridItem-width;
             
             > a {
+                @include boxShadow($listGridItem-boxShadow);                
                 background: $listGridItem-bg;
-                @include boxShadow($listGridItem-boxShadow);
                 color: $listGridItem-color;
                 display: block;
                 height: $listGridItem-height;
@@ -179,50 +168,48 @@
         }
 
         // Portrait
-
-        .portrait {
-            background: $listGridPortrait-bg;
-            padding: $listGridPortrait-padding;
-            width: $listGridPortrait-width;
-        }
+        .portrait { background: $listGridPortrait-bg; padding: $listGridPortrait-padding; width: $listGridPortrait-width; }
 
         // s-full
-
         &.s-full {
-
             .b-list-item {
                 width: $listGridItemFull-width;
                 height: $listGridItemFull-height;
                 margin: $listGridItemFull-margin !important;
 
                 > a {
+                    @include boxShadow($listGridItemFull-boxShadow);                    
                     @include group;
                     background: $listGridItemFull-bg;
-                    @include boxShadow($listGridItemFull-boxShadow);
                     color: $listGridItemFull-color;
+                    height: auto;                    
                     padding: $leading/2;
                     width: auto;
-                    height: auto;
                 }
             }
 
             .portrait {
-                @include col(4);
                 @include boxShadow($listGridItemPortraitFull-boxShadow);
+                @include col(4);
                 float: left;
                 margin: 0;
                 margin-left: 0;
             }
 
             .caption { position: absolute; left: -9999px; }
-            .details { overflow: hidden; text-align: right; @include col(8); } // Overflow prevents wrapping around portrait
-            .title { font-weight: bold; overflow: hidden; padding-right: 1em; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+            .details { @include col(8); @include group; text-align: right; } 
+            .title { 
+                font-weight: bold; 
+                overflow: hidden; 
+                padding-right: 1em; 
+                text-align: left;                 
+                text-overflow: ellipsis; 
+                white-space: nowrap; 
+            }
             .comments { position: absolute; top: -2px; right: -2px; }
             .author { color: $font-color; display: block; text-align: left; }
-
             .likes,
             .views { color: $font-color; display: inline-block; margin-top: $leading; }
-
             .views { margin-left: 6px; }
         }
     }
