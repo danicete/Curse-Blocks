@@ -791,9 +791,8 @@ $icon-ua-warn: -42px 0 !default;
 $icon-ua-add-note: 0 0 !default;
 $icon-ua-remove-note: -14px 0 !default;
 $icon-us-fontColor: $darkgrey !default;
-
-//$icon-ua-width: 16px;
-//$icon-ua-hoverPosition: 0 -37px;
+// Comment Rating
+$icon-ua-commentRating-sprite: url("#{$imageURL-core}/icons/12x12/darkgrey/user-action-comment-sprite.png") no-repeat 0 0 !default;
 
 $navDropDown-bg: $secondaryColor !default;
 
