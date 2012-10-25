@@ -1,9 +1,7 @@
 ﻿// Block -> List (b-list-b)
-//
+
 // ✎ Vertical, connecting block list
-//
-// ⌚ Level 1.00 (05/04/12)
-//
+
 // ☍ Components:
 //     - Item    (b-list-item)
 //     - Time    (b-list-time)
@@ -13,18 +11,19 @@
 //     - Thumb   (b-list-thumb)
 //     - View    (b-list-view)
 //     - Date    (b-list-date)
-//
+
 // ☆ Sub-Classes:
 //     - Comments (b-list_comments)
 //     - Videos (b-list_videos)
-//
-// ☯ Browser Support:
-//     - Chrome
-//     - FireFox
-//     - Safari
-//     - Opera
-//     - IE9/8/7
-//
+
+// $ Variables:
+//      a.) Border
+//          - $listBorder
+//      b.) Box-Model
+//          - $listPadding
+//      c.) Typography
+//          - $font-sizeSmaller
+
 // --------------------------------------------------------- //
 // Mixin
 // --------------------------------------------------------- //
@@ -46,21 +45,14 @@
         > a:only-of-type { @include group; display: block; }
     }
 
-    // Time
+    // Time & Button
 
-    .b-list-time { position: absolute; top: 0; right: 0; }
-
-    // Button
-
-    .b-list-button { position: absolute; top: 0; right: 0; }
+    .b-list-button,
+    .b-list-time { position: absolute; right: 0; top: 0;  }
 
     // Title
 
-    .b-list-title { 
-    	overflow: hidden; 
-    	text-overflow: ellipsis;
-        white-space: nowrap;
-    }
+    .b-list-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
     //// ☆ Sub-Classes ☆
 
@@ -70,11 +62,7 @@
 
         // Meta
 
-        .b-list-meta {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
+        .b-list-meta { @extend .b-list-title; }
         
         // Comment
 
@@ -93,34 +81,22 @@
 
 		// Thumb 
 
-		.b-list-thumb {
-			float: left;
-			margin-right: 10px;
-		}
+		.b-list-thumb { float: left; margin-right: 10px; }
 
 		// Time
 
 		.b-list-time {
+            display: block;
+            font-size: $font-sizeSmaller;            
+            left: 0;
 			position: relative;
 			top: 0;
-			left: 0;
-			display: block;
-			font-size: $font-sizeSmaller;
 		}
 
-		// Views
+		// Views & Date
 
-		.b-list-view {
-			display: block;
-			font-size: $font-sizeSmaller;
-		}
-
-		// Date
-
-		.b-list-date {
-			display: block;
-			font-size: $font-sizeSmaller;
-		}
+		.b-list-date,
+        .b-list-view { font-size: $font-sizeSmaller; display: block; }
 	}
 
 } // END b-list-b
