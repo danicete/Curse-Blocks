@@ -63,7 +63,7 @@ a.go-next {
 		> .user-action {
 			.u-icon { @include inline-block; background: $icon-ua-sprite; width: 12px; height: 12px; } 
 			a:hover > span { text-decoration: underline; } 
-			span { position: relative; top: 1px; color: $icon-us-fontColor; }
+			span { position: relative; top: 1px; }
 			.u-icon-quote {
 				background-position: $icon-ua-quote;
 			}

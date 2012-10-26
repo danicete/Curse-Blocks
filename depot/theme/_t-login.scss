@@ -1,0 +1,91 @@
+
+.ui-dialog.loginModal {
+	@include background($color: #060606, $gradient: radial-gradient(top left, #222 0%, #060606 85%));
+	@include boxShadow(inset 0 0 1px rgba(255,255,255,.3), 0px 0 20px rgba(0, 0, 0, 0.9));
+	color: #ccc;
+	font: 12px Arial, Sans-serif;
+	border: 1px solid #000;
+	position: fixed;
+	a { color: #ff5f14; &:hover { color: #fff; } }
+	.ui-dialog-title { display: none; }
+	.ui-dialog-titlebar {
+		padding: 0;
+		height: 1px;
+		border: none;
+		line-height: normal;
+		@include background($color: #b95807, $gradient: linear-gradient(left, #b95807 0%,#b95807 22%,#aa5306 22%,#aa5306 50%,#db9108 50%,#db9108 78%,#ffbb09 78%,#ffbb09 100%));
+		.ui-dialog-titlebar-close {
+			background-color: #222;
+			z-index: 3;
+		}
+	}
+	form { margin: 0; }
+	h1 {
+		width: 60px;
+		height: 85px;
+		display: block;
+		text-indent: -99999px;
+		float: left;
+		margin: 15px;
+		background: url("#{$imageURL-core}/login/icon-curseFlame.png") no-repeat left center;
+	}
+	.p-login-form {
+		padding: 60px 60px 10px 100px;
+		p { margin: 0; }
+		input[type=text],
+		input[type=password] {
+			@include borderRadius(3px);
+			width: 100%;
+			padding: 12px 16px;
+			margin-bottom: 10px;
+			font-size: 14px;
+			background: #fff;
+			color: #333;
+			&:focus { 
+				border-color: #ff5f14;  
+				border-color: #ff5f14;
+			    @include boxShadow(null);
+			    background-color: #fff;
+			}
+		}
+
+		// Fallback for IE (IE7 displays correctly believe it or not) -JB (10/25/12)
+
+		.ie9 &,
+		.ie8 & { .input-label { display: block; } }
+	}
+	.p-login-register {
+		margin: 0 60px 60px 100px;
+	}
+	label { @include group; }
+	label > span { @include inline-block; margin-bottom: 5px; color: #fff; }
+	label > a { float: right; }
+	.cta-button { 
+		padding: 10px;
+		width: 175px;
+		clear: both; 
+		margin: 0 60px 20px 100px; 
+		background-color: #555;
+		@include backgroundGradient(linear-gradient(bottom, #343434, #555));
+		text-shadow: none;
+		border: 1px solid #111;
+		color: #fff;
+		font-family: Arial, Sans-serif;
+		line-height: 20px;
+		&:hover { background-position: 0 15px; }
+	}
+	.p-login-helpers {
+		clear: both;
+		@include group;
+		font-size: 11px;
+		padding: 5px 15px;
+		.premium-link { 
+			float: left; 
+			padding-left: 24px; 
+			padding-top: 5px; 
+			background: url("#{$imageURL-core}/login/icon-curseDragon.png") no-repeat left center; 
+			> span { color: #fff; border-bottom: 1px dotted #333; &:hover { border-color: #999; } }
+		}
+		.help-link { float: right; padding-top: 5px; }
+	}
+}

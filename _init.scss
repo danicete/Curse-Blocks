@@ -174,7 +174,7 @@
 
         // Login
 
-        @if ($login) { .p-login-a { @include p-login-a; } .p-login-b { @include p-login-b; } }
+        @if ($login) { .p-login-a { @include p-login-a; } }
 
         // Mapper
 

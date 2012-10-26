@@ -1,8 +1,4 @@
-﻿$netbar-counter: 0 !default;
-
-@while $netbar-counter < 1 {
-
-// Theme -> Netbar
+﻿// Theme -> Netbar
 
 // ✎ Styles for universal Curse netbar
 
@@ -20,21 +16,24 @@
 // -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 // Vars
+// Returns a striped gradient for use anywhere gradients are accepted.
+// - $position: the starting position or angle of the gradient.
+// - $colors: a list of all the colors to be used.
 
 $netbarHeight: 28px;
 $netbarPadding: 0 15px;
 $netbarSprite: url("#{$imageURL-core}/netbar/netbar-sprite.png") no-repeat;
 $netbarBgColor-hover: #222;
-$netbarFont-family: Tahoma, Geneva, Verdana;
+$netbarFont-family: Arial, Sans-Serif;
 
 .t-netbar {
-    @include boxShadow(inset 0 0 1px #666, 1px 1px 2px rgba(0,0,0,.65));
-    background-color: #222;
-    @include backgroundGradient(linear-gradient(top, #4d4d4d, #343434));
+    @include boxShadow(inset 0 -2px 6px 0px rgba(0,0,0,.3));
     @include group;
-    font: 12px/18px $netbarFont-family;
+    background-color: #262626; 
+    border-bottom: 1px solid #000; 
+    font: 12px $netbarFont-family;
     height: $netbarHeight; 
-    text-shadow: 0px -1px 0px rgba(0,0,0,.6);
+    min-width: 1000px;
 
     // Fallback 1 of 1
 
@@ -46,34 +45,36 @@ $netbarFont-family: Tahoma, Geneva, Verdana;
     .t-netbar-help,
     .t-netbar-preferences,
     .t-netbar-account {
+        height: $netbarHeight;
         > li { 
-			@include u-dropDown-z;
-			.u-icon-dropDown {
-				content:"";
-				border-style: solid dashed dashed;
-				border-color:transparent;
-				border-top-color:silver;
-				height:0;
-				line-height:0;
-				width:0;
-				border-width: 3px 3px 0;
-				padding-top:1px;
-				position: absolute;
-				top: 12px;
-				right: 6px;
-			} 
-		}
+            @include u-dropDown-z;
+            > ul { padding: 3px 0; }
+            .u-icon-dropDown {
+                content:"";
+                border-style: solid dashed dashed;
+                border-color:transparent;
+                border-top-color:silver;
+                height:0;
+                line-height:0;
+                width:0;
+                border-width: 3px 3px 0;
+                padding-top:1px;
+                position: absolute;
+                top: 12px;
+                right: 6px;
+            } 
+        }
     }
 
     // Set link colors
 
     a {
-        color: #fff;
+        color: #aeaeae;
         font-family: $netbarFont-family;
         white-space: nowrap;
-		display: block;
+        display: block;
     
-        &:visited { color: #fff; }
+        &:visited { color: #aeaeae; }
         &:hover { color: #fff; text-decoration: none; }
 
         > strong {
@@ -87,34 +88,54 @@ $netbarFont-family: Tahoma, Geneva, Verdana;
 
     .t-netbar-section {
         float: left;
+        height: $netbarHeight;
 
-        &:hover { background: $netbarBgColor-hover; }
+        &.u-dropdown:hover { background: $netbarBgColor-hover; }
 
         // Label
 
         .t-netbar-label {
-            border-right: 1px solid #333;
+            border-right: 1px solid #000;
+            @include boxShadow(0px -1px 1px rgba(255,255,255,.3));
             display: block;
             line-height: $netbarHeight;
+            height: $netbarHeight;
             padding: $netbarPadding;
+            &:hover + ul { left: -1px; }
 
             // DropDown
 
             & + ul {
                 background: $netbarBgColor-hover;
                 @include borderRadius-bottom(6px);
-                @include boxShadow(0px 1px 1px rgba(0,0,0,.3));
-
+                @include boxShadow(0px 2px 4px rgba(0,0,0,.3));
+                border: 1px solid #000;
+                border-top: none;
+                padding: 3px 0;
+                &:hover { left: -1px; }
                 // List Item
 
                 > li {
                     > a {
                         display: block;
-                        padding: 4px 8px;
+                        padding: 4px 16px;
 
                         &:hover { background-color: #111; }
                     }
                     &:last-child > a { @include borderRadius-bottom(6px); } // Prevent corner overflow on hover
+                    &.break { display: block; text-indent: -99999px; height: 1px; background: lighten($netbarBgColor-hover,10%); margin: 3px 0; }
+                    &.user {
+                        a { padding: 8px 24px 8px 50px; font-size: 11px; }
+                        .user-avatar {
+                            width: 30px;
+                            max-height: 34px;
+                            @include borderRadius(3px);
+                            position: absolute;
+                            left: 10px;
+                            top: 10px;
+                        }
+                        .user-name { @include truncate; max-width: 100px; display: block; color: #fff; font-weight: bold; font-size: 12px; }
+                    }
                 }
             }
         }
@@ -123,27 +144,56 @@ $netbarFont-family: Tahoma, Geneva, Verdana;
     // Curse Info
 
     .t-netbar-curseInfo {
-
+        float: left;
         // Discover
 
         .t-netbar-discover {
             > li { 
-				background: url("#{$imageURL-core}/netbar/discover.png") no-repeat 8px 0; text-indent: -9999px; width: 100px; 
-				> ul li i {
-					@include u-icon-z;
-					width: 30px;
-					&.u-icon-curse { background: url("#{$imageURL-core}/netbar/sites/curse.png") no-repeat 5px center; }
-					&.u-icon-mmoc { background: url("#{$imageURL-core}/netbar/sites/mmoc.png") no-repeat 0 center; }
-					&.u-icon-wowstead { background: url("#{$imageURL-core}/netbar/sites/wowstead.png") no-repeat 1px center; }
-					&.u-icon-arenajunkies { background: url("#{$imageURL-core}/netbar/sites/aj.png") no-repeat 0 center; }
-					&.u-icon-minecraftforums { background: url("#{$imageURL-core}/netbar/sites/mcf.png") no-repeat 0 center; }
-					&.u-icon-darthhater { background: url("#{$imageURL-core}/netbar/sites/dh.png") no-repeat 3px center; }
-					&.u-icon-diablofans { background: url("#{$imageURL-core}/netbar/sites/dfans.png") no-repeat -1px center; }
-					&.u-icon-terraria { background: url("#{$imageURL-core}/netbar/sites/terraria.png") no-repeat -1px center; }
-					&.u-icon-rog { background: url("#{$imageURL-core}/netbar/sites/rog.png") no-repeat -1px center; }
-					&.u-icon-lolpro { background: url("#{$imageURL-core}/netbar/sites/lolpro.png") no-repeat -1px center; }
-				}
-			}
+                background: url("#{$imageURL-core}/netbar/discover.png") no-repeat 8px 1px; text-indent: -9999px; width: 130px; 
+                > ul li i {
+                    @include u-icon-z;
+                    width: 30px;
+                    &.u-icon-curse { background: url("#{$imageURL-core}/netbar/sites/curse.png") no-repeat 5px center; }
+                    &.u-icon-mmoc { background: url("#{$imageURL-core}/netbar/sites/mmoc.png") no-repeat 0 center; }
+                    &.u-icon-wowstead { background: url("#{$imageURL-core}/netbar/sites/wowstead.png") no-repeat 1px center; }
+                    &.u-icon-arenajunkies { background: url("#{$imageURL-core}/netbar/sites/aj.png") no-repeat 0 center; }
+                    &.u-icon-minecraftforums { background: url("#{$imageURL-core}/netbar/sites/mcf.png") no-repeat 0 center; }
+                    &.u-icon-darthhater { background: url("#{$imageURL-core}/netbar/sites/dh.png") no-repeat 3px center; }
+                    &.u-icon-diablofans { background: url("#{$imageURL-core}/netbar/sites/dfans.png") no-repeat -1px center; }
+                    &.u-icon-terraria { background: url("#{$imageURL-core}/netbar/sites/terraria.png") no-repeat -1px center; }
+                    &.u-icon-rog { background: url("#{$imageURL-core}/netbar/sites/rog.png") no-repeat 4px center; }
+                    &.u-icon-lolpro { background: url("#{$imageURL-core}/netbar/sites/lolpro.png") no-repeat 4px center; }
+                    &.u-icon-fpsg { background: url("#{$imageURL-core}/netbar/sites/fpsgeneral.png") no-repeat 4px center; }
+                    &.u-icon-guildwars2guru { background: url("#{$imageURL-core}/netbar/sites/guildwars2guru.png") no-repeat 4px center; }
+                }
+                > ul li {
+                    &.break {
+                        text-indent: 0;
+                        font-size: 11px;
+                        height: auto;
+                        padding: 3px 10px;
+                        color: lighten($netbarBgColor-hover,30%);
+                    }
+                    &.featured {
+                        border: 1px solid #000;
+                        border-width: 1px 0;
+                        margin: 10px 0;
+                        width: 230px;
+                        @include backgroundGradient(radial-gradient(top left, #222 0%, #060606 85%));
+                        @include boxShadow(inset 0 0 1px rgba(255,255,255,.3));
+                        > a {
+                            padding: 0 20px 0 40px;
+                            height: 50px;
+                            display: block;
+                            text-indent: -99999px;
+                            background: url("#{$imageURL-core}/netbar/icon-curseCom.png") no-repeat left center;
+                        }
+                        &:hover { 
+                            @include backgroundGradient(radial-gradient(top left, #333 0%, #060606 85%));
+                        }
+                    }
+                }
+            }
         }
 
         // Preferences
@@ -151,13 +201,35 @@ $netbarFont-family: Tahoma, Geneva, Verdana;
         .t-netbar-preferences {
             > li {
                 > a {
-                    background: $netbarSprite;
-                    background-position: 2px -86px; // Gear icon
-                    padding: 0 24px 0 20px;
-                    text-indent: -9999px;
+                    display: block;
+                    height: $netbarHeight;
+                    padding: 8px 20px;
+                    > span {
+                        display: block;
+                        text-indent: -99999px;
+                        background: $netbarSprite;
+                        background-position: -15px -12px; // Gear icon
+                        width: 13px;
+                        height: 13px;
+                    }
                 }
-                &:hover > a { background-position: -33px -86px; }
+                &:hover > span { background-position: 0 -12px; }
             }
+        }
+
+        // Premium Upsell
+
+        .t-netbar-premium {
+            display: block;
+            float: left;
+            height: $netbarHeight;
+            padding: 0 20px;
+            height: $netbarHeight;
+            line-height: $netbarHeight;
+            color: #FFCC33;
+            font-weight: bold;
+            &:hover { color: #fff; }
+            .hide-ads & { display: none; }
         }
     }
 
@@ -171,74 +243,189 @@ $netbarFont-family: Tahoma, Geneva, Verdana;
 
         .t-netbar-authorize {
             &:hover { background: transparent; }
-            > li {  @extend .t-netbar-section;  }
+            > li {  @extend .t-netbar-section; &:hover { background: transparent; }  }
         }
 
         // Messages
 
         .t-netbar-messages {
-			position: relative;
+            position: relative;
             > li {
                 > a {
-                    background: $netbarSprite;
-                    background-position: 2px -25px; // Envelope icon
                     display: block;
                     height: $netbarHeight;
-                    padding: 0 20px;
+                    padding: 9px 20px;
+                    > span {
+                        display: block;
+                        text-indent: -99999px;
+                        background: $netbarSprite;
+                        background-position: -16px 0; // Envelope icon
+                        width: 14px;
+                        height: 10px;
+                    }
+                    &:hover > span { background-position: 0 0; }
                 }
             }
-			.option-count {
-				@include borderRadius(2px);
-				color: #fff;        
-				font-family: Arial, Sans-Serif;   
-				font-size: 8px;
-				text-align: center;    
-				padding: 0 3px;
-				font-weight: bold;
-				background: #d70101;
-				line-height: 11px;  
-				position: absolute;
-				top: 5px;
-				right: 9px;  
-			}
+            .option-count {
+                @include borderRadius(2px);
+                color: #fff;        
+                font-family: Arial, Sans-Serif;   
+                font-size: 8px;
+                text-align: center;    
+                padding: 0 5px;
+                font-weight: bold;
+                background: #d70101;
+                height: 11px;
+                line-height: 11px;
+                position: absolute;
+                top: 5px;
+                right: 9px;  
+                text-indent: 0;
+                vertical-align: middle;
+                width: auto;
+            }
         }
 
-        // Messages
+        // Notifications
 
         .t-netbar-notifications {
-			position: relative;
+            position: relative;
             > li {
                 > a {
-                    background: $netbarSprite;
-                    background-position: -65px 2px; // Envelope icon
                     display: block;
                     height: $netbarHeight;
-                    padding: 0 20px;
+                    padding: 8px 20px;
+                    > span {
+                        display: block;
+                        text-indent: -99999px;
+                        background: $netbarSprite;
+                        background-position: 0 -27px; // Envelope icon
+                        width: 13px;
+                        height: 13px;
+                    }
+                    &:hover > span { background-position: -32px 0; }
                 }
             }
-			.option-count {
-				@include borderRadius(2px);
-				color: #fff;        
-				font-family: Arial, Sans-Serif;   
-				font-size: 8px;
-				text-align: center;    
-				padding: 0 3px;
-				font-weight: bold;
-				background: #d70101;
-				line-height: 11px;  
-				position: absolute;
-				top: 5px;
-				right: 9px;  
-			}
+            .option-count {
+                @include borderRadius(2px);
+                color: #fff;        
+                font-family: Arial, Sans-Serif;   
+                font-size: 8px;
+                text-align: center;    
+                padding: 0 5px;
+                font-weight: bold;
+                background: #d70101;
+                height: 11px;
+                line-height: 11px;
+                position: absolute;
+                top: 5px;
+                right: 9px;  
+                text-indent: 0;
+                vertical-align: middle;
+                width: auto;
+            }
         }
 
         // Avatar
 
-        .t-netbar-avatar img { height: 24px; padding-bottom: 3px; vertical-align: bottom; }
+        .t-netbar-avatar {
+            > a { padding-top: 5px; height: $netbarHeight; }
+            img { height: 18px; vertical-align: top; @include borderRadius(3px); }
+        } 
     }
 
 } // END t-netbar
 
-$netbar-counter: $netbar-counter + 1;
+// Curse Gradient Strip
 
+.curse-stripe { 
+    @include background($color: #b95807, $gradient: linear-gradient(left, #b95807 0%,#b95807 22%,#aa5306 22%,#aa5306 50%,#db9108 50%,#db9108 78%,#ffbb09 78%,#ffbb09 100%));
+    height: 1px;
+    display: block;
+}
+
+// Notification Drop Down - Lives outside of Netbar through .js -JB (10/26/12)
+
+#notifications {
+    @include boxShadow(inset 0 -2px 6px 0px rgba(0,0,0,.3));
+    @include borderRadius-bottom(6px);
+
+    background-color: #262626; 
+    border-bottom: 1px solid #000;
+    color: #4c4c4c;
+    font-size: 12px;
+    position: absolute;
+    top: 59px !important;
+    width: 320px;
+    z-index: 3;
+
+    a { color: #aeaeae; }
+    a:hover { color: #fff; }
+
+    // Notifications Listing
+
+    .listing-user-notification { margin-bottom: 0; }
+
+    // Item
+
+    .item {
+        overflow: hidden;
+        padding: 10px 16px;
+        text-overflow: ellipsis;
+
+        & + .item { border-top: 1px solid #3c3c3c; }
+    }
+
+    // Avatar
+
+    .avatar {
+        display: inline; // Reset -JB (10/26/12) 
+
+        > a {
+            float: left;
+            height: 48px;
+            width: 48px;
+        }
+    }
+
+    // Content
+
+    .content { font-size: 11px; line-height: 1.3em; margin-left: 58px; }
+
+    .subject { margin-bottom: 1.3em; }
+    .subject .title { color: #eee; }
+
+    .preview { color: #aeaeae; margin-bottom: 1.3em; }
+
+    .content > li > a:hover {
+
+        .subject,
+        .subject .title,
+        .preview { color: #fff; }
+    }
+
+    .date { color: #6f6f6f; margin-bottom: 0; text-align: right; }
+
+    // No Results
+
+    .no-results {
+        background: transparent;
+        border: none;
+        color: #aeaeae;
+        font-size: 12px;
+    }
+
+    // View All Notifications
+
+    .view-all > a {
+        @include boxShadow(inset 0 1px 0 rgba(255,255,255,.1));
+
+        background: #060606;
+        border: 1px solid #000;
+        border-width: 1px 0;
+        display: block;
+        margin: 10px 0;
+        padding: 10px 0;
+        text-align: center;
+    }
 }

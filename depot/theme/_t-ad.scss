@@ -28,7 +28,7 @@
 
 // If site skin active
 
-.ad-skin #site-main { @include boxShadow($adskin-boxShadow); }
+.ad-skin #site-main { @include boxShadow($adskin-boxShadow); cursor: default; }
 .ad-skin .p-header-a { background: $adSkinHeader-bg; }
 .ad-skin .atf .atf-ad-badge { display: none !important; visibility: hidden !important; }
 .ad-skin #site { position: relative; background: $adskin-bgGradient; background-position: $adskin-bgGradientPosition; }
@@ -98,6 +98,11 @@
 .atf-ad-leaderboard .ad-removal,
 .btf-ad-leaderboard .ad-removal { display: none !important; visibility: hidden !important; }
 .btf { text-align: center; margin-bottom: 20px; }
+
+// Positioning of site skins per site
+.site-reignofgaming.ad-skin { background-position: center 94px !important; }
+.site-fpsgeneral.ad-skin { background-position: center 40px !important; }
+.site-darthhater.ad-skin { background-position: center 33px !important; }
 
 $ad-counter: $ad-counter + 1;
 

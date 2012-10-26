@@ -32,46 +32,5 @@
 
 } // END p-login-a
 
-@mixin p-login-b {
+@mixin p-login-b {}
 
-    display: none;
-	@include group;
-	padding: 1px !important; // !important until refactoring of this happens
-    > form { margin: 0; }
-	.p-login-form {
-		@include col(7);
-		margin-left: 0;
-		padding: $modalPadding;
-		label { 
-			margin-bottom: $modalPadding; 
-			a { float: right; }
-			input { width: 100%; }
-			.input-label { font-weight: bold; margin-bottom: 3px; display: inline-block; }
-		}
-	}
-	.p-login-upsell {
-		@include col(5);
-		padding: $modalPadding;
-		background: url("../../../../../../Curse.Cobalt.Web/content/skins/Blocks/images/login/bg-login-premium-upsell.png") no-repeat center center;
-		border-left: 1px solid darken($modalBg, 40%);
-		float: left;
-		h6, 
-		ul { padding: 0px $modalPadding; }
-		h6 {
-		   font-size: 14px;
-		   font-weight: bold;
-		   padding: 10px;
-		}
-		li { font-size: 11px; list-style-position: inside; list-style-type: disc; margin-bottom: 3px; line-height: normal; }
-		.cta-button { margin-top: $modalPadding; margin-left: $modalPadding; text-align: center; list-style: none; display: inline-block; }
-
-        .jump-link { @include u-button-z; margin: $leading / 2 0; }
-	}
-	.p-login-actions {
-		background: $modalActionBg;
-		border-top: 1px solid darken($modalBg, 40%);
-		clear: both;
-		padding: $modalPadding;
-	}
-
-} // END p-login-b
